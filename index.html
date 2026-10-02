@@ -3881,18 +3881,29 @@ const esperarFB = () => new Promise(ok => {
   setTimeout(() => ok(window.FB || null), 15000);
 });
 
-(async () => {
-  const FBok = await esperarFB();
-  if(!FBok){
-    $('#lg-erro').textContent = 'Não foi possível carregar o Firebase. Confira o arquivo firebase-config.js e a conexão.';
-    $('#lg-entrar').textContent = 'Indisponível';
-    return;
-  }
-  const db = FBok.db;
-  DB = db;
+let ouvintes = [];
+function fecharOuvintes(){
+  ouvintes.forEach(f => { try{ f(); }catch(e){} });
+  ouvintes = [];
+}
+/* As regras do Firestore só liberam leitura para quem está logado.
+   Por isso os ouvintes só são abertos DEPOIS que o Firebase Auth confirma a sessão. */
+function abrirOuvintes(db){
+  fecharOuvintes();
 
-  FB.aoMudar(user => { uidAtual = user ? user.uid : null; sincronizarSessao(); });
-  db.collection('solicitacoes').onSnapshot(snap => {
+  ouvintes.push(db.collection('usuarios').onSnapshot(snap => {
+    USUARIOS = snap.docs.map(d => ({id:d.id, ...d.data()}));
+    usuariosCarregados = true;
+    sincronizarSessao();
+    if(!$('#pg-usuarios').hidden) renderUsuarios();
+  }, err => {
+    usuariosCarregados = true;
+    mostrarLogin('Entrou, mas o banco recusou a leitura dos perfis (' +
+      ((err && err.code) || 'erro') + '). Confira se as regras do Firestore foram publicadas.');
+    try{ FB.sair(); }catch(e){}
+  }));
+
+  ouvintes.push(db.collection('solicitacoes').onSnapshot(snap => {
     SOLICITACOES = snap.docs.map(d => ({id:d.id, ...d.data()}));
     const maior = SOLICITACOES.reduce((m,s) => Math.max(m, s.num || 0), 1186);
     ficha.num = maior + 1; renderFolha();
@@ -3905,30 +3916,49 @@ const esperarFB = () => new Promise(ok => {
     $('#c-aviso').textContent = '';
     $('#c-aviso').appendChild(cria('p','aviso',
       'A fila parou de atualizar nesta aba. Recarregue a página para voltar a acompanhar.'));
-  });
-  db.collection('estoque').onSnapshot(snap => {
+  }));
+
+  ouvintes.push(db.collection('estoque').onSnapshot(snap => {
     MOVIMENTOS = snap.docs.map(d => ({id:d.id, ...d.data()}));
     if(!$('#pg-estoque').hidden) renderEstoque();
   }, err => {
     $('#e-resumo').textContent = 'O estoque parou de atualizar nesta aba. Recarregue a página.';
-  });
-  db.collection('usuarios').onSnapshot(snap => {
-    USUARIOS = snap.docs.map(d => ({id:d.id, ...d.data()}));
-    usuariosCarregados = true;
-    sincronizarSessao();
-    if(!$('#pg-usuarios').hidden) renderUsuarios();
-  }, err => {
-    usuariosCarregados = true; liberarLogin();
-    $('#lg-erro').textContent = 'Sem permissão para ler a lista de usuários. Confira as regras do Firestore.';
-  });
+  }));
 
-  db.collection('colaboradores').onSnapshot(snap => {
+  ouvintes.push(db.collection('colaboradores').onSnapshot(snap => {
     COLABORADORES = snap.docs.map(d => ({id:d.id, ...d.data()}));
     preencherEmpresasColab();
     if(!$('#pg-colaboradores').hidden) renderColaboradores();
     if(abertaId) abrirGaveta(abertaId);
   }, err => {
     $('#cl-resumo').textContent = 'A base parou de atualizar nesta aba. Recarregue a página.';
+  }));
+}
+
+(async () => {
+  const FBok = await esperarFB();
+  if(!FBok){
+    $('#lg-erro').textContent = 'Não foi possível carregar o Firebase. Confira o arquivo firebase-config.js e a conexão.';
+    $('#lg-entrar').textContent = 'Indisponível';
+    return;
+  }
+  const db = FBok.db;
+  DB = db;
+  liberarLogin();
+
+  FB.aoMudar(user => {
+    uidAtual = user ? user.uid : null;
+    if(user){
+      usuariosCarregados = false;
+      abrirOuvintes(db);
+    } else {
+      fecharOuvintes();
+      USUARIOS = []; SOLICITACOES = []; MOVIMENTOS = []; COLABORADORES = [];
+      usuariosCarregados = false;
+      if(eu.id){ eu = {id:null, login:'', nome:'', papel:'supervisor'}; pintarChip(); aplicarAcesso(); }
+      mostrarLogin('');
+      liberarLogin();
+    }
   });
 })();
 </script>
