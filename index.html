@@ -649,7 +649,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.</p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 3</span></p>
     </form>
   </div>
 </div>
@@ -3886,21 +3886,21 @@ function fecharOuvintes(){
   ouvintes.forEach(f => { try{ f(); }catch(e){} });
   ouvintes = [];
 }
-/* As regras do Firestore só liberam leitura para quem está logado.
-   Por isso os ouvintes só são abertos DEPOIS que o Firebase Auth confirma a sessão. */
+/* As regras do Firestore só liberam leitura para quem está logado,
+   por isso tudo isto só abre DEPOIS que o Auth confirma a sessão. */
 function abrirOuvintes(db){
   fecharOuvintes();
 
   ouvintes.push(db.collection('usuarios').onSnapshot(snap => {
-    USUARIOS = snap.docs.map(d => ({id:d.id, ...d.data()}));
+    const lista = snap.docs.map(d => ({id:d.id, ...d.data()}));
+    if(lista.length) USUARIOS = lista;
     usuariosCarregados = true;
     sincronizarSessao();
     if(!$('#pg-usuarios').hidden) renderUsuarios();
   }, err => {
-    usuariosCarregados = true;
-    mostrarLogin('Entrou, mas o banco recusou a leitura dos perfis (' +
-      ((err && err.code) || 'erro') + '). Confira se as regras do Firestore foram publicadas.');
-    try{ FB.sair(); }catch(e){}
+    /* sem a lista o sistema continua funcionando: o perfil do usuário já foi lido direto */
+    const r = $('#us-resumo');
+    if(r) r.textContent = 'Não foi possível listar os usuários (' + ((err && err.code) || 'erro') + ').';
   }));
 
   ouvintes.push(db.collection('solicitacoes').onSnapshot(snap => {
@@ -3915,7 +3915,7 @@ function abrirOuvintes(db){
   }, err => {
     $('#c-aviso').textContent = '';
     $('#c-aviso').appendChild(cria('p','aviso',
-      'A fila parou de atualizar nesta aba. Recarregue a página para voltar a acompanhar.'));
+      'A fila parou de atualizar nesta aba (' + ((err && err.code) || 'erro') + '). Recarregue a página.'));
   }));
 
   ouvintes.push(db.collection('estoque').onSnapshot(snap => {
@@ -3946,19 +3946,48 @@ function abrirOuvintes(db){
   DB = db;
   liberarLogin();
 
-  FB.aoMudar(user => {
+  FB.aoMudar(async user => {
     uidAtual = user ? user.uid : null;
-    if(user){
-      usuariosCarregados = false;
-      abrirOuvintes(db);
-    } else {
+
+    if(!user){
       fecharOuvintes();
       USUARIOS = []; SOLICITACOES = []; MOVIMENTOS = []; COLABORADORES = [];
       usuariosCarregados = false;
       if(eu.id){ eu = {id:null, login:'', nome:'', papel:'supervisor'}; pintarChip(); aplicarAcesso(); }
       mostrarLogin('');
       liberarLogin();
+      return;
     }
+
+    /* Lê o próprio perfil DIRETO pelo caminho usuarios/<uid>.
+       Não depende de conseguir listar a coleção inteira. */
+    let meu = null;
+    try{
+      const s = await db.doc('usuarios/' + user.uid).get();
+      if(s && s.exists) meu = {id:user.uid, ...s.data()};
+    }catch(e){
+      mostrarLogin('Você entrou, mas o banco recusou a leitura do seu perfil (' +
+        ((e && e.code) || 'erro') + '). Confira se as regras do Firestore foram publicadas.');
+      try{ FB.sair(); }catch(x){}
+      return;
+    }
+
+    if(!meu){
+      mostrarLogin('A senha está certa, mas não existe o documento "usuarios/' + user.uid +
+        '" no Firestore deste projeto. Crie-o com os campos nome, email, papel e ativo.');
+      try{ FB.sair(); }catch(x){}
+      return;
+    }
+    if(meu.ativo === false){
+      mostrarLogin('Sua conta está desativada. Procure o administrador.');
+      try{ FB.sair(); }catch(x){}
+      return;
+    }
+
+    USUARIOS = [meu];
+    usuariosCarregados = true;
+    entrarComo(meu);
+    abrirOuvintes(db);
   });
 })();
 </script>
