@@ -1,0 +1,1396 @@
+{
+ "solicitacoes": {
+  "192qxily9llu7dd0xtfx": {
+   "cargo": "MEC DE AR COND E REF III",
+   "cnpj": "14.819.514/0001-88",
+   "colaborador": "EDVALDO BRITO DOS SANTOS",
+   "contrato": "FEDERAÇÃO PAULISTA FUTEBOL",
+   "cpf": "954.770.555-53",
+   "criadoEm": "2026-09-02T17:14:14.920Z",
+   "criadoPor": "Segurança do Trabalho",
+   "empresaCod": 2,
+   "empresaRazao": "FANCOLD MANUTENÇÃO LTDA",
+   "estoqueBaixado": true,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-02T17:14:14.920Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T14:18:09.504Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T14:18:14.345Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T14:23:22.177Z",
+     "por": "Segurança do Trabalho",
+     "status": "concluido"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "29775",
+     "nome": "LUVA ALTA TENSAO CLASSE 0 PRETO 5 KVA 1000 V TAM 10",
+     "pendente": false,
+     "qtd": 1,
+     "qtdSep": 1,
+     "separado": true
+    },
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 38",
+     "pendente": false,
+     "qtd": 1,
+     "qtdSep": 1,
+     "separado": true
+    },
+    {
+     "ca": "33304",
+     "nome": "CAPA CHUVA PVC FORRADO AMARELO PLASTCOR 700.30348",
+     "pendente": false,
+     "qtd": 1,
+     "qtdSep": 1,
+     "separado": true
+    },
+    {
+     "ca": "19628",
+     "nome": "OCULOS  DE SEGURANÇA AMPLA VISAO EVEREST",
+     "pendente": false,
+     "qtd": 1,
+     "qtdSep": 1,
+     "separado": true
+    }
+   ],
+   "num": 1201,
+   "status": "concluido"
+  },
+  "3y8m7tl6y1emujmnxp2b": {
+   "cargo": "MEC DE AR COND E REF III",
+   "cnpj": "14.819.514/0001-88",
+   "colaborador": "EDSON BATISTA DOS SANTOS",
+   "contrato": "EMILIO RIBAS",
+   "cpf": "287.379.968-43",
+   "criadoEm": "2026-09-02T17:26:07.025Z",
+   "criadoPor": "Segurança do Trabalho",
+   "empresaCod": 2,
+   "empresaRazao": "FANCOLD MANUTENÇÃO LTDA",
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-02T17:26:07.025Z",
+     "por": "Segurança do Trabalho",
+     "status": "solicitado"
+    },
+    {
+     "em": "2026-09-02T17:26:13.478Z",
+     "por": "Segurança do Trabalho",
+     "status": "seguranca"
+    },
+    {
+     "em": "2026-09-02T17:26:28.413Z",
+     "por": "Segurança do Trabalho",
+     "status": "almoxarifado"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "33304",
+     "nome": "CAPA CHUVA PVC FORRADO AMARELO PLASTCOR 700.30348",
+     "qtd": 1,
+     "separado": false
+    }
+   ],
+   "num": 1203,
+   "status": "almoxarifado"
+  },
+  "79wdmlrank74z0ivukv7": {
+   "cm": "GG",
+   "colaborador": "ELSON PEREIRA DA MOTA",
+   "contrato": "BRASILOR  - BOTAFOGO",
+   "criadoEm": "2026-09-18T02:57:06.867Z",
+   "criadoPor": "gg",
+   "dataRetirada": "2027-08-17T03:00:00.000Z",
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-18T02:57:06.867Z",
+     "por": "gg",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:32:18.082Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:32:22.183Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T13:34:22.947Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "19224",
+     "nome": "AVENTAL DE RASPA BARBEIRO",
+     "pendente": false,
+     "qtd": 1,
+     "separado": true
+    }
+   ],
+   "num": 1207,
+   "status": "validacao",
+   "tipo": "reposicao"
+  },
+  "819jzoaqnbr2oq5b5ia2": {
+   "cm": "CMR - 610.12.23",
+   "colaborador": "PAULO CESAR",
+   "colaboradorCpf": "123",
+   "contrato": "ARCOR  - BRAGANÇA PAULISTA",
+   "criadoEm": "2026-10-02T14:19:43.390Z",
+   "criadoPor": "gustavo ",
+   "dataRetirada": "2026-10-10T03:00:00.000Z",
+   "estoqueBaixado": true,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-10-02T14:19:43.390Z",
+     "por": "gustavo ",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T14:19:54.636Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T14:20:02.758Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T14:20:05.916Z",
+     "por": "Segurança do Trabalho",
+     "status": "concluido"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "38530",
+     "nome": "BOTA DE SEGURANÇA C/ COMPOSITE",
+     "pendente": false,
+     "qtd": 1,
+     "qtdSep": 1,
+     "separado": true
+    },
+    {
+     "ca": "498",
+     "nome": "CAPACETE CLASSE A AZUL",
+     "pendente": false,
+     "qtd": 6,
+     "qtdSep": 6,
+     "separado": true
+    },
+    {
+     "ca": "32036",
+     "nome": "LUVA ANTI CORTE DANNY",
+     "pendente": false,
+     "qtd": 7,
+     "qtdSep": 7,
+     "separado": true
+    },
+    {
+     "ca": "",
+     "nome": "CALÇA UNIFORME NR10 AZUL C/REFLETIVO LARANJA G",
+     "pendente": false,
+     "qtd": 1,
+     "qtdSep": 1,
+     "separado": true
+    }
+   ],
+   "nFotos": 0,
+   "num": 1214,
+   "status": "concluido",
+   "tipo": "reposicao"
+  },
+  "dwcms7m7x5s72wvdd7tf": {
+   "cm": "CMA - 631.07.24",
+   "colaborador": "GUSTAVO ",
+   "contrato": "AUTOMETAL SBC",
+   "criadoEm": "2026-09-24T19:33:17.907Z",
+   "criadoPor": "GUSTAVO ",
+   "dataRetirada": "2026-10-24T03:00:00.000Z",
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-24T19:33:17.907Z",
+     "por": "GUSTAVO ",
+     "status": "solicitado"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 42",
+     "pendente": false,
+     "qtd": 1,
+     "separado": false
+    },
+    {
+     "ca": "32036",
+     "nome": "LUVA ANTICORTE CINZA TAM 7 -P",
+     "pendente": false,
+     "qtd": 1,
+     "separado": false
+    },
+    {
+     "ca": "29638",
+     "nome": "CAPACETE DE SEGURANÇA  AZUL",
+     "pendente": false,
+     "qtd": 1,
+     "separado": false
+    }
+   ],
+   "num": 1210,
+   "status": "solicitado",
+   "tipo": "reposicao"
+  },
+  "ejx0qq33kiavs2x6itch": {
+   "cargo": "MEC DE AR COND E REF III",
+   "cnpj": "14.819.514/0001-88",
+   "colaborador": "EDSON BATISTA DOS SANTOS",
+   "contrato": "EMILIO RIBAS",
+   "cpf": "287.379.968-43",
+   "criadoEm": "2026-09-02T17:15:50.565Z",
+   "criadoPor": "Segurança do Trabalho",
+   "empresaCod": 2,
+   "empresaRazao": "FANCOLD MANUTENÇÃO LTDA",
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-02T17:15:50.565Z",
+     "por": "Segurança do Trabalho",
+     "status": "solicitado"
+    },
+    {
+     "em": "2026-09-16T23:27:51.702Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-16T23:27:54.463Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:34:17.083Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 39",
+     "qtd": 1,
+     "separado": false
+    },
+    {
+     "ca": "29638",
+     "nome": "CAPACETE DE SEGURANÇA  BRANCO",
+     "qtd": 1,
+     "separado": false
+    }
+   ],
+   "num": 1202,
+   "status": "validacao"
+  },
+  "fgle1qi2z1hetd28c6w3": {
+   "cargo": "MEC DE AR COND E REF I",
+   "cnpj": "14.819.514/0001-88",
+   "colaborador": "EDMILSON APARECIDO BRITO",
+   "contrato": "EMILIO RIBAS",
+   "cpf": "205.366.178-05",
+   "criadoEm": "2026-09-15T00:55:04.150Z",
+   "criadoPor": "Segurança do Trabalho",
+   "empresaCod": 2,
+   "empresaRazao": "FANCOLD MANUTENÇÃO LTDA",
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-15T00:55:04.150Z",
+     "por": "Segurança do Trabalho",
+     "status": "solicitado"
+    },
+    {
+     "em": "2026-09-15T00:55:20.117Z",
+     "por": "Segurança do Trabalho",
+     "status": "seguranca"
+    },
+    {
+     "em": "2026-09-15T00:55:30.917Z",
+     "por": "Segurança do Trabalho",
+     "status": "almoxarifado"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 39",
+     "qtd": 1,
+     "separado": false
+    }
+   ],
+   "num": 1204,
+   "status": "almoxarifado"
+  },
+  "h1aru72x74flghf8nl43": {
+   "cm": "CMR - 391.01.15",
+   "colaborador": "GUSTAVO ",
+   "colaboradorCnpj": "22.418.765/0001-89",
+   "colaboradorEmpresa": "INFRA 5 MANUTENÇÃO LTDA",
+   "contrato": "(U-SHIN)    MINEBEA",
+   "criadoEm": "2026-10-02T13:02:45.178Z",
+   "criadoPor": "PAULO ",
+   "dataRetirada": null,
+   "empresaCod": 8,
+   "estoqueBaixado": true,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-10-02T13:02:45.178Z",
+     "por": "PAULO ",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:18:00.377Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:34:14.324Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:40:44.473Z",
+     "por": "Almoxarifado Operacional",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:44:00.804Z",
+     "por": "Segurança do Trabalho",
+     "status": "concluido"
+    },
+    {
+     "em": "2026-10-02T13:44:03.481Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T14:17:56.080Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 40",
+     "pendente": false,
+     "qtd": 1,
+     "qtdSep": 1,
+     "separado": true
+    }
+   ],
+   "nFotos": 1,
+   "num": 1212,
+   "status": "envio",
+   "tipo": "troca"
+  },
+  "h32o7zw3fnlgotikaolw": {
+   "cargo": "AJUDANTE GERAL",
+   "cnpj": "14.819.514/0001-88",
+   "colaborador": "CLEBER DE LIMA DIAS",
+   "contrato": "EMILIO RIBAS",
+   "cpf": "429.722.498-44",
+   "criadoEm": "2026-09-16T23:44:28.142Z",
+   "criadoPor": "Segurança do Trabalho",
+   "empresaCod": 2,
+   "empresaRazao": "FANCOLD MANUTENÇÃO LTDA",
+   "estoqueBaixado": true,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-16T23:44:28.142Z",
+     "por": "Segurança do Trabalho",
+     "status": "solicitado"
+    },
+    {
+     "em": "2026-09-16T23:44:38.392Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-16T23:44:49.425Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-09-16T23:45:16.846Z",
+     "por": "Segurança do Trabalho",
+     "status": "entrega"
+    },
+    {
+     "em": "2026-09-16T23:45:23.587Z",
+     "por": "Segurança do Trabalho",
+     "status": "concluido"
+    },
+    {
+     "em": "2026-10-02T13:34:24.291Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 38",
+     "pendente": false,
+     "qtd": 1,
+     "separado": true
+    }
+   ],
+   "num": 1205,
+   "posto": "COLGATE JAGUARÉ",
+   "responsavelEnvio": "seguranca",
+   "status": "validacao",
+   "tipo": "reposicao"
+  },
+  "hr27jao3h1u3fpo3kpp6": {
+   "cm": "CMR - 391.01.15",
+   "colaborador": "PAULO CEZAR",
+   "contrato": "(U-SHIN)    MINEBEA",
+   "criadoEm": "2026-09-29T17:02:00.317Z",
+   "criadoPor": "ALEXANDRE ",
+   "dataRetirada": "2026-10-01T03:00:00.000Z",
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-29T17:02:00.317Z",
+     "por": "ALEXANDRE ",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-29T17:02:21.662Z",
+     "por": "Supervisor",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:34:13.223Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 38",
+     "pendente": false,
+     "qtd": 1,
+     "separado": false
+    }
+   ],
+   "num": 1211,
+   "status": "validacao",
+   "tipo": "troca"
+  },
+  "sov9p7kjt6kp1y6zrnbh": {
+   "cm": "CMR - 610.12.23",
+   "colaborador": "KLEBER",
+   "colaboradorCnpj": "01.808.352/0001-30",
+   "colaboradorCpf": "1321",
+   "colaboradorEmpresa": "PREST COLD AR CONDICIONADO LTDA",
+   "contrato": "ARCOR  - BRAGANÇA PAULISTA",
+   "criadoEm": "2026-10-02T14:20:43.241Z",
+   "criadoPor": "gustavo AS",
+   "dataRetirada": null,
+   "empresaCod": 3,
+   "estoqueBaixado": true,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-10-02T14:20:43.241Z",
+     "por": "gustavo AS",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T14:21:28.840Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T14:21:32.405Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T14:21:50.209Z",
+     "por": "Segurança do Trabalho",
+     "status": "concluido"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "38530",
+     "nome": "BOTA DE SEGURANÇA C/ COMPOSITE",
+     "pendente": false,
+     "qtd": 4,
+     "qtdSep": 4,
+     "separado": true
+    }
+   ],
+   "nFotos": 0,
+   "num": 1215,
+   "status": "concluido",
+   "tipo": "reposicao"
+  },
+  "vo8700narb2mtiw4brpw": {
+   "cm": "CMF - 170.06.15",
+   "colaborador": "GUSTAVOO",
+   "colaboradorCnpj": "05.262.055/0001-93",
+   "colaboradorEmpresa": "FANCOLD SERVICE LTDA.",
+   "contrato": "360 ON THE PARK",
+   "criadoEm": "2026-09-24T19:25:42.528Z",
+   "criadoPor": "KLEBER",
+   "dataRetirada": "2026-10-24T03:00:00.000Z",
+   "empresaCod": 1,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-24T19:25:42.528Z",
+     "por": "KLEBER",
+     "status": "solicitado"
+    },
+    {
+     "em": "2026-09-24T19:25:51.860Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-24T19:25:55.367Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-09-24T19:25:58.597Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-24T19:26:05.374Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-09-24T19:30:49.320Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-24T19:33:33.602Z",
+     "por": "Supervisor",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-09-24T19:33:39.023Z",
+     "por": "Supervisor",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-24T19:34:04.851Z",
+     "por": "Supervisor",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-09-24T19:39:50.771Z",
+     "por": "Supervisor",
+     "status": "entrega"
+    },
+    {
+     "em": "2026-10-02T13:34:21.669Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:37:06.516Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:44:02.097Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T13:44:03.988Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 38",
+     "pendente": false,
+     "qtd": 1,
+     "separado": true
+    },
+    {
+     "ca": "33304",
+     "nome": "CAPA CHUVA PVC FORRADO AMARELO PLASTCOR 700.30348",
+     "pendente": false,
+     "qtd": 1,
+     "separado": true
+    },
+    {
+     "ca": "29638",
+     "nome": "CAPACETE DE SEGURANÇA  BRANCO",
+     "pendente": false,
+     "qtd": 1,
+     "separado": true
+    },
+    {
+     "ca": "29775",
+     "nome": "LUVA ALTA TENSAO CLASSE 0 PRETO 5 KVA 1000 V TAM 10",
+     "pendente": false,
+     "qtd": 1,
+     "separado": false
+    }
+   ],
+   "num": 1209,
+   "status": "separacao",
+   "tipo": "troca"
+  },
+  "wv7g7wvb2zt98ewdzip0": {
+   "cm": "65",
+   "colaborador": "EDELSON MARTINS DE LIMA",
+   "colaboradorCnpj": "20.353.693/0001-03",
+   "colaboradorCpf": "",
+   "colaboradorEmpresa": "BMS - BUILDING MAINTENANCE SERVICE LTDA",
+   "contrato": "AJINOMOTO - LARANJAL PAULISTA",
+   "criadoEm": "2026-09-18T02:54:43.825Z",
+   "criadoPor": "Gustavo ",
+   "dataRetirada": "2026-09-17T03:00:00.000Z",
+   "empresaCod": 5,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-18T02:54:43.825Z",
+     "por": "Gustavo ",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:33:52.567Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:34:15.676Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 38",
+     "pendente": false,
+     "qtd": 1,
+     "separado": false
+    }
+   ],
+   "num": 1206,
+   "status": "validacao",
+   "tipo": "reposicao"
+  },
+  "y4piy4m8i2h09se4269n": {
+   "cm": "CMR - 683.12.25",
+   "colaborador": "HUSTAVO ALVES",
+   "colaboradorCnpj": "05.262.055/0001-93",
+   "colaboradorCpf": "",
+   "colaboradorEmpresa": "FANCOLD SERVICE LTDA.",
+   "contrato": "ODATA BRASIL -HORTOLANDIA",
+   "criadoEm": "2026-10-02T13:19:21.762Z",
+   "criadoPor": "PAULO C",
+   "dataRetirada": "2026-10-10T03:00:00.000Z",
+   "empresaCod": 1,
+   "estoqueBaixado": true,
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-10-02T13:19:21.762Z",
+     "por": "PAULO C",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:20:11.485Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:34:11.707Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:34:32.951Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:34:44.564Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T13:43:59.235Z",
+     "por": "Segurança do Trabalho",
+     "status": "entrega"
+    },
+    {
+     "em": "2026-10-02T13:44:05.123Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:47:22.432Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T13:47:36.621Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:48:13.423Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T13:48:18.207Z",
+     "por": "Segurança do Trabalho",
+     "status": "concluido"
+    },
+    {
+     "em": "2026-10-02T13:48:20.441Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T14:23:14.572Z",
+     "por": "Segurança do Trabalho",
+     "status": "concluido"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 41",
+     "pendente": false,
+     "qtd": 4,
+     "qtdSep": 4,
+     "separado": true
+    },
+    {
+     "ca": "29638",
+     "nome": "CAPACETE DE SEGURANÇA  AZUL",
+     "pendente": false,
+     "qtd": 2,
+     "qtdSep": 2,
+     "separado": true
+    }
+   ],
+   "nFotos": 1,
+   "num": 1213,
+   "status": "concluido",
+   "tipo": "reposicao"
+  },
+  "ylcc8qhjrxfn7vn0l7ho": {
+   "cm": "CMF - 170.06.15",
+   "colaborador": "GUSTABAO",
+   "contrato": "360 ON THE PARK",
+   "criadoEm": "2026-09-24T19:23:53.416Z",
+   "criadoPor": "KLEBER",
+   "dataRetirada": "2026-10-24T03:00:00.000Z",
+   "exemplo": false,
+   "historico": [
+    {
+     "em": "2026-09-24T19:23:53.416Z",
+     "por": "KLEBER",
+     "status": "solicitado"
+    },
+    {
+     "em": "2026-09-24T19:24:17.227Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-09-24T19:24:58.703Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-09-24T19:33:47.284Z",
+     "por": "Supervisor",
+     "status": "validacao"
+    },
+    {
+     "em": "2026-10-02T13:31:40.076Z",
+     "por": "Segurança do Trabalho",
+     "status": "separacao"
+    },
+    {
+     "em": "2026-10-02T13:31:49.362Z",
+     "por": "Segurança do Trabalho",
+     "status": "envio"
+    },
+    {
+     "em": "2026-10-02T13:34:18.604Z",
+     "por": "Segurança do Trabalho",
+     "status": "validacao"
+    }
+   ],
+   "itens": [
+    {
+     "ca": "42149",
+     "nome": "BOTA / GALOCHA PVC CANO LONGO 38",
+     "pendente": false,
+     "qtd": 1,
+     "separado": true
+    }
+   ],
+   "num": 1208,
+   "status": "validacao",
+   "tipo": "troca"
+  }
+ },
+ "colaboradores": {
+  "8h9l83dos6os4dc71a9r": {
+   "cargo": "",
+   "contrato": "",
+   "cpf": "123",
+   "empresa": "",
+   "matricula": "",
+   "nome": "PAULO CESAR",
+   "supervisor": ""
+  },
+  "adeylton_firmino": {
+   "cargo": "OFICIAL DE MAN CIVIL JR I",
+   "contrato": "CONDOMINIO DO EDIFICIO NOVOCAIS DO PORTO",
+   "cpf": "024.791.187-97",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "176",
+   "nome": "ADEYLTON FIRMINO",
+   "supervisor": "FERNANDO SODRÉ"
+  },
+  "alessandro_silva": {
+   "cargo": "MEC DE AR COND E REF I",
+   "contrato": "HOTEL LAGUETTO",
+   "cpf": "123.422.777-09",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "179",
+   "nome": "ALESSANDRO SILVA",
+   "supervisor": "FERNANDO SODRÉ"
+  },
+  "alexandre_fernandes_batista_pereira": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "060.213.321-13",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "153",
+   "nome": "ALEXANDRE FERNANDES BATISTA PEREIRA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "almir_rosa_aguiar": {
+   "cargo": "MEC DE AR COND E REF I",
+   "contrato": "CONDOMINIO NEOLINK OFFICE MALL & STAY",
+   "cpf": "084.010.697-18",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "118",
+   "nome": "ALMIR ROSA AGUIAR",
+   "supervisor": "RAFAEL MEIRA"
+  },
+  "ana_lucia_alves_queiroz": {
+   "cargo": "AGENTE DE ASSEIO E CONSERVAÇÃO JR III",
+   "contrato": "MATRIZ -LIMPEZA",
+   "cpf": "283.716.208-61",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "186",
+   "nome": "ANA LUCIA ALVES QUEIROZ",
+   "supervisor": "WALTER DE LIMA"
+  },
+  "anderson_dos_santos_mendes_da_silva_affo": {
+   "cargo": "OFICIAL DE MAN CIVIL JR II",
+   "contrato": "GRUPAMENTO RESIDENCIAL 360 ON THE PARK",
+   "cpf": "087.225.397-00",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "143",
+   "nome": "ANDERSON DOS SANTOS MENDES DA SILVA AFFO",
+   "supervisor": "RAFAEL MEIRA"
+  },
+  "arnaldo_meira_de_sousa_filho": {
+   "cargo": "GERENTE DE MANUTENÇÃO",
+   "contrato": "MATRIZ",
+   "cpf": "219.290.658-76",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "PRO-LABORE",
+   "nome": "ARNALDO MEIRA DE SOUSA FILHO",
+   "supervisor": "JOÃO ADAUTO"
+  },
+  "carlos_henrique_lopes_de_castro_pinheiro": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "RESERVA PARQUE /RESIDENCIAL AGUAS CLARAS",
+   "cpf": "906.163.241-20",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "216",
+   "nome": "CARLOS HENRIQUE LOPES DE CASTRO PINHEIRO",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "carlos_jose_barbizan": {
+   "cargo": "GERENTE DE FACILITIES",
+   "contrato": "MATRIZ - S.B.C",
+   "cpf": "9930232826",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "PRO-LABORE",
+   "nome": "CARLOS JOSE BARBIZAN",
+   "supervisor": "JOÃO ADAUTO"
+  },
+  "d74qy6k0k09dclu20i7a": {
+   "cargo": "",
+   "contrato": "",
+   "cpf": "",
+   "empresa": "FANCOLD SERVICE LTDA.",
+   "matricula": "",
+   "nome": "HUSTAVO ALVES",
+   "supervisor": ""
+  },
+  "daniel_sousa_de_castro": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "RESERVA PARQUE /RESIDENCIAL AGUAS CLARAS",
+   "cpf": "029.186.881-93",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "215",
+   "nome": "DANIEL SOUSA DE CASTRO",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "david_souza_do_nascimento": {
+   "cargo": "1/2 OF MEC DE AR COND E REF",
+   "contrato": "CONDOMINIO NEOLINK OFFICE MALL & STAY",
+   "cpf": "116.954.837-74",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "175",
+   "nome": "DAVID SOUZA DO NASCIMENTO",
+   "supervisor": "RAFAEL MEIRA"
+  },
+  "deivison_davy_ferreira_felix": {
+   "cargo": "PLANEJADOR DE MANUTENÇÃO",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "044.322.791-84",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "217",
+   "nome": "DEIVISON DAVY FERREIRA FELIX",
+   "supervisor": "MARCOS PARDINI/HERICK"
+  },
+  "denise_oliveira_de_souza": {
+   "cargo": "ASSISTENTE ADMINISTRATIVO JR",
+   "contrato": "MATRIZ - COMPRAS",
+   "cpf": "478.880.448-40",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "169",
+   "nome": "DENISE OLIVEIRA DE SOUZA",
+   "supervisor": "ANA MAGALHAES"
+  },
+  "dhiego_cavalcante_de_aguiar": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "056.256.053-00",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "125",
+   "nome": "DHIEGO CAVALCANTE DE AGUIAR",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "dhiogo_cavalcante_de_aguiar": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO BLEND",
+   "cpf": "070.519.283-09",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "208",
+   "nome": "DHIOGO CAVALCANTE DE AGUIAR",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "edinei_lima_de_souza": {
+   "cargo": "MEC DE AR COND E REF II",
+   "contrato": "OCYAN S.A",
+   "cpf": "021.115.145-94",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "190",
+   "nome": "EDINEI LIMA DE SOUZA",
+   "supervisor": "FERNANDO SODRÉ"
+  },
+  "elco_junior_franca_ribeiro": {
+   "cargo": "ENCARREGADO DE MANUTENÇÃO I",
+   "contrato": "CONDOMINIO NEOLINK OFFICE MALL & STAY",
+   "cpf": "143.983.237-40",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "134",
+   "nome": "ELÇO JUNIOR FRANCA RIBEIRO",
+   "supervisor": "RAFAEL MEIRA"
+  },
+  "erionaldo_pereira_de_oliveira": {
+   "cargo": "LIDER DE MANUTENÇÃO - FACILITIES",
+   "contrato": "BSB Bay Properties",
+   "cpf": "836.497.351-72",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "179",
+   "nome": "ERIONALDO PEREIRA DE OLIVEIRA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "evanei_alex_da_silva": {
+   "cargo": "AUXILIAR DE ALMOXARIFADO",
+   "contrato": "MATRIZ - COMPRAS",
+   "cpf": "284.908.568-50",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "160",
+   "nome": "EVANEI ALEX DA SILVA",
+   "supervisor": "ANA MAGALHAES"
+  },
+  "evelyn_souza_barros": {
+   "cargo": "AUXILIAR DE ESCRITORIO",
+   "contrato": "MATRIZ - COMPRAS",
+   "cpf": "241.939.368-64",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "206",
+   "nome": "EVELYN SOUZA BARROS",
+   "supervisor": "ANA MAGALHAES"
+  },
+  "fabio_cardoso_da_silva": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO BLEND",
+   "cpf": "610.465.401-06",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "177",
+   "nome": "FABIO CARDOSO DA SILVA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "flavio_dos_santos_araujo": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "029.508.661-07",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "159",
+   "nome": "FLAVIO DOS SANTOS ARAUJO",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "flavio_ramos_de_lima": {
+   "cargo": "ASSISTENTE FINANCEIRO",
+   "contrato": "MATRIZ - FINANCEIRO",
+   "cpf": "537.561.628-93",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "148",
+   "nome": "FLAVIO RAMOS DE LIMA",
+   "supervisor": "SILENA TUDINO"
+  },
+  "francisco_marcos_de_lima_andrade": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "BSB Bay Properties",
+   "cpf": "707.458.971-34",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "212",
+   "nome": "FRANCISCO MARCOS DE LIMA ANDRADE",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "geovanne_henrique_de_carvalho_santos": {
+   "cargo": "AUXILIAR DE MANUTENÇÃO CIVIL",
+   "contrato": "OKA MAMORÉ",
+   "cpf": "506.301.518-22",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "213",
+   "nome": "GEOVANNE HENRIQUE DE CARVALHO SANTOS",
+   "supervisor": "RENATO CARRILLO"
+  },
+  "gildevan_de_sousa_silva": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "015.835.483-43",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "60",
+   "nome": "GILDEVAN DE SOUSA SILVA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "gilney_de_jesus_jansen_silva": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "515.666.303-63",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "151",
+   "nome": "GILNEY DE JESUS JANSEN SILVA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "gustavo_lapreato_de_faria": {
+   "cargo": "MECANICO DE AR CONDICIONADO E REFRIGERAÇAO III",
+   "contrato": "PHARLAB INDUSTRIA FARMACEUTICA AS",
+   "cpf": "142.229.456-09",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "166",
+   "nome": "GUSTAVO LAPREATO DE FARIA",
+   "supervisor": "ROBSON CORTI"
+  },
+  "herick_prudencio_da_costa": {
+   "cargo": "ENCARREGADO TECNICO",
+   "contrato": "DF PLAZA/RESERVA /BLEND",
+   "cpf": "053.598.006-07",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "P.J",
+   "nome": "HERICK PRUDENCIO DA COSTA",
+   "supervisor": "CARLOS BARBIZAN"
+  },
+  "jeferson_goncalves_da_silva": {
+   "cargo": "AJUDANTE GERAL",
+   "contrato": "CONDOMINIO DO EDIFICIO NOVOCAIS DO PORTO",
+   "cpf": "128.013.007-56",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "188",
+   "nome": "JEFERSON GONCALVES DA SILVA",
+   "supervisor": "FERNANDO SODRÉ"
+  },
+  "jefferson_barbosa_do_nascimento": {
+   "cargo": "OFICIAL DE MAN CIVIL PL I",
+   "contrato": "GRUPAMENTO RESIDENCIAL 360 ON THE PARK",
+   "cpf": "128.013.007-56",
+   "empresa": "INFRA 5 MANUTENÇÃO EIRELI",
+   "matricula": "104",
+   "nome": "JEFFERSON BARBOSA DO NASCIMENTO",
+   "supervisor": "RAFAEL MEIRA"
+  },
+  "jefferson_nascimento_leao": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO ESCRITÓRIO MORUMBI PRIME",
+   "cpf": "377.452.858-60",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "203",
+   "nome": "JEFFERSON NASCIMENTO LEAO",
+   "supervisor": "RENATO CARRILLO"
+  },
+  "jerfferson_da_silva_farias": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "042.381.423-06",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "140",
+   "nome": "JERFFERSON DA SILVA FARIAS",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "jeronimo_lima_da_silva": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "011.909.224-79",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "142",
+   "nome": "JERONIMO LIMA DA SILVA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "jilsimar_santos_de_oliveira": {
+   "cargo": "OFICIAL DE MAN CIVIL JR III",
+   "contrato": "BOTICARIO - DF",
+   "cpf": "029.551.121-43",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "180",
+   "nome": "JILSIMAR SANTOS DE OLIVEIRA",
+   "supervisor": "RODRIGO PIERANGELLI"
+  },
+  "jose_augusto_serrao": {
+   "cargo": "OFICIAL DE MAN CIVIL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "857.471.811-49",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "193",
+   "nome": "JOSE AUGUSTO SERRAO",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "josemberg_lobo_costa": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO BLEND",
+   "cpf": "766.775.403-91",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "191",
+   "nome": "JOSEMBERG LOBO COSTA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "kenty2atoij4cgmi830f": {
+   "cargo": "",
+   "contrato": "",
+   "cpf": "1321",
+   "empresa": "",
+   "matricula": "",
+   "nome": "KLEBER",
+   "supervisor": ""
+  },
+  "leandro_de_medeiros_lopes": {
+   "cargo": "AUXILIAR DE MANUTENÇÃO CIVIL",
+   "contrato": "RESERVA PARQUE /RESIDENCIAL AGUAS CLARAS",
+   "cpf": "862.159.221-53",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "200",
+   "nome": "LEANDRO DE MEDEIROS LOPES",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "lucas_cardoso_fonseca": {
+   "cargo": "OFICIAL DE MAN CIVIL EL PL II",
+   "contrato": "",
+   "cpf": "437.910.148-70",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "174",
+   "nome": "LUCAS CARDOSO FONSECA",
+   "supervisor": "RENATO CARRILLO"
+  },
+  "lucas_jeferson_rodrigues_de_araujo": {
+   "cargo": "AJUDANTE GERAL",
+   "contrato": "RESERVA PARQUE /RESIDENCIAL AGUAS CLARAS",
+   "cpf": "065.566.861-66",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "207",
+   "nome": "LUCAS JEFERSON RODRIGUES DE ARAUJO",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "maickon_rodrigo_lima_queiroz": {
+   "cargo": "TEC DE SEGURANÇA DO TRABALHO",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "020.120.911-05",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "204",
+   "nome": "MAICKON RODRIGO LIMA QUEIROZ",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "marinaldo_pereira_silva": {
+   "cargo": "MECANICO DE AR CONDICIONADO E REFRIGERAÇAO III",
+   "contrato": "TEMPLO MÓRMON DE BRASILIA",
+   "cpf": "822.965.881-15",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "181",
+   "nome": "MARINALDO PEREIRA SILVA",
+   "supervisor": "WILLIAM SANTOS"
+  },
+  "oseias_da_silva": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "RESERVA PARQUE /RESIDENCIAL AGUAS CLARAS",
+   "cpf": "048.643.846-57",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "205",
+   "nome": "OSEIAS DA SILVA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "paulo_adriano_de_sousa_freire": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "RESERVA PARQUE /RESIDENCIAL AGUAS CLARAS",
+   "cpf": "045.291.951-71",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "199",
+   "nome": "PAULO ADRIANO DE SOUSA FREIRE",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "paulo_dos_santos": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "810.685.651-87",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "178",
+   "nome": "PAULO DOS SANTOS",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "pedro_antonio_goulart_ferreira_lima": {
+   "cargo": "AUXILIAR DE REFRIGERAÇAO",
+   "contrato": "PHARLAB INDUSTRIA FARMACEUTICA AS",
+   "cpf": "161.015.516-52",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "167",
+   "nome": "PEDRO ANTONIO GOULART FERREIRA LIMA",
+   "supervisor": "ROBSON CORTI"
+  },
+  "rafael_leal_silva": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "006.202.801-40",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "176",
+   "nome": "RAFAEL LEAL SILVA",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "romeu_nascimento_de_jesus": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "BOTICARIO - DF",
+   "cpf": "636.230.211-72",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "155",
+   "nome": "ROMEU NASCIMENTO DE JESUS",
+   "supervisor": "RODRIGO PIERANGELLI"
+  },
+  "tiago_souza_dos_santos": {
+   "cargo": "OFICIAL DE MAN CIVIL EL JR III",
+   "contrato": "CONDOMINIO GERAL DF CENTURY PLAZA OFFICE",
+   "cpf": "016.375.655-42",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "68",
+   "nome": "TIAGO SOUZA DOS SANTOS",
+   "supervisor": "MARCOS PARDINI /HERICK"
+  },
+  "wendson_do_nascimento_sobrinho": {
+   "cargo": "ENCARREGADO DE MANUTENÇÃO I",
+   "contrato": "RESERVA PARQUE /RESIDENCIAL AGUAS CLARAS",
+   "cpf": "047.220.221-94",
+   "empresa": "BMS BUILDING MAINTENANCE SERVICE EIRELI",
+   "matricula": "196",
+   "nome": "WENDSON DO NASCIMENTO SOBRINHO",
+   "supervisor": "MARCOS PARDINI/HERICK"
+  }
+ },
+ "estoque": {
+  "1584kn75ld14wnaxbzma": "2026-10-02T14:23:22.177Z",
+  "2gb11mowchoun2sjjc0v": "2026-10-02T14:20:05.916Z",
+  "4nuppter1oa2xzz2ptsu": "2026-10-02T13:44:00.804Z",
+  "7ir5it8wcl1y5k79k9cu": "2026-10-02T14:20:05.916Z",
+  "8501gjev32208qhvxfxo": "2026-09-16T23:45:23.587Z",
+  "a7ymun66qjyxu3skm3r1": "2026-10-02T14:23:22.177Z",
+  "bgb0mjzisansmcnqexma": "2026-09-29T16:52:08.765Z",
+  "fsphvclg6m81wfj7g9sk": "2026-10-02T14:23:22.177Z",
+  "ifjw1fvacg12d1swdrof": "2026-10-02T14:23:22.177Z",
+  "qy0f6gy8do0ys6ri2wfi": "2026-10-02T13:48:18.207Z",
+  "xm4ymfrewlqatxlx2c1c": "2026-10-02T14:20:05.916Z"
+ },
+ "fotos": {
+  "h1aru72x74flghf8nl43-0": {
+   "criadoEm": "2026-10-02T13:02:45.570Z",
+   "dataUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAwICQsJCAwLCgsODQwOEh4UEhEREiUbHBYeLCcuLisnKyoxN0Y7MTRCNCorPVM+QkhKTk9OLztWXFVMW0ZNTkv/2wBDAQ0ODhIQEiQUFCRLMisyS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0v/wAARCAEBANkDASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABAABAgMFBgcI/8QATRAAAgEDAgMEBQQNCQgDAQAAAQIDAAQRBSESMUEGE1FxFCIyYZFSgaGxByMzQlNicnOTssHR8BUkJUNUgpLC0hYXNURVouHxJmOUs//EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMEBf/EACARAQEAAgMBAAMBAQAAAAAAAAABAhESITEDMkFRBCL/2gAMAwEAAhEDEQA/AOX0fQLjW7o21hbRu6rxMzYCoPEnFbv+7TXOi6cB4d63+itf7Ef3XVD+b/zV6PXo+n0uOWo44Y7x7eR/7ttc8NO/TN/opf7tdcPTTv0rf6K6TtL29TT759P0q0F5dK3CWbPAH8ABux8vjW/2Tv7/AFLSBc6nB3FwzsODumi2B2PCxJrN+met1Zhi8zvPseazaW8k8lvayrGOIiKTLY9wKj665oRRgDCqfmFfREm8bA+Br58b228zXb453L1z+s4+K+7j+Qvwpd3H8hfgKmsckrrHDG8kjnCpGpZm8gN+lWPp+oQo0k2nXscagszvbOAo6kkjYV2txnVcpMr4o7qP5C/AUu6j+Qvwq+4srm0SF7m3khWdO8iLjHGu24+I+NVCr0l3Dd0nyF+FLu0+Qvwp809OjdR7qP5C/Cl3UfyF+FX2trPezpBawtNM+eFF5nAyauu9Lv7CNZL2zlt0ZyimTC5Yc9s5PnyrP/O9L36C7uP5C/Cl3cfyF+AqXupjtWtRN1Hu4/kL8KXdx/IX4UTYWN1qVwbeygaebhLcCkA4GMnc46iqCCrFTzBII99Or0vaPdJ8hfhS7qP5C/CpYNTgtprmQR28Mk0h5LGhY+eB03pZITdVd3H+DT/DT91H+DX4VZNDNbS91cQywyc+CRCpx44NRpJKXc9R7uP8Gvwpd1H8hfgKfNPTUTdQ7uP5C/AUu7j+QvwoyPTbyWwmv47cvaQHEkoIwp29+eooWpNU7iPdp8lfhS7tPkr8KlSxV1Db0D7Ef3bU/KP/ADV2naW+bTNCv72P7pDCxTz6fTXFfYjP27U/yY/81df2xge67M6nDGvE7W7FQOpAzXh+n5vVh+DyrstrD6G889rpj6hfFccfrERp1OACck9f/Nehdj+2adoJJLaeAW91GOLhDZV1zuR122z51j/YmurRdOvYmkRbjvO8biOCUwMHyG9ZXZMpc/ZIkks8G345pAU9kpjGfIkitZyXaY3T1eT2G8q+e3z3reZ+uvoWT2G8q+e5CO8bzP11r/P7U+3jY7EH/wCX6WOnet//ADauh7Zf7VJJqrPLIujHiXA7vBiIAPTi6n31znY6WODtTp0s0ixxpIxZ3OAPUYbk1HtdeTza9qYiu5Xt2mIVVmYoRgchnFbzx39GMctYNbULBJ5OykWr6jdSQ31p6rHgHckhMAHG4yQN8nlvQ2r9lk0LSb+81C4lWVLgxWUScP29dsMdvPOPA0frEVlqz9lLU6hbJDBacN1IJ1AjCiPIznYnGB1q/tzqGndotEnltLmFLvTrhkiUzDinjwAWQZ3BzkY+TXLeUddShLDsppF9KljDrpn1F4TL9oVWh25jPXHhnNB6X2es/wCSp9U1u9ltbWOcwKIU4mLA4J5HbP1V3dpeWMOo2L2Wq6fDo4tjGlspUMZPHPTAH8ZrmrNYe0HZ670S2uoYr9NQkmiSRsd4veE5HiME8qc8k44s9NHj0jtLHGNcjtbbuWmjvQ6himMFd9uLf4bire0OmNcaZp2oWWp3epQvL6LCl4OGRWY454B3IHP40VoFj2b0vtVNbx3SzSQw+pLc8PdibPrYIwCQP2460Vr2pd12asmudSt9SvLXUo5ZfRyoyFcnhAHgMClyvLcJJrQP/YzTzcyaUNVkbWY4O+Mfd4iPuzj3jrmuOhhkuLuG2QcM0sqwqrdGJxv89ekLcaXF2ll7SnWbM2b2/AsYky5bAGMZ57cudefWl6I9dtr9lKol6s7DG4XjyfoNdcMsrK55SbmnfdmdD0zRu07QQajJPqEVuVmiePAIPCcqQOm22/MVy1l2ftG0q41rWL2W1tDcvHGIU42bDEEnY9c/CuztjpsXa2bXTrdibe6g7uOPvACThcknPLC/TXP2Xo2vdkG0YahbWl3FdyOvfPtIpdjld9x630Vxly3t01NMTtNog0K7iRZ+/guI+9icjBI65+I+Nbug3B0b7H97qlmAl7cT9z3oAJA4wo5+GSfOs7t/qNreXtnbWcyzpZW3dNKhyrMcZwfdw/TRHZ25stT7K3XZ+4vIrO5aYSwNMcKxyGAz5jlXbLdwm2MdTITqlzJrX2OF1K/Ilu7S44RNwgMRx8J924NCT9kbePtdaaGt1OY57YzGUheIHfYbY6VodoNObRuwMOkiQXLXM/G80a+oPW48Z+bAzzNa7z6ZN2o07tANXsktRaGII8gDlvW9+2Mn4VzmVnjdkvrh9M0rTXW+m1LUmhitbhoEhiUNPJg4DcPh5Doa0JOxrL2rTR0uz6O0HpPfFfWCZwRjlxZ+utLSWtYdN1caVqun22qPeO/pcxUgxFs5XPMYJ92c0dPq+mRduba7bUbaSGSwa3Z1cERvxAjiOds5pzy2ccQYi06z+xzrrabdyXEMkpOZlAZW9VcbeQI86ztd7LaZpWnRSrqMxvrqNDbWz8PrsxAxy5b0ReQ2um9h9a01tUsJ7qWYyokUoyQWBAxnc4HSqO3F/bNqPZ6eCaK4FpErSCJwxBVkONuuxqY3LfS3V9XDsdpTakdHGrTjVlh70r3Y7s+W30Z5VzP+zmt/2D/vr0HGmx9pW7VnWLU2Jt+ERhvX4sYxz+jnnasX/eIv/Spf8a1Z9M2eOK77Ekqpe6lEWAZo0YA8yATn6xXpbKHBBGQa+eop5IZRLBK0Ui8njcqw8iN6KGs6n/1fUP8A9cn+qrn85ctyphlrHVj0XUfsZaddXJmtLqeyVhgxxgFce7PKt3s32WsOzkcgteOSWXZ5pSCxHQbAADyrx8a1qa89W1D57uT/AFUx13Uv+sX/AP8Ask/fWeFv7amU/j3ieRIoHd2CqikknoK+fCeJmYcmJI8qun1e8uImin1O7ljbZkkunZT5gnehu9T5Q+NdfljMPax9Lcv0n08RS6b7+dR4xzyKXGvyh8a78sXLjkc45dKfP0cqh3ifLX4imMsY/rF+IqcsTWSZUEnb/wA0fomqHR9ThvljeVos+oJODiyOp328RWaJkPJ1+NS41+UKluN6WTKdrbyY3l3cXEiIrTyGRlQYXJOdhVQXG+Bn3UuJfEUgwPI1ZcU1lTcIDZxv49acCnGCKVOWP9OORcs7c+e9NsRyp6WD4GnLH+nHI2NqYpkYO9TCsxAVSSTgADmavNheD/lJ/wBGf3U5Y/045Ii9ulsP5PFxJ6Fx8fccXq8X8b45Z3ofAznG5og2N6P+Vm/Rml6BfH/lJv8AAakuMWzKqNseOKQC5zjFX/yfff2Sb/Aaf0C+/sk/6M1eWJxyDd2oI25cvdTgAdBRHoF7/ZJ/0Zp/5Pvv7JP+jNOWJxyD4GchQD40sH5X8fCiPQL7+xz/AKM0vQL3+xz/AKM05YnHJifbOjUmadcMFz5VcZI2+9ApAqPZfhr5W30NB2uJSw2IPvqPpcgO31UdkSMASpGOdBSoyykKDw+VXbJ/TJeoFMt07OMAZppEOPWBFRtx/OUGOtFk7E3Msy4VyNxnAFUKGc71oasoEqbbcIpreHPs9azMmrNKY7bK/vFERWSNBJ6oLjfNGJb74q61jw06n5NS5UxkYUCLsDz8qNSJfvVNV2sYaTcVrxRAchTdTUBpAT97UFiHDkA4zWysWVOfCg0h+17ci1WU1EI7ccI2NWLbqeho2KIcA2q9Ix4U2agBYF8DUxbjwo7gHhT8FFC29uBcwEDlKp+muobmcE4xnNYkKHvYyflA1tFSU26is7DBQRv9VLADBf45GpDcY8KTAnBA5GltQiNxgnxqSbjDMai2RjFPCCzHzA+c1N1ejnY+4++nzgnwpzw4yvjUwN6bor5kjfFNwfjVM7MfceQ60sL8g1UeXNa467VS1sSwHia13QeFCXHqlcD76rsCTW5jkIXoKo76RH4c5rVciRjt0rN4Absg1UKaZpBwuNqjaIfSE/KoueEAbCq7baZSehyaXxZ6O12Iq8QHgDStIjtzrdttC1DtLIklnBwQJ6rTSthdueCM5+b6K6rTvsfRxxgXd87v17mMKP8AuzUxl0uV7cXFFuNqSKFnlHitd5edioooWNncyhwuwmKlT8ACK4nULSewvniuYzE7KeEH77y8R5VLFxvbFs0+2CtmJazLAZYHFbcaqOZFKh1TKEeIoVYyIVHvo3vYkBJbpQZvIFiALgHNIDI4yIxtVqJkcqGGpW4jBBzRIu1W1ilciIyvwDiTiwME5x44FTaybT7o+FLhAALbA9TVqapbx2/FBZ9+VHOeTdzjP3oIz7q27chApSONDjOyAYq6rG2JFA7svdxs2/RTWlHZz49YcH5RxRUjyMcs7NnxNRAxuQKaNopahT68y568IJqXdxjb1mHwqWdiWAUD74naoghlBVgQeRG4obTCQnbuVz4nJqjiLKy7DgbG3kD+2r0PrChom42n/Of5VoE8oVckDA91RS5hbm2Me4iq7xSYG4SfaHLzrOnkmIZeFVbfgYDBPn5GrIltGXFxwuDDJk58ah6Tc/hUofjZmzwqM8wDyqfzGrpnblu+Q9asQWrRsZDljyGayzbuPGqJS8ZHPnWe3XpppAquRxZGNqzZF4b0nOxoyNmlUA5BA50EYiZyhO2asT0TcFQN2z5V1PYTsoNVk9Nv0JsVJVVGR3p9/wCKOR8TtyznlJdPaWWOKM+vIwRcnqTgfSa9zs4ItOsLe1gGI4lCKPcBj9lakStCJY44+GNQq4wBgDA8KRPTpQ6y8PM0zTZPM1WV52O9D3dvBdQvFcRJIjDdWH8Y86YyZGc1Atmg8r7Sdm5dC1EeiyZspj9pLHJU9UPl0PUUNFayuPWm+Feoaxp8Go2DwSc35MBko3Qj31zP+yWpxLnuo5MD7x/34rFje3OjTV7ti0jEgVQlhCYlYpkk1ruhRZFYFWUEEHpQ0Y/m6VIoi0tIuBQEUE7UVfQLHqWnxlx3UbmRsjkAhH1mlbABFPhvUdWvXuIGTZAo2ONya55Xt3wk49i4bmEQtJCjzjjEaLEF4ifnIHTxptQ1O+trWa5j09AkSF272XBwN+gP10HoUTQWlohO4uBk+PPetftA/B2d1BJSMi3kCtn2vVP013k3Hly9VILy6lnMVyIoUlKLiIFtgM7nPXPSgrtbmKSaH02aVZIBsxCkEyBcqQBjrWxphQJMvHwy+kSFD8PjWZrV3FcamRDg91DwOOgYSqcfTV0guLs9ZM5kljDsm3ExDEnwycmgtPljstPvnOFjgubj3DAkatq9uxbxySi1mdkBOIVBZvLxFY2lwi4srxJR90ubgMD75GqWdEaUEqzKHQhlYZBG4qqDYzfl/wCVathiEKLGvJQcVRDyn/Of5RWGkpUSVCjgMp5g0N/J9vvsV+c0SU3yDSag5jXWk0+6RLaVuBl4sHcc8dd6B9Ou/wAM3wFF9rGC3cGWAzF/mNY3er8oVuVijmiG9Z93FjhP41bJUYrPvlAjzjrWY6Xw0QzLt4UG6/z0j31oWy/bM/i0FMuL4H31ckxH2ZCaxYFsYE8fP8oV6y1wGCjw3rx65cwTxSgZaMhx8xz+yvSIbsSRo6HKuMjHgaSlbBmpCTJ50BFcxjeUng9xrUtlN2pVLcxoBs//AJrUrKHHy2zVkYDEDi9Y/ejn8Kxtd7VaBoivFLcvd3A5xW+5U+9uQrz7We3Gp6hmC34dOtyd1hclz5vzPkMUV6Xq3avSdGYws3pV6vOGH1iv5R5L9dc9J2svtXVljc2oI9eOM8h+Udz82K4CzW7Nu3cRABiS0je0fIV0mlRpDCnrszHPEzcyc1m1uY9C5FYxOT4UFET3KD31pOR3L+VCQAC2UsD48I5sKyDUBFvkgctqyZ7uUgwsoBJwDzzvVMuoTW0hZw3dlsgpuVHh5e6rNNeO+uJChBKhdugyef0Vjjd7dOU4t4FoLeB44mmMUoYxx4yQM55kD6az9Znm1O1aCHS5kchgrTXAwpYEE8K5zsfGtuI4TlWFfa69tctAsCMUIPFnb6xXXG1wrSS41KESx20NuUaUurSIzEZ92QKqj0+5uWkedoI3ZGUejxBMEkHiwScnIovS7pryxhncAM67gbUN2hu3tNPaSCTgk7xQCOgJxTlTScljqMyMk2sXLIw4Sq8CDH91RRVhaLZW6wozNglmZmJLEkkkk+81y2kXlzcatAklw0gZmDgscbL512IpkJDnQsAz32fwh+oUUvP5qGg/rvzh+oVlUzUGNTNQag5PtdD319Btyix/3Gsv0UeK/CtrtM387hH/ANf+Y1mcD+BqjQIwDQN9vHy60Eup3AkUORwk4NF6iwMQAI3wautG9xbb4MuB8mgJxi+HnRVift2M59WhLjPp/wA9MjEReLxuBnB4etddp/afQbWzijSxupJYolBXhQhTjkCzVyN3tKh91DWg4pZgMcqzvTWnSX32TpEJTTtLijxya4PFj+6MfXWNfdotd1xC19eN6O39QnqoR7wOY881iXVs8DcRB958aqa8lKFEYqh5gV1mmKTMGuOBQAOLoNq6iCzgknjttgHh44yAMqRz38q5jT4jLOMDkQTXTafdejEQzQGVAcq2PZrl9Lqu/wApv0XZwC0i7oNxgHnRahuAFTwqTg45+6gEuBxHJ50THLxYAwRkZBrlN7dbrS+5mSKMB3VS3sg9ayLu8ZJFXgGDupQY+YiitRnEgaMx+tzRs5DCse5KlRxF1K+zIp3HuIr1Yzp5L6hdTSsQ3eM2TjBNdNodgthAAfuztmQ+J8K53R076/WSQZji3bbYv0/fiupS4UyxqObNWcqRrJ7NcHqscq6tdqHyQ4wTuTsOf1V3SHbesrUNOsS5ubthEGOOIkgE1JQXoH/B7Y+K5+ms7tnGz6dBIuCY5xw/PnP7K0Le/wBNtbZYluVCRr0BwB8Kee5sbiJo5C0iHoYmPz8qn7HK9m0KarbjJyxYtnoeE13oNZWmW1mqiS2RgRkZdSp+BrTFLRYhwfjQ8H9b+cP1Crl51RDsJfzp+oVBM1E1Komg5rtGpOoxAfgh+saDw3jR3aL/AIhF+aH6zUJiqOcTeZBnOCNq1tSjXu0kAxsKlb6aqSq3CNqu1JP5v89at3U1qKdOCtOdt+Ghrkf0hj30Tpf3Z/yaHu/+IjHjTP1cPF19jvE8qCsJAlxN1Bo2+H2xPKgLFcyzZrDbSaFbmHupOTA4PhtmshdJYucNlemeddFBbME43bhbBCjz8aoe3mV+JQCPxT+w1vGdM2qNNshESqpg9TWq1sOE+OKDAboSreBGx+eiILwnMcuc8t+Y/fXLP55eu3zznjKmDJIwB3FSWSSJ1VnzxDPCOfl543omfghnjkBBJJ+GDQs78UUsg+6MoK45hgf/AFW8MWM8uzi4ZW7pmBI3jY/fLVMh7xXKqSSccI58VUTs0nCwOGxkY6GtTRLUG29NmY945PACdgPHzrrbpznbX0u0FnaJGeEvxF2IHX/xyovhBkQ9QapjdeAHiFXxYLKQQd9q5XtdaGocLUbi5t4mSOVHkYg+qoydx9XOpJuorktesL7+VjcpNwRtwhX4+Hh29n9vz1FnvbrgUvLaVY/VWRXjyd/Fc/RV811HBFlmcjBAyedAaSSLJMkk5Y58yT+2sztXYz3IilgmaOOJX4wrEb7Y2Hz/AApNnW23ZTw3UkqxqQyAFj45yP8ALRNY3ZdHWSdmYMBHGoIbIPt/vFbBO5qTwy1vpNP2VRDyk/OH9lXJz+aqYOUn5w/sqsp1E09MaDm+0R/pKL8yP1jQm3jRPaM/0onuhX9ZqB46KPaPC7UBqCkWxyetaDMMVn6ic2586T0qnTPuzj8Wg7xsakAM86N0tgZWH4tBXbot84YEnO1az9MPBd97SddqfQrVneac7IG4VJ6nmT9NBT3Scya39NbgtIEICngG3vxk/Pk1MZtbRiRDhwBgDpVbQA9B8KuVsrmn4hXaMhWtQRjAIPiOVCT2e+PqrUY52qJwqnOKIwHtXOVfOxwDQcnFAWDYL8gOh/g1s3oVyOErtyPEVI+cfVyoEKpuE9I9Zl3BYDcfNsR44+cVPA2n6a+DcS4C4HAp64HtUVJazyW6mJgPM1e1xE4CiTiJ2FExnMA2xjauVu2mVJa3q8OJ9vAUZpttdLfwPJMCgJJA67Gi0jLDJq+2jxICeYqLtpxn1RVN0YOACeSNATkB2AzjzqyM4WqyqNeAuocd1txAHHrf+qMpQXFsqhVuIf0i/vqxjDICO8jYEdHBoa/jh9CuGEUYYRtghB4USbCyZSrWkBHLeIH9lXoWQqiLhCDgdDVnWgbKCG21G5EESRKYo8hFCg7v4UdUE4/aHkaog5P+cY1dHz+Y1Vb+w/5xvroJmmNOaixoOX7Rt/SyDoIV/WahcjwovtCM6sv5lfrNB4NUHHlQWoYFud+tEtMnAXyMCsrUJxPGgj5Z3pPS+LNHI79t+lVXsKtfBjtvT23FDKCcYxUbpjJOCuCK1n6YVVqVuHmAQbFeYreTAkPuGB7qzhFI5QqBwgjJrSOAD45NMGslhcgkg8IG+KYT5POhpnITGdutVK4eEDO4OBXRhoGUKMlhih5JmkbqBnb+P4+ahjxDJO4BwM8xUmfOKqFIisTxcWT1DEULcRlFycyKDniUDij948aKJ8fCnHAx9dlz7xUVVYRRGRZVKs33xHLNabMOA1mWzQwXZ4XIDbFSpH/utJgrLsdidj41xs03F8J+1jxomLHEKETbA6CiIjuKiL3nS3jMksixoObMQAPnNAW2qRXUjtGzF0OwdeH1SwHzjn8Kr7RxM+h3AVWYnh2Az98KyNFthCMoZHedUJJ3A2B/fWpJpl0t+QlrIC2BICDxHbGOvwo62k7yCNyd2GazNciln0p+5OJOAbY5n+M0fbju4IlPMKKmlKE51K4weUUefi9FA1nWMNxFqVxK7gwyKAgxy8aPzUFkfM48Kqt943/ON9dWw+381V233Jvzj/rGgnUGqZqt6Dme0J/pbbpCn1mhqI18f0rn/wCpP20Piih4Y2MZU7ZoW4tWijyvMHnWrtw7VTcgNARjlVnqVkw95I5VztRUdqu5DEE0oFwNxvRKYApaSaBS99bAASkgnlWtLMU8jvWbe+wD4Gi7rdufT9preK1KK4SZmQkhwPZPXyqgkIzofHPLNCzN6/EuQy8m8Kn6QJyp4gsuMEHr5Vtlct4JCYsEMm2/WrQ2fOsyRjBOGPU4NHlt8+Iqou4sDfem76Irwv6rHkSMiqxJg4IOKdo45Rj0jgz0YVAvR7sqQhR4z8k8vLwrRgBSFVJ9kAZrLFjJCOO3n4m9x2NGW9y6jhuk4X8RyNYyjUHxtk0QhxQEM6k7ijYZEc4UjNc2l8o763eJhlWGCPGgbO4RbsxejSKARhwnq7bc84A5VoAhRxMcADc0FbXtvcTI0Eiyd4xjBUDYgZ/jxqsjbu9gtow1xIERzsSD+yiBKrgFTlc4yKElgV14GAY5OARkc+Z91TgSPuQsICoCdlAAByc8vfmgKgkEgyhDYONjmrAayodOgF53rKTIpDLhvZOeuPH31qCoLofa+aqrYnuT+cf9Y1bD7XzVVb/cf77/AKxoLDUGqRqDUHNa4pbVef8AVp+2huD8aitbP9KMR+DUUNk0UuJcYpgylCKG4ZM0wST5VBcQmTtVRIBwKiUk+VUDG460EL9OKBt8bbUVcEEK2eYoK7WXu8BeKiMmS2QkkEDl4bVvGlUSgE5DfuoWaHjGQM+8b0SQQfcfCq3j4RkbiujIRi/DwSkkdGNFWs5dirHJHKqWQvsF4hVHGYZAAMkbZojY7zfHP30RGqyJhqzY5g243B5Gr47ho2HhQH9wsW/FjzqUTIx9fdariuIbg4kJVvHNWvCijiEseAM7nlRQdxdtDM4Cfay2ForRroS3wQdUJ+qpK0ZWNRwlCcAtzYjrRVtEkNyrYUHBAIGOdcri3y6aEq95BImccQIzWNpOntY6gEXiMQbiLMc9CMVrqeIbHrUljPFnBqMsfWobr+Vbe6jcpEmAcE7YbJ2HQjFbOnO3oLSBc8TysoPXLsR9YqTwiRShG1XICigYxim0YegXt7PqTR3bFsx8RDJgqdtuXvNb13dx2cPeSDbiC8/Haqo4uGUyDcnnT31ot5btDKoZG9oYzRdNGEhiCpyCNqqt/uP99/1jT2ycCgA7KMcqrtyRF/ef9Y1F0tPOoNk000wjTj59KFa/OCQgAHVjirpNuc7R3Dxau6gAqI02I86C9Pk/Br8a2NQsY9QvDcSvKCVAwuMbe+qP5Itvlz/4h+6tyM2m7oe+nEYolU91S4R4VydAvd1Fo89KLKDwpwoA5UAPce6qpQQWGw4a1AoPSgb+IlWKc63h6zWbLJENicZqCNEfacMPCk1jMx3AJ8qYaZK53UL766slKJD6sEQRDzYczQlxEsCZY5dunWiLho7BcRyGWY7YzsKCSJpW4nfLnnQV28/dsVYYUnI91aSOHUYIoKS0JyarjcwNg7qfoqDVADcwKk6gBQg9Z9qGSTYYOfKiLeVBJxnpsBVUVJIO8ihAyV9rHQUSJvbJVWkT1gT96x2H0UCZFgQsp4pZDSjlMA4iQXJyQepojUE5jLZO6nBx1qfp7pIipJ7RIIZRgeWMViG6OTxHJJJ59auiLSKZTnhGye89TU0rbh1IrJwSlWbfdcgUUmpIcbZz1zXMt6o25DepJcZUBVz4YNSyDsrSSCeNZCTgkjHgauup1iUmNAQOnjXIW1+0bFePAPMZrSivEK7yYPv5V5ct8nswmPFP+W2kmRIVIYMCwxuAPH4VrWtwbqHvs+qzEAY5YJB+kVkek2a3ImAUz44Sw6g0VPqttaxuAjMoZmHARjc56mtY1jOL71vtSY29bO9ZpiiEDwlxwNnOTzzzoSftHBKhU2buOgkYfsqhNeA9myhTyy37q6bebQ97mCHCmVRtsKh6Zb/h1+BrJurn02cySFFJAGFGOVNxmt7SuhC7U/AMUioY7VLu/fXJ0QMYPhUTGakykchTcLeNEOEyMdaEnjJlZcerjejBkY3FBahIYMSjJHJseHjWseqlBmeaCQxsA6ge0dsCsy91WacmO29VeRxRV1djUV7mNlUZ9ffBq21sYbdchc/TXZlmW2n59Z85PWiHtkiXLY91Fy3KRghVPuyKHzxnjkxjwqaAkzNyG4oKWMsM4wfCtVgHPqfCq7iNUj3G9BmRho2GG28KLTJIKjJO2AN6HfnR+i738YPIkD6RUorSYRsdssOnhS9d2JZTxHqa62S2in2nijkH46g1S2mWY9m2iHkMVnm1xc6kUUfrSMC3hVdw7yrjJCrsFGwFdA+j2jZIRkJ+S376ePSbVG4m4pPxWIx8KcjTm4EuZGKQF5QRvvsBR1np9wzjvSI1HPfJI8K6FkUIVXAHgBVBzkZOazyVl3cAEhKdBgb1WrOh9bINGXa/bfV5Y3qkgcGMZ8KzrbUysDyyvJgsoGPkjFVkvjBJI8KvCgjlvSK4JpIXK0NwA04jONhmruHwAqSqT7qrIfuixPq0/cN/BopU3qzhoN8nH3opuOp92BvzpjjwoIcWfGkQDVgx4Ypxn3fGgp4ffVNzEHhbIGBuaIZST0+NUXeBHwEZDDcZ6VZ6lrmXsYpZSY5AG5jf2vI1HF3bEcLsy+Db/TRF3p91JK80DoMn2SOtANdahBkSrxAeIrqjTtrqKYcM3CjjxNENFHjPq4rBbUCR60Ksadb1osERFVPg21NjYfhUbED5qz7pnkOFU8PjjnVJ1HcluJs9McqR1EY9hqbEDCeeCaP0OLOqQfi5Y+QH/qs/0yR2GFwCeprq+z9kRYLMVHFMeNm646D4VnK9EFk7nakrnwIqTMnSoczzxXJo4DNT8JHSmG1RKsetUWAZHLpQbNht/CrsMMnNDspcrj56aAtwcnaqxg1bcxFSTnah489fCgTYDUtjTuu3Leq0Bzg1dCaqTsKkE4amq8I99OeWT9FTQigBJq/gqMEYY5ozu/cKaBhqB50qVUSph1pUqBGhp/bX8mlSqxmqRzbzoC65/GlSrYw7v2qlL9zj+elSoKKY0qVQSTl8a7vSv+EwfkD6qVKs5eLFAqS0qVRUqkOVKlViGPI1SOdKlRVNzyoQc6VKgTVWfbFKlVFp5U/3opUqC6HnRNKlQf/Z",
+   "idx": 0,
+   "solicitacao": "h1aru72x74flghf8nl43"
+  },
+  "y4piy4m8i2h09se4269n-0": {
+   "criadoEm": "2026-10-02T13:19:22.092Z",
+   "dataUrl": "data:image/jpeg;base64,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",
+   "idx": 0,
+   "solicitacao": "y4piy4m8i2h09se4269n"
+  }
+ }
+}

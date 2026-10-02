@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function logado()  { return request.auth != null; }
+    function meu()     { return get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data; }
+    function existo()  { return exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)); }
+    function liberado(){ return logado() && existo() && meu().ativo == true; }
+    function admin()   { return liberado() && meu().papel == 'admin'; }
+
+    // Perfis: todo mundo logado lê (a tela precisa saber nome e papel).
+    // Só o administrador cria, altera ou apaga.
+    match /usuarios/{uid} {
+      allow read:                 if logado();
+      allow create, update, delete: if admin();
+    }
+
+    // Dados do fluxo: qualquer usuário cadastrado e ativo.
+    match /solicitacoes/{id}  { allow read, write: if liberado(); }
+    match /estoque/{id}       { allow read, write: if liberado(); }
+    match /colaboradores/{id} { allow read, write: if liberado(); }
+    match /fotos/{id}         { allow read, write: if liberado(); }
+
+    // Nada mais é acessível.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

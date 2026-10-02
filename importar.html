@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carga inicial · Fluxo de EPI</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:#050A26;color:#EDF2FF;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  .cx{width:100%;max-width:520px;background:#101A47;border:1px solid #33447A;border-radius:14px;padding:28px}
+  h1{font-size:21px;margin:0 0 6px}
+  p{color:#A3B4DC;font-size:13.5px;margin:0 0 16px}
+  label{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#A3B4DC;margin-bottom:4px}
+  input{width:100%;box-sizing:border-box;background:#050A26;border:1px solid #33447A;border-radius:6px;
+    padding:9px 10px;color:#EDF2FF;font:inherit;margin-bottom:12px}
+  button{width:100%;border:0;border-radius:8px;padding:11px;font:inherit;font-weight:700;cursor:pointer;
+    background:linear-gradient(135deg,#2E7BFF,#1550C8);color:#fff}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  #log{margin-top:16px;font-size:13px;font-family:ui-monospace,monospace;color:#A3B4DC;
+    max-height:260px;overflow:auto;white-space:pre-wrap;line-height:1.55}
+  .ok{color:#36AD6B}.err{color:#E8A15C}
+</style>
+</head>
+<body>
+<div class="cx">
+  <h1>Carga inicial dos dados</h1>
+  <p>Roda uma vez só. Entre com o seu e-mail de administrador e envie para o Firestore
+     o que já existia no sistema: solicitações, colaboradores, movimentos de estoque e fotos.
+     Rodar de novo apenas sobrescreve os mesmos registros, não duplica.</p>
+  <label for="e">E-mail</label><input id="e" type="email" autocomplete="username">
+  <label for="s">Senha</label><input id="s" type="password" autocomplete="current-password">
+  <button id="b">Entrar e importar</button>
+  <div id="log"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { FIREBASE_CONFIG } from "./firebase-config.js";
+
+const app = initializeApp(FIREBASE_CONFIG);
+const auth = getAuth(app), fs = getFirestore(app);
+const log = document.getElementById('log');
+const diz = (t, c) => { const d = document.createElement('div'); if(c) d.className = c; d.textContent = t; log.appendChild(d); log.scrollTop = 1e6; };
+
+document.getElementById('b').addEventListener('click', async () => {
+  const b = document.getElementById('b'); b.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…');
+    await signInWithEmailAndPassword(auth, document.getElementById('e').value.trim().toLowerCase(),
+                                           document.getElementById('s').value);
+    diz('Conectado.', 'ok');
+    const dados = await (await fetch('./dados-iniciais.json')).json();
+    let total = 0, erros = 0;
+    for(const [col, docs] of Object.entries(dados)){
+      const ids = Object.keys(docs);
+      diz(col + ': ' + ids.length + ' registros…');
+      for(const id of ids){
+        try{ await setDoc(doc(fs, col, id), docs[id]); total++; }
+        catch(e){ erros++; diz('  falhou ' + id + ': ' + e.message, 'err'); }
+      }
+    }
+    diz(total + ' registros gravados' + (erros ? ' · ' + erros + ' falharam' : '') + '.', erros ? 'err' : 'ok');
+    if(!erros) diz('Pronto. Pode fechar esta página e abrir o sistema.', 'ok');
+  }catch(e){
+    diz('Erro: ' + (e.code || '') + ' ' + e.message, 'err');
+  }
+  b.disabled = false;
+});
+</script>
+</body>
+</html>
