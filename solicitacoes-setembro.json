@@ -1,5 +1,1509 @@
 [
  {
+  "num": 1180,
+  "status": "validacao",
+  "colaborador": "ADRIANO CARLOS DOS SANTOS",
+  "colaboradorCpf": "383.683.298-41",
+  "cargo": "MEIO OFICIAL MEC DE AR COND E REF",
+  "colaboradorEmpresa": "FANCOLD SERVIÇOS DE AR CONDICIONADO LTDA",
+  "contrato": "CP KLECO",
+  "cm": "CMR 594.04.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-01T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 48-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1181,
+  "status": "validacao",
+  "colaborador": "DHIEGO HEITOR CHAGAS SILVA",
+  "colaboradorCpf": "342.517.018-01",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "VILLARES",
+  "cm": "CMF 286.08.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-01T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1182,
+  "status": "validacao",
+  "colaborador": "JEFFERSON ANDERSON MINUZZI",
+  "colaboradorCpf": "324.844.528-96",
+  "cargo": "LIDER DE MANUTENÇÃO",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "VILLARES",
+  "cm": "CMF 286.08.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-01T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 45",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 50",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1183,
+  "status": "validacao",
+  "colaborador": "WISNEY DE JESUS SILVA",
+  "colaboradorCpf": "040.105.971-51",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "DHL GO",
+  "cm": "CMR 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-01T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 43",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 46-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA GG",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON GG",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1184,
+  "status": "validacao",
+  "colaborador": "MICHEL GOMES DA SILVA",
+  "colaboradorCpf": "466.953.238-36",
+  "cargo": "MEC DE AR COND E REF I",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "ALPHABUILDING ALPHAVILLE",
+  "cm": "CMR 548.05.21",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-01T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 39",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1185,
+  "status": "validacao",
+  "colaborador": "HIGOR FERREIRA DOS SANTOS",
+  "colaboradorCpf": "435.834.088-10",
+  "cargo": "AUXILIAR DE REFRIGERAÇÃO",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "DHL GRU",
+  "cm": "CMR 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 43",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 46",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON GG",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1186,
+  "status": "validacao",
+  "colaborador": "JHONNATA DE ARAUJO CHAVES",
+  "colaboradorCpf": "602.914.313-13",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "LUXOTTICA SUMARÉ",
+  "cm": "CMR 649.01.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-01T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  P",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON P",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 38",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1187,
+  "status": "validacao",
+  "colaborador": "EDSON GOMES DE OLIVEIRA",
+  "colaboradorCpf": "140.950.047-03",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "BRADESCO RJ",
+  "cm": "CMR 670.08.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1188,
+  "status": "validacao",
+  "colaborador": "RODNEI ROBERTO FERREIRA DOS SANTOS",
+  "colaboradorCpf": "429.302.848-03",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL EL JR III",
+  "colaboradorEmpresa": "BMS - BUILDING MAINTENANCE SERVICE LTDA",
+  "contrato": "OKA MAMORE",
+  "cm": "CMF 253.08.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 44-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1189,
+  "status": "validacao",
+  "colaborador": "EDILEON CASSIMIRO BARBOSA",
+  "colaboradorCpf": "343.280.728-70",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "DHL EXTREMA",
+  "cm": "CMR 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 43",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 44-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA EXG",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1190,
+  "status": "validacao",
+  "colaborador": "MARCELO PEREIRA DOS SANTOS",
+  "colaboradorCpf": "277.935.968-46",
+  "cargo": "PEDREIRO",
+  "colaboradorEmpresa": "PREST COLD AR CONDICIONADO LTDA",
+  "contrato": "VILLARES",
+  "cm": "CMF 286.08.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1191,
+  "status": "validacao",
+  "colaborador": "JOSÉ ALBERTO PEREIRA NASCIMENTO",
+  "colaboradorCpf": "351.071.698-13",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "VOLANTE SP",
+  "cm": "",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 46",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
   "num": 1192,
   "status": "validacao",
   "colaborador": "Carlos Henrique Santana de lima",
@@ -41,76 +1545,6 @@
  {
   "num": 1192,
   "status": "validacao",
-  "colaborador": "Paulo de Carvalho Santos",
-  "contrato": "AJINOMOTO DO BRASIL",
-  "cm": "CMR-AO 5680222",
-  "tipo": "reposicao",
-  "criadoPor": "Carlos Henrique Santana de lima",
-  "criadoEm": "2026-09-04T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-04T12:00:00.000Z",
-    "por": "Carlos Henrique Santana de lima"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 3,
-    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1192,
-  "status": "validacao",
-  "colaborador": "Marcos Henrique marangoni",
-  "contrato": "AJINOMOTO DO BRASIL",
-  "cm": "CMR-AO 5680222",
-  "tipo": "reposicao",
-  "criadoPor": "Carlos Henrique Santana de lima",
-  "criadoEm": "2026-09-04T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-04T12:00:00.000Z",
-    "por": "Carlos Henrique Santana de lima"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 3,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1192,
-  "status": "validacao",
   "colaborador": "Douglas Fernando Gato",
   "contrato": "AJINOMOTO DO BRASIL",
   "cm": "CMR-AO 5680222",
@@ -132,37 +1566,6 @@
    {
     "qtd": 1,
     "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1192,
-  "status": "validacao",
-  "colaborador": "Lucas Alexandre Balbino Texeira",
-  "contrato": "AJINOMOTO DO BRASIL",
-  "cm": "CMR-AO 5680222",
-  "tipo": "reposicao",
-  "criadoPor": "Carlos Henrique Santana de lima",
-  "criadoEm": "2026-09-04T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-04T12:00:00.000Z",
-    "por": "Carlos Henrique Santana de lima"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -212,6 +1615,37 @@
  {
   "num": 1192,
   "status": "validacao",
+  "colaborador": "Lucas Alexandre Balbino Texeira",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
   "colaborador": "Marcos Antônio Carlos da Silva",
   "contrato": "AJINOMOTO DO BRASIL",
   "cm": "CMR-AO 5680222",
@@ -249,6 +1683,76 @@
    {
     "qtd": 1,
     "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Marcos Henrique marangoni",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Paulo de Carvalho Santos",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -432,37 +1936,6 @@
  {
   "num": 1196,
   "status": "validacao",
-  "colaborador": "Celso",
-  "contrato": "TOYOTA SOROCABA",
-  "cm": "CMA - 654.04.25",
-  "tipo": "reposicao",
-  "criadoPor": "Willians do Carmo",
-  "criadoEm": "2026-08-28T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-08-28T12:00:00.000Z",
-    "por": "Willians do Carmo"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 2,
-    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1196,
-  "status": "validacao",
   "colaborador": "Alexandre José dos Santos",
   "contrato": "TOYOTA SOROCABA",
   "cm": "CMA - 654.04.25",
@@ -494,7 +1967,38 @@
  {
   "num": 1196,
   "status": "validacao",
-  "colaborador": "Jaques Maxwel da Silva P. de Souza",
+  "colaborador": "Celso",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMA - 654.04.25",
+  "tipo": "reposicao",
+  "criadoPor": "Willians do Carmo",
+  "criadoEm": "2026-08-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-28T12:00:00.000Z",
+    "por": "Willians do Carmo"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1196,
+  "status": "validacao",
+  "colaborador": "Claudemir de Araújo",
   "contrato": "TOYOTA SOROCABA",
   "cm": "CMA - 654.04.25",
   "tipo": "reposicao",
@@ -556,7 +2060,7 @@
  {
   "num": 1196,
   "status": "validacao",
-  "colaborador": "Claudemir de Araújo",
+  "colaborador": "Jaques Maxwel da Silva P. de Souza",
   "contrato": "TOYOTA SOROCABA",
   "cm": "CMA - 654.04.25",
   "tipo": "reposicao",
@@ -712,7 +2216,7 @@
  {
   "num": 1200,
   "status": "validacao",
-  "colaborador": "MAURICIO",
+  "colaborador": "ANDERSON",
   "contrato": "INSTITUTO DO SONO",
   "cm": "CMF 288.09.26",
   "tipo": "reposicao",
@@ -731,24 +2235,8 @@
   ],
   "itens": [
    {
-    "qtd": 2,
-    "nome": "CALÇA JEANS AZUL 64",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 2,
-    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
     "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -853,7 +2341,7 @@
  {
   "num": 1200,
   "status": "validacao",
-  "colaborador": "ANDERSON",
+  "colaborador": "MAURICIO",
   "contrato": "INSTITUTO DO SONO",
   "cm": "CMF 288.09.26",
   "tipo": "reposicao",
@@ -872,8 +2360,24 @@
   ],
   "itens": [
    {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 64",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
     "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -1000,6 +2504,250 @@
   ]
  },
  {
+  "num": 1202,
+  "status": "validacao",
+  "colaborador": "ARNALDO APARECIDO CARDOSO",
+  "colaboradorCpf": "251.956.958-14",
+  "cargo": "PEDREIRO",
+  "colaboradorEmpresa": "PREST COLD AR CONDICIONADO LTDA",
+  "contrato": "VILLARES",
+  "cm": "CMF 286.08.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 48",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1203,
+  "status": "validacao",
+  "colaborador": "JULIO CESAR DA SILVA",
+  "colaboradorCpf": "155.476.418-12",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÃO LTDA-ME",
+  "contrato": "SUPERMERCADO D'AVÓ",
+  "cm": "CMR 608.11.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 48",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
   "num": 1204,
   "status": "validacao",
   "colaborador": "Hidrauterm/Zito/MGS",
@@ -1031,9 +2779,643 @@
   ]
  },
  {
+  "num": 1205,
+  "status": "validacao",
+  "colaborador": "MICHELE APARECIDA RIBEIRO",
+  "colaboradorCpf": "481.981.858-95",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL IV",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMR 675.10.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 36",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL P",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA P",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON P",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1206,
+  "status": "validacao",
+  "colaborador": "ALESSANDRO BRAGA DOS SANTOS",
+  "colaboradorCpf": "445.556.738-08",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL PL II",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÇÃO LTDA-ME",
+  "contrato": "LUXOTTICA SUMARÉ",
+  "cm": "CMR 636.09.24",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 50",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1207,
+  "status": "validacao",
+  "colaborador": "JOÃO LUCAS FERREIRA CUNHA",
+  "colaboradorCpf": "702.453.534-29",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "PREST COLD AR CONDICIONADO LTDA",
+  "contrato": "VILLARES",
+  "cm": "CMF 286.08.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1208,
+  "status": "validacao",
+  "colaborador": "MARC ARTHUR FABIEN",
+  "colaboradorCpf": "239.124.078-35",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "BAUDUCCO EXTREMA",
+  "cm": "CMR 698.07.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1209,
+  "status": "validacao",
+  "colaborador": "CESAR AUGUSTO GONÇALVES",
+  "colaboradorCpf": "187.738.488-75",
+  "cargo": "AUXILIAR DE REFRIGERAÇÃO",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "SANTHER BRAGANÇA",
+  "cm": "CMR 652.02.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
   "num": 1210,
   "status": "validacao",
-  "colaborador": "MAURICIO bitercurt de oliveira",
+  "colaborador": "ENIVALDO PEREIRA RAMOS",
   "contrato": "INSTITUTO DO SONO",
   "cm": "CMF 288.09.26",
   "tipo": "reposicao",
@@ -1053,7 +3435,7 @@
   "itens": [
    {
     "qtd": 2,
-    "nome": "CALÇA NR 10 AZUL 62-REFLETIVO LARANJA",
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -1061,7 +3443,15 @@
    },
    {
     "qtd": 2,
-    "nome": "CAMISA NR 10 AZUL EXG-REFLETIVO LARANJA",
+    "nome": "CAMISA NR 10 AZUL M -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -1119,6 +3509,45 @@
  {
   "num": 1210,
   "status": "validacao",
+  "colaborador": "MAURICIO bitercurt de oliveira",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 62-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL EXG-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1210,
+  "status": "validacao",
   "colaborador": "Paulo Henrique de matos zwarg",
   "contrato": "INSTITUTO DO SONO",
   "cm": "CMF 288.09.26",
@@ -1148,53 +3577,6 @@
    {
     "qtd": 2,
     "nome": "CAMISA NR 10 AZUL G -REFLETIVO LARANJA",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1210,
-  "status": "validacao",
-  "colaborador": "ENIVALDO PEREIRA RAMOS",
-  "contrato": "INSTITUTO DO SONO",
-  "cm": "CMF 288.09.26",
-  "tipo": "reposicao",
-  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
-  "criadoEm": "2026-09-09T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-09T12:00:00.000Z",
-    "por": "ROMILDO ALMEIDA DA ROCHA"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 2,
-    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 2,
-    "nome": "CAMISA NR 10 AZUL M -REFLETIVO LARANJA",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -1321,6 +3703,128 @@
   ]
  },
  {
+  "num": 1213,
+  "status": "validacao",
+  "colaborador": "BRUNO FELIPE RITA",
+  "colaboradorCpf": "347.526.518-40",
+  "cargo": "LIDER DE MANUTENÇÃO",
+  "colaboradorEmpresa": "PREST COLD AR CONDICIONADO LTDA",
+  "contrato": "VILLARES",
+  "cm": "CMF 286.08.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 48",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON GG",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
   "num": 1214,
   "status": "validacao",
   "colaborador": "ARTHUR NASCIMENTO",
@@ -1384,6 +3888,218 @@
     "qtd": 1,
     "nome": "CAPACETE DE SEGURANÇA  BRANCO",
     "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1215,
+  "status": "validacao",
+  "colaborador": "LUIZ FERNANDO DOS SANTOS DE OLIVEIRA",
+  "colaboradorCpf": "428.996.688-89",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "SALA VIP",
+  "cm": "CMF 276.12.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 46",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1216,
+  "status": "validacao",
+  "colaborador": "JOÃO VITOR LIMA PATRIOTA",
+  "colaboradorCpf": "047.836.061-45",
+  "cargo": "PLANEJADOR DE MANUTENÇÃO",
+  "colaboradorEmpresa": "BMS - BUILDING MAINTENANCE SERVICE LTDA",
+  "contrato": "CENTURY PLAZA DF",
+  "cm": "CMF 204.10.17",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-15T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-15T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
     "qtdSep": 0,
     "separado": false,
     "pendente": false
@@ -1606,7 +4322,7 @@
  {
   "num": 1218,
   "status": "validacao",
-  "colaborador": "Eduardo da Silva Ferreira",
+  "colaborador": "Alexandre da Costa Alves",
   "contrato": "EMBARÉ",
   "cm": "CMR - 564.12.21",
   "tipo": "reposicao",
@@ -1677,7 +4393,7 @@
  {
   "num": 1218,
   "status": "validacao",
-  "colaborador": "Alexandre da Costa Alves",
+  "colaborador": "Eduardo da Silva Ferreira",
   "contrato": "EMBARÉ",
   "cm": "CMR - 564.12.21",
   "tipo": "reposicao",
@@ -1739,6 +4455,1550 @@
     "qtd": 3,
     "nome": "LUVA ANTICORTE CINZA SS 1008",
     "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1219,
+  "status": "validacao",
+  "colaborador": "ENIVALDO PEREIRA RAMOS",
+  "colaboradorCpf": "118.856.978-30",
+  "cargo": "ELETRICISTA",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÃO LTDA-ME",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA M",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1220,
+  "status": "validacao",
+  "colaborador": "CESAR GUSTAVO LUCAS DOS SANTOS",
+  "colaboradorCpf": "425.274.338-98",
+  "cargo": "ENCARREGADO DE MANUTENÇÃO",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÇÃO LTDA",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 44-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA M",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1221,
+  "status": "validacao",
+  "colaborador": "PAULO HENRIQUE DE MATOS ZWARG",
+  "colaboradorCpf": "369.050.908-40",
+  "cargo": "ELETRICISTA",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÇÃO LTDA",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 44-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1222,
+  "status": "validacao",
+  "colaborador": "EDEANDERSON OLIVEIRA DA NEVES",
+  "colaboradorCpf": "420.758.028-07",
+  "cargo": "ENCANADOR",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÇÃO LTDA",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1223,
+  "status": "validacao",
+  "colaborador": "PABLO DA SILVA MARANA",
+  "colaboradorCpf": "336.180.178-80",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVIÇOS DE AR CONDICIONADO LTDA",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 554.08.21",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1224,
+  "status": "validacao",
+  "colaborador": "MATHEUS ALLAN NUNES",
+  "colaboradorCpf": "525.116.918-33",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVIÇOS DE AR CONDICIONADO LTDA",
+  "contrato": "ARCOR RDP",
+  "cm": "CMR 592.03.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 46",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1225,
+  "status": "validacao",
+  "colaborador": "RAFAEL FERREIRA DOS SANTOS",
+  "colaboradorCpf": "364.379.088-07",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "ODATA",
+  "cm": "CMR 683.12.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA M",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1226,
+  "status": "validacao",
+  "colaborador": "EDINEY DE OLIVEIRA RIBEIRO",
+  "colaboradorCpf": "124.372.658-05",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "BAUDUCCO EXTREMA",
+  "cm": "CMR 698.07.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 46-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA M",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1227,
+  "status": "validacao",
+  "colaborador": "CARLOS GASPAR DOS SANTOS",
+  "colaboradorCpf": "402.344.328-02",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL EL JR III",
+  "colaboradorEmpresa": "FANCOLD CLIMATIZAÇÃO",
+  "contrato": "LEROY CAJAMAR",
+  "cm": "CMF 255.11.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 46-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR AURICULAR TIPO CONCHA HASTE FIXAÇAO MOVEL",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1228,
+  "status": "validacao",
+  "colaborador": "FLORIS NILO JUNIOR",
+  "colaboradorCpf": "345.374.448-94",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL IV",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMR 675.10.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1229,
+  "status": "validacao",
+  "colaborador": "DANIEL RIBEIRO DO CARMO",
+  "colaboradorCpf": "514.985.088-80",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL EL JR III",
+  "colaboradorEmpresa": "FANCOLD CLIMATIZAÇÃO",
+  "contrato": "LEROY CAJAMAR",
+  "cm": "CMF 255.11.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA M",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 38 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR AURICULAR TIPO CONCHA HASTE FIXAÇAO MOVEL",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1230,
+  "status": "validacao",
+  "colaborador": "FELIPE FERREIRA MONTEIRO",
+  "colaboradorCpf": "057.985.493-05",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "DHL GO",
+  "cm": "CMR 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-18T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-18T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 46-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA GG",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON GG",
+    "ca": "#N/A",
     "qtdSep": 0,
     "separado": false,
     "pendente": false
@@ -1911,6 +6171,136 @@
   ]
  },
  {
+  "num": 1235,
+  "status": "validacao",
+  "colaborador": "ORLANDO VALERIO FILHO",
+  "colaboradorCpf": "332.827.458-85",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL EL JR III",
+  "colaboradorEmpresa": "FANCOLD CLIMATIZAÇÃO",
+  "contrato": "LEROY CAJAMAR",
+  "cm": "",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-22T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-22T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
   "num": 1236,
   "status": "validacao",
   "colaborador": "José Audo",
@@ -1982,6 +6372,136 @@
     "qtd": 3,
     "nome": "CALÇA NR 10 AZUL 50 -REFLETIVO LARANJA",
     "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1238,
+  "status": "validacao",
+  "colaborador": "DARIO ANTONIO SILVA BRABOSA JUNIOR",
+  "colaboradorCpf": "402.344.328-02",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL EL JR I",
+  "colaboradorEmpresa": "FANCOLD CLIMATIZAÇÃO",
+  "contrato": "VIVA BENX",
+  "cm": "CMF 253.08.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-24T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-24T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
     "qtdSep": 0,
     "separado": false,
     "pendente": false
@@ -2287,6 +6807,128 @@
    {
     "qtd": 1,
     "nome": "SUETER (BLUSA) DE LÃ - SUPERVISOR G1",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1245,
+  "status": "validacao",
+  "colaborador": "YRUAN DA SILVA MELO",
+  "colaboradorCpf": "153.571.567-78",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "VOLANTE RJ",
+  "cm": "",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 45",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 52",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -2604,6 +7246,1022 @@
   ]
  },
  {
+  "num": 1248,
+  "status": "validacao",
+  "colaborador": "LUIZ ANDRÉ DA SILVA MONTEIRO",
+  "colaboradorCpf": "170.138.067-65",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "VOLANTE RJ",
+  "cm": "",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-30T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-30T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 44",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1249,
+  "status": "validacao",
+  "colaborador": "DIEGO OLIVEIRA DA CUNHA",
+  "colaboradorCpf": "170.138.067-65",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "BRADESCO RJ",
+  "cm": "CMR 670.08.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-30T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-30T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1250,
+  "status": "validacao",
+  "colaborador": "MARCO PAULO ALVES",
+  "colaboradorCpf": "080.584.526-70",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "BAUDUCCO EXTREMA",
+  "cm": "CMR 698.07.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-29T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-29T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 48-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA GG",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1251,
+  "status": "validacao",
+  "colaborador": "FRANCISNETE GONÇALVES DE LIMA",
+  "colaboradorCpf": "416.281.938-67",
+  "cargo": "ELETRICISTA",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÇÃO LTDA",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-29T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-29T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 38 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL P",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA P",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON P",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 37",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1252,
+  "status": "validacao",
+  "colaborador": "MAURICIO BITENCOURT DE OLIVEIRA",
+  "colaboradorCpf": "116.474.838-67",
+  "cargo": "ELETRICISTA",
+  "colaboradorEmpresa": "FANCOLD GLOBAL COOLING MANUTENÇÃO LTDA",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-29T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-29T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 56-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA EXG",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1253,
+  "status": "validacao",
+  "colaborador": "THIAGO LEMES MARINS",
+  "colaboradorCpf": "534.337.238-42",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVIÇOS DE AR CONDICIONADO LTDA",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR 636.09.24",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-29T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-29T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  P",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON P",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1254,
+  "status": "validacao",
+  "colaborador": "PAULO HENRIQUE DE SANTANA SILVA",
+  "colaboradorCpf": "349.147.368-37",
+  "cargo": "OFICIAL DE MANUTENÇÃO CIVIL EL JR III",
+  "colaboradorEmpresa": "FANCOLD CLIMATIZAÇÃO",
+  "contrato": "LEROY CAJAMAR",
+  "cm": "CMF 255.11.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-30T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-30T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR AURICULAR TIPO CONCHA HASTE FIXAÇAO MOVEL",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1255,
+  "status": "validacao",
+  "colaborador": "FABIO DE LIMA COLOMBRINI JUNIOR",
+  "colaboradorCpf": "361.417.578-20",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "HOSP EMILIO RIBAS",
+  "cm": "CMR 381.08.14",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-29T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-29T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 52",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "10579",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
   "num": 1255,
   "status": "validacao",
   "colaborador": "Fernando Assis Jacomo",
@@ -2682,6 +8340,136 @@
   ]
  },
  {
+  "num": 1256,
+  "status": "validacao",
+  "colaborador": "SAMUEL CIRINO DA ROCHA",
+  "colaboradorCpf": "435.863.468-08",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMR 675.10.25",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-09-29T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-29T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
   "num": 1257,
   "status": "validacao",
   "colaborador": "JOSE LIORDE BRITO SILVA",
@@ -2705,6 +8493,108 @@
    {
     "qtd": 1,
     "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1258,
+  "status": "validacao",
+  "colaborador": "ALESSANDRO BRAGA",
+  "contrato": "LUXOTTICA SUMARÉ",
+  "cm": "CMR - 649.01.25",
+  "tipo": "troca",
+  "criadoPor": "HENRIQUE BERTINI",
+  "criadoEm": "2026-09-23T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-23T12:00:00.000Z",
+    "por": "HENRIQUE BERTINI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 58",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1258,
+  "status": "validacao",
+  "colaborador": "HENRIQUE BERTINI",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "HENRIQUE BERTINI",
+  "criadoEm": "2026-09-23T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-23T12:00:00.000Z",
+    "por": "HENRIQUE BERTINI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "COLETE TP JALECO LARANJA RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO PRETA - SUPERVISOR XG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA BEGE - SUPERVISOR 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "JAQUETA - SUPERVISOR EXG",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -2791,108 +8681,6 @@
    {
     "qtd": 6,
     "nome": "LUVA ANTICORTE PRETA SS 1007",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1258,
-  "status": "validacao",
-  "colaborador": "HENRIQUE BERTINI",
-  "contrato": "LUXOTTICA CAMPINAS",
-  "cm": "CMR - 636.09.24",
-  "tipo": "troca",
-  "criadoPor": "HENRIQUE BERTINI",
-  "criadoEm": "2026-09-23T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-23T12:00:00.000Z",
-    "por": "HENRIQUE BERTINI"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 2,
-    "nome": "COLETE TP JALECO LARANJA RFX S/ BOLSO VICSA VIC71260 VD",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 10,
-    "nome": "PROTETOR AURICULAR TIPO PLUG",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 2,
-    "nome": "CAMISA POLO PRETA - SUPERVISOR XG",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 2,
-    "nome": "CALÇA BEGE - SUPERVISOR 44",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 1,
-    "nome": "JAQUETA - SUPERVISOR EXG",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1258,
-  "status": "validacao",
-  "colaborador": "ALESSANDRO BRAGA",
-  "contrato": "LUXOTTICA SUMARÉ",
-  "cm": "CMR - 649.01.25",
-  "tipo": "troca",
-  "criadoPor": "HENRIQUE BERTINI",
-  "criadoEm": "2026-09-23T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-23T12:00:00.000Z",
-    "por": "HENRIQUE BERTINI"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 3,
-    "nome": "CALÇA JEANS AZUL 58",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3013,7 +8801,7 @@
  {
   "num": 1261,
   "status": "validacao",
-  "colaborador": "WANDERSON DE LEMOS DIAS",
+  "colaborador": "JOILSON DA SILVA RODRIGUES",
   "contrato": "LUXOTTICA CAMPINAS",
   "cm": "CMR - 636.09.24",
   "tipo": "troca",
@@ -3032,24 +8820,8 @@
   ],
   "itens": [
    {
-    "qtd": 2,
-    "nome": "CALÇA JEANS AZUL 46",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
-    "qtd": 2,
-    "nome": "CAMISA POLO AZUL  GG",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   },
-   {
     "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3058,6 +8830,45 @@
    {
     "qtd": 5,
     "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 40,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1261,
+  "status": "validacao",
+  "colaborador": "MARCELIO FRANCISCO FERREIRA",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON BOAVENTURA",
+  "criadoEm": "2026-09-10T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-10T12:00:00.000Z",
+    "por": "ROBSON BOAVENTURA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL EXG-REFLETIVO LARANJA",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3115,38 +8926,7 @@
  {
   "num": 1261,
   "status": "validacao",
-  "colaborador": "MARCELIO FRANCISCO FERREIRA",
-  "contrato": "LUXOTTICA CAMPINAS",
-  "cm": "CMR - 636.09.24",
-  "tipo": "reposicao",
-  "criadoPor": "ROBSON BOAVENTURA",
-  "criadoEm": "2026-09-10T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-10T12:00:00.000Z",
-    "por": "ROBSON BOAVENTURA"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 2,
-    "nome": "CAMISA NR 10 AZUL EXG-REFLETIVO LARANJA",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1261,
-  "status": "validacao",
-  "colaborador": "JOILSON DA SILVA RODRIGUES",
+  "colaborador": "WANDERSON DE LEMOS DIAS",
   "contrato": "LUXOTTICA CAMPINAS",
   "cm": "CMR - 636.09.24",
   "tipo": "troca",
@@ -3165,8 +8945,24 @@
   ],
   "itens": [
    {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 46",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL  GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
     "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3179,10 +8975,33 @@
     "qtdSep": 0,
     "separado": false,
     "pendente": false
-   },
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Adelmo",
+  "contrato": "LUXOTTICA SUMARÉ",
+  "cm": "CMR - 554.08.21",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
    {
-    "qtd": 40,
-    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3232,9 +9051,9 @@
  {
   "num": 1262,
   "status": "validacao",
-  "colaborador": "Adelmo",
-  "contrato": "LUXOTTICA SUMARÉ",
-  "cm": "CMR - 554.08.21",
+  "colaborador": "Noan Nunez",
+  "contrato": "DSM MAIRINQUE",
+  "cm": "CMR - 596.05.23",
   "tipo": "troca",
   "criadoPor": "Alexandre Bulgarim",
   "criadoEm": "2026-09-14T12:00:00.000Z",
@@ -3251,39 +9070,8 @@
   ],
   "itens": [
    {
-    "qtd": 1,
-    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1262,
-  "status": "validacao",
-  "colaborador": "Robson Boaventura",
-  "contrato": "LUXOTTICA CAMPINAS",
-  "cm": "CMR - 636.09.24",
-  "tipo": "troca",
-  "criadoPor": "Alexandre Bulgarim",
-  "criadoEm": "2026-09-14T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-14T12:00:00.000Z",
-    "por": "Alexandre Bulgarim"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 20,
-    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "qtd": 2,
+    "nome": "CARTUCHO 6003 PARA VAPORES ORGANICOS E GASES ACIDOS 3M",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3372,9 +9160,9 @@
  {
   "num": 1262,
   "status": "validacao",
-  "colaborador": "Noan Nunez",
-  "contrato": "DSM MAIRINQUE",
-  "cm": "CMR - 596.05.23",
+  "colaborador": "Robson Boaventura",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
   "tipo": "troca",
   "criadoPor": "Alexandre Bulgarim",
   "criadoEm": "2026-09-14T12:00:00.000Z",
@@ -3391,39 +9179,8 @@
   ],
   "itens": [
    {
-    "qtd": 2,
-    "nome": "CARTUCHO 6003 PARA VAPORES ORGANICOS E GASES ACIDOS 3M",
-    "ca": "",
-    "qtdSep": 0,
-    "separado": false,
-    "pendente": false
-   }
-  ]
- },
- {
-  "num": 1262,
-  "status": "validacao",
-  "colaborador": "Yuri Paschoal",
-  "contrato": "DSM MAIRINQUE",
-  "cm": "CMR - 596.05.23",
-  "tipo": "troca",
-  "criadoPor": "Alexandre Bulgarim",
-  "criadoEm": "2026-09-14T12:00:00.000Z",
-  "origem": "importacao-setembro",
-  "lote": "setembro-2026",
-  "exemplo": false,
-  "estoqueBaixado": false,
-  "historico": [
-   {
-    "status": "validacao",
-    "em": "2026-09-14T12:00:00.000Z",
-    "por": "Alexandre Bulgarim"
-   }
-  ],
-  "itens": [
-   {
-    "qtd": 2,
-    "nome": "CARTUCHO 6003 PARA VAPORES ORGANICOS E GASES ACIDOS 3M",
+    "qtd": 20,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3463,6 +9220,76 @@
    {
     "qtd": 1,
     "nome": "RESPIRADOR FACIAL INTEIRO 6800  (COM CARTUCHO 6003, FILTRO 5N 511/ e RETENTOR 501)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Yuri Paschoal",
+  "contrato": "DSM MAIRINQUE",
+  "cm": "CMR - 596.05.23",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CARTUCHO 6003 PARA VAPORES ORGANICOS E GASES ACIDOS 3M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1263,
+  "status": "validacao",
+  "colaborador": "Alex C. da Silva",
+  "contrato": "COLGATE ANCHIETA JAGUARÉ",
+  "cm": "CMR-AO 4130216",
+  "tipo": "troca",
+  "criadoPor": "CHARLHES FARIAS SALES",
+  "criadoEm": "2026-10-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-01T12:00:00.000Z",
+    "por": "CHARLHES FARIAS SALES"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 44",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
@@ -3559,7 +9386,7 @@
  {
   "num": 1263,
   "status": "validacao",
-  "colaborador": "Alex C. da Silva",
+  "colaborador": "Jose Liorde Brito Silva",
   "contrato": "COLGATE ANCHIETA JAGUARÉ",
   "cm": "CMR-AO 4130216",
   "tipo": "troca",
@@ -3596,14 +9423,17 @@
   ]
  },
  {
-  "num": 1263,
+  "num": 1264,
   "status": "validacao",
-  "colaborador": "Jose Liorde Brito Silva",
-  "contrato": "COLGATE ANCHIETA JAGUARÉ",
-  "cm": "CMR-AO 4130216",
-  "tipo": "troca",
-  "criadoPor": "CHARLHES FARIAS SALES",
-  "criadoEm": "2026-10-01T12:00:00.000Z",
+  "colaborador": "JOAO VICTOR DE ASSIS FERNANDES",
+  "colaboradorCpf": "168.547.177-36",
+  "cargo": "OFICIAL DE MAN CIVIL EL JR II",
+  "colaboradorEmpresa": "INFRA 5 MANUTENÇÃO LTDA",
+  "contrato": "COND NEOLINK",
+  "cm": "CMF 197.10.17",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
   "origem": "importacao-setembro",
   "lote": "setembro-2026",
   "exemplo": false,
@@ -3611,23 +9441,989 @@
   "historico": [
    {
     "status": "validacao",
-    "em": "2026-10-01T12:00:00.000Z",
-    "por": "CHARLHES FARIAS SALES"
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
    }
   ],
   "itens": [
    {
-    "qtd": 2,
-    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
     "ca": "",
     "qtdSep": 0,
     "separado": false,
     "pendente": false
    },
    {
-    "qtd": 2,
-    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL EXG",
     "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA EXG",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 50 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1265,
+  "status": "validacao",
+  "colaborador": "LEONARDO DE AMORIM FERREIRA",
+  "colaboradorCpf": "177.855.917-41",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD SERVICE LTDA",
+  "contrato": "FORSEA RJ",
+  "cm": "CMF 197.10.17",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1266,
+  "status": "validacao",
+  "colaborador": "FÁBIO MOURA COSTA",
+  "colaboradorCpf": "489.267.328-51",
+  "cargo": "AJUDANTE GERAL",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "VOLANTE SP",
+  "cm": "",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 48",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA BRACOL 40",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1267,
+  "status": "validacao",
+  "colaborador": "LUIS RICARDO CAMARGO",
+  "colaboradorCpf": "365.212.678-50",
+  "cargo": "MEC DE AR COND E REF",
+  "colaboradorEmpresa": "CAMARGO CLIMATIZACAO E REFRIGERACAO - ME",
+  "contrato": "VOLANTE SP",
+  "cm": "",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "35981",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 45",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1268,
+  "status": "validacao",
+  "colaborador": "ROBERTO MARCELINO CORREIA JUNIOR",
+  "colaboradorCpf": "398.953.808-01",
+  "cargo": "MEC DE AR COND E REF III",
+  "colaboradorEmpresa": "FANCOLD CLIMATIZAÇÃO",
+  "contrato": "LEROY CAJAMAR",
+  "cm": "CMF 255.11.23",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA M",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 40 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "48383",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "14990",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR AURICULAR TIPO CONCHA HASTE FIXAÇAO MOVEL",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1269,
+  "status": "validacao",
+  "colaborador": "GABRIEL CONCEIÇÃO DOS SANTOS",
+  "colaboradorCpf": "113.949.115-64",
+  "cargo": "AUXILIAR DE MANUTENÇÃO CIVIL",
+  "colaboradorEmpresa": "BMS - BUILDING MAINTENANCE SERVICE LTDA",
+  "contrato": "OKA MAMORE",
+  "cm": "CMF 260.10.24",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "#N/A",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1270,
+  "status": "validacao",
+  "colaborador": "MARCONE BEZERRA SOARES",
+  "colaboradorCpf": "490.251.368-42",
+  "cargo": "MEIO OFICIAL MEC DE AR COND E REF",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "BAUDUCCO EXTREMA",
+  "cm": "CMR 698.07.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 44-REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 44",
+    "ca": "38530",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1271,
+  "status": "validacao",
+  "colaborador": "JOÃO GABRIEL JOSÉ DA SILVA",
+  "colaboradorCpf": "140.988.646-81",
+  "cargo": "MEIO OFICIAL MEC DE AR COND E REF",
+  "colaboradorEmpresa": "FANCOLD MANUTENÇÃO LTDA",
+  "contrato": "BAUDUCCO EXTREMA",
+  "cm": "CMR 698.07.26",
+  "tipo": "reposicao",
+  "criadoPor": "Importação (ficha assinada)",
+  "criadoEm": "2026-10-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-02T12:00:00.000Z",
+    "por": "Importação"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 40 -REFLETIVO LARANJA",
+    "ca": "30903",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL REFLETIVO LARANJA G",
+    "ca": "30774",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA SEM GOLA AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "29638",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA TAM 9 -G",
+    "ca": "32036",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "9567",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO INCOLOR",
+    "ca": "11268",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA DE VAQUETA MISTA PUNHO LONGO",
+    "ca": "25387",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "17664",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA  /TALABARTE /ATHENAS",
+    "ca": "37977",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "38530",
     "qtdSep": 0,
     "separado": false,
     "pendente": false
