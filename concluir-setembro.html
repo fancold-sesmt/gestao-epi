@@ -33,7 +33,7 @@
   <div class="box">
     Marca os itens como separados · grava o histórico das etapas<br>
     Gera uma saída por item, com a data original da ficha<br>
-    Rodar duas vezes <b>não</b> duplica: as saídas têm código fixo
+    Rodar duas vezes <b>não</b> duplica — e completa o que ficou faltando
   </div>
   <label for="e">E-mail de administrador</label><input id="e" type="email" autocomplete="username">
   <label for="s">Senha</label><input id="s" type="password" autocomplete="current-password">
@@ -83,22 +83,27 @@ document.getElementById('b').addEventListener('click', async () => {
       const quando = s.criadoEm || new Date().toISOString();
       const por    = 'Importação de setembro';
 
-      /* 1) saídas de estoque — código fixo por ficha+item, então reexecutar substitui */
-      const itens = (s.itens || []).map((it, i) => {
+      /* 1) saídas de estoque — código fixo por ficha+item, então reexecutar substitui.
+            Cada gravação é AGUARDADA: sem isso o navegador abandona as pendentes. */
+      const itens = [];
+      for(let i = 0; i < (s.itens || []).length; i++){
+        const it = s.itens[i];
         const q = it.qtd || 0;
         if(q > 0){
           const sid = 'setout-' + s.id + '-' + i;
-          setDoc(doc(fs,'estoque',sid), {
-            tipo:'saida', epi: it.nome, ca: it.ca || '', quantidade: q,
-            colaborador: s.colaborador || '', contrato: s.contrato || '', cm: s.cm || '',
-            retiradoPor: 'Almoxarifado (entrega pessoal)',
-            origem: ORIGEM, lote: LOTE, solicitacaoNum: s.num,
-            data: quando, criadoPor: por, criadoEm: quando,
-          }).catch(e => { erros++; diz('  saída falhou Nº' + s.num + ' / ' + it.nome + ': ' + e.message,'err'); });
-          nS++;
+          try{
+            await setDoc(doc(fs,'estoque',sid), {
+              tipo:'saida', epi: it.nome, ca: it.ca || '', quantidade: q,
+              colaborador: s.colaborador || '', contrato: s.contrato || '', cm: s.cm || '',
+              retiradoPor: 'Almoxarifado (entrega pessoal)',
+              origem: ORIGEM, lote: LOTE, solicitacaoNum: s.num,
+              data: quando, criadoPor: por, criadoEm: quando,
+            });
+            nS++;
+          }catch(e){ erros++; diz('  saída falhou Nº' + s.num + ' / ' + it.nome + ': ' + e.message,'err'); }
         }
-        return Object.assign({}, it, {qtdSep: q, separado: true, pendente: false});
-      });
+        itens.push(Object.assign({}, it, {qtdSep: q, separado: true, pendente: false}));
+      }
 
       /* 2) a ficha em si */
       const hist = (s.historico || []).slice();
@@ -110,7 +115,7 @@ document.getElementById('b').addEventListener('click', async () => {
           itens, status:'concluido', estoqueBaixado:true, historico:hist,
         });
         nF++;
-        if(nF % 10 === 0) diz('  ' + nF + ' fichas concluídas…');
+        if(nF % 5 === 0) diz('  ' + nF + '/' + fichas.length + ' fichas · ' + nS + ' saídas…');
       }catch(e){ erros++; diz('  ficha falhou Nº' + s.num + ': ' + e.message,'err'); }
     }
     diz('');

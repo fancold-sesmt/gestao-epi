@@ -703,7 +703,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 12</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 13</span></p>
     </form>
   </div>
 </div>
@@ -990,6 +990,11 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
     </aside>
     <main class="estoque-main">
       <dl class="tiles" id="e-tiles"></dl>
+      <section class="painel" id="e-painel-sem" hidden>
+        <h3>EPI sem preço cadastrado</h3>
+        <p class="sub">Estes saíram do estoque mas não têm preço na tabela — por isso ficam fora do custo total. Me diga o preço de cada um e eles entram na conta.</p>
+        <div id="e-sem-preco"></div>
+      </section>
       <section class="painel">
         <h3>Custo por contrato</h3>
         <p class="sub">Soma de tudo que saiu, por contrato. Clique para ver de quais fichas veio o valor.</p>
@@ -3980,6 +3985,38 @@ function renderCustos(){
       det.appendChild(corpo);
       alvo.appendChild(det);
     });
+  }
+
+  /* ---- EPI sem preço: lista separada, para resolver de uma vez ---- */
+  const pnSem = $('#e-painel-sem'), alvoS = $('#e-sem-preco');
+  alvoS.textContent = '';
+  const semMap = new Map();
+  saidas.forEach(m => {
+    if(custoDaSaida(m) != null) return;
+    const k = m.epi || '(sem nome)';
+    if(!semMap.has(k)) semMap.set(k, {nome:k, qtd:0, lanc:0, contratos:new Set()});
+    const g = semMap.get(k);
+    g.qtd += (m.quantidade || 0); g.lanc++;
+    if(m.contrato) g.contratos.add(m.contrato);
+  });
+  if(!semMap.size){ pnSem.hidden = true; }
+  else {
+    pnSem.hidden = false;
+    const ts = cria('table','dados');
+    const th = cria('thead'), trh = cria('tr');
+    ['EPI','Peças','Lançamentos','Contratos'].forEach(h => trh.appendChild(cria('th', null, h)));
+    th.appendChild(trh); ts.appendChild(th);
+    const tbs = cria('tbody');
+    [...semMap.values()].sort((a,b) => b.qtd - a.qtd).forEach(g => {
+      const tr = cria('tr');
+      tr.appendChild(cria('td', null, g.nome));
+      tr.appendChild(cria('td','n', String(g.qtd)));
+      tr.appendChild(cria('td','n', String(g.lanc)));
+      tr.appendChild(cria('td','n', String(g.contratos.size)));
+      tbs.appendChild(tr);
+    });
+    ts.appendChild(tbs);
+    const wr = cria('div','tabela-wrap'); wr.appendChild(ts); alvoS.appendChild(wr);
   }
 
   /* ---- por EPI ---- */
