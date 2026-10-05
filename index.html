@@ -63,6 +63,13 @@ h1,h2,h3{margin:0}
 .aba:hover{background:rgba(46,123,255,.09);color:var(--gelo)}
 .aba[aria-selected="true"]{background:rgba(46,123,255,.16);color:var(--azul-claro)}
 .subabas{display:flex;gap:6px;margin-bottom:10px;border-bottom:1px solid var(--borda);padding-bottom:2px}
+.e-filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.e-filtros .campo{margin:0;min-width:150px;flex:1 1 150px}
+.e-filtros .campo.largo{flex:2 1 220px}
+.e-filtros select,.e-filtros input{width:100%;box-sizing:border-box}
+.e-paginas{margin-bottom:16px}
+.e-paginas .subaba{font-size:14px;padding:9px 16px}
+.e-chip{display:inline-block;background:rgba(46,123,255,.14);color:var(--azul-claro);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;margin-right:6px}
 .subaba{border:0;background:none;padding:7px 12px;border-radius:5px 5px 0 0;cursor:pointer;
   font-weight:600;font-size:13px;color:var(--suave)}
 .subaba:hover{background:rgba(46,123,255,.08);color:var(--gelo)}
@@ -703,7 +710,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 13</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 14</span></p>
     </form>
   </div>
 </div>
@@ -989,35 +996,72 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </section>
     </aside>
     <main class="estoque-main">
-      <dl class="tiles" id="e-tiles"></dl>
-      <section class="painel" id="e-painel-sem" hidden>
-        <h3>EPI sem preço cadastrado</h3>
-        <p class="sub">Estes saíram do estoque mas não têm preço na tabela — por isso ficam fora do custo total. Me diga o preço de cada um e eles entram na conta.</p>
-        <div id="e-sem-preco"></div>
-      </section>
+      <div class="subabas e-paginas" role="tablist" id="e-paginas">
+        <button class="subaba" role="tab" data-pg="mov" aria-selected="true">Entradas &times; Saídas</button>
+        <button class="subaba" role="tab" data-pg="custo" aria-selected="false">Custos</button>
+      </div>
+
       <section class="painel">
-        <h3>Custo por contrato</h3>
-        <p class="sub">Soma de tudo que saiu, por contrato. Clique para ver de quais fichas veio o valor.</p>
-        <div id="e-contratos"></div>
-      </section>
-      <section class="painel">
-        <h3>Custo por EPI</h3>
-        <p class="sub">Quanto cada equipamento consumiu no total</p>
-        <div id="e-custo-epi"></div>
-      </section>
-      <section class="painel">
-        <h3>Saldo atual por EPI</h3>
-        <p class="sub">Entradas menos saídas — inclui as saídas automáticas geradas quando uma ficha é entregue</p>
-        <div id="e-saldo"></div>
-      </section>
-      <section class="painel">
-        <div class="subabas" role="tablist">
-          <button class="subaba" role="tab" data-sub="saida" aria-selected="true">Saídas</button>
-          <button class="subaba" role="tab" data-sub="entrada" aria-selected="false">Entradas</button>
+        <div class="e-filtros">
+          <div class="campo"><label for="ef-mes">Mês</label><select id="ef-mes"></select></div>
+          <div class="campo largo"><label for="ef-contrato">Contrato</label><select id="ef-contrato"></select></div>
+          <div class="campo largo"><label for="ef-colab">Colaborador</label><select id="ef-colab"></select></div>
+          <div class="campo"><label for="ef-epi">EPI</label><input id="ef-epi" autocomplete="off" placeholder="parte do nome"></div>
+          <button class="btn" id="ef-limpar" type="button">Limpar filtros</button>
         </div>
-        <p class="sub" id="e-mov-sub">Todas as saídas registradas, da mais recente à mais antiga</p>
-        <div id="e-mov"></div>
+        <p class="sub" id="ef-resumo" style="margin:10px 0 0"></p>
       </section>
+
+      <div id="e-pg-mov">
+        <dl class="tiles" id="e-tiles-mov"></dl>
+        <section class="painel">
+          <h3>Saldo por EPI</h3>
+          <p class="sub">Entradas menos saídas, dentro do filtro acima. As saídas automáticas das fichas entregues já entram aqui.</p>
+          <div id="e-saldo"></div>
+        </section>
+        <section class="painel">
+          <h3>Movimento por mês</h3>
+          <p class="sub">Peças que entraram e que saíram, mês a mês</p>
+          <div id="e-mov-mes"></div>
+        </section>
+        <section class="painel">
+          <div class="subabas" role="tablist" id="e-mov-tabs">
+            <button class="subaba" role="tab" data-sub="saida" aria-selected="true">Saídas</button>
+            <button class="subaba" role="tab" data-sub="entrada" aria-selected="false">Entradas</button>
+          </div>
+          <p class="sub" id="e-mov-sub">Todas as saídas registradas, da mais recente à mais antiga</p>
+          <div id="e-mov"></div>
+        </section>
+      </div>
+
+      <div id="e-pg-custo" hidden>
+        <dl class="tiles" id="e-tiles"></dl>
+        <section class="painel" id="e-painel-sem" hidden>
+          <h3>EPI sem preço cadastrado</h3>
+          <p class="sub">Estes saíram do estoque mas não têm preço na tabela — por isso ficam fora do custo total. Me diga o preço de cada um e eles entram na conta.</p>
+          <div id="e-sem-preco"></div>
+        </section>
+        <section class="painel">
+          <h3>Custo por mês</h3>
+          <p class="sub">Quanto saiu de EPI em cada mês</p>
+          <div id="e-custo-mes"></div>
+        </section>
+        <section class="painel">
+          <h3>Custo por contrato</h3>
+          <p class="sub">Soma de tudo que saiu, por contrato. Clique para ver de quais fichas veio o valor.</p>
+          <div id="e-contratos"></div>
+        </section>
+        <section class="painel">
+          <h3>Maiores custos por colaborador</h3>
+          <p class="sub">Os 15 colaboradores que mais consumiram no período filtrado</p>
+          <div id="e-custo-colab"></div>
+        </section>
+        <section class="painel">
+          <h3>Custo por EPI</h3>
+          <p class="sub">Quanto cada equipamento consumiu no total</p>
+          <div id="e-custo-epi"></div>
+        </section>
+      </div>
     </main>
   </div>
   <datalist id="l-epis-estoque"></datalist>
@@ -3686,10 +3730,10 @@ function barras(dados, cor){
     const l = cria('div','linha-barra');
     if(d.cor) l.style.setProperty('--cor', d.cor);
     else if(cor) l.style.setProperty('--cor', cor);
-    l.append(cria('span','lb-rot', d.k), cria('span','lb-val', String(d.v)));
+    l.append(cria('span','lb-rot', d.k), cria('span','lb-val', d.vr != null ? d.vr : String(d.v)));
     const tr = cria('div','lb-trilho'); const i = cria('i');
     i.style.width = Math.max(2, d.v / max * 100) + '%';
-    tr.appendChild(i); tr.title = d.k + ': ' + d.v; l.appendChild(tr);
+    tr.appendChild(i); tr.title = d.k + ': ' + (d.vr != null ? d.vr : d.v); l.appendChild(tr);
     wrap.appendChild(l);
   });
   return wrap;
@@ -3895,42 +3939,170 @@ $('#es-out-add').addEventListener('click', async () => {
     $('#es-out-contrato').value=''; $('#es-out-cm').value=''; $('#es-out-por').value='';
   }catch(e){ nota.textContent = 'Não foi possível registrar agora. Tente novamente.'; }
 });
-document.querySelectorAll('.subaba').forEach(b => {
+/* ======== aba Estoque: duas páginas (movimentação e custos) + filtros ======== */
+let subPgEstoque = 'mov';
+const fEst = {mes:'', contrato:'', colaborador:'', epi:''};
+
+document.querySelectorAll('#e-paginas .subaba').forEach(b => {
   b.addEventListener('click', () => {
-    subAbaEstoque = b.dataset.sub;
-    document.querySelectorAll('.subaba').forEach(o => o.setAttribute('aria-selected', String(o === b)));
+    subPgEstoque = b.dataset.pg;
+    document.querySelectorAll('#e-paginas .subaba')
+      .forEach(o => o.setAttribute('aria-selected', String(o === b)));
     renderEstoque();
   });
 });
+document.querySelectorAll('#e-mov-tabs .subaba').forEach(b => {
+  b.addEventListener('click', () => {
+    subAbaEstoque = b.dataset.sub;
+    document.querySelectorAll('#e-mov-tabs .subaba')
+      .forEach(o => o.setAttribute('aria-selected', String(o === b)));
+    renderEstoque();
+  });
+});
+['ef-mes','ef-contrato','ef-colab'].forEach(id => {
+  $('#' + id).addEventListener('change', () => {
+    fEst.mes        = $('#ef-mes').value;
+    fEst.contrato   = $('#ef-contrato').value;
+    fEst.colaborador= $('#ef-colab').value;
+    renderEstoque();
+  });
+});
+$('#ef-epi').addEventListener('input', () => { fEst.epi = $('#ef-epi').value; renderEstoque(); });
+$('#ef-limpar').addEventListener('click', () => {
+  fEst.mes = fEst.contrato = fEst.colaborador = fEst.epi = '';
+  $('#ef-mes').value = ''; $('#ef-contrato').value = '';
+  $('#ef-colab').value = ''; $('#ef-epi').value = '';
+  renderEstoque();
+});
 
-/* ---- custos: só existem aqui na aba Estoque ---- */
+const mesDe  = m => String(m && m.data || '').slice(0,7);
+const MES_PT = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+function mesRot(ym){
+  if(!ym || ym.length < 7) return 'sem data';
+  const a = ym.slice(0,4), m = parseInt(ym.slice(5,7),10);
+  return (MES_PT[m-1] || '?') + '/' + a;
+}
+function estFiltrados(){
+  const alvoEpi = botNorm(fEst.epi);
+  return MOVIMENTOS.filter(m => {
+    if(fEst.mes         && mesDe(m) !== fEst.mes) return false;
+    if(fEst.contrato    && (m.contrato || '(sem contrato)') !== fEst.contrato) return false;
+    if(fEst.colaborador && (m.colaborador || '') !== fEst.colaborador) return false;
+    if(alvoEpi          && !botNorm(m.epi).includes(alvoEpi)) return false;
+    return true;
+  });
+}
+function opcoes(sel, lista, rotulo, vazio){
+  const atual = sel.value;
+  sel.textContent = '';
+  const o0 = cria('option', null, vazio); o0.value = ''; sel.appendChild(o0);
+  lista.forEach(v => {
+    const o = cria('option', null, rotulo ? rotulo(v) : v); o.value = v; sel.appendChild(o);
+  });
+  sel.value = lista.includes(atual) ? atual : '';
+}
+function preencherFiltrosEstoque(){
+  const meses = [...new Set(MOVIMENTOS.map(mesDe).filter(Boolean))].sort().reverse();
+  const ctrs  = [...new Set(MOVIMENTOS.map(m => m.contrato).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  const cols  = [...new Set(MOVIMENTOS.map(m => m.colaborador).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  opcoes($('#ef-mes'),      meses, mesRot, 'Todos os meses');
+  opcoes($('#ef-contrato'), ctrs,  null,   'Todos os contratos');
+  opcoes($('#ef-colab'),    cols,  null,   'Todos os colaboradores');
+  fEst.mes = $('#ef-mes').value;
+  fEst.contrato = $('#ef-contrato').value;
+  fEst.colaborador = $('#ef-colab').value;
+}
+function tiles(alvo, itens){
+  alvo.textContent = '';
+  itens.forEach(([k,v,sub]) => {
+    const d = cria('div','tile');
+    d.append(cria('dt', null, k), cria('dd', null, v), cria('small', null, sub));
+    alvo.appendChild(d);
+  });
+}
+function resumoFiltro(n){
+  const alvo = $('#ef-resumo'); alvo.textContent = '';
+  const ativos = [];
+  if(fEst.mes)         ativos.push(mesRot(fEst.mes));
+  if(fEst.contrato)    ativos.push(fEst.contrato);
+  if(fEst.colaborador) ativos.push(fEst.colaborador);
+  if(fEst.epi)         ativos.push('EPI: ' + fEst.epi);
+  if(!ativos.length){
+    alvo.textContent = MOVIMENTOS.length + ' lançamento' + (MOVIMENTOS.length===1?'':'s') + ' no total — sem filtro.';
+    return;
+  }
+  ativos.forEach(a => alvo.appendChild(cria('span','e-chip', a)));
+  alvo.appendChild(cria('span', null, ' ' + n + ' de ' + MOVIMENTOS.length + ' lançamentos'));
+}
+
+/* ---- custos ---- */
 function custoDaSaida(m){
   const cu = m.custoUnitario != null ? m.custoUnitario : custoDe(m.epi);
   return cu != null ? cu * (m.quantidade || 0) : null;
 }
 
-function renderCustos(){
-  const saidas = MOVIMENTOS.filter(m => m.tipo === 'saida');
+function renderCustos(movs){
+  const saidas = movs.filter(m => m.tipo === 'saida');
   const semCusto = saidas.filter(m => custoDaSaida(m) == null);
   const total = saidas.reduce((a,m) => a + (custoDaSaida(m) || 0), 0);
   const pecas = saidas.reduce((a,m) => a + (m.quantidade || 0), 0);
+  const comPreco = pecas - semCusto.reduce((a,m) => a + (m.quantidade || 0), 0);
 
-  /* tiles do topo */
-  const tiles = $('#e-tiles'); tiles.textContent = '';
-  [['Custo total das saídas', fmtMoeda(total), pecas + ' peças entregues'],
-   ['Saídas registradas', String(saidas.length), saidas.length ? 'lançamentos' : 'nenhuma ainda'],
-   ['Sem custo cadastrado', String(semCusto.length),
-    semCusto.length ? 'EPI fora da tabela de preço' : 'todos com preço']
-  ].forEach(([k,v,sub]) => {
-    const d = cria('div','tile');
-    d.append(cria('dt', null, k), cria('dd', null, v), cria('small', null, sub));
-    tiles.appendChild(d);
+  tiles($('#e-tiles'), [
+    ['Custo total das saídas', fmtMoeda(total), pecas + ' peças entregues'],
+    ['Custo médio por peça', comPreco ? fmtMoeda(total / comPreco) : '—',
+      comPreco + ' peças com preço'],
+    ['Saídas registradas', String(saidas.length), saidas.length ? 'lançamentos' : 'nenhuma ainda'],
+    ['Sem custo cadastrado', String(semCusto.length),
+      semCusto.length ? 'veja a lista abaixo' : 'todos com preço'],
+  ]);
+
+  /* ---- EPI sem preço ---- */
+  const pnSem = $('#e-painel-sem'), alvoS = $('#e-sem-preco');
+  alvoS.textContent = '';
+  const semMap = new Map();
+  semCusto.forEach(m => {
+    const k = m.epi || '(sem nome)';
+    if(!semMap.has(k)) semMap.set(k, {nome:k, qtd:0, lanc:0, contratos:new Set()});
+    const g = semMap.get(k);
+    g.qtd += (m.quantidade || 0); g.lanc++;
+    if(m.contrato) g.contratos.add(m.contrato);
   });
+  if(!semMap.size){ pnSem.hidden = true; }
+  else {
+    pnSem.hidden = false;
+    const ts = cria('table','dados'), th = cria('thead'), trh = cria('tr');
+    ['EPI','Peças','Lançamentos','Contratos'].forEach(h => trh.appendChild(cria('th', null, h)));
+    th.appendChild(trh); ts.appendChild(th);
+    const tbs = cria('tbody');
+    [...semMap.values()].sort((a,b) => b.qtd - a.qtd).forEach(g => {
+      const tr = cria('tr');
+      tr.appendChild(cria('td', null, g.nome));
+      tr.appendChild(cria('td','n', String(g.qtd)));
+      tr.appendChild(cria('td','n', String(g.lanc)));
+      tr.appendChild(cria('td','n', String(g.contratos.size)));
+      tbs.appendChild(tr);
+    });
+    ts.appendChild(tbs);
+    const wr = cria('div','tabela-wrap'); wr.appendChild(ts); alvoS.appendChild(wr);
+  }
 
-  /* ---- por contrato, com as fichas que originaram ---- */
+  /* ---- custo por mês ---- */
+  const alvoM = $('#e-custo-mes'); alvoM.textContent = '';
+  const porMes = new Map();
+  saidas.forEach(m => {
+    const k = mesDe(m) || '';
+    porMes.set(k, (porMes.get(k) || 0) + (custoDaSaida(m) || 0));
+  });
+  if(!porMes.size) alvoM.appendChild(cria('p','nada','Sem saídas no filtro atual.'));
+  else alvoM.appendChild(barras(
+    [...porMes.entries()].sort((a,b) => a[0].localeCompare(b[0]))
+      .map(([k,v]) => ({k:mesRot(k), v:Math.round(v), vr:fmtMoeda(v)})), 'var(--azul)'));
+
+  /* ---- por contrato ---- */
   const alvo = $('#e-contratos'); alvo.textContent = '';
   if(!saidas.length){
-    alvo.appendChild(cria('p','nada','Nenhuma saída registrada — os custos aparecem conforme as fichas são entregues.'));
+    alvo.appendChild(cria('p','nada','Nenhuma saída no filtro atual — os custos aparecem conforme as fichas são entregues.'));
   } else {
     const porCtr = new Map();
     saidas.forEach(m => {
@@ -3941,7 +4113,7 @@ function renderCustos(){
       if(c == null) g.semPreco++; else g.total += c;
       g.pecas += (m.quantidade || 0);
       if(m.cm && !g.cm) g.cm = m.cm;
-      const fk = m.origem === 'fluxo' ? ('Nº' + m.solicitacaoNum) : 'Manual';
+      const fk = m.solicitacaoNum ? ('Nº' + m.solicitacaoNum) : 'Manual';
       if(!g.fichas.has(fk)) g.fichas.set(fk, {rot:fk, total:0, itens:[]});
       const f = g.fichas.get(fk);
       if(c != null) f.total += c;
@@ -3987,44 +4159,21 @@ function renderCustos(){
     });
   }
 
-  /* ---- EPI sem preço: lista separada, para resolver de uma vez ---- */
-  const pnSem = $('#e-painel-sem'), alvoS = $('#e-sem-preco');
-  alvoS.textContent = '';
-  const semMap = new Map();
+  /* ---- por colaborador ---- */
+  const alvoC = $('#e-custo-colab'); alvoC.textContent = '';
+  const porCol = new Map();
   saidas.forEach(m => {
-    if(custoDaSaida(m) != null) return;
-    const k = m.epi || '(sem nome)';
-    if(!semMap.has(k)) semMap.set(k, {nome:k, qtd:0, lanc:0, contratos:new Set()});
-    const g = semMap.get(k);
-    g.qtd += (m.quantidade || 0); g.lanc++;
-    if(m.contrato) g.contratos.add(m.contrato);
+    const k = m.colaborador || '(sem colaborador)';
+    porCol.set(k, (porCol.get(k) || 0) + (custoDaSaida(m) || 0));
   });
-  if(!semMap.size){ pnSem.hidden = true; }
-  else {
-    pnSem.hidden = false;
-    const ts = cria('table','dados');
-    const th = cria('thead'), trh = cria('tr');
-    ['EPI','Peças','Lançamentos','Contratos'].forEach(h => trh.appendChild(cria('th', null, h)));
-    th.appendChild(trh); ts.appendChild(th);
-    const tbs = cria('tbody');
-    [...semMap.values()].sort((a,b) => b.qtd - a.qtd).forEach(g => {
-      const tr = cria('tr');
-      tr.appendChild(cria('td', null, g.nome));
-      tr.appendChild(cria('td','n', String(g.qtd)));
-      tr.appendChild(cria('td','n', String(g.lanc)));
-      tr.appendChild(cria('td','n', String(g.contratos.size)));
-      tbs.appendChild(tr);
-    });
-    ts.appendChild(tbs);
-    const wr = cria('div','tabela-wrap'); wr.appendChild(ts); alvoS.appendChild(wr);
-  }
+  const topCol = [...porCol.entries()].filter(e => e[1] > 0).sort((a,b) => b[1] - a[1]).slice(0,15);
+  if(!topCol.length) alvoC.appendChild(cria('p','nada','Sem custo apurado no filtro atual.'));
+  else alvoC.appendChild(barras(
+    topCol.map(([k,v]) => ({k, v:Math.round(v), vr:fmtMoeda(v)})), 'var(--verde)'));
 
   /* ---- por EPI ---- */
   const alvoE = $('#e-custo-epi'); alvoE.textContent = '';
-  if(!saidas.length){
-    alvoE.appendChild(cria('p','nada','Sem saídas ainda.'));
-    return;
-  }
+  if(!saidas.length){ alvoE.appendChild(cria('p','nada','Sem saídas no filtro atual.')); return; }
   const porEpi = new Map();
   saidas.forEach(m => {
     const k = m.epi || '(sem nome)';
@@ -4035,8 +4184,7 @@ function renderCustos(){
     if(c != null){ g.total += c; g.temPreco = true;
       g.unit = m.custoUnitario != null ? m.custoUnitario : custoDe(m.epi); }
   });
-  const tb = cria('table','dados');
-  const thead = cria('thead'); const trh = cria('tr');
+  const tb = cria('table','dados'), thead = cria('thead'), trh = cria('tr');
   ['EPI','Peças','Custo unit.','Custo total'].forEach(h => trh.appendChild(cria('th', null, h)));
   thead.appendChild(trh); tb.appendChild(thead);
   const tbody = cria('tbody');
@@ -4060,14 +4208,23 @@ function renderCustos(){
   const wrap = cria('div','tabela-wrap'); wrap.appendChild(tb); alvoE.appendChild(wrap);
 }
 
-function renderEstoque(){
-  renderCustos();
-  $('#e-resumo').textContent = MOVIMENTOS.length
-    ? `${MOVIMENTOS.length} lançamento${MOVIMENTOS.length===1?'':'s'} registrado${MOVIMENTOS.length===1?'':'s'}`
-    : 'Nenhuma movimentação ainda.';
+/* ---- página de movimentação ---- */
+function renderMovimentacao(movs){
+  const ent = movs.filter(m => m.tipo === 'entrada');
+  const sai = movs.filter(m => m.tipo !== 'entrada');
+  const pEnt = ent.reduce((a,m) => a + (m.quantidade || 0), 0);
+  const pSai = sai.reduce((a,m) => a + (m.quantidade || 0), 0);
 
+  tiles($('#e-tiles-mov'), [
+    ['Entradas', String(pEnt), ent.length + ' lançamento' + (ent.length===1?'':'s')],
+    ['Saídas',   String(pSai), sai.length + ' lançamento' + (sai.length===1?'':'s')],
+    ['Saldo',    String(pEnt - pSai), pEnt - pSai < 0 ? 'faltam entradas registradas' : 'peças em estoque'],
+    ['EPI diferentes', String(new Set(movs.map(m => m.epi || '')).size), 'itens movimentados'],
+  ]);
+
+  /* saldo por EPI */
   const porEpi = {};
-  MOVIMENTOS.forEach(m => {
+  movs.forEach(m => {
     const k = m.epi || '(sem nome)';
     if(!porEpi[k]) porEpi[k] = {entradas:0, saidas:0};
     if(m.tipo === 'entrada') porEpi[k].entradas += (m.quantidade || 0);
@@ -4078,10 +4235,9 @@ function renderEstoque(){
 
   const wrapSaldo = $('#e-saldo'); wrapSaldo.textContent = '';
   if(!linhas.length){
-    wrapSaldo.appendChild(cria('p','nada','Sem lançamentos — adicione entradas e saídas ao lado.'));
+    wrapSaldo.appendChild(cria('p','nada','Nenhum lançamento no filtro atual.'));
   } else {
-    const tb = cria('table','dados');
-    const thead = cria('thead'); const trh = cria('tr');
+    const tb = cria('table','dados'), thead = cria('thead'), trh = cria('tr');
     ['EPI','Entradas','Saídas','Saldo'].forEach(h => trh.appendChild(cria('th', null, h)));
     thead.appendChild(trh); tb.appendChild(thead);
     const tbody = cria('tbody');
@@ -4100,44 +4256,80 @@ function renderEstoque(){
     wrapSaldo.appendChild(wrap);
   }
 
-  const wrapMov = $('#e-mov'); wrapMov.textContent = '';
-  const movFiltrados = MOVIMENTOS.filter(m => m.tipo === subAbaEstoque);
-  $('#e-mov-sub').textContent = subAbaEstoque === 'saida'
-    ? 'Todas as saídas registradas, da mais recente à mais antiga'
-    : 'Todas as entradas registradas, da mais recente à mais antiga';
-  if(!movFiltrados.length){
-    wrapMov.appendChild(cria('p','nada', subAbaEstoque === 'saida' ? 'Nenhuma saída registrada ainda.' : 'Nenhuma entrada registrada ainda.'));
-  } else {
-    const tb = cria('table','dados');
-    const thead = cria('thead'); const trh = cria('tr');
-    const colunas = subAbaEstoque === 'saida'
-      ? ['Data','EPI','Qtd','Contrato','CMR','Colaborador','Custo unit.','Custo total','Nº solicitação']
-      : ['Data','EPI','Qtde','Observação','Origem'];
-    colunas.forEach(h => trh.appendChild(cria('th', null, h)));
-    thead.appendChild(trh); tb.appendChild(thead);
-    const tbody = cria('tbody');
-    movFiltrados.slice().sort((a,b) => new Date(b.data) - new Date(a.data)).forEach(m => {
-      const tr = cria('tr');
-      tr.appendChild(cria('td','n', dataCurta(m.data)));
-      tr.appendChild(cria('td', null, m.epi || '—'));
-      tr.appendChild(cria('td','n', String(m.quantidade || 0)));
-      if(subAbaEstoque === 'saida'){
-        tr.appendChild(cria('td', null, m.contrato || '—'));
-        tr.appendChild(cria('td','mono', m.cm || '—'));
-        tr.appendChild(cria('td', null, m.colaborador || '—'));
-        tr.appendChild(cria('td','n', m.custoUnitario != null ? fmtMoeda(m.custoUnitario) : '—'));
-        tr.appendChild(cria('td','n', m.custoUnitario != null ? fmtMoeda(m.custoUnitario * (m.quantidade||0)) : '—'));
-        tr.appendChild(cria('td','n', m.origem === 'fluxo' ? ('Nº' + (m.solicitacaoNum || '—')) : '—'));
-      } else {
-        tr.appendChild(cria('td', null, m.observacao || '—'));
-        tr.appendChild(cria('td', null, m.origem === 'fluxo' ? ('Fluxo (Nº' + (m.solicitacaoNum || '') + ')') : 'Manual'));
-      }
-      tbody.appendChild(tr);
+  /* movimento por mês */
+  const alvoMM = $('#e-mov-mes'); alvoMM.textContent = '';
+  const mm = new Map();
+  movs.forEach(m => {
+    const k = mesDe(m) || '';
+    if(!mm.has(k)) mm.set(k, {e:0, s:0});
+    const g = mm.get(k);
+    if(m.tipo === 'entrada') g.e += (m.quantidade || 0); else g.s += (m.quantidade || 0);
+  });
+  if(!mm.size) alvoMM.appendChild(cria('p','nada','Sem lançamentos no filtro atual.'));
+  else {
+    const dados = [];
+    [...mm.entries()].sort((a,b) => a[0].localeCompare(b[0])).forEach(([k,g]) => {
+      dados.push({k:mesRot(k) + ' · entrou', v:g.e, cor:'var(--verde)'});
+      dados.push({k:mesRot(k) + ' · saiu',   v:g.s, cor:'var(--azul)'});
     });
-    tb.appendChild(tbody);
-    const wrap = cria('div','tabela-wrap'); wrap.appendChild(tb);
-    wrapMov.appendChild(wrap);
+    alvoMM.appendChild(barras(dados));
   }
+
+  /* lançamentos */
+  const wrapMov = $('#e-mov'); wrapMov.textContent = '';
+  const movFiltrados = movs.filter(m => (m.tipo === 'entrada' ? 'entrada' : 'saida') === subAbaEstoque);
+  $('#e-mov-sub').textContent = subAbaEstoque === 'saida'
+    ? 'Saídas do filtro atual, da mais recente à mais antiga'
+    : 'Entradas do filtro atual, da mais recente à mais antiga';
+  if(!movFiltrados.length){
+    wrapMov.appendChild(cria('p','nada', subAbaEstoque === 'saida' ? 'Nenhuma saída no filtro atual.' : 'Nenhuma entrada no filtro atual.'));
+    return;
+  }
+  const tb = cria('table','dados'), thead = cria('thead'), trh = cria('tr');
+  const colunas = subAbaEstoque === 'saida'
+    ? ['Data','EPI','Qtd','Contrato','CMR','Colaborador','Custo unit.','Custo total','Nº solicitação']
+    : ['Data','EPI','Qtde','Observação','Origem'];
+  colunas.forEach(h => trh.appendChild(cria('th', null, h)));
+  thead.appendChild(trh); tb.appendChild(thead);
+  const tbody = cria('tbody');
+  movFiltrados.slice().sort((a,b) => new Date(b.data) - new Date(a.data)).forEach(m => {
+    const tr = cria('tr');
+    tr.appendChild(cria('td','n', dataCurta(m.data)));
+    tr.appendChild(cria('td', null, m.epi || '—'));
+    tr.appendChild(cria('td','n', String(m.quantidade || 0)));
+    if(subAbaEstoque === 'saida'){
+      const cu = m.custoUnitario != null ? m.custoUnitario : custoDe(m.epi);
+      tr.appendChild(cria('td', null, m.contrato || '—'));
+      tr.appendChild(cria('td','mono', m.cm || '—'));
+      tr.appendChild(cria('td', null, m.colaborador || '—'));
+      tr.appendChild(cria('td','n', cu != null ? fmtMoeda(cu) : '—'));
+      tr.appendChild(cria('td','n', cu != null ? fmtMoeda(cu * (m.quantidade||0)) : '—'));
+      tr.appendChild(cria('td','n', m.solicitacaoNum ? ('Nº' + m.solicitacaoNum) : '—'));
+    } else {
+      tr.appendChild(cria('td', null, m.observacao || '—'));
+      tr.appendChild(cria('td', null, m.solicitacaoNum ? ('Fluxo (Nº' + m.solicitacaoNum + ')') : 'Manual'));
+    }
+    tbody.appendChild(tr);
+  });
+  tb.appendChild(tbody);
+  const wrap = cria('div','tabela-wrap'); wrap.appendChild(tb);
+  wrapMov.appendChild(wrap);
+}
+
+function renderEstoque(){
+  preencherFiltrosEstoque();
+  const movs = estFiltrados();
+  resumoFiltro(movs.length);
+
+  $('#e-resumo').textContent = MOVIMENTOS.length
+    ? `${MOVIMENTOS.length} lançamento${MOVIMENTOS.length===1?'':'s'} registrado${MOVIMENTOS.length===1?'':'s'}`
+    : 'Nenhuma movimentação ainda.';
+
+  $('#e-pg-mov').hidden   = subPgEstoque !== 'mov';
+  $('#e-pg-custo').hidden = subPgEstoque !== 'custo';
+
+  if(subPgEstoque === 'mov') renderMovimentacao(movs);
+  else renderCustos(movs);
 }
 
 /* ================= colaboradores (aba própria) ================= */
