@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap">
 <style>
+[hidden]{display:none !important}
 :root{
   color-scheme:dark;
   --noite:#050A26;
@@ -649,7 +650,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 3</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 5</span></p>
     </form>
   </div>
 </div>
@@ -1062,6 +1063,12 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
           <div class="campo"><label for="us-senha-nova">Senha</label>
             <input id="us-senha-nova" type="text" autocomplete="off" placeholder="mínimo 6 caracteres"></div>
           <label class="opcao"><input type="checkbox" id="us-ativo" checked> Usuário ativo</label>
+          <label class="opcao"><input type="checkbox" id="us-tem-conta"> A conta de login já existe — só gravar o perfil</label>
+          <div class="campo" id="us-uid-linha" hidden>
+            <label for="us-uid">UID da conta</label>
+            <input id="us-uid" autocomplete="off" autocapitalize="none" spellcheck="false"
+                   placeholder="cole o UID que aparece no erro de login">
+          </div>
           <p class="g-nota" id="us-form-aviso" style="text-align:left"></p>
         </div>
         <div class="acoes">
@@ -2155,14 +2162,14 @@ $('#imp-desfazer').addEventListener('click', async () => {
 /* ================= sessão, login e usuários ================= */
 const PAPEL_ACESSO = {
   admin:            ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','importar','usuarios'],
-  seguranca:        ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','importar'],
+  seguranca:        ['solicitacao','controle','dashboard','pendencias'],
   almoxarifado:     ['controle','dashboard','estoque'],
   almoxarifado_adm: ['controle','dashboard','colaboradores','estoque','importar'],
   supervisor:       ['solicitacao'],
 };
 const PAPEL_DESC = {
   admin:'Faz tudo: valida, separa, entrega, cancela ou congela ficha e gerencia os usuários.',
-  seguranca:'Valida as solicitações, gera a Ficha de EPI, acompanha Pendências e emite fichas para assinatura.',
+  seguranca:'Valida as solicitações, gera a Ficha de EPI, emite fichas para assinatura e acompanha as Pendências do almoxarifado.',
   almoxarifado:'Separa os itens no Controle (inclusive quantidade parcial) e lança saídas no Estoque.',
   almoxarifado_adm:'Separação e Estoque, mais a base de Colaboradores e a importação de histórico.',
   supervisor:'Abre solicitações, anexa a evidência da troca e acompanha só as fichas que ele mesmo enviou.',
@@ -2326,6 +2333,10 @@ function limparFormUsuario(manterAviso){
   $('#us-ativo').checked = true;
   $('#us-salvar').textContent = 'Cadastrar usuário';
   $('#us-cancelar').hidden = true;
+  $('#us-tem-conta').checked = false;
+  $('#us-uid').value = '';
+  $('#us-uid-linha').hidden = true;
+  $('#us-senha-nova').closest('.campo').hidden = false;
   if(!manterAviso) $('#us-form-aviso').textContent = '';
 }
 function editarUsuario(u){
@@ -2342,6 +2353,13 @@ function editarUsuario(u){
   $('#us-form-aviso').textContent = '';
   $('#us-nome').focus();
 }
+$('#us-tem-conta').addEventListener('change', e => {
+  const on = e.target.checked;
+  $('#us-uid-linha').hidden = !on;
+  $('#us-senha-nova').closest('.campo').hidden = on;
+  $('#us-salvar').textContent = on ? 'Gravar perfil' : (editandoUser ? 'Salvar alterações' : 'Cadastrar usuário');
+  if(on) setTimeout(() => { try{ $('#us-uid').focus(); }catch(x){} }, 30);
+});
 $('#us-cancelar').addEventListener('click', () => limparFormUsuario());
 
 $('#us-salvar').addEventListener('click', async () => {
@@ -2364,7 +2382,10 @@ $('#us-salvar').addEventListener('click', async () => {
   if(editandoUser && (editandoUser.email||'').toLowerCase() !== login){
     av.textContent = 'O e-mail de acesso não pode ser trocado por aqui — ele é a identidade da conta. Cadastre outro usuário e desative este.'; return;
   }
-  if(!editandoUser && senha.length < 6){ av.textContent = 'A senha inicial precisa de 6 caracteres ou mais.'; return; }
+  const modoReparo = $('#us-tem-conta').checked && !editandoUser;
+  const uidManual = ($('#us-uid').value || '').trim();
+  if(modoReparo && !uidManual){ av.textContent = 'Cole o UID da conta — ele aparece na mensagem de erro quando a pessoa tenta entrar.'; return; }
+  if(!editandoUser && !modoReparo && senha.length < 6){ av.textContent = 'A senha inicial precisa de 6 caracteres ou mais.'; return; }
   if(editandoUser && editandoUser.id === eu.id){
     if(papel !== 'admin'){ av.textContent = 'Você não pode tirar o seu próprio acesso de administrador.'; return; }
     if(!ativo){ av.textContent = 'Você não pode desativar a sua própria conta.'; return; }
@@ -2383,17 +2404,39 @@ $('#us-salvar').addEventListener('click', async () => {
       limparFormUsuario(true);
       av.textContent = 'Usuário atualizado.';
     } else {
-      const uid = await FB.criarConta(login, senha);
+      let uid = uidManual;
+      if(!modoReparo){
+        av.textContent = 'Criando a conta de login…';
+        uid = await FB.criarConta(login, senha);
+      }
       dados.criadoEm = new Date().toISOString();
       dados.criadoPorNome = eu.nome || '';
-      await DB.doc('usuarios/' + uid).set(dados);
+
+      /* A conta já existe daqui para frente. Se o perfil não gravar, o usuário fica
+         sem acesso — então a falha precisa aparecer com o UID para poder ser reparada. */
+      try{
+        av.textContent = 'Gravando o perfil…';
+        await DB.doc('usuarios/' + uid).set(dados);
+      }catch(erroPerfil){
+        av.textContent = '';
+        av.appendChild(cria('b', null, 'A conta de ' + login + ' foi criada, mas o perfil NÃO gravou.'));
+        av.appendChild(cria('div', null, 'Motivo: ' + ((erroPerfil && erroPerfil.code) || erroPerfil.message || 'erro')));
+        av.appendChild(cria('div', null, 'Marque "A conta de login já existe" e cole este UID para tentar de novo:'));
+        const cx = cria('div'); cx.appendChild(cria('span','us-senha', uid)); av.appendChild(cx);
+        return;
+      }
+
       limparFormUsuario(true);
       av.textContent = '';
       av.appendChild(cria('span', null, nome.split(/\s+/)[0] + ' já pode entrar com '));
       av.appendChild(cria('span','us-senha', login));
-      av.appendChild(cria('span', null, ' e a senha '));
-      av.appendChild(cria('span','us-senha', senha));
-      av.appendChild(cria('span', null, ' — passe isso para ele. Ele pode trocar a senha depois em Usuários.'));
+      if(!modoReparo){
+        av.appendChild(cria('span', null, ' e a senha '));
+        av.appendChild(cria('span','us-senha', senha));
+      } else {
+        av.appendChild(cria('span', null, ' e a senha que já tinha'));
+      }
+      av.appendChild(cria('span', null, '. Ele pode trocá-la depois em Usuários.'));
     }
   }catch(e){
     av.textContent = 'Não deu para salvar: ' + msgAuth(e);
