@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Importar setembro · Fluxo de EPI</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:#050A26;color:#EDF2FF;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  .cx{width:100%;max-width:560px;background:#101A47;border:1px solid #33447A;border-radius:14px;padding:28px}
+  h1{font-size:21px;margin:0 0 6px}
+  p{color:#A3B4DC;font-size:13.5px;margin:0 0 16px}
+  label{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#A3B4DC;margin-bottom:4px}
+  input{width:100%;box-sizing:border-box;background:#050A26;border:1px solid #33447A;border-radius:6px;
+    padding:9px 10px;color:#EDF2FF;font:inherit;margin-bottom:12px}
+  button{width:100%;border:0;border-radius:8px;padding:11px;font:inherit;font-weight:700;cursor:pointer;
+    background:linear-gradient(135deg,#2E7BFF,#1550C8);color:#fff;margin-top:4px}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  button.sec{background:none;border:1px solid #33447A;color:#A3B4DC;font-weight:600}
+  #log{margin-top:16px;font-size:13px;font-family:ui-monospace,monospace;color:#A3B4DC;
+    max-height:300px;overflow:auto;white-space:pre-wrap;line-height:1.55}
+  .ok{color:#36AD6B}.err{color:#E8A15C}
+  .box{background:#050A26;border:1px solid #24325F;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px}
+  .box b{color:#7FB0FF}
+</style>
+</head>
+<body>
+<div class="cx">
+  <h1>Importar as solicitações de setembro</h1>
+  <p>Sobe as 79 fichas extraídas das 41 planilhas. Todas entram em <b>Validação</b>.
+     Rodar duas vezes substitui os mesmos registros, não duplica.</p>
+  <div class="box">
+    <b>41 planilhas</b> · 79 fichas (uma por colaborador) · 239 itens · 636 peças<br>
+    24 contratos · lote <b>setembro-2026</b>
+  </div>
+  <label for="e">E-mail de administrador</label><input id="e" type="email" autocomplete="username">
+  <label for="s">Senha</label><input id="s" type="password" autocomplete="current-password">
+  <button id="b">Entrar e importar</button>
+  <button id="d" class="sec">Desfazer esta importação</button>
+  <div id="log"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs }
+  from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { FIREBASE_CONFIG } from "./firebase-config.js";
+
+const app = initializeApp(FIREBASE_CONFIG);
+const auth = getAuth(app), fs = getFirestore(app);
+const log = document.getElementById('log');
+const diz = (t,c)=>{const d=document.createElement('div'); if(c)d.className=c; d.textContent=t; log.appendChild(d); log.scrollTop=1e6;};
+const LOTE = 'setembro-2026';
+
+async function entrar(){
+  await signInWithEmailAndPassword(auth,
+    document.getElementById('e').value.trim().toLowerCase(),
+    document.getElementById('s').value);
+}
+
+document.getElementById('b').addEventListener('click', async () => {
+  const b = document.getElementById('b'); b.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar(); diz('Conectado.','ok');
+    const lista = await (await fetch('./solicitacoes-setembro.json')).json();
+    diz(lista.length + ' fichas para gravar…');
+    let n = 0, erros = 0;
+    for(const s of lista){
+      const id = 'set2026-' + s.num + '-' + (s.colaborador || 'sem')
+        .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+        .replace(/[^A-Za-z0-9]/g,'').slice(0,24).toLowerCase();
+      try{ await setDoc(doc(fs,'solicitacoes',id), s); n++;
+           if(n % 10 === 0) diz('  ' + n + ' gravadas…'); }
+      catch(e){ erros++; diz('  falhou Nº' + s.num + ' (' + s.colaborador + '): ' + e.message,'err'); }
+    }
+    diz(n + ' fichas gravadas' + (erros ? ' · ' + erros + ' falharam' : '') + '.', erros ? 'err' : 'ok');
+    if(!erros) diz('Pronto. Abra o sistema: elas estão na coluna Validação.','ok');
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+  b.disabled = false;
+});
+
+document.getElementById('d').addEventListener('click', async () => {
+  const d = document.getElementById('d'); d.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar();
+    const snap = await getDocs(collection(fs,'solicitacoes'));
+    let n = 0;
+    for(const x of snap.docs){
+      if(x.data().lote === LOTE){ await deleteDoc(x.ref); n++; }
+    }
+    diz(n + ' fichas do lote de setembro removidas.','ok');
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+  d.disabled = false;
+});
+</script>
+</body>
+</html>

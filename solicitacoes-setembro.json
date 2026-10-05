@@ -1,0 +1,3731 @@
+[
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Carlos Henrique Santana de lima",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA BEGE - SUPERVISOR 62",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Paulo de Carvalho Santos",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Marcos Henrique marangoni",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Douglas Fernando Gato",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Lucas Alexandre Balbino Texeira",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 41",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Gabriel Dias Coelho",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1192,
+  "status": "validacao",
+  "colaborador": "Marcos Antônio Carlos da Silva",
+  "contrato": "AJINOMOTO DO BRASIL",
+  "cm": "CMR-AO 5680222",
+  "tipo": "reposicao",
+  "criadoPor": "Carlos Henrique Santana de lima",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "Carlos Henrique Santana de lima"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1193,
+  "status": "validacao",
+  "colaborador": "ITALO MARCIO MARANHÃO",
+  "contrato": "LEROY MERLIN CIA BRASILEIRA BRICOLM - CD CAJAMAR",
+  "cm": "CMF-FO 2360520",
+  "tipo": "troca",
+  "criadoPor": "RENATO SILVESTRI",
+  "criadoEm": "2026-08-25T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-25T12:00:00.000Z",
+    "por": "RENATO SILVESTRI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL G -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO FUME",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1194,
+  "status": "validacao",
+  "colaborador": "ADALBERTO",
+  "contrato": "CONDOMINIO VIVA BENX",
+  "cm": "CMF-FO-253.08.23",
+  "tipo": "reposicao",
+  "criadoPor": "MATHEUS CARVALHAES VALENTE",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "MATHEUS CARVALHAES VALENTE"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1195,
+  "status": "validacao",
+  "colaborador": "MARCELO",
+  "contrato": "HELBOR MOGI",
+  "cm": "CMF - 163.03.15",
+  "tipo": "reposicao",
+  "criadoPor": "MATHEUS CARVALHAES VALENTE",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "MATHEUS CARVALHAES VALENTE"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1196,
+  "status": "validacao",
+  "colaborador": "Celso",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMA - 654.04.25",
+  "tipo": "reposicao",
+  "criadoPor": "Willians do Carmo",
+  "criadoEm": "2026-08-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-28T12:00:00.000Z",
+    "por": "Willians do Carmo"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1196,
+  "status": "validacao",
+  "colaborador": "Alexandre José dos Santos",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMA - 654.04.25",
+  "tipo": "reposicao",
+  "criadoPor": "Willians do Carmo",
+  "criadoEm": "2026-08-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-28T12:00:00.000Z",
+    "por": "Willians do Carmo"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1196,
+  "status": "validacao",
+  "colaborador": "Jaques Maxwel da Silva P. de Souza",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMA - 654.04.25",
+  "tipo": "reposicao",
+  "criadoPor": "Willians do Carmo",
+  "criadoEm": "2026-08-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-28T12:00:00.000Z",
+    "por": "Willians do Carmo"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1196,
+  "status": "validacao",
+  "colaborador": "Fabio dos Santos",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMA - 654.04.25",
+  "tipo": "reposicao",
+  "criadoPor": "Willians do Carmo",
+  "criadoEm": "2026-08-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-28T12:00:00.000Z",
+    "por": "Willians do Carmo"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1196,
+  "status": "validacao",
+  "colaborador": "Claudemir de Araújo",
+  "contrato": "TOYOTA SOROCABA",
+  "cm": "CMA - 654.04.25",
+  "tipo": "reposicao",
+  "criadoPor": "Willians do Carmo",
+  "criadoEm": "2026-08-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-28T12:00:00.000Z",
+    "por": "Willians do Carmo"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1197,
+  "status": "validacao",
+  "colaborador": "Ronivaldo de Jesus Barbosa",
+  "contrato": "ESCRITÓRIO RIO NEGRO",
+  "cm": "CMF - 167.04.15",
+  "tipo": "reposicao",
+  "criadoPor": "RAFAEL RIBEIRO",
+  "criadoEm": "2026-07-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-07-14T12:00:00.000Z",
+    "por": "RAFAEL RIBEIRO"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1198,
+  "status": "validacao",
+  "colaborador": "FERNANDO FERREIRA DO NASCIMENTO",
+  "contrato": "DHL OSASCO",
+  "cm": "CMR - 647.12.24",
+  "tipo": "troca",
+  "criadoPor": "William dos Santos",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "William dos Santos"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "COLETE TP JALECO LARANJA RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1199,
+  "status": "validacao",
+  "colaborador": "CLARISMUNDO LIMA DA SILVA",
+  "contrato": "TOYOTA-SOROCABA",
+  "cm": "CMR - 618.04.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROGER ALMEIDA",
+  "criadoEm": "2026-09-04T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-04T12:00:00.000Z",
+    "por": "ROGER ALMEIDA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL M -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1200,
+  "status": "validacao",
+  "colaborador": "MAURICIO",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-08T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-08T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 64",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1200,
+  "status": "validacao",
+  "colaborador": "CESAR",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-08T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-08T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1200,
+  "status": "validacao",
+  "colaborador": "JOSE",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-08T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-08T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1200,
+  "status": "validacao",
+  "colaborador": "ANDERSON",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-08T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-08T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1200,
+  "status": "validacao",
+  "colaborador": "ROMILDO",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-08T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-08T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA BEGE - SUPERVISOR 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA DE BOTÃO - SUPERVISOR GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO PRETA - SUPERVISOR GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "SUETER (BLUSA) DE LÃ - SUPERVISOR GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1201,
+  "status": "validacao",
+  "colaborador": "ALMIR VINICIUS",
+  "contrato": "SODEXO (COLGATE IMIGRANTES)",
+  "cm": "CMR - 513.01.20",
+  "tipo": "troca",
+  "criadoPor": "SAULO RAMOS SOUSA",
+  "criadoEm": "2026-09-02T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-02T12:00:00.000Z",
+    "por": "SAULO RAMOS SOUSA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 52",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CINTO DE SEGURANÇA / TALABARTE / TRAVA QUEDAS (KIT)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1204,
+  "status": "validacao",
+  "colaborador": "Hidrauterm/Zito/MGS",
+  "contrato": "BRADESCO GDE SP",
+  "cm": "3302.08.26",
+  "tipo": "reposicao",
+  "criadoPor": "Emerson - Obras",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "Emerson - Obras"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 20,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1210,
+  "status": "validacao",
+  "colaborador": "MAURICIO bitercurt de oliveira",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 62-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL EXG-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1210,
+  "status": "validacao",
+  "colaborador": "FRANCISNETE LIMA",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 38 -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL P -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1210,
+  "status": "validacao",
+  "colaborador": "Paulo Henrique de matos zwarg",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL G -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1210,
+  "status": "validacao",
+  "colaborador": "ENIVALDO PEREIRA RAMOS",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "ROMILDO ALMEIDA DA ROCHA",
+  "criadoEm": "2026-09-09T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-09T12:00:00.000Z",
+    "por": "ROMILDO ALMEIDA DA ROCHA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 42 -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL M -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1211,
+  "status": "validacao",
+  "colaborador": "Cosme Pereira da Silva",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Cosme Pereira da Silva",
+  "criadoEm": "2026-09-08T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-08T12:00:00.000Z",
+    "por": "Cosme Pereira da Silva"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 4,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS  DE SEGURANÇA AMPLA VISAO EVEREST",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1212,
+  "status": "validacao",
+  "colaborador": "Micke de Castro Firmino",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Micke de Castro Firmino",
+  "criadoEm": "2026-09-08T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-08T12:00:00.000Z",
+    "por": "Micke de Castro Firmino"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "MACACAO DE SEGURANÇA  TYVEK RISCO BIOLOGICO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 4,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS  DE SEGURANÇA AMPLA VISAO EVEREST",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1214,
+  "status": "validacao",
+  "colaborador": "ARTHUR NASCIMENTO",
+  "contrato": "BAXTER",
+  "cm": "CMR - 687.02.26",
+  "tipo": "reposicao",
+  "criadoPor": "Arthur Nascimento",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Arthur Nascimento"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "COLETE TP JALECO VERDE LIMAO RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1214,
+  "status": "validacao",
+  "colaborador": "HELOISA SILVA",
+  "contrato": "BAXTER",
+  "cm": "CMR - 687.02.26",
+  "tipo": "reposicao",
+  "criadoPor": "Arthur Nascimento",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Arthur Nascimento"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "COLETE TP JALECO VERDE LIMAO RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  BRANCO",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1217,
+  "status": "validacao",
+  "colaborador": "Gustavo lapreato de Faria",
+  "contrato": "PHARLAB",
+  "cm": "CMR - 633.08.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON CORTI",
+  "criadoEm": "2026-09-17T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-17T12:00:00.000Z",
+    "por": "ROBSON CORTI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "CREME PROTETOR PARA AS MÃOS (LUVA QUIMICA)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO FUME",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1217,
+  "status": "validacao",
+  "colaborador": "Pedro Antonio Goulart Ferreira Lima",
+  "contrato": "PHARLAB",
+  "cm": "CMR - 633.08.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON CORTI",
+  "criadoEm": "2026-09-17T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-17T12:00:00.000Z",
+    "por": "ROBSON CORTI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "CREME PROTETOR PARA AS MÃOS (LUVA QUIMICA)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO FUME",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1217,
+  "status": "validacao",
+  "colaborador": "Sergio Goulart Ferreira Lima",
+  "contrato": "PHARLAB",
+  "cm": "CMR - 633.08.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON CORTI",
+  "criadoEm": "2026-09-17T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-17T12:00:00.000Z",
+    "por": "ROBSON CORTI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "CREME PROTETOR PARA AS MÃOS (LUVA QUIMICA)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO FUME",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1218,
+  "status": "validacao",
+  "colaborador": "Eduardo da Silva Ferreira",
+  "contrato": "EMBARÉ",
+  "cm": "CMR - 564.12.21",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON CORTI",
+  "criadoEm": "2026-09-17T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-17T12:00:00.000Z",
+    "por": "ROBSON CORTI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "CREME PROTETOR PARA AS MÃOS (LUVA QUIMICA)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO FUME",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1218,
+  "status": "validacao",
+  "colaborador": "Alexandre da Costa Alves",
+  "contrato": "EMBARÉ",
+  "cm": "CMR - 564.12.21",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON CORTI",
+  "criadoEm": "2026-09-17T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-17T12:00:00.000Z",
+    "por": "ROBSON CORTI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "CREME PROTETOR PARA AS MÃOS (LUVA QUIMICA)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA LEOPARDO FUME",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1231,
+  "status": "validacao",
+  "colaborador": "JONAS DA SILVA NASCIMENTO",
+  "contrato": "LEROY CAJAMAR",
+  "cm": "CMF - 255.11.23",
+  "tipo": "reposicao",
+  "criadoPor": "RENATO SILVESTRI",
+  "criadoEm": "2026-09-21T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-21T12:00:00.000Z",
+    "por": "RENATO SILVESTRI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CAMISA NR 10 AZUL EXG-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1233,
+  "status": "validacao",
+  "colaborador": "Vanderlei Bispo",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Rodrigo Pierangelli",
+  "criadoEm": "2026-09-22T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-22T12:00:00.000Z",
+    "por": "Rodrigo Pierangelli"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "LUVA ANTICORTE PRETA SS 1007",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS  DE SEGURANÇA AMPLA VISAO EVEREST",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1234,
+  "status": "validacao",
+  "colaborador": "Higor de Melo Soares",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Rodrigo Pierangelli",
+  "criadoEm": "2026-09-22T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-22T12:00:00.000Z",
+    "por": "Rodrigo Pierangelli"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "LUVA ANTICORTE PRETA SS 1007",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS  DE SEGURANÇA AMPLA VISAO EVEREST",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1236,
+  "status": "validacao",
+  "colaborador": "José Audo",
+  "contrato": "INSTITUTO DO SONO",
+  "cm": "CMF 288.09.26",
+  "tipo": "reposicao",
+  "criadoPor": "João Paulo de Godoy",
+  "criadoEm": "2026-09-23T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-23T12:00:00.000Z",
+    "por": "João Paulo de Godoy"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 48",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1237,
+  "status": "validacao",
+  "colaborador": "JONAS HENRIQUE",
+  "contrato": "LEROY MERLIN CIA BRASILEIRA BRICOLM - CD CAJAMAR",
+  "cm": "CMF 255.11.23",
+  "tipo": "reposicao",
+  "criadoPor": "RAFAEL RIBEIRO",
+  "criadoEm": "2026-09-24T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-24T12:00:00.000Z",
+    "por": "RAFAEL RIBEIRO"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA NR 10 AZUL 50 -REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1239,
+  "status": "validacao",
+  "colaborador": "ALESSANDRO BRAGA DOS SANTOS",
+  "contrato": "LUXOTTICA SUMARÉ",
+  "cm": "CMR - 649.01.25",
+  "tipo": "troca",
+  "criadoPor": "HENRIQUE BERTINI",
+  "criadoEm": "2026-09-24T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-24T12:00:00.000Z",
+    "por": "HENRIQUE BERTINI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 54",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "COLETE TP JALECO LARANJA RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1240,
+  "status": "validacao",
+  "colaborador": "MARCOS ANTONIO CORREIA",
+  "contrato": "DHL OSASCO",
+  "cm": "CMR:647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "FABIANO OLIVEIRA",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "FABIANO OLIVEIRA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "COLETE TP JALECO LARANJA RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1241,
+  "status": "validacao",
+  "colaborador": "ANDERSON MORATELLI LOPES",
+  "contrato": "DHL ITAPOÁ",
+  "cm": "CMR - 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "William dos Santos",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "William dos Santos"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "JAPONA TERMICA CAMARA FRIA XG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CALÇA TERMICA CAMARA FRIA 54",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA TERMICA CAMARA FRIA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "MEIA TERMICA CAMARA FRIA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1242,
+  "status": "validacao",
+  "colaborador": "CICERO MIGUEL CORREIA DE SOUZA",
+  "contrato": "DHL ITAPOÁ",
+  "cm": "CMR - 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "William dos Santos",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "William dos Santos"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "JAPONA TERMICA CAMARA FRIA G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CALÇA TERMICA CAMARA FRIA 54",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA TERMICA CAMARA FRIA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "MEIA TERMICA CAMARA FRIA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1243,
+  "status": "validacao",
+  "colaborador": "ORLENO CORREA DOS SANTOS",
+  "contrato": "DHL ITAPOÁ",
+  "cm": "CMR - 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "William dos Santos",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "William dos Santos"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "JAPONA TERMICA CAMARA FRIA XG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CALÇA TERMICA CAMARA FRIA 54",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "LUVA TERMICA CAMARA FRIA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "MEIA TERMICA CAMARA FRIA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1244,
+  "status": "validacao",
+  "colaborador": "WILLIAM DOS SANTOS",
+  "contrato": "DHL GUARULHOS",
+  "cm": "CMR - 647.12.24",
+  "tipo": "reposicao",
+  "criadoPor": "William dos Santos",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "William dos Santos"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "COLETE TP JALECO LARANJA RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO PRETA - SUPERVISOR G1",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CALÇA BEGE - SUPERVISOR 52",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA DE BOTÃO - SUPERVISOR EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "JAQUETA - SUPERVISOR G1",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "SUETER (BLUSA) DE LÃ - SUPERVISOR G1",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1246,
+  "status": "validacao",
+  "colaborador": "Glabison Jose da Silva",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON CORTI",
+  "criadoEm": "2026-09-30T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-30T12:00:00.000Z",
+    "por": "ROBSON CORTI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CREME PROTETOR PARA AS MÃOS (LUVA QUIMICA)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 52",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAMISA BRIM AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CALÇA BRIM AZUL 52",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1246,
+  "status": "validacao",
+  "colaborador": "Igo Barbosa de Jorge Ferreira",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON CORTI",
+  "criadoEm": "2026-09-30T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-30T12:00:00.000Z",
+    "por": "ROBSON CORTI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "PROTETOR SOLAR",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CREME PROTETOR PARA AS MÃOS (LUVA QUIMICA)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA LATEX RANHURADA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 52",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1247,
+  "status": "validacao",
+  "colaborador": "ANTHUANE FERNANDO PAULINO BRITO",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Revisão 19\n11/08/2025",
+  "criadoEm": "2026-09-29T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-29T12:00:00.000Z",
+    "por": "Revisão 19\n11/08/2025"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAPACETE DE SEGURANÇA  AZUL",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BONE CASQUETE",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL GG-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 44-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1255,
+  "status": "validacao",
+  "colaborador": "Fernando Assis Jacomo",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Robson Corti",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "Robson Corti"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1256,
+  "status": "validacao",
+  "colaborador": "Equipe Manutenção",
+  "contrato": "COLGATE ANCHIETA JAGUARÉ",
+  "cm": "CMR-AO 4130216",
+  "tipo": "reposicao",
+  "criadoPor": "RODRIGO JESUS",
+  "criadoEm": "2026-09-30T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-30T12:00:00.000Z",
+    "por": "RODRIGO JESUS"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 100,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "LUVA ANTICORTE PRETA SS 1007",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1257,
+  "status": "validacao",
+  "colaborador": "JOSE LIORDE BRITO SILVA",
+  "contrato": "COLGATE ANCHIETA JAGUARÉ",
+  "cm": "CMA - 413.02.16",
+  "tipo": "troca",
+  "criadoPor": "CHARLHES FARIAS SALES",
+  "criadoEm": "2026-10-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-01T12:00:00.000Z",
+    "por": "CHARLHES FARIAS SALES"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1258,
+  "status": "validacao",
+  "colaborador": "JOSÉ ADELMO",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "HENRIQUE BERTINI",
+  "criadoEm": "2026-09-23T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-23T12:00:00.000Z",
+    "por": "HENRIQUE BERTINI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1258,
+  "status": "validacao",
+  "colaborador": "VINICIUS HENRIQUE MINEIRO",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "HENRIQUE BERTINI",
+  "criadoEm": "2026-09-23T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-23T12:00:00.000Z",
+    "por": "HENRIQUE BERTINI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL GG-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 6,
+    "nome": "LUVA ANTICORTE PRETA SS 1007",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1258,
+  "status": "validacao",
+  "colaborador": "HENRIQUE BERTINI",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "HENRIQUE BERTINI",
+  "criadoEm": "2026-09-23T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-23T12:00:00.000Z",
+    "por": "HENRIQUE BERTINI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "COLETE TP JALECO LARANJA RFX S/ BOLSO VICSA VIC71260 VD",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 10,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO PRETA - SUPERVISOR XG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA BEGE - SUPERVISOR 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "JAQUETA - SUPERVISOR EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1258,
+  "status": "validacao",
+  "colaborador": "ALESSANDRO BRAGA",
+  "contrato": "LUXOTTICA SUMARÉ",
+  "cm": "CMR - 649.01.25",
+  "tipo": "troca",
+  "criadoPor": "HENRIQUE BERTINI",
+  "criadoEm": "2026-09-23T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-23T12:00:00.000Z",
+    "por": "HENRIQUE BERTINI"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 58",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1259,
+  "status": "validacao",
+  "colaborador": "ADAILTON ANDRADE SANTOS",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "ROBSON BOAVENTURA",
+  "criadoEm": "2026-08-21T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-21T12:00:00.000Z",
+    "por": "ROBSON BOAVENTURA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "OCULOS DE SEGURANÇA  AGUIA INCOLOR DANNY",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISA POLO AZUL  M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "LUVA ANTICORTE PRETA SS 1007",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1260,
+  "status": "validacao",
+  "colaborador": "PEDRO ARTHUR MINUCCI",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON BOAVENTURA",
+  "criadoEm": "2026-08-21T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-08-21T12:00:00.000Z",
+    "por": "ROBSON BOAVENTURA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 58",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 3,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1261,
+  "status": "validacao",
+  "colaborador": "WANDERSON DE LEMOS DIAS",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "ROBSON BOAVENTURA",
+  "criadoEm": "2026-09-10T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-10T12:00:00.000Z",
+    "por": "ROBSON BOAVENTURA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 46",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL  GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 43",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1261,
+  "status": "validacao",
+  "colaborador": "PEDRO ARTUR MINUCCI",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON BOAVENTURA",
+  "criadoEm": "2026-09-10T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-10T12:00:00.000Z",
+    "por": "ROBSON BOAVENTURA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 3,
+    "nome": "CALÇA JEANS AZUL 58",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 60",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1261,
+  "status": "validacao",
+  "colaborador": "MARCELIO FRANCISCO FERREIRA",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "reposicao",
+  "criadoPor": "ROBSON BOAVENTURA",
+  "criadoEm": "2026-09-10T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-10T12:00:00.000Z",
+    "por": "ROBSON BOAVENTURA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISA NR 10 AZUL EXG-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1261,
+  "status": "validacao",
+  "colaborador": "JOILSON DA SILVA RODRIGUES",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "ROBSON BOAVENTURA",
+  "criadoEm": "2026-09-10T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-10T12:00:00.000Z",
+    "por": "ROBSON BOAVENTURA"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 5,
+    "nome": "PROTETOR AURICULAR TIPO PLUG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 40,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Edson Batista",
+  "contrato": "LUXOTTICA SUMARÉ CD",
+  "cm": "CMR - 554.08.21",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 38",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "LUVA ANTICORTE CINZA SS 1008",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Adelmo",
+  "contrato": "LUXOTTICA SUMARÉ",
+  "cm": "CMR - 554.08.21",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 39",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Robson Boaventura",
+  "contrato": "LUXOTTICA CAMPINAS",
+  "cm": "CMR - 636.09.24",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 20,
+    "nome": "MASCARA SEMI DESCARTAVEL PFF2",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Rafael Leme de Moraes",
+  "contrato": "SANTHER",
+  "cm": "CMR - 652.02.25",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Robson Aparecido",
+  "contrato": "SANTHER",
+  "cm": "CMR - 652.02.25",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISETA ( OBRAS SEM GOLA ) AZUL EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA NR 10 AZUL 44-REFLETIVO LARANJA",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BLUSA DE FRIO -MOLETON EXG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Noan Nunez",
+  "contrato": "DSM MAIRINQUE",
+  "cm": "CMR - 596.05.23",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CARTUCHO 6003 PARA VAPORES ORGANICOS E GASES ACIDOS 3M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Yuri Paschoal",
+  "contrato": "DSM MAIRINQUE",
+  "cm": "CMR - 596.05.23",
+  "tipo": "troca",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CARTUCHO 6003 PARA VAPORES ORGANICOS E GASES ACIDOS 3M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1262,
+  "status": "validacao",
+  "colaborador": "Victor de Nizo",
+  "contrato": "DSM MAIRINQUE",
+  "cm": "CMR - 596.05.23",
+  "tipo": "reposicao",
+  "criadoPor": "Alexandre Bulgarim",
+  "criadoEm": "2026-09-14T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-14T12:00:00.000Z",
+    "por": "Alexandre Bulgarim"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CARTUCHO 6003 PARA VAPORES ORGANICOS E GASES ACIDOS 3M",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "RESPIRADOR FACIAL INTEIRO 6800  (COM CARTUCHO 6003, FILTRO 5N 511/ e RETENTOR 501)",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1263,
+  "status": "validacao",
+  "colaborador": "Danilo Gomes Ferreira",
+  "contrato": "COLGATE ANCHIETA JAGUARÉ",
+  "cm": "CMR-AO 4130216",
+  "tipo": "troca",
+  "criadoPor": "CHARLHES FARIAS SALES",
+  "criadoEm": "2026-10-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-01T12:00:00.000Z",
+    "por": "CHARLHES FARIAS SALES"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1263,
+  "status": "validacao",
+  "colaborador": "Jose Carlos Paiva",
+  "contrato": "COLGATE ANCHIETA JAGUARÉ",
+  "cm": "CMR-AO 4130216",
+  "tipo": "troca",
+  "criadoPor": "CHARLHES FARIAS SALES",
+  "criadoEm": "2026-10-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-01T12:00:00.000Z",
+    "por": "CHARLHES FARIAS SALES"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1263,
+  "status": "validacao",
+  "colaborador": "Alex C. da Silva",
+  "contrato": "COLGATE ANCHIETA JAGUARÉ",
+  "cm": "CMR-AO 4130216",
+  "tipo": "troca",
+  "criadoPor": "CHARLHES FARIAS SALES",
+  "criadoEm": "2026-10-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-01T12:00:00.000Z",
+    "por": "CHARLHES FARIAS SALES"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1263,
+  "status": "validacao",
+  "colaborador": "Jose Liorde Brito Silva",
+  "contrato": "COLGATE ANCHIETA JAGUARÉ",
+  "cm": "CMR-AO 4130216",
+  "tipo": "troca",
+  "criadoPor": "CHARLHES FARIAS SALES",
+  "criadoEm": "2026-10-01T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-10-01T12:00:00.000Z",
+    "por": "CHARLHES FARIAS SALES"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CAMISA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CALÇA BRIM AZUL COM REFLETIVO LARANJA 44",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1272,
+  "status": "validacao",
+  "colaborador": "Rodrigo Alves",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Robson Corti",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "Robson Corti"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 46",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL  GG",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 40",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ },
+ {
+  "num": 1273,
+  "status": "validacao",
+  "colaborador": "Luan Gomes",
+  "contrato": "VOLANTE SP MANUTENÇÃO",
+  "cm": "VOLANTE SP-AO",
+  "tipo": "reposicao",
+  "criadoPor": "Robson Corti",
+  "criadoEm": "2026-09-28T12:00:00.000Z",
+  "origem": "importacao-setembro",
+  "lote": "setembro-2026",
+  "exemplo": false,
+  "estoqueBaixado": false,
+  "historico": [
+   {
+    "status": "validacao",
+    "em": "2026-09-28T12:00:00.000Z",
+    "por": "Robson Corti"
+   }
+  ],
+  "itens": [
+   {
+    "qtd": 2,
+    "nome": "CALÇA JEANS AZUL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 2,
+    "nome": "CAMISA POLO AZUL  G",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   },
+   {
+    "qtd": 1,
+    "nome": "BOTINA DE SEGURANÇA NOBUCK BRACOL 42",
+    "ca": "",
+    "qtdSep": 0,
+    "separado": false,
+    "pendente": false
+   }
+  ]
+ }
+]
