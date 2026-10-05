@@ -700,7 +700,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 8</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 9</span></p>
     </form>
   </div>
 </div>
@@ -2304,6 +2304,7 @@ function liberarLogin(){
   if(b.disabled){ b.disabled = false; b.textContent = 'Entrar'; }
 }
 function entrarComo(u){
+  if(eu.id !== u.id) botLimpar();
   eu = {id:u.id, login:(u.email || u.login || ''), nome:u.nome, papel:u.papel};
   $('#login-fundo').hidden = true;
   $('#lg-senha').value = '';
@@ -2318,6 +2319,7 @@ function entrarComo(u){
   if(DB && u.id) { try{ DB.doc('usuarios/' + u.id).update({ultimoAcesso:new Date().toISOString()}); }catch(e){} }
 }
 function sair(msg){
+  botLimpar();
   ficha.solicitante = '';
   const c = $('#f-solicitante'); if(c) c.value = '';
   eu = {id:null, login:'', nome:'', papel:'supervisor'};
@@ -2927,6 +2929,17 @@ function botChips(){
     b.addEventListener('click', () => botPerguntar(c));
     box.appendChild(b);
   });
+}
+/* a conversa é de quem está logado: trocou de usuário, começa do zero */
+function botLimpar(){
+  const m = document.getElementById('bot-msgs');
+  if(m) m.textContent = '';
+  const c = document.getElementById('bot-chips');
+  if(c) c.textContent = '';
+  const t = document.getElementById('bot-txt');
+  if(t) t.value = '';
+  const pa = document.getElementById('bot-painel');
+  if(pa) pa.hidden = true;
 }
 function botAbrir(){
   if(!botPode()) return;
@@ -4379,6 +4392,7 @@ function abrirOuvintes(db){
 
     if(!user){
       fecharOuvintes();
+      botLimpar();
       USUARIOS = []; SOLICITACOES = []; MOVIMENTOS = []; COLABORADORES = [];
       usuariosCarregados = false;
       if(eu.id){ eu = {id:null, login:'', nome:'', papel:'supervisor'}; pintarChip(); aplicarAcesso(); }
