@@ -650,7 +650,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 5</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 7</span></p>
     </form>
   </div>
 </div>
@@ -2164,14 +2164,14 @@ const PAPEL_ACESSO = {
   admin:            ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','importar','usuarios'],
   seguranca:        ['solicitacao','controle','dashboard','pendencias'],
   almoxarifado:     ['controle','dashboard','estoque'],
-  almoxarifado_adm: ['controle','dashboard','colaboradores','estoque','importar'],
+  almoxarifado_adm: ['controle','dashboard','pendencias','colaboradores','estoque'],
   supervisor:       ['solicitacao'],
 };
 const PAPEL_DESC = {
   admin:'Faz tudo: valida, separa, entrega, cancela ou congela ficha e gerencia os usuários.',
   seguranca:'Valida as solicitações, gera a Ficha de EPI, emite fichas para assinatura e acompanha as Pendências do almoxarifado.',
   almoxarifado:'Separa os itens no Controle (inclusive quantidade parcial) e lança saídas no Estoque.',
-  almoxarifado_adm:'Separação e Estoque, mais a base de Colaboradores e a importação de histórico.',
+  almoxarifado_adm:'Separação, Pendências e Estoque, mais a base de Colaboradores.',
   supervisor:'Abre solicitações, anexa a evidência da troca e acompanha só as fichas que ele mesmo enviou.',
 };
 const ABA_ROT = {solicitacao:'Solicitação',controle:'Controle',dashboard:'Dashboard',pendencias:'Pendências',
@@ -2583,18 +2583,8 @@ document.querySelectorAll('.aba').forEach(b => {
     if(b.dataset.pg === 'usuarios') renderUsuarios();
   });
 });
-function atualizarAbaPendencias(){
-  const pode = eu.papel === 'seguranca';
-  const restritas = [['aba-pendencias','pg-pendencias']];
-  restritas.forEach(([idBtn, idPg]) => {
-    const btn = $('#'+idBtn); btn.hidden = !pode;
-    if(!pode && !$('#'+idPg).hidden){
-      $('#'+idPg).hidden = true; $('#pg-solicitacao').hidden = false;
-      document.querySelectorAll('.aba').forEach(o => o.setAttribute('aria-selected', String(o.dataset.pg === 'solicitacao')));
-    }
-  });
-}
-atualizarAbaPendencias();
+/* o controle de abas é feito por aplicarAcesso(), acima */
+aplicarAcesso();
 
 /* ================= kanban ================= */
 /* quanto foi de fato separado de um item. Fichas antigas só tinham o booleano. */
