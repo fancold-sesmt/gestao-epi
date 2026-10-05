@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Concluir setembro · Fluxo de EPI</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:#050A26;color:#EDF2FF;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  .cx{width:100%;max-width:560px;background:#101A47;border:1px solid #33447A;border-radius:14px;padding:28px}
+  h1{font-size:21px;margin:0 0 6px}
+  p{color:#A3B4DC;font-size:13.5px;margin:0 0 16px}
+  label{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#A3B4DC;margin-bottom:4px}
+  input{width:100%;box-sizing:border-box;background:#050A26;border:1px solid #33447A;border-radius:6px;
+    padding:9px 10px;color:#EDF2FF;font:inherit;margin-bottom:12px}
+  button{width:100%;border:0;border-radius:8px;padding:11px;font:inherit;font-weight:700;cursor:pointer;
+    background:linear-gradient(135deg,#2E7BFF,#1550C8);color:#fff;margin-top:4px}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  button.sec{background:none;border:1px solid #33447A;color:#A3B4DC;font-weight:600}
+  #log{margin-top:16px;font-size:13px;font-family:ui-monospace,monospace;color:#A3B4DC;
+    max-height:320px;overflow:auto;white-space:pre-wrap;line-height:1.55}
+  .ok{color:#36AD6B}.err{color:#E8A15C}
+  .box{background:#050A26;border:1px solid #24325F;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px}
+  .box b{color:#7FB0FF}
+</style>
+</head>
+<body>
+<div class="cx">
+  <h1>Concluir as fichas de setembro</h1>
+  <p>Move todas as fichas do lote <b>setembro-2026</b> de Validação direto para <b>Concluído</b>
+     e gera a saída de estoque de cada item — é isso que faz o custo aparecer na aba Estoque.</p>
+  <div class="box">
+    Marca os itens como separados · grava o histórico das etapas<br>
+    Gera uma saída por item, com a data original da ficha<br>
+    Rodar duas vezes <b>não</b> duplica: as saídas têm código fixo
+  </div>
+  <label for="e">E-mail de administrador</label><input id="e" type="email" autocomplete="username">
+  <label for="s">Senha</label><input id="s" type="password" autocomplete="current-password">
+  <button id="b">Entrar e concluir tudo</button>
+  <button id="d" class="sec">Desfazer (volta para Validação e apaga as saídas)</button>
+  <div id="log"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore, doc, setDoc, updateDoc, deleteDoc, collection, getDocs }
+  from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { FIREBASE_CONFIG } from "./firebase-config.js";
+
+const app  = initializeApp(FIREBASE_CONFIG);
+const auth = getAuth(app), fs = getFirestore(app);
+const log  = document.getElementById('log');
+const diz  = (t,c)=>{const d=document.createElement('div'); if(c)d.className=c; d.textContent=t; log.appendChild(d); log.scrollTop=1e6;};
+const LOTE   = 'setembro-2026';
+const ORIGEM = 'conclusao-setembro';
+
+async function entrar(){
+  await signInWithEmailAndPassword(auth,
+    document.getElementById('e').value.trim().toLowerCase(),
+    document.getElementById('s').value);
+}
+async function fichasDoLote(){
+  const snap = await getDocs(collection(fs,'solicitacoes'));
+  return snap.docs.filter(x => x.data().lote === LOTE).map(x => ({id:x.id, ...x.data()}));
+}
+
+document.getElementById('b').addEventListener('click', async () => {
+  const b = document.getElementById('b'); b.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar(); diz('Conectado.','ok');
+    const fichas = await fichasDoLote();
+    if(!fichas.length){
+      diz('Nenhuma ficha do lote setembro-2026 foi encontrada. A importação já rodou?','err');
+      b.disabled = false; return;
+    }
+    diz(fichas.length + ' fichas do lote encontradas.');
+
+    let nF = 0, nS = 0, erros = 0;
+    for(const s of fichas){
+      /* data da própria ficha, para o custo cair em setembro */
+      const quando = s.criadoEm || new Date().toISOString();
+      const por    = 'Importação de setembro';
+
+      /* 1) saídas de estoque — código fixo por ficha+item, então reexecutar substitui */
+      const itens = (s.itens || []).map((it, i) => {
+        const q = it.qtd || 0;
+        if(q > 0){
+          const sid = 'setout-' + s.id + '-' + i;
+          setDoc(doc(fs,'estoque',sid), {
+            tipo:'saida', epi: it.nome, ca: it.ca || '', quantidade: q,
+            colaborador: s.colaborador || '', contrato: s.contrato || '', cm: s.cm || '',
+            retiradoPor: 'Almoxarifado (entrega pessoal)',
+            origem: ORIGEM, lote: LOTE, solicitacaoNum: s.num,
+            data: quando, criadoPor: por, criadoEm: quando,
+          }).catch(e => { erros++; diz('  saída falhou Nº' + s.num + ' / ' + it.nome + ': ' + e.message,'err'); });
+          nS++;
+        }
+        return Object.assign({}, it, {qtdSep: q, separado: true, pendente: false});
+      });
+
+      /* 2) a ficha em si */
+      const hist = (s.historico || []).slice();
+      ['separacao','entrega','concluido'].forEach(et => {
+        if(!hist.some(h => h.status === et)) hist.push({status:et, em:quando, por});
+      });
+      try{
+        await updateDoc(doc(fs,'solicitacoes',s.id), {
+          itens, status:'concluido', estoqueBaixado:true, historico:hist,
+        });
+        nF++;
+        if(nF % 10 === 0) diz('  ' + nF + ' fichas concluídas…');
+      }catch(e){ erros++; diz('  ficha falhou Nº' + s.num + ': ' + e.message,'err'); }
+    }
+    diz('');
+    diz(nF + ' fichas em Concluído · ' + nS + ' saídas de estoque geradas'
+        + (erros ? ' · ' + erros + ' falhas' : '') + '.', erros ? 'err' : 'ok');
+    if(!erros) diz('Pronto. Abra o sistema e veja a aba Estoque.','ok');
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+  b.disabled = false;
+});
+
+document.getElementById('d').addEventListener('click', async () => {
+  const d = document.getElementById('d'); d.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar();
+    const snap = await getDocs(collection(fs,'estoque'));
+    let nS = 0;
+    for(const x of snap.docs){ if(x.data().origem === ORIGEM){ await deleteDoc(x.ref); nS++; } }
+    const fichas = await fichasDoLote();
+    let nF = 0;
+    for(const s of fichas){
+      const itens = (s.itens || []).map(it => Object.assign({}, it, {qtdSep:0, separado:false}));
+      const hist  = (s.historico || []).filter(h => h.status === 'validacao');
+      await updateDoc(doc(fs,'solicitacoes',s.id), {
+        itens, status:'validacao', estoqueBaixado:false, historico:hist,
+      });
+      nF++;
+    }
+    diz(nS + ' saídas apagadas · ' + nF + ' fichas de volta em Validação.','ok');
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+  d.disabled = false;
+});
+</script>
+</body>
+</html>
