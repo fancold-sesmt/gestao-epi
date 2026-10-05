@@ -527,6 +527,9 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .cartao:hover{border-color:var(--cor)}
 .cartao{touch-action:manipulation;border-radius:8px}
 .cartao.arrastando{opacity:.4}
+.cartao-travado{cursor:default;opacity:.82}
+.cartao-travado:hover{border-color:var(--linha)}
+.cartao-travado .cartao-nome{color:var(--suave)}
 .col-corpo.alvo{background:var(--cor-f);outline:2px dashed var(--cor);outline-offset:-4px;border-radius:5px}
 .g-voltar{border:0;background:none;color:var(--suave);font-size:12.5px;cursor:pointer;
   text-decoration:underline;text-underline-offset:2px;padding:2px}
@@ -700,7 +703,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 9</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 10</span></p>
     </form>
   </div>
 </div>
@@ -1303,6 +1306,24 @@ const etapa = id => ETAPAS.find(e => e.id === id) || ETAPAS[0];
 const AVANCO = {
   validacao:  {para:'separacao', papel:'seguranca', rot:'Aprovar e gerar Ficha de EPI (enviar ao almoxarifado)'},
 };
+/* Quem pode ABRIR e mexer na ficha em cada etapa. Os demais veem o cartão no
+   kanban, mas não entram nele. */
+const DONOS_ETAPA = {
+  validacao: ['admin','seguranca'],
+  separacao: ['admin','almoxarifado','almoxarifado_adm'],
+  envio:     ['admin','seguranca'],
+  entrega:   ['admin','almoxarifado','almoxarifado_adm'],
+  concluido: ['admin','seguranca','almoxarifado','almoxarifado_adm'],
+};
+const QUEM_ETAPA = {
+  validacao:'a Segurança do Trabalho',
+  separacao:'o Almoxarifado',
+  envio:'a Segurança do Trabalho',
+  entrega:'o Almoxarifado',
+  concluido:'',
+};
+const podeAbrirFicha = s => (DONOS_ETAPA[(s && s.status) || ''] || []).includes(eu.papel);
+
 const PAPEL_ROT = {supervisor:'Supervisor', seguranca:'Segurança do Trabalho', almoxarifado:'Almoxarifado Operacional', almoxarifado_adm:'Almoxarifado ADM', admin:'Administrador'};
 const ehAdmin = () => eu.papel === 'admin';
 
@@ -3048,8 +3069,11 @@ function renderKanban(){
     });
     if(!doStatus.length) corpo.appendChild(cria('p','col-vazia','Arraste um cartão para cá.'));
     doStatus.forEach(s => {
-      const c = cria('button','cartao' + (s.congelada ? ' cartao-congelado' : '')); c.type = 'button';
-      c.draggable = !s.congelada;
+      const meu = podeAbrirFicha(s);
+      const c = cria('button','cartao' + (s.congelada ? ' cartao-congelado' : '') + (meu ? '' : ' cartao-travado'));
+      c.type = 'button';
+      c.draggable = !s.congelada && meu;
+      if(!meu) c.title = 'Esta ficha está com ' + (QUEM_ETAPA[s.status] || 'outro setor') + '. Você acompanha, mas não edita.';
       c.addEventListener('dragstart', ev => {
         ev.dataTransfer.setData('text/plain', s.id);
         ev.dataTransfer.effectAllowed = 'move';
@@ -3068,7 +3092,10 @@ function renderKanban(){
       const barra = cria('div','barra'); const i = cria('i'); i.style.width = p.pct + '%'; barra.appendChild(i);
       rod.append(barra, cria('span','cartao-frac', p.fez + '/' + p.tot));
       c.appendChild(rod);
-      c.addEventListener('click', () => abrirGaveta(s.id));
+      c.addEventListener('click', () => {
+        if(!podeAbrirFicha(s)){ avisoTravado(s); return; }
+        abrirGaveta(s.id);
+      });
       corpo.appendChild(c);
     });
     col.appendChild(corpo);
@@ -3105,9 +3132,20 @@ function renderKanban(){
 }
 
 /* ================= gaveta ================= */
+function avisoTravado(s){
+  const alvo = $('#c-aviso');
+  alvo.textContent = '';
+  alvo.appendChild(cria('p','aviso',
+    'A ficha Nº' + s.num + ' está em ' + etapa(s.status).rot + ', com ' +
+    (QUEM_ETAPA[s.status] || 'outro setor') + '. Você acompanha pelo quadro, mas não edita esta etapa.'));
+  clearTimeout(avisoTravado._t);
+  avisoTravado._t = setTimeout(() => { alvo.textContent = ''; }, 6000);
+}
+
 function abrirGaveta(id){
   const s = SOLICITACOES.find(x => x.id === id);
   if(!s){ fecharGaveta(); return; }
+  if(!podeAbrirFicha(s)){ fecharGaveta(); avisoTravado(s); return; }
   abertaId = id;
   const et = etapa(s.status), p = progresso(s);
   const idxAtual = ETAPAS.findIndex(e => e.id === s.status);
