@@ -221,10 +221,24 @@ h1,h2,h3{margin:0}
 .auto-tag{display:inline-block;margin-left:6px;font-size:9.5px;font-weight:700;text-transform:uppercase;
   letter-spacing:.04em;color:var(--e1);background:rgba(146,132,230,.15);border-radius:4px;padding:1px 6px;vertical-align:middle}
 .campo label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--suave)}
-.campo input,.campo select{background:rgba(5,10,38,.6);border:1px solid var(--linha-forte);
-  border-radius:6px;padding:7px 9px;width:100%;min-width:0;color:var(--gelo)}
-.campo input:hover,.campo select:hover{border-color:var(--azul)}
-.campo input::placeholder{color:var(--tenue)}
+.campo input,.campo select,.campo textarea{background:rgba(5,10,38,.6);border:1px solid var(--linha-forte);
+  border-radius:6px;padding:7px 9px;width:100%;min-width:0;color:var(--gelo);box-sizing:border-box;
+  font:inherit;resize:vertical}
+.campo input:hover,.campo select:hover,.campo textarea:hover{border-color:var(--azul)}
+.campo input::placeholder,.campo textarea::placeholder{color:var(--tenue)}
+.btn-mini{padding:4px 10px;font-size:12px}
+.an-card{border:1px solid var(--linha-forte);border-radius:8px;padding:10px;margin-top:8px;
+  background:rgba(5,10,38,.45)}
+.an-card.an-feita{opacity:.5}
+.an-card.an-ativa{border-color:var(--azul);box-shadow:inset 0 0 0 1px var(--azul)}
+.an-nome{font-weight:600;font-size:13.5px;color:var(--gelo);margin-bottom:2px}
+.an-meta{font-size:11.5px;color:var(--suave);margin-bottom:8px;line-height:1.45}
+.an-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  border-radius:999px;padding:1px 8px;margin-left:6px}
+.an-tag-ok{background:rgba(54,173,107,.18);color:var(--verde)}
+.an-tag-av{background:rgba(232,161,92,.18);color:var(--alerta)}
+#cat-orfaos select{background:rgba(5,10,38,.6);border:1px solid var(--linha-forte);border-radius:6px;
+  padding:5px 8px;color:var(--gelo);font:inherit;max-width:420px;width:100%}
 .campo-erro{border-color:var(--alerta) !important;box-shadow:0 0 0 3px rgba(232,161,92,.25);animation:tremer .35s}
 @keyframes tremer{0%,100%{transform:translateX(0)}20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-3px)}80%{transform:translateX(3px)}}
 .dupla{display:grid;grid-template-columns:86px minmax(0,1fr);gap:9px}
@@ -710,7 +724,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 14</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 16</span></p>
     </form>
   </div>
 </div>
@@ -731,6 +745,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       <button class="aba" role="tab" aria-selected="false" data-pg="pendencias" id="aba-pendencias" hidden>Pendências</button>
       <button class="aba" role="tab" aria-selected="false" data-pg="colaboradores">Colaboradores</button>
       <button class="aba" role="tab" aria-selected="false" data-pg="estoque">Estoque</button>
+      <button class="aba" role="tab" aria-selected="false" data-pg="catalogo" id="aba-catalogo" hidden>Catálogo</button>
       <button class="aba" role="tab" aria-selected="false" data-pg="importar">Importar</button>
       <button class="aba" role="tab" aria-selected="false" data-pg="usuarios" id="aba-usuarios" hidden>Usuários</button>
     </nav>
@@ -748,6 +763,16 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
 <section class="pagina" id="pg-solicitacao">
   <div class="solic">
     <aside class="rail nao-imprime">
+      <section class="bloco" id="bloco-anexo">
+        <h2>Anexar planilha</h2>
+        <div class="bloco-corpo">
+          <p class="sub" style="margin:0 0 10px">Recebeu a solicitação em planilha? Anexe aqui que o sistema lê e preenche o formulário. Você confere e envia.</p>
+          <input type="file" id="an-arquivo" accept=".xlsx,.xlsm,.xls,.csv" hidden>
+          <button class="btn btn-forte" id="an-escolher" type="button">Escolher planilha</button>
+          <p class="g-nota" id="an-status"></p>
+          <div id="an-lista"></div>
+        </div>
+      </section>
       <section class="bloco">
         <h2>Identificação</h2>
         <div class="bloco-corpo">
@@ -1065,6 +1090,63 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
     </main>
   </div>
   <datalist id="l-epis-estoque"></datalist>
+</section>
+
+<!-- ========== CATÁLOGO ========== -->
+<section class="pagina" id="pg-catalogo" hidden>
+  <div class="faixa-topo">
+    <div>
+      <h2>Catálogo de EPI</h2>
+      <p id="cat-resumo">Carregando…</p>
+    </div>
+  </div>
+  <div class="solic">
+    <aside class="rail nao-imprime">
+      <section class="bloco">
+        <h2 id="cat-form-tit">Novo item</h2>
+        <div class="bloco-corpo">
+          <div class="campo"><label for="cat-nome">Nome do EPI</label>
+            <input id="cat-nome" autocomplete="off" placeholder="ex: BOTINA MICROFIBRA C/BICO COMPOSITE"></div>
+          <div class="campo"><label for="cat-ca">CA</label>
+            <input id="cat-ca" class="mono" autocomplete="off" placeholder="ex: 19224"></div>
+          <div class="campo"><label for="cat-grupo">Grupo</label>
+            <input id="cat-grupo" list="l-cat-grupos" autocomplete="off" placeholder="EPI, Uniforme, Calçado…"></div>
+          <div class="campo"><label for="cat-custo">Custo unitário (R$)</label>
+            <input id="cat-custo" type="number" min="0" step="0.01" placeholder="ex: 118,00"></div>
+          <div class="campo"><label for="cat-apelidos">Outros nomes que significam este mesmo EPI</label>
+            <textarea id="cat-apelidos" rows="3" placeholder="um por linha — serve para as fichas antigas acharem o preço"></textarea></div>
+          <button class="btn btn-forte" id="cat-salvar" type="button">Salvar item</button>
+          <button class="btn" id="cat-cancelar" type="button" hidden>Cancelar edição</button>
+          <p class="g-nota" id="cat-status"></p>
+        </div>
+      </section>
+      <section class="bloco" id="cat-bloco-semear" hidden>
+        <h2>Primeira carga</h2>
+        <div class="bloco-corpo">
+          <p class="sub">O catálogo ainda não está no banco — o sistema está usando a lista embutida no programa. Clique abaixo para gravá-la no banco e poder editar os preços daqui.</p>
+          <button class="btn btn-forte" id="cat-semear" type="button">Gravar os itens no banco</button>
+          <p class="g-nota" id="cat-semear-status"></p>
+        </div>
+      </section>
+    </aside>
+    <main class="estoque-main">
+      <dl class="tiles" id="cat-tiles"></dl>
+
+      <section class="painel" id="cat-painel-orfaos" hidden>
+        <h3>EPI que saíram sem preço</h3>
+        <p class="sub">Nomes que apareceram nas fichas mas não bateram com nenhum item do catálogo. Escolha a que item do catálogo cada um corresponde — o preço passa a valer na hora, em todo o histórico.</p>
+        <div id="cat-orfaos"></div>
+      </section>
+
+      <section class="painel">
+        <h3>Itens do catálogo</h3>
+        <div class="campo" style="max-width:340px;margin-bottom:12px"><label for="cat-busca">Buscar</label>
+          <input id="cat-busca" autocomplete="off" placeholder="Nome, CA ou grupo"></div>
+        <div id="cat-lista"></div>
+      </section>
+    </main>
+  </div>
+  <datalist id="l-cat-grupos"></datalist>
 </section>
 
 <section class="pagina" id="pg-importar" hidden>
@@ -1788,6 +1870,311 @@ function sinalizarPendencia(id){
   el.addEventListener('change', limpar);
 }
 
+
+/* ================= anexar planilha de solicitação ================= */
+/* Lê a planilha recebida do supervisor e preenche o formulário ao lado.
+   Nada vai para a fila sozinho: quem envia continua sendo o botão Enviar. */
+let ANEXO = [];           /* fichas lidas da planilha */
+let anexoAtivo = -1;
+
+const anTxt = v => String(v == null ? '' : v).replace(/\s+/g,' ').trim();
+const anNum = v => {
+  const n = parseFloat(String(v == null ? '' : v).replace(',','.').replace(/[^\d.\-]/g,''));
+  return isFinite(n) ? n : 0;
+};
+const anTemTodas = (linha, palavras) => {
+  const txt = linha.map(anTxt).join(' | ').toUpperCase();
+  return palavras.every(p => txt.includes(p));
+};
+const anCol = (linha, palavra) => linha.findIndex(c => anTxt(c).toUpperCase().includes(palavra));
+
+/* motivo escrito na planilha -> tipo da solicitação */
+function anTipo(txt){
+  const t = anTxt(txt).toUpperCase();
+  if(/ADMISS|NOVO|CONTRAT/.test(t)) return 'admissional';
+  if(/TROCA|DANIFIC|AVARI|QUEBR|DESGAST|RASG/.test(t)) return 'troca';
+  return 'reposicao';
+}
+/* casa o contrato da planilha com a lista oficial de centros de custo */
+const anCmChave = v => String(v == null ? '' : v).toUpperCase().replace(/[^A-Z0-9]/g,'');
+function anContrato(nomePlan, cmPlan){
+  /* o CM vem escrito de mil jeitos ("CMA 647.12.24", "CMA - 647.12.24", "cma647/12/24"),
+     então compara só letras e números */
+  const cm = anCmChave(cmPlan);
+  if(cm.length > 4){
+    const porCm = CONTRATOS_CM.find(c => anCmChave(c.cm) === cm);
+    if(porCm) return porCm;
+    /* o prefixo (CMA/CMR) separa contratos que repetem o mesmo número,
+       então sem bater exatamente é mais seguro decidir pelo nome */
+  }
+  const alvo = normEpi(nomePlan);
+  if(!alvo) return null;
+  const palavras = txt => new Set(txt.split(' ').filter(x => x.length > 2));
+  const A = palavras(alvo);
+  if(!A.size) return null;
+  let melhor = null, nota = 0;
+  CONTRATOS_CM.forEach(c => {
+    const n = normEpi(c.contrato);
+    if(!n) return;
+    let p = 0;
+    if(n === alvo) p = 10;
+    else {
+      /* quanto as duas listas de palavras se sobrepõem, nos dois sentidos.
+         Assim "COLGATE JAGUARE" não vira "COLGATE PAINEIS (ANCHIETA)" por um
+         nome só em comum — na dúvida é melhor deixar em branco e ele escolher. */
+      const C = palavras(n);
+      if(!C.size) return;
+      let comuns = 0;
+      C.forEach(t => { if(A.has(t)) comuns++; });
+      p = comuns / (C.size + A.size - comuns);
+    }
+    if(p > nota){ nota = p; melhor = c; }
+  });
+  return nota >= 0.6 ? melhor : null;
+}
+/* nome do EPI da planilha -> nome do catálogo, para o custo bater */
+function anItem(nomePlan, qtd, ca){
+  const bruto = anTxt(nomePlan).toUpperCase();
+  const casado = casarEpi(bruto);
+  const doCat = casado && casado.alvo ? epiBase().find(e => e.nome === casado.alvo) : null;
+  return {
+    qtd: Math.max(1, Math.round(qtd || 1)),
+    nome: doCat ? doCat.nome : bruto,
+    ca: anTxt(ca) || (doCat ? (doCat.ca || '') : ''),
+    original: doCat && doCat.nome !== bruto ? bruto : '',
+  };
+}
+
+/* ---- formato 1: SOLICITAÇÃO DE COMPRAS (QTD | ITEM | PARA QUEM | MOTIVO) ---- */
+function anFormato1(aoa){
+  const iCab = aoa.findIndex(l => anTemTodas(l, ['QTD','ITEM']) && anTemTodas(l, ['PARA QUEM']));
+  if(iCab < 0) return null;
+  const cab = aoa[iCab];
+  const cQtd = anCol(cab,'QTD'), cItem = anCol(cab,'ITEM'),
+        cQuem = anCol(cab,'PARA QUEM'), cMot = anCol(cab,'MOTIVO'),
+        cCli = anCol(cab,'CLIENTE'), cCm = anCol(cab,'CM');
+  const porPessoa = new Map();
+  for(let i = iCab + 1; i < aoa.length; i++){
+    const l = aoa[i];
+    if(!l) continue;
+    const linhaTxt = l.map(anTxt).join('').toUpperCase();
+    if(linhaTxt.includes('NAOPREENCHER') || linhaTxt.includes('NÃOPREENCHER')) break;
+    const qtd = anNum(l[cQtd]), item = anTxt(l[cItem]);
+    if(!item || qtd <= 0) continue;
+    const quem = anTxt(l[cQuem]).toUpperCase() || 'SEM NOME';
+    if(!porPessoa.has(quem)){
+      porPessoa.set(quem, {
+        colaborador: quem,
+        clienteBruto: anTxt(cCli >= 0 ? l[cCli] : ''),
+        cmBruto: anTxt(cCm >= 0 ? l[cCm] : ''),
+        tipo: anTipo(cMot >= 0 ? l[cMot] : ''),
+        motivo: anTxt(cMot >= 0 ? l[cMot] : ''),
+        itens: [],
+      });
+    }
+    porPessoa.get(quem).itens.push(anItem(item, qtd, ''));
+  }
+  return porPessoa.size ? [...porPessoa.values()] : null;
+}
+
+/* ---- formato 2: FICHA EPI (QTDE | DESCRIÇÃO | DATA DA ENTREGA | CA) ---- */
+function anFormato2(aoa){
+  const iCab = aoa.findIndex(l => anTemTodas(l, ['QTDE']) && anTemTodas(l, ['DESCRI']));
+  if(iCab < 0) return null;
+  const cab = aoa[iCab];
+  const cQtd = anCol(cab,'QTDE'), cDesc = anCol(cab,'DESCRI'), cCa = anCol(cab,'CA');
+
+  /* rótulos soltos acima da tabela */
+  const rotulo = alvo => {
+    for(let i = 0; i < aoa.length; i++){
+      const l = aoa[i] || [];
+      for(let j = 0; j < l.length; j++){
+        const t = anTxt(l[j]).toUpperCase();
+        if(t.startsWith(alvo)){
+          const resto = anTxt(l[j]).slice(anTxt(l[j]).toUpperCase().indexOf(alvo) + alvo.length)
+            .replace(/^[:\s]+/,'');
+          if(resto) return resto;
+          for(let k = j + 1; k < l.length; k++){ const v = anTxt(l[k]); if(v) return v; }
+        }
+      }
+    }
+    return '';
+  };
+  /* contrato costuma vir numa linha solta do tipo "TOYOTA SOROCABA - CMR 611.01.24" */
+  let contratoBruto = '', cmBruto = '';
+  for(const l of aoa){
+    for(const c of (l || [])){
+      const t = anTxt(c);
+      const m = t.match(/^(.+?)\s[-–]\s*(CM[RA]?\s*[-\s]*[\d.\/]+)/i);
+      if(m && !contratoBruto){ contratoBruto = m[1]; cmBruto = m[2]; }
+    }
+  }
+  const itens = [];
+  for(let i = iCab + 1; i < aoa.length; i++){
+    const l = aoa[i]; if(!l) continue;
+    const qtd = anNum(l[cQtd]), desc = anTxt(l[cDesc]);
+    if(!desc || qtd <= 0) continue;
+    itens.push(anItem(desc, qtd, cCa >= 0 ? l[cCa] : ''));
+  }
+  if(!itens.length) return null;
+  return [{
+    colaborador: (rotulo('COLABORADOR') || rotulo('NOME')).toUpperCase(),
+    clienteBruto: contratoBruto || rotulo('EMPRESA'),
+    cmBruto, cargo: rotulo('CARGO'), cpf: rotulo('CPF'),
+    tipo: 'reposicao', motivo: '',
+    itens,
+  }];
+}
+
+/* ---- formato 3: planilha simples, uma coluna de quantidade e uma de item ---- */
+function anFormato3(aoa){
+  const iCab = aoa.findIndex(l => {
+    const t = l.map(anTxt).join('|').toUpperCase();
+    return /QTD|QUANT/.test(t) && /ITEM|EPI|DESCRI|EQUIPAMENTO/.test(t);
+  });
+  if(iCab < 0) return null;
+  const cab = aoa[iCab];
+  const cQtd = cab.findIndex(c => /QTD|QUANT/.test(anTxt(c).toUpperCase()));
+  const cItem = cab.findIndex(c => /ITEM|EPI|DESCRI|EQUIPAMENTO/.test(anTxt(c).toUpperCase()));
+  const cQuem = cab.findIndex(c => /COLABORADOR|FUNCION|PARA QUEM|NOME/.test(anTxt(c).toUpperCase()));
+  const cCtr = cab.findIndex(c => /CONTRATO|CLIENTE|OBRA|UNIDADE/.test(anTxt(c).toUpperCase()));
+  const cCm  = cab.findIndex(c => /^CM|CENTRO/.test(anTxt(c).toUpperCase()));
+  const cMot = cab.findIndex(c => /MOTIVO|TIPO/.test(anTxt(c).toUpperCase()));
+  if(cQtd < 0 || cItem < 0) return null;
+  const porPessoa = new Map();
+  for(let i = iCab + 1; i < aoa.length; i++){
+    const l = aoa[i]; if(!l) continue;
+    const qtd = anNum(l[cQtd]), item = anTxt(l[cItem]);
+    if(!item || qtd <= 0) continue;
+    const quem = (cQuem >= 0 ? anTxt(l[cQuem]).toUpperCase() : '') || 'SEM NOME';
+    if(!porPessoa.has(quem)) porPessoa.set(quem, {
+      colaborador: quem,
+      clienteBruto: cCtr >= 0 ? anTxt(l[cCtr]) : '',
+      cmBruto: cCm >= 0 ? anTxt(l[cCm]) : '',
+      tipo: anTipo(cMot >= 0 ? l[cMot] : ''),
+      motivo: cMot >= 0 ? anTxt(l[cMot]) : '',
+      itens: [],
+    });
+    porPessoa.get(quem).itens.push(anItem(item, qtd, ''));
+  }
+  return porPessoa.size ? [...porPessoa.values()] : null;
+}
+
+function anLerPlanilha(wb){
+  const achados = [];
+  wb.SheetNames.forEach(nome => {
+    const aoa = XLSX.utils.sheet_to_json(wb.Sheets[nome], {header:1, defval:'', raw:false, blankrows:true});
+    if(!aoa || !aoa.length) return;
+    const r = anFormato1(aoa) || anFormato2(aoa) || anFormato3(aoa);
+    if(r) r.forEach(f => achados.push(Object.assign({aba:nome, enviada:false}, f)));
+  });
+  /* resolve o contrato de cada ficha */
+  achados.forEach(f => {
+    const c = anContrato(f.clienteBruto, f.cmBruto);
+    f.contrato = c ? c.contrato : '';
+    f.cm = c ? c.cm : '';
+  });
+  return achados;
+}
+
+$('#an-escolher').addEventListener('click', () => $('#an-arquivo').click());
+$('#an-arquivo').addEventListener('change', async e => {
+  const arq = e.target.files && e.target.files[0];
+  e.target.value = '';
+  if(!arq) return;
+  const nota = $('#an-status');
+  if(typeof XLSX === 'undefined'){
+    nota.textContent = 'O leitor de planilhas não carregou. Recarregue a página e tente de novo.';
+    return;
+  }
+  nota.textContent = 'Lendo ' + arq.name + '…';
+  try{
+    const buf = await arq.arrayBuffer();
+    const wb = XLSX.read(buf, {cellDates:true});
+    ANEXO = anLerPlanilha(wb);
+    anexoAtivo = -1;
+    if(!ANEXO.length){
+      nota.textContent = 'Não reconheci o formato desta planilha. Ela precisa ter uma coluna de quantidade e uma de item.';
+      $('#an-lista').textContent = '';
+      return;
+    }
+    const nItens = ANEXO.reduce((a,f) => a + f.itens.length, 0);
+    nota.textContent = ANEXO.length === 1
+      ? 'Li 1 solicitação, com ' + nItens + ' ' + (nItens === 1 ? 'item' : 'itens') + '.'
+      : 'Li ' + ANEXO.length + ' solicitações (uma por colaborador), com ' + nItens + ' itens no total.';
+    anRender();
+    if(ANEXO.length === 1) anCarregar(0);
+  }catch(err){
+    nota.textContent = 'Não consegui abrir o arquivo (' + (err && err.message ? err.message : 'erro') + ').';
+  }
+});
+
+function anRender(){
+  const alvo = $('#an-lista'); alvo.textContent = '';
+  ANEXO.forEach((f, i) => {
+    const d = cria('div','an-card' + (f.enviada ? ' an-feita' : '') + (i === anexoAtivo ? ' an-ativa' : ''));
+    const nome = cria('div','an-nome', f.colaborador || 'Sem nome');
+    if(f.enviada) nome.appendChild(cria('span','an-tag an-tag-ok','enviada'));
+    else if(!f.contrato) nome.appendChild(cria('span','an-tag an-tag-av','sem contrato'));
+    d.appendChild(nome);
+    const partes = [];
+    partes.push(f.itens.length + (f.itens.length === 1 ? ' item' : ' itens'));
+    partes.push(f.contrato || ('contrato não encontrado: ' + (f.clienteBruto || '—')));
+    if(f.motivo) partes.push(f.motivo);
+    d.appendChild(cria('div','an-meta', partes.join(' · ')));
+    const b = cria('button','btn btn-mini', f.enviada ? 'Carregar de novo' : 'Carregar no formulário');
+    b.type = 'button';
+    b.addEventListener('click', () => anCarregar(i));
+    d.appendChild(b);
+    alvo.appendChild(d);
+  });
+}
+
+function anCarregar(i){
+  const f = ANEXO[i];
+  if(!f) return;
+  anexoAtivo = i;
+
+  ficha.colaborador = f.colaborador || '';
+  $('#f-colab').value = ficha.colaborador;
+
+  ficha.tipo = f.tipo || 'reposicao';
+  $('#f-tipo').value = ficha.tipo;
+
+  if(f.cm){
+    ficha.contrato = f.contrato; ficha.cm = f.cm;
+    $('#f-contrato').value = f.cm; $('#f-cm').value = f.cm;
+  }
+
+  ficha.itens = f.itens.map(it => ({qtd:it.qtd, nome:it.nome, ca:it.ca}));
+
+  renderItens(); renderFolha(); atualizarEvidencia(); anRender();
+
+  const nota = $('#an-status');
+  const trocados = f.itens.filter(it => it.original);
+  const avisos = [];
+  if(!f.cm) avisos.push('Escolha o contrato — não achei "' + (f.clienteBruto || 'em branco') + '" na lista.');
+  if(trocados.length) avisos.push(trocados.length + ' ' +
+    (trocados.length === 1 ? 'item foi casado' : 'itens foram casados') + ' com o nome do catálogo.');
+  nota.textContent = 'Formulário preenchido com ' + (f.colaborador || 'a ficha') + '. ' +
+    (avisos.length ? avisos.join(' ') : 'Confira e clique em Enviar.');
+  try{ $('#f-colab').scrollIntoView({behavior:'smooth', block:'center'}); }catch(x){}
+}
+
+function anMarcarEnviada(){
+  if(anexoAtivo >= 0 && ANEXO[anexoAtivo]){
+    ANEXO[anexoAtivo].enviada = true;
+    const faltam = ANEXO.filter(f => !f.enviada).length;
+    anexoAtivo = -1;
+    anRender();
+    if(ANEXO.length > 1){
+      $('#an-status').textContent = faltam
+        ? 'Enviada. Ainda ' + (faltam === 1 ? 'falta 1 ficha' : 'faltam ' + faltam + ' fichas') + ' desta planilha.'
+        : 'Pronto — todas as fichas desta planilha foram enviadas.';
+    }
+  }
+}
+
 /* enviar ao fluxo */
 $('#b-enviar').addEventListener('click', async () => {
   const nota = $('#f-status-envio');
@@ -1830,6 +2217,7 @@ $('#b-enviar').addEventListener('click', async () => {
     ficha.colaborador=''; ficha.itens=[]; ficha.dataRetirada=null; ficha.fotos=[];
     $('#f-colab').value=''; $('#f-data-retirada').value='';
     renderItens(); renderFolha(); atualizarEvidencia();
+    anMarcarEnviada();
   }catch(err){
     nota.textContent = err && err.code === 'quota_exceeded'
       ? 'Banco cheio — apague solicitações antigas para continuar.'
@@ -1861,7 +2249,9 @@ const TIPO_ROT = {troca:'Troca', reposicao:'Reposição', admissional:'Admission
 const tipoRot = t => TIPO_ROT[t] || 'Reposição';
 
 /* ================= custos de EPI ================= */
-const CUSTO_EPI = Object.fromEntries(DADOS.epis.filter(e => e.custo != null).map(e => [e.nome.toUpperCase(), e.custo]));
+let CATALOGO = [];            /* vem do Firestore; vazio = usa o catálogo embutido */
+let CUSTO_EPI = {};
+const epiBase = () => CATALOGO.length ? CATALOGO : DADOS.epis;
 
 /* fichas antigas usam a nomenclatura anterior ("CAPACETE DE SEGURANÇA AZUL" em vez de
    "CAPACETE CLASSE A AZUL"). O casamento abaixo é proposital conservador: exige o mesmo
@@ -1894,10 +2284,7 @@ function cobertura(antigo, catalogo){
   return C.filter(t => A.has(t)).length / C.length;
 }
 
-const EPI_INDEX = DADOS.epis.filter(e => e.custo != null).map(e => {
-  const toks = normEpi(e.nome).split(' ');
-  return {nome:e.nome, custo:e.custo, toks, tipo:toks[0], q:qualificadores(toks)};
-});
+let EPI_INDEX = [];
 
 /* equivalências diretas: casos em que o produto é o mesmo mas o nome mudou por completo */
 const DEPARA = {
@@ -1921,14 +2308,32 @@ const DEPARA = {
   'LUVA DE VAQUETA MISTA PUNHO LONGO': 'LUVA VAQUETA CANO LONGO',
   'LUVA VAQUETA MISTA PUNHO LONGO': 'LUVA VAQUETA CANO LONGO',
 };
+let DEPARA_VIVO = Object.assign({}, DEPARA);
 const _cacheCusto = new Map();
+
+/* refaz os índices de preço sempre que o catálogo muda */
+function reconstruirCatalogo(){
+  const base = epiBase().filter(e => e.ativo !== false);
+  const comPreco = base.filter(e => e.custo != null);
+  CUSTO_EPI = Object.fromEntries(comPreco.map(e => [String(e.nome).toUpperCase(), e.custo]));
+  EPI_INDEX = comPreco.map(e => {
+    const toks = normEpi(e.nome).split(' ');
+    return {nome:e.nome, custo:e.custo, toks, tipo:toks[0], q:qualificadores(toks)};
+  });
+  DEPARA_VIVO = Object.assign({}, DEPARA);
+  base.forEach(e => (e.apelidos || []).forEach(a => {
+    const k = normEpi(a); if(k) DEPARA_VIVO[k] = e.nome;
+  }));
+  _cacheCusto.clear();
+}
+
 function casarEpi(nome){
   const chave = normEpi(nome);
   if(_cacheCusto.has(chave)) return _cacheCusto.get(chave);
   let saida = null;
 
   const exato = CUSTO_EPI[(nome || '').trim().toUpperCase()];
-  const viaDePara = DEPARA[chave];
+  const viaDePara = DEPARA_VIVO[chave];
   if(exato != null){
     saida = {custo:exato, aprox:false, alvo:nome};
   } else if(viaDePara && CUSTO_EPI[viaDePara.toUpperCase()] != null){
@@ -1963,6 +2368,7 @@ function casarEpi(nome){
 }
 
 function custoDe(nome){ const r = casarEpi(nome); return r ? r.custo : null; }
+reconstruirCatalogo();
 function custoInfo(nome){ return casarEpi(nome); }
 
 /* ================= emissão de fichas em lote ================= */
@@ -2318,10 +2724,10 @@ $('#imp-desfazer').addEventListener('click', async () => {
 
 /* ================= sessão, login e usuários ================= */
 const PAPEL_ACESSO = {
-  admin:            ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','importar','usuarios'],
+  admin:            ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','catalogo','importar','usuarios'],
   seguranca:        ['solicitacao','controle','dashboard','pendencias'],
   almoxarifado:     ['controle','dashboard','estoque'],
-  almoxarifado_adm: ['controle','dashboard','pendencias','colaboradores','estoque'],
+  almoxarifado_adm: ['controle','dashboard','pendencias','colaboradores','estoque','catalogo'],
   supervisor:       ['solicitacao'],
 };
 const PAPEL_DESC = {
@@ -2332,7 +2738,7 @@ const PAPEL_DESC = {
   supervisor:'Abre solicitações, anexa a evidência da troca e acompanha só as fichas que ele mesmo enviou.',
 };
 const ABA_ROT = {solicitacao:'Solicitação',controle:'Controle',dashboard:'Dashboard',pendencias:'Pendências',
-  colaboradores:'Colaboradores',estoque:'Estoque',importar:'Importar',usuarios:'Usuários'};
+  colaboradores:'Colaboradores',estoque:'Estoque',catalogo:'Catálogo',importar:'Importar',usuarios:'Usuários'};
 
 const gerarSenha = () => {
   const abc = 'abcdefghijkmnpqrstuvwxyz', num = '23456789';
@@ -3062,7 +3468,7 @@ if(FOTO_LOGIN){
 pintarChip();
 
 /* ================= abas ================= */
-const PAGINAS = ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','importar','usuarios'];
+const PAGINAS = ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','catalogo','importar','usuarios'];
 document.querySelectorAll('.aba').forEach(b => {
   b.addEventListener('click', () => {
     document.querySelectorAll('.aba').forEach(o => o.setAttribute('aria-selected', String(o === b)));
@@ -3071,6 +3477,7 @@ document.querySelectorAll('.aba').forEach(b => {
     if(b.dataset.pg === 'pendencias') renderPendencias();
     if(b.dataset.pg === 'colaboradores') renderColaboradores();
     if(b.dataset.pg === 'estoque') renderEstoque();
+    if(b.dataset.pg === 'catalogo') renderCatalogo();
     if(b.dataset.pg === 'usuarios') renderUsuarios();
   });
 });
@@ -4332,6 +4739,226 @@ function renderEstoque(){
   else renderCustos(movs);
 }
 
+
+/* ================= catálogo de EPI (aba própria) ================= */
+let catEditando = null;
+
+function catIdDe(nome){
+  return String(nome || '').normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60).toLowerCase() || 'item';
+}
+function catPodeEditar(){ return eu.papel === 'admin' || eu.papel === 'almoxarifado_adm'; }
+
+/* nomes que apareceram no histórico e não acharam preço */
+function catOrfaos(){
+  const mapa = new Map();
+  const juntar = (nome, qtd) => {
+    const n = String(nome || '').trim();
+    if(!n || custoDe(n) != null) return;
+    if(!mapa.has(n)) mapa.set(n, {nome:n, qtd:0});
+    mapa.get(n).qtd += (qtd || 0);
+  };
+  MOVIMENTOS.forEach(m => { if(m.tipo !== 'entrada') juntar(m.epi, m.quantidade); });
+  SOLICITACOES.forEach(s => (s.itens || []).forEach(it => juntar(it.nome, it.qtd)));
+  return [...mapa.values()].sort((a,b) => b.qtd - a.qtd);
+}
+
+function catLimparForm(){
+  catEditando = null;
+  $('#cat-form-tit').textContent = 'Novo item';
+  $('#cat-nome').value = ''; $('#cat-ca').value = '';
+  $('#cat-grupo').value = ''; $('#cat-custo').value = '';
+  $('#cat-apelidos').value = '';
+  $('#cat-cancelar').hidden = true;
+  $('#cat-status').textContent = '';
+}
+function catEditar(e){
+  catEditando = e;
+  $('#cat-form-tit').textContent = 'Editando item';
+  $('#cat-nome').value = e.nome || '';
+  $('#cat-ca').value = e.ca || '';
+  $('#cat-grupo').value = e.grupo || '';
+  $('#cat-custo').value = e.custo != null ? e.custo : '';
+  $('#cat-apelidos').value = (e.apelidos || []).join('\n');
+  $('#cat-cancelar').hidden = false;
+  $('#cat-status').textContent = '';
+  try{ $('#cat-nome').scrollIntoView({behavior:'smooth', block:'center'}); }catch(x){}
+}
+$('#cat-cancelar').addEventListener('click', catLimparForm);
+
+$('#cat-salvar').addEventListener('click', async () => {
+  const nota = $('#cat-status');
+  if(!DB){ nota.textContent = 'Sem conexão com o banco.'; return; }
+  if(!catPodeEditar()){ nota.textContent = 'Seu perfil não pode editar o catálogo.'; return; }
+  const nome = ($('#cat-nome').value || '').trim();
+  if(!nome){ nota.textContent = 'Informe o nome do EPI.'; return; }
+  const custoTxt = ($('#cat-custo').value || '').trim();
+  const dados = {
+    nome,
+    ca: ($('#cat-ca').value || '').trim(),
+    grupo: ($('#cat-grupo').value || '').trim() || 'EPI',
+    custo: custoTxt === '' ? null : Number(custoTxt),
+    apelidos: ($('#cat-apelidos').value || '').split('\n').map(x => x.trim()).filter(Boolean),
+    ativo: true,
+    alteradoEm: new Date().toISOString(),
+    alteradoPor: eu.nome || '',
+  };
+  if(dados.custo != null && !isFinite(dados.custo)){ nota.textContent = 'Custo inválido.'; return; }
+  const id = (catEditando && catEditando.id) || catIdDe(nome);
+  nota.textContent = 'Salvando…';
+  try{
+    await DB.doc('catalogo/' + id).set(dados);
+    nota.textContent = 'Salvo.';
+    catLimparForm();
+  }catch(e){ nota.textContent = 'Não deu para salvar (' + ((e && e.code) || 'erro') + ').'; }
+});
+
+$('#cat-semear').addEventListener('click', async () => {
+  const nota = $('#cat-semear-status');
+  if(!DB || !catPodeEditar()){ nota.textContent = 'Sem permissão.'; return; }
+  const b = $('#cat-semear'); b.disabled = true;
+  let n = 0, erros = 0;
+  for(const e of DADOS.epis){
+    try{
+      await DB.doc('catalogo/' + catIdDe(e.nome)).set({
+        nome:e.nome, ca:e.ca || '', grupo:e.grupo || 'EPI',
+        custo: e.custo != null ? e.custo : null, apelidos: [], ativo: true,
+        alteradoEm: new Date().toISOString(), alteradoPor: eu.nome || '',
+      });
+      n++;
+      if(n % 20 === 0) nota.textContent = n + ' de ' + DADOS.epis.length + '…';
+    }catch(x){ erros++; }
+  }
+  nota.textContent = n + ' itens gravados' + (erros ? ' · ' + erros + ' falharam' : '') + '.';
+  b.disabled = false;
+});
+
+$('#cat-busca').addEventListener('input', renderCatalogo);
+
+/* liga um nome órfão a um item do catálogo, gravando como apelido */
+async function catLigar(nomeAntigo, idAlvo){
+  if(!DB || !idAlvo) return;
+  const alvo = CATALOGO.find(c => c.id === idAlvo);
+  if(!alvo) return;
+  const apelidos = (alvo.apelidos || []).slice();
+  if(!apelidos.some(a => normEpi(a) === normEpi(nomeAntigo))) apelidos.push(nomeAntigo);
+  try{
+    await DB.doc('catalogo/' + idAlvo).update({
+      apelidos, alteradoEm:new Date().toISOString(), alteradoPor: eu.nome || '',
+    });
+  }catch(e){
+    const r = $('#cat-resumo');
+    if(r) r.textContent = 'Não deu para ligar (' + ((e && e.code) || 'erro') + ').';
+  }
+}
+
+function renderCatalogo(){
+  const base = epiBase();
+  const noBanco = CATALOGO.length > 0;
+  const comPreco = base.filter(e => e.custo != null).length;
+
+  $('#cat-resumo').textContent = noBanco
+    ? base.length + ' itens no catálogo'
+    : base.length + ' itens (lista embutida — ainda não gravada no banco)';
+
+  $('#cat-bloco-semear').hidden = noBanco || !catPodeEditar();
+  const podeMexer = catPodeEditar();
+  $('#cat-salvar').disabled = !podeMexer || !noBanco;
+
+  const orf = catOrfaos();
+  const pecasOrf = orf.reduce((a,o) => a + o.qtd, 0);
+
+  tiles($('#cat-tiles'), [
+    ['Itens no catálogo', String(base.length), noBanco ? 'editáveis aqui' : 'lista embutida'],
+    ['Com preço', String(comPreco), base.length - comPreco ? (base.length - comPreco) + ' sem preço' : 'todos precificados'],
+    ['Grupos', String(new Set(base.map(e => e.grupo || 'EPI')).size), 'categorias'],
+    ['Nomes sem preço no histórico', String(orf.length), pecasOrf + ' peças afetadas'],
+  ]);
+
+  /* grupos no datalist */
+  const dl = $('#l-cat-grupos'); dl.textContent = '';
+  [...new Set(base.map(e => e.grupo || 'EPI'))].sort().forEach(g => {
+    const o = cria('option'); o.value = g; dl.appendChild(o);
+  });
+
+  /* ---- órfãos ---- */
+  const pnO = $('#cat-painel-orfaos'), alvoO = $('#cat-orfaos');
+  alvoO.textContent = '';
+  if(!orf.length){ pnO.hidden = true; }
+  else {
+    pnO.hidden = false;
+    const tb = cria('table','dados'), th = cria('thead'), trh = cria('tr');
+    ['Nome que apareceu na ficha','Peças','Corresponde a qual item do catálogo'].forEach(h => trh.appendChild(cria('th', null, h)));
+    th.appendChild(trh); tb.appendChild(th);
+    const tbody = cria('tbody');
+    const ordenado = CATALOGO.slice().sort((a,b) => (a.nome||'').localeCompare(b.nome||''));
+    orf.forEach(o => {
+      const tr = cria('tr');
+      tr.appendChild(cria('td', null, o.nome));
+      tr.appendChild(cria('td','n', String(o.qtd)));
+      const td = cria('td');
+      if(!noBanco || !podeMexer){
+        td.appendChild(cria('span','sub', noBanco ? 'sem permissão' : 'grave o catálogo no banco primeiro'));
+      } else {
+        const sel = cria('select');
+        const o0 = cria('option', null, 'escolher…'); o0.value = ''; sel.appendChild(o0);
+        ordenado.forEach(c => {
+          const op = cria('option', null, c.nome + (c.custo != null ? '  —  ' + fmtMoeda(c.custo) : '  —  sem preço'));
+          op.value = c.id; sel.appendChild(op);
+        });
+        sel.addEventListener('change', () => { if(sel.value) catLigar(o.nome, sel.value); });
+        td.appendChild(sel);
+      }
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+    });
+    tb.appendChild(tbody);
+    const wr = cria('div','tabela-wrap'); wr.appendChild(tb); alvoO.appendChild(wr);
+  }
+
+  /* ---- lista ---- */
+  const termo = normEpi($('#cat-busca').value || '');
+  const lista = base.filter(e => !termo
+      || normEpi(e.nome).includes(termo)
+      || String(e.ca || '').includes(termo)
+      || normEpi(e.grupo || '').includes(termo)
+      || (e.apelidos || []).some(a => normEpi(a).includes(termo)))
+    .slice().sort((a,b) => (a.nome||'').localeCompare(b.nome||''));
+
+  const alvo = $('#cat-lista'); alvo.textContent = '';
+  if(!lista.length){
+    alvo.appendChild(cria('p','nada','Nenhum item encontrado.'));
+    return;
+  }
+  const tb = cria('table','dados'), th = cria('thead'), trh = cria('tr');
+  const cols = ['EPI','CA','Grupo','Custo','Outros nomes'];
+  if(noBanco && podeMexer) cols.push('');
+  cols.forEach(h => trh.appendChild(cria('th', null, h)));
+  th.appendChild(trh); tb.appendChild(th);
+  const tbody = cria('tbody');
+  lista.forEach(e => {
+    const tr = cria('tr');
+    tr.appendChild(cria('td', null, e.nome));
+    tr.appendChild(cria('td','mono', e.ca || '—'));
+    tr.appendChild(cria('td', null, e.grupo || 'EPI'));
+    const tdC = cria('td','n', e.custo != null ? fmtMoeda(e.custo) : 'sem preço');
+    if(e.custo == null) tdC.style.color = 'var(--alerta)';
+    tr.appendChild(tdC);
+    tr.appendChild(cria('td','n', String((e.apelidos || []).length || '—')));
+    if(noBanco && podeMexer){
+      const td = cria('td');
+      const b = cria('button','btn btn-mini','Editar');
+      b.type = 'button';
+      b.addEventListener('click', () => catEditar(e));
+      td.appendChild(b);
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  });
+  tb.appendChild(tbody);
+  const wrap = cria('div','tabela-wrap'); wrap.appendChild(tb); alvo.appendChild(wrap);
+}
+
 /* ================= colaboradores (aba própria) ================= */
 function acharColaborador(nome){
   const alvo = (nome || '').trim().toUpperCase();
@@ -4646,6 +5273,17 @@ function abrirOuvintes(db){
     $('#e-resumo').textContent = 'O estoque parou de atualizar nesta aba. Recarregue a página.';
   }));
 
+  ouvintes.push(db.collection('catalogo').onSnapshot(snap => {
+    CATALOGO = snap.docs.map(d => ({id:d.id, ...d.data()}));
+    reconstruirCatalogo();
+    if(!$('#pg-catalogo').hidden) renderCatalogo();
+    if(!$('#pg-estoque').hidden) renderEstoque();
+    if(!$('#pg-dashboard').hidden) renderDashboard();
+  }, err => {
+    const r = $('#cat-resumo');
+    if(r) r.textContent = 'Não foi possível ler o catálogo (' + ((err && err.code) || 'erro') + ').';
+  }));
+
   ouvintes.push(db.collection('colaboradores').onSnapshot(snap => {
     COLABORADORES = snap.docs.map(d => ({id:d.id, ...d.data()}));
     preencherEmpresasColab();
@@ -4674,6 +5312,7 @@ function abrirOuvintes(db){
       fecharOuvintes();
       botLimpar();
       USUARIOS = []; SOLICITACOES = []; MOVIMENTOS = []; COLABORADORES = [];
+      CATALOGO = []; reconstruirCatalogo();
       usuariosCarregados = false;
       if(eu.id){ eu = {id:null, login:'', nome:'', papel:'supervisor'}; pintarChip(); aplicarAcesso(); }
       mostrarLogin('');
