@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voltar para Validação · Fluxo de EPI</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:#050A26;color:#EDF2FF;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  .cx{width:100%;max-width:560px;background:#101A47;border:1px solid #33447A;border-radius:14px;padding:28px}
+  h1{font-size:21px;margin:0 0 6px}
+  p{color:#A3B4DC;font-size:13.5px;margin:0 0 16px}
+  label{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#A3B4DC;margin-bottom:4px}
+  input{width:100%;box-sizing:border-box;background:#050A26;border:1px solid #33447A;border-radius:6px;
+    padding:9px 10px;color:#EDF2FF;font:inherit;margin-bottom:12px}
+  button{width:100%;border:0;border-radius:8px;padding:11px;font:inherit;font-weight:700;cursor:pointer;
+    background:linear-gradient(135deg,#2E7BFF,#1550C8);color:#fff;margin-top:4px}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  button.sec{background:none;border:1px solid #33447A;color:#A3B4DC;font-weight:600}
+  #log{margin-top:16px;font-size:13px;font-family:ui-monospace,monospace;color:#A3B4DC;
+    max-height:320px;overflow:auto;white-space:pre-wrap;line-height:1.55}
+  .ok{color:#36AD6B}.err{color:#E8A15C}
+  .box{background:#050A26;border:1px solid #24325F;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px}
+  .box b{color:#7FB0FF}
+</style>
+</head>
+<body>
+<div class="cx">
+  <h1>Voltar tudo de Concluído para Validação</h1>
+  <p>Pega <b>todas</b> as fichas que estão na coluna Concluído e devolve para Validação,
+     apagando as saídas de estoque que elas geraram.</p>
+  <div class="box">
+    Desmarca os itens separados · limpa o histórico das etapas<br>
+    Apaga só as saídas <b>geradas pelo fluxo</b> — entradas e saídas manuais ficam intactas<br>
+    Comece conferindo pelo botão cinza antes de executar
+  </div>
+  <label for="e">E-mail de administrador</label><input id="e" type="email" autocomplete="username">
+  <label for="s">Senha</label><input id="s" type="password" autocomplete="current-password">
+  <button id="v" class="sec">1 — Ver o que vai voltar</button>
+  <button id="b" disabled>2 — Voltar tudo para Validação</button>
+  <div id="log"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore, doc, updateDoc, deleteDoc, collection, getDocs }
+  from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { FIREBASE_CONFIG } from "./firebase-config.js";
+
+const app  = initializeApp(FIREBASE_CONFIG);
+const auth = getAuth(app), fs = getFirestore(app);
+const log  = document.getElementById('log');
+const diz  = (t,c)=>{const d=document.createElement('div'); if(c)d.className=c; d.textContent=t; log.appendChild(d); log.scrollTop=1e6;};
+const AUTO = ['fluxo','conclusao-setembro'];   /* saídas que o sistema gerou sozinho */
+
+async function entrar(){
+  await signInWithEmailAndPassword(auth,
+    document.getElementById('e').value.trim().toLowerCase(),
+    document.getElementById('s').value);
+}
+async function concluidas(){
+  const snap = await getDocs(collection(fs,'solicitacoes'));
+  return snap.docs.filter(x => x.data().status === 'concluido').map(x => ({id:x.id, ...x.data()}));
+}
+async function saidasAuto(){
+  const snap = await getDocs(collection(fs,'estoque'));
+  return snap.docs.filter(x => {
+    const d = x.data();
+    return d.tipo === 'saida' && AUTO.includes(d.origem);
+  }).map(x => ({id:x.id, ref:x.ref, ...x.data()}));
+}
+
+document.getElementById('v').addEventListener('click', async () => {
+  const v = document.getElementById('v'); v.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar(); diz('Conectado.','ok');
+    const fichas = await concluidas();
+    if(!fichas.length){
+      diz('A coluna Concluído está vazia — não há nada para voltar.','err');
+      v.disabled = false; return;
+    }
+    const alvo = new Set(fichas.map(f => f.id));
+    const saidas = (await saidasAuto()).filter(m => !m.solicitacaoId || alvo.has(m.solicitacaoId));
+    const porSet = saidas.filter(m => m.origem === 'conclusao-setembro').length;
+    diz('');
+    diz(fichas.length + ' fichas em Concluído.','ok');
+    diz(saidas.length + ' saídas de estoque serão apagadas (' + porSet + ' da importação de setembro).');
+    diz('');
+    diz('Primeiras da lista:');
+    fichas.slice(0,8).forEach(f => diz('  Nº' + f.num + '  ' + (f.colaborador || 'sem nome')));
+    if(fichas.length > 8) diz('  … e mais ' + (fichas.length - 8) + '.');
+    diz('');
+    diz('Se estiver certo, clique no botão azul.','ok');
+    document.getElementById('b').disabled = false;
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+  v.disabled = false;
+});
+
+document.getElementById('b').addEventListener('click', async () => {
+  const b = document.getElementById('b'); b.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar();
+    const fichas = await concluidas();
+    if(!fichas.length){ diz('Nada em Concluído.','err'); return; }
+
+    /* 1) apaga as saídas automáticas dessas fichas */
+    const nums = new Set(fichas.map(f => f.num));
+    const ids  = fichas.map(f => f.id);
+    const saidas = await saidasAuto();
+    let nS = 0;
+    for(const m of saidas){
+      const daFicha = ids.some(id => String(m.id).startsWith('setout-' + id + '-'))
+                   || (m.origem === 'fluxo' && nums.has(m.solicitacaoNum));
+      if(!daFicha) continue;
+      try{ await deleteDoc(m.ref); nS++; if(nS % 50 === 0) diz('  ' + nS + ' saídas apagadas…'); }
+      catch(e){ diz('  falhou apagar ' + m.id + ': ' + e.message,'err'); }
+    }
+
+    /* 2) devolve as fichas */
+    let nF = 0, erros = 0;
+    for(const f of fichas){
+      const itens = (f.itens || []).map(it => Object.assign({}, it, {qtdSep:0, separado:false, pendente:false}));
+      const hist  = (f.historico || []).filter(h => h.status === 'validacao');
+      if(!hist.length) hist.push({status:'validacao', em: f.criadoEm || new Date().toISOString(), por: f.criadoPor || ''});
+      try{
+        await updateDoc(doc(fs,'solicitacoes',f.id), {
+          itens, status:'validacao', estoqueBaixado:false, historico:hist,
+        });
+        nF++;
+        if(nF % 10 === 0) diz('  ' + nF + '/' + fichas.length + ' fichas…');
+      }catch(e){ erros++; diz('  falhou Nº' + f.num + ': ' + e.message,'err'); }
+    }
+    diz('');
+    diz(nF + ' fichas de volta em Validação · ' + nS + ' saídas apagadas'
+        + (erros ? ' · ' + erros + ' falhas' : '') + '.', erros ? 'err' : 'ok');
+    if(!erros) diz('Pronto. Abra o sistema e veja a coluna Validação.','ok');
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+  b.disabled = false;
+});
+</script>
+</body>
+</html>
