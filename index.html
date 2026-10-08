@@ -724,7 +724,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 16</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 17</span></p>
     </form>
   </div>
 </div>
@@ -871,6 +871,7 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
           <div class="f-linha"><div class="f-rot">Empresa</div><div class="f-val" id="v-empresa"></div></div>
           <div class="f-linha"><div class="f-rot">CNPJ</div><div class="f-val mono" id="v-cnpj"></div></div>
           <div class="f-linha"><div class="f-rot">Colaborador</div><div class="f-val" id="v-colab"></div></div>
+          <div class="f-linha"><div class="f-rot">CPF</div><div class="f-val mono" id="v-cpf"></div></div>
           <div class="f-linha"><div class="f-rot">Data</div><div class="f-val" id="v-retirada"></div></div>
         </div>
         <table class="f-tabela">
@@ -1485,6 +1486,12 @@ function dataCurta(iso){
          d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
 }
 function fmtMoeda(v){ return (v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+/* o CPF é digitado de vários jeitos; na ficha sai sempre 000.000.000-00 */
+function fmtCpf(v){
+  const d = String(v == null ? '' : v).replace(/\D/g,'');
+  if(d.length !== 11) return String(v == null ? '' : v).trim();
+  return d.slice(0,3) + '.' + d.slice(3,6) + '.' + d.slice(6,9) + '-' + d.slice(9);
+}
 function paraInput(d){ const p = n => String(n).padStart(2,'0');
   return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`; }
 
@@ -1599,6 +1606,9 @@ function construirFicha(s){
   q('#v-empresa').textContent = emp.razao.trim();
   q('#v-cnpj').textContent = s.colaboradorCnpj || emp.cnpj;
   q('#v-colab').textContent = s.colaborador || '—';
+  /* o CPF só existe depois que a Segurança do Trabalho preenche na Validação;
+     sem ele a linha fica em branco para ser escrita à mão na hora da assinatura */
+  q('#v-cpf').textContent = fmtCpf(s.colaboradorCpf) || '';
   q('#v-retirada').textContent = s.dataRetirada ? dataBR(new Date(s.dataRetirada)) : '—';
   const dt = dataBR(new Date(s.criadoEm));
   q('#v-data').textContent = dt.charAt(0).toUpperCase() + dt.slice(1) + '.';
