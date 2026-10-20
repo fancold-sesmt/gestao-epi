@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zerar solicitações · Fluxo de EPI</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:#050A26;color:#EDF2FF;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  .cx{width:100%;max-width:560px;background:#101A47;border:1px solid #33447A;border-radius:14px;padding:28px}
+  h1{font-size:21px;margin:0 0 6px}
+  p{color:#A3B4DC;font-size:13.5px;margin:0 0 16px}
+  label{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#A3B4DC;margin-bottom:4px}
+  input[type=email],input[type=password],input[type=text]{width:100%;box-sizing:border-box;background:#050A26;
+    border:1px solid #33447A;border-radius:6px;padding:9px 10px;color:#EDF2FF;font:inherit;margin-bottom:12px}
+  button{width:100%;border:0;border-radius:8px;padding:11px;font:inherit;font-weight:700;cursor:pointer;
+    background:linear-gradient(135deg,#2E7BFF,#1550C8);color:#fff;margin-top:4px}
+  button.perigo{background:linear-gradient(135deg,#D1483C,#A3281E)}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  button.sec{background:none;border:1px solid #33447A;color:#A3B4DC;font-weight:600}
+  #log{margin-top:16px;font-size:13px;font-family:ui-monospace,monospace;color:#A3B4DC;
+    max-height:300px;overflow:auto;white-space:pre-wrap;line-height:1.55}
+  .ok{color:#36AD6B}.err{color:#E8A15C}
+  .box{background:#050A26;border:1px solid #24325F;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px}
+  .box b{color:#7FB0FF}
+  .alerta{background:rgba(209,72,60,.12);border:1px solid #8C3A32;border-radius:8px;padding:12px;
+    margin-bottom:16px;font-size:13px;line-height:1.5}
+  .alerta b{color:#FF9A8F}
+  .marca{display:flex;align-items:flex-start;gap:9px;margin:0 0 14px;font-size:13px;color:#A3B4DC}
+  .marca input{width:17px;height:17px;margin:2px 0 0;flex:none;accent-color:#2E7BFF}
+</style>
+</head>
+<body>
+<div class="cx">
+  <h1>Zerar as solicitações</h1>
+  <p>Apaga <b>todas</b> as fichas do sistema, em qualquer etapa do kanban — Validação, Separação, Envio, Entrega e Concluído.</p>
+
+  <div class="alerta">
+    <b>Isto não tem como desfazer.</b> Os registros somem do banco de vez.
+    Colaboradores, catálogo e usuários não são tocados — só as solicitações.
+  </div>
+
+  <div class="box">
+    Comece pelo botão cinza: ele <b>só conta</b> o que existe, não apaga nada.
+  </div>
+
+  <label for="e">E-mail de administrador</label><input id="e" type="email" autocomplete="username">
+  <label for="s">Senha</label><input id="s" type="password" autocomplete="current-password">
+
+  <label class="marca" style="text-transform:none;letter-spacing:0;font-weight:400">
+    <input type="checkbox" id="comEstoque" checked>
+    <span>Apagar também as <b>saídas de estoque</b> que essas fichas geraram.
+    Entradas e saídas que você lançou na mão continuam onde estão.</span>
+  </label>
+
+  <button id="v" class="sec">1 — Ver o que existe hoje</button>
+
+  <div id="passo2" style="margin-top:14px" hidden>
+    <label for="conf">Para liberar, escreva ZERAR no campo abaixo</label>
+    <input id="conf" type="text" autocomplete="off" placeholder="ZERAR">
+    <button id="b" class="perigo" disabled>2 — Apagar tudo</button>
+  </div>
+
+  <div id="log"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore, deleteDoc, collection, getDocs }
+  from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { FIREBASE_CONFIG } from "./firebase-config.js";
+
+const app  = initializeApp(FIREBASE_CONFIG);
+const auth = getAuth(app), fs = getFirestore(app);
+const log  = document.getElementById('log');
+const diz  = (t,c)=>{const d=document.createElement('div'); if(c)d.className=c; d.textContent=t; log.appendChild(d); log.scrollTop=1e6;};
+const AUTO = ['fluxo','conclusao-setembro'];   /* saídas que o próprio sistema gerou */
+
+async function entrar(){
+  await signInWithEmailAndPassword(auth,
+    document.getElementById('e').value.trim().toLowerCase(),
+    document.getElementById('s').value);
+}
+const pegar = async c => (await getDocs(collection(fs,c))).docs;
+
+document.getElementById('conf').addEventListener('input', e => {
+  document.getElementById('b').disabled = e.target.value.trim().toUpperCase() !== 'ZERAR';
+});
+
+document.getElementById('v').addEventListener('click', async () => {
+  const v = document.getElementById('v'); v.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar(); diz('Conectado.','ok');
+    const fichas = await pegar('solicitacoes');
+    const saidas = (await pegar('estoque')).filter(x => {
+      const d = x.data(); return d.tipo === 'saida' && AUTO.includes(d.origem);
+    });
+    const porEtapa = {};
+    fichas.forEach(x => { const st = x.data().status || '(sem etapa)'; porEtapa[st] = (porEtapa[st]||0)+1; });
+    diz('');
+    diz(fichas.length + ' solicitações no banco:', 'ok');
+    Object.entries(porEtapa).sort((a,b)=>b[1]-a[1]).forEach(([k,n]) => diz('   ' + k + ': ' + n));
+    diz('');
+    diz(saidas.length + ' saídas de estoque geradas pelo fluxo.');
+    if(!fichas.length){ diz('Não há nada para apagar.','err'); v.disabled = false; return; }
+    diz('');
+    diz('Se for isso mesmo, escreva ZERAR abaixo e clique no botão vermelho.','err');
+    document.getElementById('passo2').hidden = false;
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+  v.disabled = false;
+});
+
+document.getElementById('b').addEventListener('click', async () => {
+  const b = document.getElementById('b'); b.disabled = true; log.textContent = '';
+  try{
+    diz('Entrando…'); await entrar();
+    const comEstoque = document.getElementById('comEstoque').checked;
+
+    if(comEstoque){
+      const saidas = (await pegar('estoque')).filter(x => {
+        const d = x.data(); return d.tipo === 'saida' && AUTO.includes(d.origem);
+      });
+      let nS = 0;
+      for(const x of saidas){
+        try{ await deleteDoc(x.ref); nS++; if(nS % 50 === 0) diz('  ' + nS + ' saídas apagadas…'); }
+        catch(e){ diz('  falhou ' + x.id + ': ' + e.message,'err'); }
+      }
+      diz(nS + ' saídas de estoque apagadas.','ok');
+    }
+
+    const fichas = await pegar('solicitacoes');
+    let nF = 0, erros = 0;
+    for(const x of fichas){
+      try{ await deleteDoc(x.ref); nF++; if(nF % 20 === 0) diz('  ' + nF + '/' + fichas.length + ' fichas…'); }
+      catch(e){ erros++; diz('  falhou ' + x.id + ': ' + e.message,'err'); }
+    }
+    diz('');
+    diz(nF + ' solicitações apagadas' + (erros ? ' · ' + erros + ' falharam' : '') + '.', erros ? 'err' : 'ok');
+    if(!erros) diz('Pronto. O kanban está zerado — recarregue o sistema.','ok');
+    document.getElementById('conf').value = '';
+  }catch(e){ diz('Erro: ' + (e.code||'') + ' ' + e.message,'err'); }
+});
+</script>
+</body>
+</html>
