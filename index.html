@@ -673,6 +673,23 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .g-rodape{margin-top:auto;padding:14px 18px;border-top:1px solid var(--linha);
   display:flex;flex-direction:column;gap:8px;position:sticky;bottom:0;background:#0B1440;z-index:3}
 .g-nota{font-size:12px;color:var(--suave);text-align:center}
+.g-erro{font-size:12.5px;color:var(--alerta);text-align:left;line-height:1.45;margin:0;
+  overflow-wrap:anywhere}
+.g-erro:empty{display:none}
+/* escolha do caminho da entrega, na Validação */
+.ent-opcoes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ent-op{display:flex;flex-direction:column;gap:2px;text-align:left;cursor:pointer;
+  border:1.5px solid var(--linha-forte);background:rgba(5,10,38,.5);border-radius:9px;
+  padding:10px 11px;color:var(--suave);font:inherit;transition:border-color .12s ease,background .12s ease}
+.ent-op b{font-size:13.5px;color:var(--gelo)}
+.ent-op span{font-size:11px;line-height:1.3}
+.ent-op:hover:not(:disabled){border-color:var(--azul)}
+.ent-op.ent-on{border-color:var(--azul);background:rgba(46,123,255,.16)}
+.ent-op.ent-on b{color:var(--azul-claro)}
+.ent-op:disabled{opacity:.5;cursor:default}
+@media (max-width:420px){.ent-opcoes{grid-template-columns:1fr}}
+/* kanban de coluna única (Almoxarifado Operacional) */
+.kanban-solo{grid-template-columns:minmax(0,560px) !important}
 
 /* ---------- dashboard ---------- */
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px}
@@ -852,7 +869,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 22</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 23</span></p>
     </form>
   </div>
 </div>
@@ -1033,7 +1050,7 @@ html{overflow-x:clip}
     </div>
   </div>
   <div id="c-aviso"></div>
-  <p class="dica" style="margin-top:-4px;margin-bottom:12px">Clique num cartão para ver os equipamentos, ou arraste entre as colunas para mudar a etapa.</p>
+  <p class="dica" id="c-dica" style="margin-top:-4px;margin-bottom:12px">Clique num cartão para ver os equipamentos, ou arraste entre as colunas para mudar a etapa.</p>
   <div class="kanban" id="kanban"></div>
 </section>
 
@@ -3730,7 +3747,17 @@ function renderKanban(){
   const temEx = SOLICITACOES.some(s => s.exemplo);
   $('#b-limpar-ex').hidden = !temEx || !DB;
 
-  ETAPAS.forEach(et => {
+  /* o Almoxarifado Operacional só enxerga a coluna dele: menos ruído, menos engano */
+  const colunas = eu.papel === 'almoxarifado'
+    ? ETAPAS.filter(et => et.id === 'separacao')
+    : ETAPAS;
+  alvo.classList.toggle('kanban-solo', colunas.length === 1);
+  const dica = $('#c-dica');
+  if(dica) dica.textContent = colunas.length === 1
+    ? 'Toque num cartão para abrir a ficha e marcar o que já separou.'
+    : 'Clique num cartão para ver os equipamentos, ou arraste entre as colunas para mudar a etapa.';
+
+  colunas.forEach(et => {
     const doStatus = SOLICITACOES.filter(s => s.status === et.id && !s.cancelada)
       .sort((a,b) => new Date(b.criadoEm) - new Date(a.criadoEm));
     const col = cria('section','coluna');
@@ -4011,6 +4038,38 @@ function abrirGaveta(id){
     });
     secColab.append(bSalvar, notaColab);
     corpo.appendChild(secColab);
+
+    /* quem define o caminho da entrega é a Segurança do Trabalho, aqui.
+       O almoxarifado só separa — não escolhe mais nada depois. */
+    const secEnt = cria('section','g-sec');
+    secEnt.appendChild(cria('h4', null, 'Como vai chegar ao colaborador'));
+    const opcoesEnt = cria('div','ent-opcoes');
+    const notaEnt = cria('p','g-nota'); notaEnt.style.textAlign = 'left';
+    const pintarEnt = () => {
+      opcoesEnt.querySelectorAll('button').forEach(b =>
+        b.classList.toggle('ent-on', b.dataset.via === (s.entregaPor || '')));
+      notaEnt.textContent = s.entregaPor
+        ? ''
+        : 'Escolha uma das duas para poder aprovar a ficha.';
+    };
+    [['envio','Correios','Segurança do Trabalho posta'],
+     ['entrega','Entrega pessoal','Almoxarifado entrega em mãos']].forEach(([via, tit, sub]) => {
+      const b = cria('button','ent-op'); b.type='button'; b.dataset.via = via;
+      b.append(cria('b', null, tit), cria('span', null, sub));
+      b.disabled = !DB;
+      b.addEventListener('click', async () => {
+        notaEnt.textContent = 'Salvando…';
+        try{
+          await DB.doc('solicitacoes/' + s.id).update({entregaPor: via});
+          s.entregaPor = via; pintarEnt();
+          const bAprov = $('#g-aprovar'); if(bAprov) bAprov.disabled = !DB;
+        }catch(e){ notaEnt.textContent = 'Não consegui salvar (' + ((e && e.code) || 'erro') + ').'; }
+      });
+      opcoesEnt.appendChild(b);
+    });
+    secEnt.append(opcoesEnt, notaEnt);
+    pintarEnt();
+    corpo.appendChild(secEnt);
   }
 
   const temPendencia = s.itens.some(i => i.pendente);
@@ -4187,45 +4246,69 @@ function abrirGaveta(id){
         'O que falta fica registrado como pendência, com a quantidade exata, e aparece para a Segurança do Trabalho.'));
       rod.appendChild(det);
     }
-    const linha = cria('div','acoes');
-    /* com pendência, pede um segundo toque no próprio botão (confirm() não roda aqui dentro) */
-    const fazBotao = (rotulo, destino) => {
-      const b = cria('button','btn btn-forte', rotulo); b.type='button';
-      b.disabled = !DB;
-      let armado = false, tid = null;
-      b.addEventListener('click', () => {
-        if(faltam > 0 && !armado){
-          armado = true;
-          b.textContent = 'Confirmar com ' + faltam + ' pendência' + (faltam>1?'s':'') + '?';
-          b.classList.add('btn-confirmar');
-          tid = setTimeout(() => {
-            armado = false; b.textContent = rotulo; b.classList.remove('btn-confirmar');
-          }, 6000);
-          return;
-        }
-        if(tid) clearTimeout(tid);
-        b.disabled = true; b.textContent = 'Registrando…';
-        concluirSeparacao(s, destino);
-      });
-      return b;
-    };
-    linha.append(fazBotao('Enviar via Correios (Segurança)', 'envio'),
-                 fazBotao('Entrega pessoal (Almoxarifado)', 'entrega'));
-    rod.appendChild(linha);
-    rod.appendChild(cria('p','g-nota','Escolha quem fica responsável por enviar ou entregar os itens separados.'));
+    /* o caminho da entrega já veio decidido da Validação; aqui é só concluir */
+    const destino = s.entregaPor === 'envio' ? 'envio' : 'entrega';
+    rod.appendChild(cria('p','g-nota', s.entregaPor
+      ? ('Depois daqui vai para ' + (destino === 'envio'
+          ? 'Envio — Segurança do Trabalho posta pelos Correios.'
+          : 'Entrega — Almoxarifado entrega em mãos.'))
+      : 'A Segurança do Trabalho não marcou o caminho da entrega; vai para Entrega pessoal.'));
+
+    const rotulo = 'Separação concluída';
+    const b = cria('button','btn btn-forte', rotulo); b.type='button';
+    b.disabled = !DB;
+    let armado = false, tid = null;
+    b.addEventListener('click', async () => {
+      /* com pendência pede um segundo toque — confirm() não roda aqui dentro */
+      if(faltam > 0 && !armado){
+        armado = true;
+        b.textContent = 'Tem certeza? Faltam ' + pecasFaltando + ' peça' + (pecasFaltando>1?'s':'') + ' — toque de novo';
+        b.classList.add('btn-confirmar');
+        tid = setTimeout(() => {
+          armado = false; b.textContent = rotulo; b.classList.remove('btn-confirmar');
+        }, 6000);
+        return;
+      }
+      if(tid) clearTimeout(tid);
+      b.disabled = true; b.textContent = 'Registrando…';
+      const erro = await concluirSeparacao(s, destino);
+      if(erro){
+        b.disabled = false; b.textContent = rotulo; b.classList.remove('btn-confirmar');
+        armado = false;
+        gavetaErro('Não deu para concluir a separação: ' + erro);
+      }
+    });
+    rod.appendChild(b);
   } else if(s.status === 'envio' || s.status === 'entrega'){
     const ehEnvio = s.status === 'envio';
     rod.appendChild(cria('p','g-nota','Responsável: ' + (ehEnvio ? 'Segurança do Trabalho — envio via Correios' : 'Almoxarifado Operacional — entrega pessoal')));
-    const b = cria('button','btn btn-forte', ehEnvio ? 'Confirmar postagem' : 'Confirmar entrega'); b.type = 'button';
+    const rotulo = ehEnvio ? 'Confirmar postagem' : 'Confirmar entrega';
+    const b = cria('button','btn btn-forte', rotulo); b.type = 'button';
     b.disabled = !DB;
-    b.addEventListener('click', () => avancar(s, 'concluido'));
+    b.addEventListener('click', async () => {
+      b.disabled = true; b.textContent = 'Registrando…';
+      const erro = await avancar(s, 'concluido');
+      if(erro){
+        b.disabled = false; b.textContent = rotulo;
+        gavetaErro('Não deu para concluir: ' + erro);
+      }
+    });
     rod.appendChild(b);
   } else {
     const av = AVANCO[s.status];
     if(av){
-      const b = cria('button','btn btn-forte', av.rot); b.type = 'button';
+      const b = cria('button','btn btn-forte', av.rot); b.type = 'button'; b.id = 'g-aprovar';
       b.disabled = !DB;
-      b.addEventListener('click', () => avancar(s, av.para));
+      b.addEventListener('click', async () => {
+        /* sem o caminho da entrega definido a ficha não sai da Validação */
+        if(s.status === 'validacao' && !s.entregaPor){
+          gavetaErro('Antes de aprovar, escolha em "Como vai chegar ao colaborador" se vai por Correios ou entrega pessoal.');
+          return;
+        }
+        b.disabled = true; const antes = b.textContent; b.textContent = 'Registrando…';
+        const erro = await avancar(s, av.para);
+        if(erro){ b.disabled = false; b.textContent = antes; gavetaErro('Não deu para avançar: ' + erro); }
+      });
       rod.appendChild(b);
       rod.appendChild(cria('p','g-nota', 'Etapa normalmente feita pelo ' + PAPEL_ROT[av.papel] + '.'));
     } else {
@@ -4234,12 +4317,23 @@ function abrirGaveta(id){
   }
   if(idxAtual > 0 && DB){
     const v = cria('button','g-voltar','← Voltar para ' + ETAPAS[idxAtual-1].rot); v.type='button';
-    v.addEventListener('click', () => avancar(s, ETAPAS[idxAtual-1].id));
+    v.addEventListener('click', async () => {
+      const erro = await avancar(s, ETAPAS[idxAtual-1].id);
+      if(erro) gavetaErro('Não deu para voltar a etapa: ' + erro);
+    });
     rod.appendChild(v);
   }
+  rod.appendChild(cria('p','g-erro'));
   g.appendChild(rod);
 
   $('#gaveta-fundo').hidden = false;
+}
+/* mostra o motivo da falha dentro da própria gaveta, onde a pessoa está olhando */
+function gavetaErro(msg){
+  const el = document.querySelector('#gaveta .g-erro');
+  if(!el){ alert(msg); return; }
+  el.textContent = msg;
+  try{ el.scrollIntoView({behavior:'smooth', block:'nearest'}); }catch(e){}
 }
 function fecharGaveta(){ abertaId = null; $('#gaveta-fundo').hidden = true; }
 $('#gaveta-fundo').addEventListener('click', e => { if(e.target === $('#gaveta-fundo')) fecharGaveta(); });
@@ -4342,8 +4436,10 @@ async function marcarItem(s, idx, qtd){
   });
   try{ await DB.doc('solicitacoes/' + s.id).update({itens}); }catch(e){}
 }
+/* devolvem null quando deu certo, ou o motivo da falha — antes o erro era engolido
+   e o botão parecia não fazer nada */
 async function concluirSeparacao(s, destino){
-  if(!DB) return;
+  if(!DB) return 'sem conexão com o banco';
   /* item que vai incompleto (nada ou quantidade menor) entra como pendência */
   const itens = s.itens.map(it => {
     const n = qtdSep(it);
@@ -4354,10 +4450,11 @@ async function concluirSeparacao(s, destino){
   const h = (s.historico || []).concat([{status:destino, em:agora, por: eu.nome || PAPEL_ROT[eu.papel]}]);
   try{
     await DB.doc('solicitacoes/' + s.id).update({itens, status:destino, historico:h});
-  }catch(e){}
+    return null;
+  }catch(e){ return (e && e.code) || (e && e.message) || 'erro'; }
 }
 async function avancar(s, novo){
-  if(!DB) return;
+  if(!DB) return 'sem conexão com o banco';
   const agora = new Date().toISOString();
   const h = (s.historico || []).concat([{status:novo, em:agora, por: eu.nome || PAPEL_ROT[eu.papel]}]);
   const patch = {status:novo, historico:h};
@@ -4365,7 +4462,10 @@ async function avancar(s, novo){
     patch.estoqueBaixado = true;
     registrarSaidaAutomatica(s);
   }
-  try{ await DB.doc('solicitacoes/' + s.id).update(patch); }catch(e){}
+  try{
+    await DB.doc('solicitacoes/' + s.id).update(patch);
+    return null;
+  }catch(e){ return (e && e.code) || (e && e.message) || 'erro'; }
 }
 async function registrarSaidaAutomatica(s){
   if(!DB) return;
