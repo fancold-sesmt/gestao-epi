@@ -227,6 +227,13 @@ h1,h2,h3{margin:0}
 .campo input:hover,.campo select:hover,.campo textarea:hover{border-color:var(--azul)}
 .campo input::placeholder,.campo textarea::placeholder{color:var(--tenue)}
 .btn-mini{padding:4px 10px;font-size:12px}
+.an-solta{border:1.5px dashed var(--linha-forte);border-radius:10px;padding:16px 14px;
+  display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;
+  background:rgba(5,10,38,.35);transition:border-color .12s ease,background .12s ease}
+.an-solta b{font-size:13.5px;color:var(--gelo)}
+.an-solta span{font-size:11.5px;color:var(--suave);margin-bottom:8px}
+.an-solta .btn{flex:none;width:100%}
+.an-solta.an-sobre{border-color:var(--azul);background:rgba(46,123,255,.14)}
 .an-card{border:1px solid var(--linha-forte);border-radius:8px;padding:10px;margin-top:8px;
   background:rgba(5,10,38,.45)}
 .an-card.an-feita{opacity:.5}
@@ -568,6 +575,19 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .cartao-frac{font-size:11px;color:var(--suave);font-variant-numeric:tabular-nums;font-weight:600}
 .chip-ex{align-self:flex-start;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
   background:rgba(163,180,220,.14);color:var(--suave);border-radius:3px;padding:1px 5px}
+
+/* admissão: cor própria (roxo), que não se mistura com nenhuma cor de etapa */
+.cartao-adm{background:linear-gradient(95deg,rgba(146,132,230,.17),rgba(5,10,38,.55) 58%);
+  box-shadow:inset 3px 0 0 var(--e1)}
+.cartao-adm:hover{border-color:var(--e1)}
+.cartao-adm .cartao-nome{color:var(--gelo)}
+.chip-adm{align-self:flex-start;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  background:rgba(146,132,230,.2);color:var(--e1);border:1px solid rgba(146,132,230,.45);
+  border-radius:3px;padding:1px 6px}
+.g-topo .chip-adm{align-self:center;margin-left:8px;vertical-align:middle}
+.col-legenda{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--suave);
+  margin-top:8px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.col-legenda i{width:9px;height:9px;border-radius:2px;background:var(--e1);flex:none}
 .col-vazia{font-size:12.5px;color:var(--tenue);text-align:center;padding:14px 6px;font-style:italic}
 
 /* gaveta */
@@ -602,6 +622,51 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .chk-txt{min-width:0}
 .chk-ca{display:block;font-size:10.5px;color:var(--suave);font-variant-numeric:tabular-nums}
 .chk input:checked ~ .chk-txt{text-decoration:line-through;text-decoration-color:var(--tenue);color:var(--suave)}
+
+/* ---------- separação: feita de pé, no celular, com o dedo ---------- */
+.sep-prog{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sep-prog-trilho{flex:1;height:8px;border-radius:5px;background:rgba(127,176,255,.14);overflow:hidden}
+.sep-prog-trilho i{display:block;height:100%;background:var(--azul);border-radius:5px;transition:width .18s ease}
+.sep-prog-trilho i.cheio{background:var(--e4)}
+.sep-prog b{font-size:13px;font-variant-numeric:tabular-nums;color:var(--suave);flex:none}
+.sep-item{display:flex;align-items:flex-start;gap:12px;padding:12px;
+  border-bottom:1px solid var(--borda);background:none}
+.sep-item:last-child{border-bottom:0}
+.sep-item.sep-ok{background:rgba(54,173,107,.09)}
+.sep-item.sep-parcial{background:rgba(232,161,92,.08)}
+.sep-marca{flex:none;width:34px;height:34px;border-radius:50%;cursor:pointer;
+  border:2px solid var(--linha-forte);background:rgba(5,10,38,.5);
+  color:#fff;font-size:17px;font-weight:700;line-height:1;display:grid;place-items:center;
+  transition:background .12s ease,border-color .12s ease}
+.sep-marca:hover:not(:disabled){border-color:var(--azul)}
+.sep-item.sep-ok .sep-marca{background:var(--e4);border-color:var(--e4)}
+.sep-marca:disabled{cursor:default;opacity:.45}
+.sep-txt{min-width:0;flex:1}
+.sep-nome{font-size:14.5px;line-height:1.3;font-weight:600;overflow-wrap:anywhere;
+  display:flex;gap:7px;align-items:baseline}
+.sep-item.sep-ok .sep-nome{color:var(--suave);font-weight:500}
+.sep-qtd{flex:none;font-variant-numeric:tabular-nums;color:var(--azul-claro);font-weight:700}
+.sep-item.sep-ok .sep-qtd{color:var(--e4)}
+.sep-sub{font-size:11.5px;color:var(--suave);margin-top:3px;font-variant-numeric:tabular-nums}
+.sep-step{display:flex;align-items:center;gap:8px;margin-top:9px;flex-wrap:wrap}
+.sep-bt{width:38px;height:38px;border-radius:9px;border:1px solid var(--linha-forte);
+  background:rgba(22,33,84,.8);color:var(--gelo);font-size:19px;font-weight:700;line-height:1;
+  cursor:pointer;display:grid;place-items:center;flex:none}
+.sep-bt:hover{border-color:var(--azul);background:rgba(46,123,255,.18)}
+.sep-num{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums;min-width:62px;text-align:center}
+.sep-falta{font-size:11.5px;color:var(--alerta);font-weight:600}
+.g-dados{border:1px solid var(--borda);border-radius:8px;background:rgba(5,10,38,.35)}
+.g-dados>summary{cursor:pointer;padding:10px 12px;list-style:none;display:flex;
+  flex-direction:column;gap:2px}
+.g-dados>summary::-webkit-details-marker{display:none}
+.g-dados>summary::after{content:'ver dados da ficha';font-size:10.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--azul-claro);font-weight:600;margin-top:3px}
+.g-dados[open]>summary::after{content:'esconder dados da ficha'}
+.g-dados>summary b{font-size:15px;line-height:1.25;overflow-wrap:anywhere}
+.g-dados>summary span{font-size:12px;color:var(--suave)}
+.g-dados .g-grade{padding:2px 12px 12px}
+.falta-det>summary{cursor:pointer;font-size:12px;color:var(--azul-claro);font-weight:600;
+  padding:2px 0 6px}
 .linha-tempo{list-style:none;margin:0;padding:0;font-size:12.5px;display:flex;flex-direction:column;gap:6px}
 .linha-tempo li{display:flex;gap:8px;align-items:baseline;color:var(--suave)}
 .lt-ponto{width:7px;height:7px;border-radius:50%;background:var(--cor);flex:none}
@@ -708,7 +773,11 @@ html{overflow-x:clip}
   .acoes .btn{flex:1 1 auto}
   /* no celular o texto do botão quebra em vez de esticar a caixa */
   .btn{white-space:normal;line-height:1.25}
-  .g-rodape{padding:12px 14px;gap:9px}
+  .g-rodape{padding:10px 14px 12px;gap:7px}
+  /* o rodapé não pode comer meia tela: o texto dos botões já diz quem faz o quê */
+  .g-rodape>.g-nota{display:none}
+  .g-rodape .btn{padding:12px 10px;font-size:14px}
+  .g-rodape .aviso{padding:8px 10px;font-size:12.5px}
   .g-corpo{padding:14px}
   .g-topo{padding:12px 14px}
   .gaveta{width:100%}
@@ -783,7 +852,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 19</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 22</span></p>
     </form>
   </div>
 </div>
@@ -826,8 +895,12 @@ html{overflow-x:clip}
         <h2>Anexar planilha</h2>
         <div class="bloco-corpo">
           <p class="sub" style="margin:0 0 10px">Recebeu a solicitação em planilha? Anexe aqui que o sistema lê e preenche o formulário. Você confere e envia.</p>
-          <input type="file" id="an-arquivo" accept=".xlsx,.xlsm,.xls,.csv" hidden>
-          <button class="btn btn-forte" id="an-escolher" type="button">Escolher planilha</button>
+          <input type="file" id="an-arquivo" accept=".xlsx,.xlsm,.xls,.csv" multiple hidden>
+          <div class="an-solta" id="an-solta">
+            <b>Arraste a planilha ou a pasta para cá</b>
+            <span>Pode soltar várias de uma vez — ele lê todas</span>
+            <button class="btn btn-forte" id="an-escolher" type="button">Escolher do computador</button>
+          </div>
           <p class="g-nota" id="an-status"></p>
           <div id="an-lista"></div>
         </div>
@@ -2145,37 +2218,118 @@ function anLerPlanilha(wb){
   return achados;
 }
 
-$('#an-escolher').addEventListener('click', () => $('#an-arquivo').click());
-$('#an-arquivo').addEventListener('change', async e => {
-  const arq = e.target.files && e.target.files[0];
-  e.target.value = '';
-  if(!arq) return;
+/* aceita um arquivo, vários arquivos ou uma pasta inteira arrastada */
+const AN_EXT = /\.(xlsx|xlsm|xls|csv)$/i;
+
+function anEntradaEmArquivos(entrada){
+  /* percorre a pasta arrastada, incluindo subpastas */
+  return new Promise(resolve => {
+    if(!entrada) return resolve([]);
+    if(entrada.isFile) return entrada.file(f => resolve([f]), () => resolve([]));
+    if(!entrada.isDirectory) return resolve([]);
+    const leitor = entrada.createReader();
+    const tudo = [];
+    const proxima = () => leitor.readEntries(async lote => {
+      if(!lote.length){
+        const partes = await Promise.all(tudo.map(anEntradaEmArquivos));
+        return resolve(partes.flat());
+      }
+      lote.forEach(e => tudo.push(e));
+      proxima();
+    }, () => resolve([]));
+    proxima();
+  });
+}
+
+async function anArquivosDoDrop(dt){
+  const itens = dt.items ? [...dt.items] : [];
+  const entradas = itens.map(it => (it.webkitGetAsEntry ? it.webkitGetAsEntry() : null)).filter(Boolean);
+  if(entradas.length){
+    const partes = await Promise.all(entradas.map(anEntradaEmArquivos));
+    return partes.flat();
+  }
+  return dt.files ? [...dt.files] : [];
+}
+
+async function anProcessar(arquivos){
   const nota = $('#an-status');
   if(typeof XLSX === 'undefined'){
     nota.textContent = 'O leitor de planilhas não carregou. Recarregue a página e tente de novo.';
     return;
   }
-  nota.textContent = 'Lendo ' + arq.name + '…';
-  try{
-    const buf = await arq.arrayBuffer();
-    const wb = XLSX.read(buf, {cellDates:true});
-    ANEXO = anLerPlanilha(wb);
-    anexoAtivo = -1;
-    if(!ANEXO.length){
-      nota.textContent = 'Não reconheci o formato desta planilha. Ela precisa ter uma coluna de quantidade e uma de item.';
-      $('#an-lista').textContent = '';
-      return;
-    }
-    const nItens = ANEXO.reduce((a,f) => a + f.itens.length, 0);
-    nota.textContent = ANEXO.length === 1
-      ? 'Li 1 solicitação, com ' + nItens + ' ' + (nItens === 1 ? 'item' : 'itens') + '.'
-      : 'Li ' + ANEXO.length + ' solicitações (uma por colaborador), com ' + nItens + ' itens no total.';
-    anRender();
-    if(ANEXO.length === 1) anCarregar(0);
-  }catch(err){
-    nota.textContent = 'Não consegui abrir o arquivo (' + (err && err.message ? err.message : 'erro') + ').';
+  const planilhas = arquivos.filter(f => AN_EXT.test(f.name));
+  const ignorados = arquivos.length - planilhas.length;
+  if(!planilhas.length){
+    nota.textContent = arquivos.length
+      ? 'Nenhum arquivo de planilha aí dentro (só valem .xlsx, .xlsm, .xls e .csv).'
+      : 'Não veio nenhum arquivo.';
+    return;
   }
+
+  ANEXO = []; anexoAtivo = -1;
+  $('#an-lista').textContent = '';
+  const falhas = [];
+  for(let k = 0; k < planilhas.length; k++){
+    const arq = planilhas[k];
+    nota.textContent = planilhas.length === 1
+      ? 'Lendo ' + arq.name + '…'
+      : 'Lendo ' + (k+1) + ' de ' + planilhas.length + ': ' + arq.name + '…';
+    try{
+      const wb = XLSX.read(await arq.arrayBuffer(), {cellDates:true});
+      const achadas = anLerPlanilha(wb);
+      if(!achadas.length){ falhas.push(arq.name); continue; }
+      achadas.forEach(f => { f.arquivo = arq.name; ANEXO.push(f); });
+    }catch(err){ falhas.push(arq.name); }
+  }
+
+  if(!ANEXO.length){
+    nota.textContent = 'Não reconheci o formato ' +
+      (planilhas.length === 1 ? 'desta planilha' : 'de nenhuma dessas planilhas') +
+      '. Precisa ter uma coluna de quantidade e uma de item.';
+    return;
+  }
+  const nItens = ANEXO.reduce((a,f) => a + f.itens.length, 0);
+  const partes = [];
+  partes.push(ANEXO.length === 1
+    ? 'Li 1 solicitação, com ' + nItens + ' ' + (nItens === 1 ? 'item' : 'itens') + '.'
+    : 'Li ' + ANEXO.length + ' solicitações (uma por colaborador), com ' + nItens + ' itens no total.');
+  if(planilhas.length > 1) partes.push('De ' + planilhas.length + ' planilhas.');
+  if(falhas.length) partes.push(falhas.length + ' não deu para ler: ' + falhas.slice(0,3).join(', ')
+    + (falhas.length > 3 ? ' e mais ' + (falhas.length - 3) : '') + '.');
+  if(ignorados) partes.push(ignorados + ' arquivo(s) fora do formato foram ignorados.');
+  nota.textContent = partes.join(' ');
+
+  anRender();
+  if(ANEXO.length === 1) anCarregar(0);
+}
+
+$('#an-escolher').addEventListener('click', () => $('#an-arquivo').click());
+$('#an-arquivo').addEventListener('change', async e => {
+  const arquivos = [...(e.target.files || [])];
+  e.target.value = '';
+  if(arquivos.length) anProcessar(arquivos);
 });
+
+/* arrastar e soltar na caixa */
+{
+  const zona = $('#an-solta');
+  const parar = ev => { ev.preventDefault(); ev.stopPropagation(); };
+  ['dragenter','dragover'].forEach(n => zona.addEventListener(n, ev => {
+    parar(ev); ev.dataTransfer.dropEffect = 'copy'; zona.classList.add('an-sobre');
+  }));
+  ['dragleave','dragend'].forEach(n => zona.addEventListener(n, ev => {
+    parar(ev); zona.classList.remove('an-sobre');
+  }));
+  zona.addEventListener('drop', async ev => {
+    parar(ev); zona.classList.remove('an-sobre');
+    $('#an-status').textContent = 'Abrindo o que você soltou…';
+    anProcessar(await anArquivosDoDrop(ev.dataTransfer));
+  });
+  /* solto fora da caixa, o navegador abriria o arquivo e perderia a página */
+  ['dragover','drop'].forEach(n => window.addEventListener(n, ev => {
+    if(!zona.contains(ev.target)) ev.preventDefault();
+  }));
+}
 
 function anRender(){
   const alvo = $('#an-lista'); alvo.textContent = '';
@@ -2189,6 +2343,7 @@ function anRender(){
     partes.push(f.itens.length + (f.itens.length === 1 ? ' item' : ' itens'));
     partes.push(f.contrato || ('contrato não encontrado: ' + (f.clienteBruto || '—')));
     if(f.motivo) partes.push(f.motivo);
+    if(f.arquivo && ANEXO.some(o => o.arquivo !== f.arquivo)) partes.push(f.arquivo);
     d.appendChild(cria('div','an-meta', partes.join(' · ')));
     const b = cria('button','btn btn-mini', f.enviada ? 'Carregar de novo' : 'Carregar no formulário');
     b.type = 'button';
@@ -3607,7 +3762,9 @@ function renderKanban(){
     if(!doStatus.length) corpo.appendChild(cria('p','col-vazia','Arraste um cartão para cá.'));
     doStatus.forEach(s => {
       const meu = podeAbrirFicha(s);
-      const c = cria('button','cartao' + (s.congelada ? ' cartao-congelado' : '') + (meu ? '' : ' cartao-travado'));
+      const ehAdm = s.tipo === 'admissional';
+      const c = cria('button','cartao' + (ehAdm ? ' cartao-adm' : '')
+        + (s.congelada ? ' cartao-congelado' : '') + (meu ? '' : ' cartao-travado'));
       c.type = 'button';
       c.draggable = !s.congelada && meu;
       if(!meu) c.title = 'Esta ficha está com ' + (QUEM_ETAPA[s.status] || 'outro setor') + '. Você acompanha, mas não edita.';
@@ -3620,6 +3777,7 @@ function renderKanban(){
       const l1 = cria('div','cartao-l1');
       l1.append(cria('span','cartao-num','Nº'+s.num), cria('span','cartao-data', dataCurta(s.criadoEm)));
       c.appendChild(l1);
+      if(ehAdm) c.appendChild(cria('span','chip-adm','admissão'));
       if(s.congelada) c.appendChild(cria('span','chip-gelo','congelada'));
       if(s.exemplo) c.appendChild(cria('span','chip-ex','exemplo'));
       c.appendChild(cria('div','cartao-nome', s.colaborador));
@@ -3692,7 +3850,9 @@ function abrirGaveta(id){
 
   const topo = cria('div','g-topo');
   const tit = cria('div');
-  tit.appendChild(cria('h3','', (ehFicha ? 'Ficha de EPI nº' : 'Solicitação nº') + s.num));
+  const h3 = cria('h3','', (ehFicha ? 'Ficha de EPI nº' : 'Solicitação nº') + s.num);
+  if(s.tipo === 'admissional') h3.appendChild(cria('span','chip-adm','admissão'));
+  tit.appendChild(h3);
   tit.appendChild(cria('p','', et.rot + ' · ' + et.quem));
   const x = cria('button','g-fechar','×'); x.type='button'; x.setAttribute('aria-label','Fechar');
   x.addEventListener('click', fecharGaveta);
@@ -3716,10 +3876,22 @@ function abrirGaveta(id){
   linhasDl.forEach(([k,v]) => {
     dl.append(cria('dt', null, k), cria('dd', null, v));
   });
-  corpo.appendChild(dl);
+  if(s.status === 'validacao'){
+    corpo.appendChild(dl);
+  } else {
+    /* no almoxarifado o que importa são os itens: os dados da ficha ficam
+       recolhidos, com o nome e o contrato já à vista na primeira linha */
+    const det = cria('details','g-dados');
+    const sum = cria('summary');
+    sum.append(cria('b', null, s.colaborador || '—'),
+               cria('span', null, s.contrato || '—'));
+    det.append(sum, dl);
+    corpo.appendChild(det);
+  }
 
-  /* empresa emissora: define logo e CNPJ da ficha. Salva ao escolher, em qualquer etapa. */
-  {
+  /* empresa emissora: define o logo e o CNPJ da ficha. Só aparece na Validação —
+     depois disso a ficha já está emitida e o almoxarifado não mexe nisso. */
+  if(s.status === 'validacao'){
     const secEmp = cria('section','g-sec');
     const atual = empresaDaFicha(s);
     const h4e = cria('h4');
@@ -3852,37 +4024,57 @@ function abrirGaveta(id){
   if(temPendencia && s.status !== 'separacao'){
     sec.appendChild(cria('p','aviso','Esta ficha seguiu com item pendente. Marque o item quando ele for separado — a pendência some sozinha.'));
   }
+  /* barra de progresso: o almoxarifado vê de longe quanto falta */
+  const barra = cria('div','sep-prog');
+  const trilho = cria('div','sep-prog-trilho');
+  const ench = cria('i');
+  ench.style.width = (p.pecasTot ? Math.round(p.pecasSep / p.pecasTot * 100) : 0) + '%';
+  if(p.pecasTot && p.pecasSep >= p.pecasTot) ench.classList.add('cheio');
+  trilho.appendChild(ench);
+  barra.append(trilho, cria('b', null, p.pecasSep + '/' + p.pecasTot));
+  sec.appendChild(barra);
+
   const ul = cria('ul','checklist');
   s.itens.forEach((it, idx) => {
-    const sep = qtdSep(it), falta = it.qtd - sep;
-    const li = cria('li','chk' + (podeMarcar ? '' : ' travado') + (itemParcial(it) ? ' chk-parcial' : ''));
-    const cb = cria('input'); cb.type='checkbox'; cb.checked = itemCompleto(it); cb.disabled = !podeMarcar;
-    cb.title = 'Marcar tudo como separado';
-    cb.addEventListener('change', () => marcarItem(s, idx, cb.checked ? it.qtd : 0));
-    const q = cria('span','chk-qtd', it.qtd + '×');
-    const t = cria('span','chk-txt', it.nome);
-    if(it.ca) t.appendChild(cria('span','chk-ca','CA ' + it.ca));
+    const sep = qtdSep(it), falta = it.qtd - sep, pronto = itemCompleto(it);
+    const li = cria('li','sep-item' + (pronto ? ' sep-ok' : '') + (itemParcial(it) ? ' sep-parcial' : ''));
 
-    const linhaQtd = cria('div','chk-sep');
-    if(podeMarcar){
-      linhaQtd.appendChild(cria('span','chk-sep-rot','Separando'));
-      const inp = cria('input','chk-sep-num'); inp.type='number'; inp.min='0'; inp.max=String(it.qtd);
-      inp.step='1'; inp.value=String(sep);
-      inp.setAttribute('aria-label','Quantidade separada de ' + it.nome);
-      inp.addEventListener('change', () => {
-        let n = parseInt(inp.value,10); if(isNaN(n)) n = 0;
-        n = Math.max(0, Math.min(it.qtd, n)); inp.value = String(n);
-        marcarItem(s, idx, n);
-      });
-      linhaQtd.append(inp, cria('span','chk-sep-rot','de ' + it.qtd));
-    } else {
-      linhaQtd.appendChild(cria('span','chk-sep-rot', sep + ' de ' + it.qtd + ' separados'));
+    /* marcador grande: dá para acertar com o dedo */
+    const marca = cria('button','sep-marca'); marca.type = 'button';
+    marca.disabled = !podeMarcar;
+    marca.setAttribute('aria-pressed', String(pronto));
+    marca.setAttribute('aria-label', (pronto ? 'Desmarcar ' : 'Marcar tudo separado de ') + it.nome);
+    marca.textContent = pronto ? '✓' : '';
+    if(podeMarcar) marca.addEventListener('click', () => marcarItem(s, idx, pronto ? 0 : it.qtd));
+
+    const txt = cria('div','sep-txt');
+    const nome = cria('div','sep-nome');
+    nome.append(cria('span','sep-qtd', it.qtd + '×'), cria('span', null, it.nome));
+    txt.appendChild(nome);
+    const sub = [];
+    if(it.ca) sub.push('CA ' + it.ca);
+    if(it.pendente) sub.push('pendência registrada');
+    if(sub.length) txt.appendChild(cria('div','sep-sub', sub.join(' · ')));
+
+    /* a contagem só aparece quando o item tem mais de uma peça */
+    if(podeMarcar && it.qtd > 1){
+      const st = cria('div','sep-step');
+      const bota = (rot, alvo, rotAria) => {
+        const b = cria('button','sep-bt', rot); b.type='button';
+        b.setAttribute('aria-label', rotAria + ' ' + it.nome);
+        b.addEventListener('click', () => marcarItem(s, idx, Math.max(0, Math.min(it.qtd, alvo))));
+        return b;
+      };
+      st.append(bota('−', sep - 1, 'Tirar uma peça de'),
+                cria('span','sep-num', sep + ' de ' + it.qtd),
+                bota('+', sep + 1, 'Somar uma peça de'));
+      if(falta > 0) st.appendChild(cria('span','sep-falta','faltam ' + falta));
+      txt.appendChild(st);
+    } else if(!podeMarcar){
+      txt.appendChild(cria('div','sep-sub', sep + ' de ' + it.qtd + ' separados'));
     }
-    if(falta > 0) linhaQtd.appendChild(cria('span','chk-falta','faltam ' + falta));
-    t.appendChild(linhaQtd);
-    if(it.pendente) t.appendChild(cria('span','chk-ca','pendência registrada'));
 
-    li.append(cb, q, t); ul.appendChild(li);
+    li.append(marca, txt); ul.appendChild(li);
   });
   sec.appendChild(ul);
   corpo.appendChild(sec);
@@ -3983,14 +4175,16 @@ function abrirGaveta(id){
     const pecasFaltando = incompletos.reduce((a,i) => a + (i.qtd - qtdSep(i)), 0);
     if(faltam > 0){
       const av = cria('p','aviso');
-      av.appendChild(cria('b', null, `Seguindo incompleta: faltam ${pecasFaltando} peça${pecasFaltando>1?'s':''} em ${faltam} ite${faltam>1?'ns':'m'}.`));
-      av.appendChild(document.createTextNode(' '));
-      av.appendChild(document.createTextNode(
-        'O que falta fica registrado como pendência, com a quantidade exata, e aparece para a Segurança do Trabalho.'));
+      av.appendChild(cria('b', null, `Faltam ${pecasFaltando} peça${pecasFaltando>1?'s':''} em ${faltam} ite${faltam>1?'ns':'m'}.`));
       rod.appendChild(av);
-      const det = cria('ul','falta-lista');
-      incompletos.forEach(i => det.appendChild(cria('li', null,
+      /* o detalhe fica recolhido: no celular o rodapé não pode comer a tela */
+      const det = cria('details','falta-det');
+      det.appendChild(cria('summary', null, 'Ver o que falta'));
+      const lista = cria('ul','falta-lista');
+      incompletos.forEach(i => lista.appendChild(cria('li', null,
         i.nome + ' — enviando ' + qtdSep(i) + ' de ' + i.qtd)));
+      det.append(lista, cria('p','g-nota',
+        'O que falta fica registrado como pendência, com a quantidade exata, e aparece para a Segurança do Trabalho.'));
       rod.appendChild(det);
     }
     const linha = cria('div','acoes');
