@@ -676,6 +676,33 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .g-erro{font-size:12.5px;color:var(--alerta);text-align:left;line-height:1.45;margin:0;
   overflow-wrap:anywhere}
 .g-erro:empty{display:none}
+/* edição da ficha pelo administrador */
+.g-edit{border:1px solid var(--linha-forte);border-radius:9px;background:rgba(146,132,230,.07)}
+.g-edit>summary{cursor:pointer;padding:10px 12px;font-size:12.5px;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--e1);list-style:none}
+.g-edit>summary::-webkit-details-marker{display:none}
+.g-edit>summary::after{content:' ▾';opacity:.7}
+.g-edit[open]>summary::after{content:' ▴'}
+.g-edit-corpo{padding:2px 12px 14px;display:flex;flex-direction:column;gap:10px}
+.g-edit-corpo h4{font-size:11.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--suave);margin:4px 0 0}
+.g-edit-grade{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.g-edit-grade .campo{margin:0;display:flex;flex-direction:column;gap:3px}
+.ed-itens{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.ed-item{display:flex;align-items:center;gap:8px}
+.ed-qtd{width:58px;flex:none;background:rgba(5,10,38,.6);border:1px solid var(--linha-forte);
+  border-radius:6px;padding:6px 7px;color:var(--gelo);font:inherit;text-align:center}
+.ed-nome{flex:1;min-width:0;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
+.ed-ca{display:block;font-size:10.5px;color:var(--suave)}
+.ed-rm{flex:none;width:30px;height:30px;border-radius:6px;border:1px solid var(--linha-forte);
+  background:rgba(5,10,38,.5);color:var(--suave);font-size:17px;line-height:1;cursor:pointer}
+.ed-rm:hover{border-color:var(--alerta);color:var(--alerta)}
+.ed-vazio{font-size:12.5px;color:var(--tenue);font-style:italic}
+.ed-add{display:flex;gap:7px;align-items:center}
+.ed-add input{flex:1;min-width:0;background:rgba(5,10,38,.6);border:1px solid var(--linha-forte);
+  border-radius:6px;padding:7px 9px;color:var(--gelo);font:inherit}
+.ed-add .btn{flex:none;width:auto;padding:7px 14px}
+@media (max-width:460px){.g-edit-grade{grid-template-columns:1fr}}
 /* escolha do caminho da entrega, na Validação */
 .ent-opcoes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .ent-op{display:flex;flex-direction:column;gap:2px;text-align:left;cursor:pointer;
@@ -869,7 +896,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 23</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 25</span></p>
     </form>
   </div>
 </div>
@@ -945,6 +972,7 @@ html{overflow-x:clip}
               <option value="admissional">Admissional</option>
               <option value="troca">Troca</option>
             </select></div>
+          <p class="g-nota" id="f-kit-nota" style="text-align:left;margin:-4px 0 0"></p>
           <div class="campo"><label for="f-data-retirada">Data de retirada</label>
             <input id="f-data-retirada" type="date"></div>
         </div>
@@ -1288,6 +1316,11 @@ html{overflow-x:clip}
         <div id="cat-orfaos"></div>
       </section>
 
+      <section class="painel" id="cat-painel-kit">
+        <h3>Kit de admissão</h3>
+        <p class="sub">O que entra sozinho na solicitação quando o tipo é <b>Admissional</b>. Bota e uniforme ficam de fora de propósito — dependem do tamanho de cada pessoa.</p>
+        <div id="cat-kit"></div>
+      </section>
       <section class="painel">
         <h3>Itens do catálogo</h3>
         <div class="campo" style="max-width:340px;margin-bottom:12px"><label for="cat-busca">Buscar</label>
@@ -1626,6 +1659,22 @@ const ficha = {
   itens: [],
 };
 
+/* kit de admissão: o que todo admitido leva, com a mesma quantidade sempre.
+   Bota e uniforme ficam de fora de propósito — dependem do tamanho de cada um.
+   Esta é só a lista de partida; o administrador edita na aba Catálogo. */
+const KIT_ADM_PADRAO = [
+  {nome:'LUVA ANTI CORTE DANNY', qtd:3},
+  {nome:'LUVA LATEX LONGATEX DANNY AMARELA', qtd:3},
+  {nome:'LUVA VAQUETA CANO LONGO', qtd:1},
+  {nome:'OCULOS SEGURANÇA INCOLOR (LEOPARDO)', qtd:1},
+  {nome:'PROTETOR AURICULAR PLUG', qtd:5},
+  {nome:'CAPACETE CLASSE A AZUL', qtd:1},
+  {nome:'KIT ALTURA - CINTO SEGURANÇA/TRAVA-QUEDAS/TALABARTE', qtd:1},
+  {nome:'PROTETOR SOLAR FPS 30', qtd:1},
+];
+let KIT_ADM = KIT_ADM_PADRAO.slice();
+const KIT_DOC = '__kit-admissao';
+
 const DICA_SEGURANCA = 'Segurança em primeiro lugar não é slogan de parede — é decisão que cada um toma, em cada tarefa, todos os dias.';
 
 function dataBR(d){ return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'}); }
@@ -1876,7 +1925,39 @@ $('#f-contrato').addEventListener('change', e => {
   renderFolha();
 });
 $('#f-colab').addEventListener('input', e => { ficha.colaborador = e.target.value.toUpperCase(); renderFolha(); });
-$('#f-tipo').addEventListener('change', e => { ficha.tipo = e.target.value; renderFolha(); atualizarEvidencia(); });
+/* lembra quais itens entraram pelo kit, para poder tirá-los se o tipo mudar */
+let kitAplicado = [];
+function aplicarKitAdmissao(){
+  const nota = $('#f-kit-nota');
+  if(!KIT_ADM.length){ if(nota) nota.textContent = ''; return; }
+  const novos = [];
+  KIT_ADM.forEach(k => {
+    const doCat = epiBase().find(e => normEpi(e.nome) === normEpi(k.nome));
+    const nome = doCat ? doCat.nome : k.nome;
+    if(ficha.itens.some(i => normEpi(i.nome) === normEpi(nome))) return;
+    ficha.itens.push({qtd: k.qtd, nome, ca: doCat ? (doCat.ca || '') : ''});
+    novos.push(nome);
+  });
+  kitAplicado = novos;
+  renderItens(); renderFolha(); atualizarEvidencia();
+  if(nota) nota.textContent = novos.length
+    ? 'Incluí ' + novos.length + ' EPI do kit de admissão. Confira as quantidades e acrescente bota e uniforme, que dependem do tamanho.'
+    : 'Os itens do kit de admissão já estavam na lista.';
+}
+function tirarKitAdmissao(){
+  if(!kitAplicado.length) return;
+  ficha.itens = ficha.itens.filter(i => !kitAplicado.some(n => normEpi(n) === normEpi(i.nome)));
+  kitAplicado = [];
+  renderItens(); renderFolha(); atualizarEvidencia();
+  const nota = $('#f-kit-nota'); if(nota) nota.textContent = '';
+}
+$('#f-tipo').addEventListener('change', e => {
+  const antes = ficha.tipo;
+  ficha.tipo = e.target.value;
+  if(ficha.tipo === 'admissional' && antes !== 'admissional') aplicarKitAdmissao();
+  else if(antes === 'admissional' && ficha.tipo !== 'admissional') tirarKitAdmissao();
+  renderFolha(); atualizarEvidencia();
+});
 $('#f-data-retirada').addEventListener('change', e => {
   if(!e.target.value){ ficha.dataRetirada = null; renderFolha(); return; }
   const [a,m,d] = e.target.value.split('-').map(Number);
@@ -1885,6 +1966,7 @@ $('#f-data-retirada').addEventListener('change', e => {
 });
 $('#b-limpar').addEventListener('click', () => {
   ficha.colaborador=''; ficha.tipo='reposicao'; ficha.itens=[]; ficha.data=new Date(); ficha.dataRetirada=null; ficha.fotos=[];
+  kitAplicado = []; { const n = $('#f-kit-nota'); if(n) n.textContent = ''; }
   $('#f-colab').value=''; $('#f-tipo').value='reposicao'; $('#f-data-retirada').value='';
   $('#f-data').value = paraInput(ficha.data);
   $('#f-status-envio').textContent='';
@@ -2455,6 +2537,7 @@ $('#b-enviar').addEventListener('click', async () => {
     $('#envio-dica-texto').textContent = DICA_SEGURANCA;
     $('#envio-dica').hidden = false;
     ficha.colaborador=''; ficha.itens=[]; ficha.dataRetirada=null; ficha.fotos=[];
+    kitAplicado = []; { const n = $('#f-kit-nota'); if(n) n.textContent = ''; }
     $('#f-colab').value=''; $('#f-data-retirada').value='';
     renderItens(); renderFolha(); atualizarEvidencia();
     anMarcarEnviada();
@@ -4151,6 +4234,152 @@ function abrirGaveta(id){
   corpo.appendChild(sec2);
   g.appendChild(corpo);
 
+
+  /* edição livre da ficha — só o administrador, em qualquer etapa */
+  if(ehAdmin()){
+    const ed = cria('details','g-edit');
+    ed.appendChild(cria('summary', null, 'Editar esta ficha'));
+    const corpoEd = cria('div','g-edit-corpo');
+
+    const campo = (rot, el) => {
+      const b = cria('div','campo');
+      b.append(cria('label', null, rot), el);
+      return b;
+    };
+    const inNome = cria('input'); inNome.value = s.colaborador || '';
+    inNome.setAttribute('list','l-colabs');
+    const inCpf = cria('input','mono'); inCpf.value = s.colaboradorCpf || '';
+    inCpf.placeholder = '000.000.000-00';
+
+    const selCtr = cria('select');
+    const o0 = cria('option', null, '— sem contrato —'); o0.value = ''; selCtr.appendChild(o0);
+    CONTRATOS_CM.forEach(c => {
+      const o = cria('option', null, c.label); o.value = c.cm; o.dataset.contrato = c.contrato;
+      selCtr.appendChild(o);
+    });
+    selCtr.value = s.cm || '';
+    if(selCtr.value !== (s.cm || '') && s.contrato){
+      /* contrato antigo que não está mais na lista: mantém como opção própria */
+      const o = cria('option', null, s.contrato + (s.cm ? ' — ' + s.cm : ''));
+      o.value = s.cm || ''; o.dataset.contrato = s.contrato;
+      selCtr.appendChild(o); selCtr.value = s.cm || '';
+    }
+
+    const selTipo = cria('select');
+    [['reposicao','Reposição'],['admissional','Admissional'],['troca','Troca']].forEach(([v,r]) => {
+      const o = cria('option', null, r); o.value = v; selTipo.appendChild(o);
+    });
+    selTipo.value = s.tipo || 'reposicao';
+
+    const selEnt = cria('select');
+    [['','— não definido —'],['envio','Correios (Segurança do Trabalho)'],['entrega','Entrega pessoal (Almoxarifado)']]
+      .forEach(([v,r]) => { const o = cria('option', null, r); o.value = v; selEnt.appendChild(o); });
+    selEnt.value = s.entregaPor || '';
+
+    const inData = cria('input'); inData.type = 'date';
+    if(s.dataRetirada) inData.value = paraInput(new Date(s.dataRetirada));
+
+    const grade = cria('div','g-edit-grade');
+    grade.append(campo('Colaborador', inNome), campo('CPF', inCpf),
+                 campo('Contrato', selCtr), campo('Tipo', selTipo),
+                 campo('Como vai chegar', selEnt), campo('Data de retirada', inData));
+    corpoEd.appendChild(grade);
+
+    /* itens: quantidade, remover e incluir */
+    corpoEd.appendChild(cria('h4', null, 'Equipamentos da ficha'));
+    const rascunho = s.itens.map(it => ({...it}));
+    const listaEd = cria('ul','ed-itens');
+    const pintarItens = () => {
+      listaEd.textContent = '';
+      if(!rascunho.length){
+        listaEd.appendChild(cria('li','ed-vazio','Nenhum item — inclua ao menos um antes de salvar.'));
+        return;
+      }
+      rascunho.forEach((it, i) => {
+        const li = cria('li','ed-item');
+        const q = cria('input','ed-qtd'); q.type='number'; q.min='1'; q.step='1'; q.value = String(it.qtd);
+        q.setAttribute('aria-label','Quantidade de ' + it.nome);
+        q.addEventListener('change', () => {
+          let n = parseInt(q.value,10); if(isNaN(n) || n < 1) n = 1;
+          q.value = String(n); it.qtd = n;
+          if(it.qtdSep != null && it.qtdSep > n) it.qtdSep = n;
+        });
+        const nm = cria('span','ed-nome', it.nome);
+        if(it.ca) nm.appendChild(cria('span','ed-ca','CA ' + it.ca));
+        const x = cria('button','ed-rm','×'); x.type='button';
+        x.setAttribute('aria-label','Remover ' + it.nome);
+        x.addEventListener('click', () => { rascunho.splice(i,1); pintarItens(); });
+        li.append(q, nm, x);
+        listaEd.appendChild(li);
+      });
+    };
+    pintarItens();
+    corpoEd.appendChild(listaEd);
+
+    const linhaAdd = cria('div','ed-add');
+    const inNovo = cria('input'); inNovo.placeholder = 'Incluir EPI — digite o nome';
+    inNovo.setAttribute('list','l-epis-estoque'); inNovo.autocomplete = 'off';
+    const bAdd = cria('button','btn','Incluir'); bAdd.type='button';
+    const incluir = () => {
+      const nome = (inNovo.value || '').trim().toUpperCase();
+      if(!nome) return;
+      const doCat = epiBase().find(e => normEpi(e.nome) === normEpi(nome));
+      const ja = rascunho.find(x => normEpi(x.nome) === normEpi(nome));
+      if(ja) ja.qtd += 1;
+      else rascunho.push({qtd:1, nome: doCat ? doCat.nome : nome, ca: doCat ? (doCat.ca || '') : '',
+                          qtdSep:0, separado:false, pendente:false});
+      inNovo.value = ''; pintarItens();
+    };
+    bAdd.addEventListener('click', incluir);
+    inNovo.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); incluir(); } });
+    linhaAdd.append(inNovo, bAdd);
+    corpoEd.appendChild(linhaAdd);
+
+    const notaEd = cria('p','g-nota'); notaEd.style.textAlign = 'left';
+    const bSalvarEd = cria('button','btn btn-forte','Salvar alterações'); bSalvarEd.type='button';
+    bSalvarEd.disabled = !DB;
+    bSalvarEd.addEventListener('click', async () => {
+      if(!DB) return;
+      if(!rascunho.length){ notaEd.textContent = 'A ficha precisa de pelo menos um equipamento.'; return; }
+      const opt = selCtr.selectedOptions[0];
+      const patch = {
+        colaborador: (inNome.value || '').trim().toUpperCase() || s.colaborador,
+        colaboradorCpf: (inCpf.value || '').trim(),
+        contrato: (opt && opt.dataset.contrato) || '',
+        cm: selCtr.value || '',
+        tipo: selTipo.value,
+        entregaPor: selEnt.value || null,
+        dataRetirada: inData.value ? new Date(inData.value + 'T12:00:00').toISOString() : null,
+        itens: rascunho.map(it => ({
+          qtd: it.qtd, nome: it.nome, ca: it.ca || '',
+          qtdSep: Math.max(0, Math.min(it.qtd, it.qtdSep == null ? (it.separado ? it.qtd : 0) : it.qtdSep)),
+          separado: !!it.separado, pendente: !!it.pendente,
+        })),
+        edicoes: (s.edicoes || []).concat([{em: new Date().toISOString(), por: eu.nome || 'Administrador'}]),
+      };
+      patch.itens.forEach(it => {
+        it.separado = it.qtdSep >= it.qtd;
+        if(it.separado) it.pendente = false;
+      });
+      bSalvarEd.disabled = true; notaEd.textContent = 'Salvando…';
+      try{
+        await DB.doc('solicitacoes/' + s.id).update(patch);
+        notaEd.textContent = 'Salvo.';
+      }catch(e){
+        notaEd.textContent = 'Não deu para salvar (' + ((e && e.code) || 'erro') + ').';
+      }
+      bSalvarEd.disabled = !DB;
+    });
+    corpoEd.append(bSalvarEd, notaEd);
+    if((s.edicoes || []).length){
+      const ult = s.edicoes[s.edicoes.length - 1];
+      corpoEd.appendChild(cria('p','g-nota',
+        'Última edição: ' + dataCurta(ult.em) + (ult.por ? ' · ' + ult.por : '')));
+    }
+    ed.appendChild(corpoEd);
+    corpo.appendChild(ed);
+  }
+
   /* ações de master: congelar e cancelar */
   if(ehAdmin()){
     const secA = cria('section','g-sec');
@@ -5214,6 +5443,97 @@ async function catLigar(nomeAntigo, idAlvo){
   }
 }
 
+function renderKitAdm(){
+  const alvo = $('#cat-kit'); if(!alvo) return;
+  alvo.textContent = '';
+  const podeMexer = catPodeEditar() && CATALOGO.length > 0;
+  const rascunho = KIT_ADM.map(k => ({...k}));
+
+  const lista = cria('ul','ed-itens');
+  const pintar = () => {
+    lista.textContent = '';
+    if(!rascunho.length){
+      lista.appendChild(cria('li','ed-vazio','Kit vazio — nada entra sozinho na admissão.'));
+      return;
+    }
+    rascunho.forEach((k, i) => {
+      const li = cria('li','ed-item');
+      const q = cria('input','ed-qtd'); q.type='number'; q.min='1'; q.step='1'; q.value=String(k.qtd);
+      q.disabled = !podeMexer;
+      q.setAttribute('aria-label','Quantidade de ' + k.nome);
+      q.addEventListener('change', () => {
+        let n = parseInt(q.value,10); if(isNaN(n) || n < 1) n = 1;
+        q.value = String(n); k.qtd = n;
+      });
+      const doCat = epiBase().find(e => normEpi(e.nome) === normEpi(k.nome));
+      const nm = cria('span','ed-nome', k.nome);
+      nm.appendChild(cria('span','ed-ca', doCat
+        ? (doCat.custo != null ? fmtMoeda(doCat.custo) + ' cada' : 'sem preço')
+        : 'fora do catálogo'));
+      li.append(q, nm);
+      if(podeMexer){
+        const x = cria('button','ed-rm','×'); x.type='button';
+        x.setAttribute('aria-label','Tirar ' + k.nome + ' do kit');
+        x.addEventListener('click', () => { rascunho.splice(i,1); pintar(); });
+        li.appendChild(x);
+      }
+      lista.appendChild(li);
+    });
+  };
+  pintar();
+  alvo.appendChild(lista);
+
+  if(!podeMexer){
+    alvo.appendChild(cria('p','g-nota', CATALOGO.length
+      ? 'Só o administrador e o Almoxarifado ADM editam o kit.'
+      : 'Grave o catálogo no banco para poder editar o kit.'));
+    return;
+  }
+
+  const linha = cria('div','ed-add');
+  const inNovo = cria('input'); inNovo.placeholder = 'Incluir EPI no kit';
+  inNovo.setAttribute('list','l-epis-estoque'); inNovo.autocomplete='off';
+  const bAdd = cria('button','btn','Incluir'); bAdd.type='button';
+  const incluir = () => {
+    const nome = (inNovo.value || '').trim().toUpperCase();
+    if(!nome) return;
+    const doCat = epiBase().find(e => normEpi(e.nome) === normEpi(nome));
+    const alvoNome = doCat ? doCat.nome : nome;
+    const ja = rascunho.find(k => normEpi(k.nome) === normEpi(alvoNome));
+    if(ja) ja.qtd += 1; else rascunho.push({nome: alvoNome, qtd: 1});
+    inNovo.value = ''; pintar();
+  };
+  bAdd.addEventListener('click', incluir);
+  inNovo.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); incluir(); } });
+  linha.append(inNovo, bAdd);
+  alvo.appendChild(linha);
+
+  const nota = cria('p','g-nota'); nota.style.textAlign = 'left';
+  const bSalvar = cria('button','btn btn-forte','Salvar o kit'); bSalvar.type='button';
+  bSalvar.style.marginTop = '10px';
+  bSalvar.addEventListener('click', async () => {
+    if(!DB) return;
+    bSalvar.disabled = true; nota.textContent = 'Salvando…';
+    try{
+      await DB.doc('catalogo/' + KIT_DOC).set({
+        itens: rascunho.map(k => ({nome:k.nome, qtd:k.qtd})),
+        alteradoEm: new Date().toISOString(), alteradoPor: eu.nome || '',
+      });
+      nota.textContent = 'Salvo. Vale a partir da próxima solicitação de admissão.';
+    }catch(e){ nota.textContent = 'Não deu para salvar (' + ((e && e.code) || 'erro') + ').'; }
+    bSalvar.disabled = false;
+  });
+  const bPadrao = cria('button','btn','Voltar ao kit sugerido'); bPadrao.type='button';
+  bPadrao.addEventListener('click', () => {
+    rascunho.length = 0;
+    KIT_ADM_PADRAO.forEach(k => rascunho.push({...k}));
+    pintar(); nota.textContent = 'Lista restaurada — clique em Salvar o kit para valer.';
+  });
+  const acoes = cria('div','acoes'); acoes.style.marginTop = '10px';
+  acoes.append(bSalvar, bPadrao);
+  alvo.append(acoes, nota);
+}
+
 function renderCatalogo(){
   const base = epiBase();
   const noBanco = CATALOGO.length > 0;
@@ -5242,6 +5562,8 @@ function renderCatalogo(){
   [...new Set(base.map(e => e.grupo || 'EPI'))].sort().forEach(g => {
     const o = cria('option'); o.value = g; dl.appendChild(o);
   });
+
+  renderKitAdm();
 
   /* ---- órfãos ---- */
   const pnO = $('#cat-painel-orfaos'), alvoO = $('#cat-orfaos');
@@ -5636,7 +5958,13 @@ function abrirOuvintes(db){
   }));
 
   ouvintes.push(db.collection('catalogo').onSnapshot(snap => {
-    CATALOGO = snap.docs.map(d => ({id:d.id, ...d.data()}));
+    const todos = snap.docs.map(d => ({id:d.id, ...d.data()}));
+    /* o kit de admissão mora na mesma coleção, num documento à parte */
+    const doKit = todos.find(d => d.id === KIT_DOC);
+    KIT_ADM = (doKit && Array.isArray(doKit.itens) && doKit.itens.length)
+      ? doKit.itens.map(i => ({nome:i.nome, qtd:Math.max(1, parseInt(i.qtd,10) || 1)}))
+      : KIT_ADM_PADRAO.slice();
+    CATALOGO = todos.filter(d => d.id !== KIT_DOC);
     reconstruirCatalogo();
     if(!$('#pg-catalogo').hidden) renderCatalogo();
     if(!$('#pg-estoque').hidden) renderEstoque();
