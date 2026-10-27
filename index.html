@@ -351,11 +351,14 @@ h1,h2,h3{margin:0}
 .f-end{display:block;font-weight:400;font-size:10.5px;line-height:1.35;margin-top:1px;color:#333}
 table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .f-tabela th{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:12.5px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.08em;background:#E9EEEB;border:1px solid var(--papel-borda);padding:5px 8px}
-.f-tabela td{border:1px solid #6B6B6B;padding:4.5px 8px;font-size:12.5px;vertical-align:top;color:#000}
+  text-transform:uppercase;letter-spacing:.08em;background:#E9EEEB;border:1px solid var(--papel-borda);
+  padding:5px 8px;color:#000}
+.f-tabela td{border:1px solid #6B6B6B;padding:6px 8px;font-size:12.5px;vertical-align:top;color:#000;
+  height:27px}
 .f-tabela .c-qtd{width:56px;text-align:center;font-variant-numeric:tabular-nums;font-weight:600}
-.f-tabela .c-ca{width:78px;text-align:center;font-variant-numeric:tabular-nums;color:#000}
-.f-tabela tr.f-branca td{height:21px}
+.f-tabela .c-ca{width:72px;text-align:center;font-variant-numeric:tabular-nums;color:#000}
+.f-tabela .c-assina{width:168px}
+.f-tabela tr.f-branca td{height:27px}
 .f-nada td{text-align:center;color:#555;font-style:italic;padding:14px}
 .f-termo h3{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:13px;font-weight:700;
   text-transform:uppercase;letter-spacing:.1em;text-align:center;margin-bottom:7px;padding:5px;
@@ -600,8 +603,12 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
   display:flex;justify-content:space-between;align-items:flex-start;gap:10px;position:sticky;top:0;background:#0B1440;z-index:2}
 .g-topo h3{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:19px;font-weight:700}
 .g-topo p{margin:1px 0 0;font-size:13px;color:var(--suave)}
-.g-fechar{border:0;background:none;font-size:22px;line-height:1;color:var(--suave);cursor:pointer;padding:2px 6px;border-radius:4px}
-.g-fechar:hover{background:rgba(46,123,255,.12);color:var(--gelo)}
+.g-fechar{flex:none;width:38px;height:38px;border:1.5px solid var(--linha-forte);
+  background:rgba(5,10,38,.65);font-size:22px;line-height:1;color:var(--gelo);cursor:pointer;
+  border-radius:9px;display:grid;place-items:center;padding:0;
+  transition:background .12s ease,border-color .12s ease}
+.g-fechar:hover{background:rgba(209,72,60,.18);border-color:var(--alerta);color:var(--alerta)}
+@media (max-width:900px){.g-fechar{width:42px;height:42px;font-size:24px}}
 .g-corpo{padding:16px 18px;display:flex;flex-direction:column;gap:16px}
 .g-grade{display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 12px;font-size:13px}
 .g-grade dt{color:var(--suave);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
@@ -676,6 +683,9 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .g-erro{font-size:12.5px;color:var(--alerta);text-align:left;line-height:1.45;margin:0;
   overflow-wrap:anywhere}
 .g-erro:empty{display:none}
+.aviso-ok{background:rgba(54,173,107,.13);border:1px solid rgba(54,173,107,.45);
+  border-left:4px solid var(--e4);border-radius:8px;padding:11px 13px;margin:0 0 12px;
+  font-size:13.5px;line-height:1.45;color:var(--gelo);font-weight:600}
 /* edição da ficha pelo administrador */
 .g-edit{border:1px solid var(--linha-forte);border-radius:9px;background:rgba(146,132,230,.07)}
 .g-edit>summary{cursor:pointer;padding:10px 12px;font-size:12.5px;font-weight:700;
@@ -896,7 +906,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 25</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 28</span></p>
     </form>
   </div>
 </div>
@@ -1052,7 +1062,7 @@ html{overflow-x:clip}
           <div class="f-linha"><div class="f-rot">Data</div><div class="f-val" id="v-retirada"></div></div>
         </div>
         <table class="f-tabela">
-          <thead><tr><th class="c-qtd">Qtde</th><th>Descrição do equipamento</th><th class="c-ca" id="v-th-ca">CA</th></tr></thead>
+          <thead><tr><th class="c-qtd">Qtde</th><th>Descrição do equipamento</th><th class="c-ca" id="v-th-ca">CA</th><th class="c-assina">Assinatura</th></tr></thead>
           <tbody id="v-corpo"></tbody>
         </table>
         <section class="f-termo"><h3>Termo de responsabilidade</h3><div id="v-termo"></div></section>
@@ -1813,18 +1823,21 @@ function construirFicha(s){
   const corpoTab = q('#v-corpo'); corpoTab.textContent = '';
   if(!s.itens.length){
     const tr = cria('tr','f-nada'); const td = cria('td', null, 'Nenhum equipamento lançado nesta ficha.');
-    td.colSpan = 3; tr.appendChild(td); corpoTab.appendChild(tr);
+    td.colSpan = 4; tr.appendChild(td); corpoTab.appendChild(tr);
   } else {
     s.itens.forEach(it => {
       const tr = cria('tr');
       tr.appendChild(cria('td','c-qtd', it.qtd));
       tr.appendChild(cria('td', null, it.nome));
       tr.appendChild(cria('td','c-ca', it.ca || '—'));
+      /* espaço em branco: o colaborador assina item por item, ao receber */
+      tr.appendChild(cria('td','c-assina'));
       corpoTab.appendChild(tr);
     });
-    for(let i = s.itens.length; i < 12; i++){
+    /* linhas em branco só até fechar a página — agora são mais altas, por causa da assinatura */
+    for(let i = s.itens.length; i < 10; i++){
       const tr = cria('tr','f-branca');
-      for(let j = 0; j < 3; j++) tr.appendChild(cria('td'));
+      for(let j = 0; j < 4; j++) tr.appendChild(cria('td'));
       corpoTab.appendChild(tr);
     }
   }
@@ -3937,6 +3950,15 @@ function renderKanban(){
 }
 
 /* ================= gaveta ================= */
+/* recado curto no alto do Controle, para confirmar o que acabou de acontecer */
+function avisoFeito(texto){
+  const alvo = $('#c-aviso');
+  alvo.textContent = '';
+  alvo.appendChild(cria('p','aviso-ok', texto));
+  try{ alvo.scrollIntoView({behavior:'smooth', block:'nearest'}); }catch(e){}
+  clearTimeout(avisoFeito._t);
+  avisoFeito._t = setTimeout(() => { alvo.textContent = ''; }, 9000);
+}
 function avisoTravado(s){
   const alvo = $('#c-aviso');
   alvo.textContent = '';
@@ -4505,7 +4527,12 @@ function abrirGaveta(id){
         b.disabled = false; b.textContent = rotulo; b.classList.remove('btn-confirmar');
         armado = false;
         gavetaErro('Não deu para concluir a separação: ' + erro);
+        return;
       }
+      /* fecha a ficha e volta para o quadro, com a confirmação à vista */
+      fecharGaveta();
+      avisoFeito('Separação da ficha Nº' + s.num + ' concluída. A Segurança do Trabalho foi comunicada'
+        + (faltam > 0 ? ', inclusive das ' + pecasFaltando + ' peça' + (pecasFaltando>1?'s':'') + ' que ficaram pendentes.' : '.'));
     });
     rod.appendChild(b);
   } else if(s.status === 'envio' || s.status === 'entrega'){
@@ -4590,10 +4617,11 @@ body{margin:0;background:#fff;color:#000;font-family:"Barlow",system-ui,-apple-s
 table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .f-tabela th{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
   background:#E9EEEB;border:1px solid #000;padding:5px 8px}
-.f-tabela td{border:1px solid #6B6B6B;padding:4.5px 8px;font-size:12px;vertical-align:top;color:#000}
+.f-tabela td{border:1px solid #6B6B6B;padding:6px 8px;font-size:12px;vertical-align:top;color:#000;height:27px}
 .f-tabela .c-qtd{width:56px;text-align:center;font-weight:600}
-.f-tabela .c-ca{width:78px;text-align:center;color:#000}
-.f-tabela tr.f-branca td{height:21px}
+.f-tabela .c-ca{width:72px;text-align:center;color:#000}
+.f-tabela .c-assina{width:168px}
+.f-tabela tr.f-branca td{height:27px}
 .f-nada td{text-align:center;color:#555;font-style:italic;padding:14px}
 .f-termo h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-align:center;
   margin:0 0 7px;padding:5px;border:1px solid #000;background:#E9EEEB}
