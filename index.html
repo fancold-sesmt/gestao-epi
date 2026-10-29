@@ -63,6 +63,15 @@ h1,h2,h3{margin:0}
 .aba:hover{background:rgba(46,123,255,.09);color:var(--gelo)}
 .aba[aria-selected="true"]{background:rgba(46,123,255,.16);color:var(--azul-claro)}
 .subabas{display:flex;gap:6px;margin-bottom:10px;border-bottom:1px solid var(--borda);padding-bottom:2px}
+.e-filtros-cx>summary{cursor:pointer;font-family:"Barlow Condensed",Barlow,sans-serif;font-size:15px;
+  font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gelo);list-style:none;
+  display:flex;align-items:center;gap:8px}
+.e-filtros-cx>summary::-webkit-details-marker{display:none}
+.e-filtros-cx>summary::after{content:'▾';margin-left:auto;color:var(--suave);font-size:13px}
+.e-filtros-cx[open]>summary::after{content:'▴'}
+.e-filtros-cx>summary span{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:none;
+  color:var(--azul-claro);font-family:inherit}
+.e-filtros-cx[open] .e-filtros{margin-top:12px}
 .e-filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
 .e-filtros .campo{margin:0;min-width:150px;flex:1 1 150px}
 .e-filtros .campo.largo{flex:2 1 220px}
@@ -683,6 +692,36 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .g-erro{font-size:12.5px;color:var(--alerta);text-align:left;line-height:1.45;margin:0;
   overflow-wrap:anywhere}
 .g-erro:empty{display:none}
+.ab-passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-bottom:12px}
+.ab-passo{border:1px solid var(--linha);border-radius:9px;padding:11px 12px;background:rgba(5,10,38,.35);
+  display:flex;flex-direction:column;gap:3px}
+.ab-passo b{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--azul-claro)}
+.ab-passo span{font-size:11.5px;color:var(--suave);line-height:1.35;flex:1}
+.ab-passo .btn{margin-top:8px;flex:none;width:100%}
+.ab-modo{display:flex;flex-direction:column;gap:7px;margin-bottom:4px}
+.ab-modo label{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--suave);cursor:pointer;
+  line-height:1.4}
+.ab-modo input{width:17px;height:17px;margin:1px 0 0;flex:none;accent-color:var(--azul)}
+.ab-modo b{color:var(--gelo)}
+/* saldo por EPI, em cartões */
+.sal-lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:10px}
+.sal-item{border:1px solid var(--linha);border-left:3px solid var(--cor-sal,var(--linha-forte));
+  border-radius:9px;padding:10px 12px;background:rgba(5,10,38,.35);display:flex;flex-direction:column;gap:6px}
+.sal-falta{--cor-sal:var(--alerta);background:rgba(232,161,92,.09)}
+.sal-baixo{--cor-sal:var(--e5)}
+.sal-ok{--cor-sal:var(--e4)}
+.sal-cab{display:flex;align-items:flex-start;gap:8px;justify-content:space-between}
+.sal-nome{font-size:13px;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
+.sal-chip{flex:none;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:3px;padding:2px 6px;background:rgba(163,180,220,.14);color:var(--suave)}
+.sal-falta .sal-chip{background:rgba(232,161,92,.2);color:var(--alerta)}
+.sal-ok .sal-chip{background:rgba(54,173,107,.2);color:var(--e4)}
+.sal-linha{display:flex;align-items:center;gap:9px}
+.sal-trilho{flex:1;height:7px;border-radius:4px;background:rgba(127,176,255,.13);overflow:hidden}
+.sal-trilho i{display:block;height:100%;border-radius:4px;background:var(--cor-sal,var(--azul))}
+.sal-saldo{font-size:17px;font-variant-numeric:tabular-nums;flex:none;min-width:34px;text-align:right}
+.sal-falta .sal-saldo{color:var(--alerta)}
+.sal-meta{font-size:11px;color:var(--tenue);font-variant-numeric:tabular-nums;line-height:1.35}
 .aviso-ok{background:rgba(54,173,107,.13);border:1px solid rgba(54,173,107,.45);
   border-left:4px solid var(--e4);border-radius:8px;padding:11px 13px;margin:0 0 12px;
   font-size:13.5px;line-height:1.45;color:var(--gelo);font-weight:600}
@@ -906,7 +945,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 28</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 29</span></p>
     </form>
   </div>
 </div>
@@ -1214,7 +1253,8 @@ html{overflow-x:clip}
         <button class="subaba" role="tab" data-pg="custo" aria-selected="false">Custos</button>
       </div>
 
-      <section class="painel">
+      <details class="painel e-filtros-cx" id="e-filtros-cx">
+        <summary>Filtrar <span id="ef-chip-resumo"></span></summary>
         <div class="e-filtros">
           <div class="campo"><label for="ef-mes">Mês</label><select id="ef-mes"></select></div>
           <div class="campo largo"><label for="ef-contrato">Contrato</label><select id="ef-contrato"></select></div>
@@ -1223,10 +1263,45 @@ html{overflow-x:clip}
           <button class="btn" id="ef-limpar" type="button">Limpar filtros</button>
         </div>
         <p class="sub" id="ef-resumo" style="margin:10px 0 0"></p>
-      </section>
+      </details>
 
       <div id="e-pg-mov">
         <dl class="tiles" id="e-tiles-mov"></dl>
+
+        <section class="painel" id="e-painel-abastecer">
+          <h3>Abastecer o estoque por planilha</h3>
+          <p class="sub">Baixe a planilha, preencha a coluna <b>Quantidade</b> e devolva aqui. Serve tanto para lançar uma compra quanto para acertar o estoque depois de uma contagem.</p>
+          <div class="ab-passos">
+            <div class="ab-passo">
+              <b>1 · Baixar</b>
+              <span>Vem com todos os EPI do catálogo e o saldo de hoje</span>
+              <button class="btn" id="ab-modelo" type="button">Baixar planilha</button>
+            </div>
+            <div class="ab-passo">
+              <b>2 · Preencher</b>
+              <span>Só a coluna Quantidade. Linha em branco é ignorada</span>
+            </div>
+            <div class="ab-passo">
+              <b>3 · Devolver</b>
+              <span>Arraste aqui ou escolha do computador</span>
+              <input type="file" id="ab-arquivo" accept=".xlsx,.xlsm,.xls,.csv" hidden>
+              <button class="btn btn-forte" id="ab-escolher" type="button">Escolher planilha</button>
+            </div>
+          </div>
+          <div class="ab-modo">
+            <label><input type="radio" name="ab-modo" value="somar" checked>
+              <span><b>Somar ao que já tem</b> — compra nova, entrada de nota</span></label>
+            <label><input type="radio" name="ab-modo" value="ajustar">
+              <span><b>Essa é a quantidade real</b> — contagem de inventário; o sistema acerta a diferença</span></label>
+          </div>
+          <div id="ab-solta" class="an-solta" style="margin-top:10px">
+            <b>Arraste a planilha preenchida para cá</b>
+            <span>ou use o botão do passo 3</span>
+          </div>
+          <p class="g-nota" id="ab-status" style="text-align:left"></p>
+          <div id="ab-previa"></div>
+        </section>
+
         <section class="painel">
           <h3>Saldo por EPI</h3>
           <p class="sub">Entradas menos saídas, dentro do filtro acima. As saídas automáticas das fichas entregues já entram aqui.</p>
@@ -5053,12 +5128,176 @@ function resumoFiltro(n){
   if(fEst.contrato)    ativos.push(fEst.contrato);
   if(fEst.colaborador) ativos.push(fEst.colaborador);
   if(fEst.epi)         ativos.push('EPI: ' + fEst.epi);
+  const chip = $('#ef-chip-resumo');
+  if(chip) chip.textContent = ativos.length ? '· ' + ativos.length + ' filtro' + (ativos.length>1?'s':'') + ' ativo' + (ativos.length>1?'s':'') : '';
   if(!ativos.length){
     alvo.textContent = MOVIMENTOS.length + ' lançamento' + (MOVIMENTOS.length===1?'':'s') + ' no total — sem filtro.';
     return;
   }
   ativos.forEach(a => alvo.appendChild(cria('span','e-chip', a)));
   alvo.appendChild(cria('span', null, ' ' + n + ' de ' + MOVIMENTOS.length + ' lançamentos'));
+}
+
+
+/* ================= abastecer o estoque por planilha ================= */
+function abSaldoAtual(){
+  const m = new Map();
+  MOVIMENTOS.forEach(x => {
+    const k = normEpi(x.epi || '');
+    if(!k) return;
+    m.set(k, (m.get(k) || 0) + (x.tipo === 'entrada' ? 1 : -1) * (x.quantidade || 0));
+  });
+  return m;
+}
+
+$('#ab-modelo').addEventListener('click', () => {
+  if(typeof XLSX === 'undefined'){
+    $('#ab-status').textContent = 'O leitor de planilhas não carregou. Recarregue a página.';
+    return;
+  }
+  const saldos = abSaldoAtual();
+  const cab = ['EPI','CA','Saldo hoje','Quantidade','Observação'];
+  const linhas = epiBase()
+    .filter(e => e.ativo !== false)
+    .slice()
+    .sort((a,b) => (a.nome||'').localeCompare(b.nome||''))
+    .map(e => [e.nome, e.ca || '', saldos.get(normEpi(e.nome)) || 0, '', '']);
+  /* EPI que já se moveu mas não está no catálogo também entra, para não ficar de fora */
+  const vistos = new Set(epiBase().map(e => normEpi(e.nome)));
+  [...new Set(MOVIMENTOS.map(m => m.epi).filter(Boolean))].forEach(nome => {
+    if(vistos.has(normEpi(nome))) return;
+    linhas.push([nome, '', saldos.get(normEpi(nome)) || 0, '', 'fora do catálogo']);
+  });
+  const ws = XLSX.utils.aoa_to_sheet([cab, ...linhas]);
+  ws['!cols'] = [{wch:52},{wch:12},{wch:12},{wch:13},{wch:30}];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Estoque');
+  XLSX.writeFile(wb, 'estoque-fancold.xlsx');
+  $('#ab-status').textContent = 'Planilha baixada com ' + linhas.length +
+    ' EPI. Preencha a coluna Quantidade e devolva aqui.';
+});
+
+$('#ab-escolher').addEventListener('click', () => $('#ab-arquivo').click());
+$('#ab-arquivo').addEventListener('change', e => {
+  const arq = e.target.files && e.target.files[0];
+  e.target.value = '';
+  if(arq) abLer(arq);
+});
+{
+  const zona = $('#ab-solta');
+  const parar = ev => { ev.preventDefault(); ev.stopPropagation(); };
+  ['dragenter','dragover'].forEach(n => zona.addEventListener(n, ev => {
+    parar(ev); ev.dataTransfer.dropEffect = 'copy'; zona.classList.add('an-sobre');
+  }));
+  ['dragleave','dragend'].forEach(n => zona.addEventListener(n, ev => {
+    parar(ev); zona.classList.remove('an-sobre');
+  }));
+  zona.addEventListener('drop', ev => {
+    parar(ev); zona.classList.remove('an-sobre');
+    const f = ev.dataTransfer.files && ev.dataTransfer.files[0];
+    if(f) abLer(f);
+  });
+}
+
+async function abLer(arq){
+  const nota = $('#ab-status'), previa = $('#ab-previa');
+  previa.textContent = '';
+  if(typeof XLSX === 'undefined'){ nota.textContent = 'O leitor de planilhas não carregou.'; return; }
+  nota.textContent = 'Lendo ' + arq.name + '…';
+  try{
+    const wb = XLSX.read(await arq.arrayBuffer(), {cellDates:true});
+    const aoa = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header:1, defval:'', raw:false});
+    const iCab = aoa.findIndex(l => anTemTodas(l, ['EPI']) && anTemTodas(l, ['QUANTIDADE']));
+    if(iCab < 0){
+      nota.textContent = 'Não achei as colunas EPI e Quantidade. Use a planilha que o botão "Baixar planilha" gera.';
+      return;
+    }
+    const cab = aoa[iCab];
+    const cEpi = anCol(cab,'EPI'), cQtd = anCol(cab,'QUANTIDADE'), cObs = anCol(cab,'OBSERVA');
+    const saldos = abSaldoAtual();
+    const modo = (document.querySelector('input[name="ab-modo"]:checked') || {}).value || 'somar';
+
+    const linhas = [];
+    for(let i = iCab + 1; i < aoa.length; i++){
+      const l = aoa[i]; if(!l) continue;
+      const nome = anTxt(l[cEpi]);
+      const bruto = anTxt(l[cQtd]);
+      if(!nome || bruto === '') continue;
+      const qtd = anNum(bruto);
+      if(!isFinite(qtd)) continue;
+      const atual = saldos.get(normEpi(nome)) || 0;
+      const delta = modo === 'somar' ? qtd : (qtd - atual);
+      if(!delta) continue;
+      linhas.push({nome, qtd, atual, delta, obs: cObs >= 0 ? anTxt(l[cObs]) : ''});
+    }
+    if(!linhas.length){
+      nota.textContent = modo === 'somar'
+        ? 'Nenhuma linha com quantidade preenchida.'
+        : 'As quantidades informadas já batem com o saldo do sistema — nada a ajustar.';
+      return;
+    }
+    nota.textContent = linhas.length + ' EPI para ' + (modo === 'somar' ? 'dar entrada' : 'acertar') + '. Confira e confirme.';
+    abPrevia(linhas, modo, arq.name);
+  }catch(err){
+    nota.textContent = 'Não consegui abrir o arquivo (' + ((err && err.message) || 'erro') + ').';
+  }
+}
+
+function abPrevia(linhas, modo, nomeArq){
+  const alvo = $('#ab-previa'); alvo.textContent = '';
+  const tb = cria('table','dados'), th = cria('thead'), trh = cria('tr');
+  const cols = modo === 'somar'
+    ? ['EPI','Saldo hoje','Entrando','Fica com']
+    : ['EPI','Saldo hoje','Contado','Ajuste'];
+  cols.forEach(h => trh.appendChild(cria('th', null, h)));
+  th.appendChild(trh); tb.appendChild(th);
+  const tbody = cria('tbody');
+  linhas.forEach(l => {
+    const tr = cria('tr');
+    tr.appendChild(cria('td', null, l.nome));
+    tr.appendChild(cria('td','n', String(l.atual)));
+    tr.appendChild(cria('td','n', String(l.qtd)));
+    const fim = cria('td','n', modo === 'somar'
+      ? String(l.atual + l.delta)
+      : (l.delta > 0 ? '+' + l.delta : String(l.delta)));
+    if(modo !== 'somar') fim.style.color = l.delta > 0 ? 'var(--e4)' : 'var(--alerta)';
+    tr.appendChild(fim);
+    tbody.appendChild(tr);
+  });
+  tb.appendChild(tbody);
+  const wrap = cria('div','tabela-wrap'); wrap.appendChild(tb); alvo.appendChild(wrap);
+
+  const b = cria('button','btn btn-forte',
+    'Confirmar — ' + linhas.length + ' EPI'); b.type='button';
+  b.style.marginTop = '12px';
+  b.disabled = !DB;
+  b.addEventListener('click', async () => {
+    if(!DB) return;
+    b.disabled = true;
+    const nota = $('#ab-status');
+    const agora = new Date().toISOString();
+    let n = 0, erros = 0;
+    for(const l of linhas){
+      nota.textContent = 'Gravando ' + (n + 1) + ' de ' + linhas.length + '…';
+      try{
+        await DB.collection('estoque').add({
+          tipo: l.delta > 0 ? 'entrada' : 'saida',
+          epi: l.nome, ca: '', quantidade: Math.abs(l.delta),
+          observacao: (l.obs ? l.obs + ' · ' : '') +
+            (modo === 'somar' ? 'entrada por planilha' : 'acerto de inventário') + ' (' + nomeArq + ')',
+          origem: modo === 'somar' ? 'planilha' : 'inventario',
+          colaborador: '', contrato: '', cm: '',
+          retiradoPor: modo === 'somar' ? '' : 'Acerto de inventário',
+          data: agora, criadoPor: eu.nome || '', criadoEm: agora,
+        });
+        n++;
+      }catch(e){ erros++; }
+    }
+    nota.textContent = n + ' lançamento' + (n===1?'':'s') + ' gravado' + (n===1?'':'s')
+      + (erros ? ' · ' + erros + ' falharam' : '') + '. O saldo abaixo já está atualizado.';
+    $('#ab-previa').textContent = '';
+  });
+  alvo.appendChild(b);
 }
 
 /* ---- custos ---- */
@@ -5068,7 +5307,8 @@ function custoDaSaida(m){
 }
 
 function renderCustos(movs){
-  const saidas = movs.filter(m => m.tipo === 'saida');
+  /* acerto de inventário é correção de saldo, não EPI entregue: fica fora do custo */
+  const saidas = movs.filter(m => m.tipo === 'saida' && m.origem !== 'inventario');
   const semCusto = saidas.filter(m => custoDaSaida(m) == null);
   const total = saidas.reduce((a,m) => a + (custoDaSaida(m) || 0), 0);
   const pecas = saidas.reduce((a,m) => a + (m.quantidade || 0), 0);
@@ -5241,13 +5481,6 @@ function renderMovimentacao(movs){
   const pEnt = ent.reduce((a,m) => a + (m.quantidade || 0), 0);
   const pSai = sai.reduce((a,m) => a + (m.quantidade || 0), 0);
 
-  tiles($('#e-tiles-mov'), [
-    ['Entradas', String(pEnt), ent.length + ' lançamento' + (ent.length===1?'':'s')],
-    ['Saídas',   String(pSai), sai.length + ' lançamento' + (sai.length===1?'':'s')],
-    ['Saldo',    String(pEnt - pSai), pEnt - pSai < 0 ? 'faltam entradas registradas' : 'peças em estoque'],
-    ['EPI diferentes', String(new Set(movs.map(m => m.epi || '')).size), 'itens movimentados'],
-  ]);
-
   /* saldo por EPI */
   const porEpi = {};
   movs.forEach(m => {
@@ -5256,30 +5489,44 @@ function renderMovimentacao(movs){
     if(m.tipo === 'entrada') porEpi[k].entradas += (m.quantidade || 0);
     else porEpi[k].saidas += (m.quantidade || 0);
   });
-  const linhas = Object.entries(porEpi).map(([k,v]) => ({nome:k, ...v, saldo: v.entradas - v.saidas}))
-    .sort((a,b) => a.nome.localeCompare(b.nome));
+  const linhas = Object.entries(porEpi).map(([k,v]) => ({nome:k, ...v, saldo: v.entradas - v.saidas}));
+  /* pior primeiro: o que está em falta é o que precisa de decisão */
+  const peso = l => l.saldo <= 0 ? 0 : (l.entradas && l.saldo <= Math.max(3, l.entradas * 0.2) ? 1 : 2);
+  linhas.sort((a,b) => peso(a) - peso(b) || a.saldo - b.saldo || a.nome.localeCompare(b.nome));
+
+  const emFalta = Object.values(porEpi).filter(v => v.entradas - v.saidas <= 0).length;
+  tiles($('#e-tiles-mov'), [
+    ['Em estoque', String(pEnt - pSai), pEnt - pSai < 0 ? 'falta registrar compras' : 'peças disponíveis'],
+    ['EPI em falta', String(emFalta), emFalta ? 'saldo zerado ou negativo' : 'nenhum zerado'],
+    ['Entradas', String(pEnt), ent.length + ' lançamento' + (ent.length===1?'':'s')],
+    ['Saídas',   String(pSai), sai.length + ' lançamento' + (sai.length===1?'':'s')],
+  ]);
 
   const wrapSaldo = $('#e-saldo'); wrapSaldo.textContent = '';
   if(!linhas.length){
     wrapSaldo.appendChild(cria('p','nada','Nenhum lançamento no filtro atual.'));
   } else {
-    const tb = cria('table','dados'), thead = cria('thead'), trh = cria('tr');
-    ['EPI','Entradas','Saídas','Saldo'].forEach(h => trh.appendChild(cria('th', null, h)));
-    thead.appendChild(trh); tb.appendChild(thead);
-    const tbody = cria('tbody');
+    const lista = cria('div','sal-lista');
     linhas.forEach(l => {
-      const tr = cria('tr');
-      tr.appendChild(cria('td', null, l.nome));
-      tr.appendChild(cria('td','n', String(l.entradas)));
-      tr.appendChild(cria('td','n', String(l.saidas)));
-      const tdS = cria('td','n', String(l.saldo));
-      if(l.saldo <= 0) tdS.style.color = 'var(--alerta)';
-      tr.appendChild(tdS);
-      tbody.appendChild(tr);
+      const nivel = peso(l);
+      const d = cria('div','sal-item ' + ['sal-falta','sal-baixo','sal-ok'][nivel]);
+      const cab = cria('div','sal-cab');
+      cab.append(cria('span','sal-nome', l.nome),
+                 cria('span','sal-chip', ['Em falta','Acabando','Em estoque'][nivel]));
+      d.appendChild(cab);
+      const trilho = cria('div','sal-trilho'); const i = cria('i');
+      const pct = l.entradas > 0 ? Math.max(0, Math.min(100, l.saldo / l.entradas * 100)) : 0;
+      i.style.width = pct + '%';
+      trilho.appendChild(i);
+      const linha = cria('div','sal-linha');
+      linha.append(trilho, cria('b','sal-saldo', String(l.saldo)));
+      d.appendChild(linha);
+      d.appendChild(cria('div','sal-meta',
+        'entrou ' + l.entradas + ' · saiu ' + l.saidas +
+        (l.saldo < 0 ? ' · saiu mais do que entrou, falta registrar a compra' : '')));
+      lista.appendChild(d);
     });
-    tb.appendChild(tbody);
-    const wrap = cria('div','tabela-wrap'); wrap.appendChild(tb);
-    wrapSaldo.appendChild(wrap);
+    wrapSaldo.appendChild(lista);
   }
 
   /* movimento por mês */
@@ -5342,7 +5589,10 @@ function renderMovimentacao(movs){
   wrapMov.appendChild(wrap);
 }
 
+let filtroAjustado = false;
 function renderEstoque(){
+  const cx = $('#e-filtros-cx');
+  if(cx && !filtroAjustado){ cx.open = window.innerWidth > 900; filtroAjustado = true; }
   preencherFiltrosEstoque();
   const movs = estFiltrados();
   resumoFiltro(movs.length);
