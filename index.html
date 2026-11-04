@@ -76,6 +76,29 @@ h1,h2,h3{margin:0}
 .e-filtros .campo{margin:0;min-width:150px;flex:1 1 150px}
 .e-filtros .campo.largo{flex:2 1 220px}
 .e-filtros select,.e-filtros input{width:100%;box-sizing:border-box}
+.ef-atalhos{display:flex;flex-wrap:wrap;gap:6px}
+.ef-at{border:1px solid var(--linha-forte);background:rgba(5,10,38,.55);border-radius:999px;
+  padding:6px 12px;font-size:12.5px;font-weight:600;color:var(--suave);cursor:pointer;white-space:nowrap}
+.ef-at:hover{border-color:var(--azul);color:var(--gelo)}
+.ef-at.ef-on{border-color:var(--azul);background:rgba(46,123,255,.18);color:var(--azul-claro)}
+/* para onde foi: EPI com o destino aberto embaixo */
+.dst-item{border:1px solid var(--linha);border-radius:9px;margin-bottom:8px;background:rgba(5,10,38,.4)}
+.dst-item[open]{border-color:var(--linha-forte)}
+.dst-sum{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 13px;
+  cursor:pointer;list-style:none}
+.dst-sum::-webkit-details-marker{display:none}
+.dst-sum:hover{background:rgba(46,123,255,.07)}
+.dst-esq{min-width:0;flex:1}
+.dst-nome{font-size:13.5px;font-weight:700;line-height:1.25;overflow-wrap:anywhere}
+.dst-meta{font-size:11.5px;color:var(--suave);margin-top:2px}
+.dst-qtd{flex:none;font-family:"Barlow Condensed",Barlow,sans-serif;font-size:21px;font-weight:700;
+  font-variant-numeric:tabular-nums;color:var(--azul-claro);text-align:right}
+.dst-corpo{padding:2px 13px 12px;display:flex;flex-direction:column;gap:4px}
+.dst-linha{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:8px;font-size:12px;color:var(--suave)}
+.dst-linha b{font-variant-numeric:tabular-nums;color:var(--gelo)}
+.dst-para{overflow-wrap:anywhere}
+.dst-quando{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--tenue)}
+.sal-periodo{font-size:11.5px;color:var(--azul-claro);font-variant-numeric:tabular-nums;font-weight:600}
 .e-paginas{margin-bottom:16px}
 .e-paginas .subaba{font-size:14px;padding:9px 16px}
 .e-chip{display:inline-block;background:rgba(46,123,255,.14);color:var(--azul-claro);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;margin-right:6px}
@@ -945,7 +968,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 29</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 30</span></p>
     </form>
   </div>
 </div>
@@ -1256,7 +1279,24 @@ html{overflow-x:clip}
       <details class="painel e-filtros-cx" id="e-filtros-cx">
         <summary>Filtrar <span id="ef-chip-resumo"></span></summary>
         <div class="e-filtros">
-          <div class="campo"><label for="ef-mes">Mês</label><select id="ef-mes"></select></div>
+          <div class="campo"><label for="ef-de">Período — de</label><input id="ef-de" type="date"></div>
+          <div class="campo"><label for="ef-ate">até</label><input id="ef-ate" type="date"></div>
+          <div class="campo largo"><label>Atalhos de período</label>
+            <div class="ef-atalhos" id="ef-atalhos">
+              <button class="ef-at" type="button" data-p="mes">Este mês</button>
+              <button class="ef-at" type="button" data-p="passado">Mês passado</button>
+              <button class="ef-at" type="button" data-p="30">Últimos 30 dias</button>
+              <button class="ef-at" type="button" data-p="ano">Este ano</button>
+              <button class="ef-at ef-on" type="button" data-p="tudo">Tudo</button>
+            </div>
+          </div>
+          <div class="campo largo"><label for="ef-situacao">Situação do saldo</label><select id="ef-situacao">
+            <option value="">Todos os EPI</option>
+            <option value="neg">Negativados — saldo abaixo de zero</option>
+            <option value="falta">Em falta — saldo zerado ou negativo</option>
+            <option value="baixo">Acabando — pouco saldo</option>
+            <option value="pos">Positivos — tem saldo em casa</option>
+          </select></div>
           <div class="campo largo"><label for="ef-contrato">Contrato</label><select id="ef-contrato"></select></div>
           <div class="campo largo"><label for="ef-colab">Colaborador</label><select id="ef-colab"></select></div>
           <div class="campo"><label for="ef-epi">EPI</label><input id="ef-epi" autocomplete="off" placeholder="parte do nome"></div>
@@ -1304,8 +1344,13 @@ html{overflow-x:clip}
 
         <section class="painel">
           <h3>Saldo por EPI</h3>
-          <p class="sub">Entradas menos saídas, dentro do filtro acima. As saídas automáticas das fichas entregues já entram aqui.</p>
+          <p class="sub" id="e-saldo-sub">O que existe em casa hoje: tudo que já entrou menos tudo que já saiu, desde sempre. Não muda quando você filtra período — o período aparece ao lado, como movimento.</p>
           <div id="e-saldo"></div>
+        </section>
+        <section class="painel">
+          <h3>O que saiu — e para onde</h3>
+          <p class="sub" id="e-destino-sub">Saídas do período filtrado, EPI por EPI. Abra um item para ver o contrato e o colaborador que receberam.</p>
+          <div id="e-destino"></div>
         </section>
         <section class="painel">
           <h3>Movimento por mês</h3>
@@ -5042,7 +5087,7 @@ $('#es-out-add').addEventListener('click', async () => {
 });
 /* ======== aba Estoque: duas páginas (movimentação e custos) + filtros ======== */
 let subPgEstoque = 'mov';
-const fEst = {mes:'', contrato:'', colaborador:'', epi:''};
+const fEst = {de:'', ate:'', contrato:'', colaborador:'', epi:'', situacao:''};
 
 document.querySelectorAll('#e-paginas .subaba').forEach(b => {
   b.addEventListener('click', () => {
@@ -5060,20 +5105,56 @@ document.querySelectorAll('#e-mov-tabs .subaba').forEach(b => {
     renderEstoque();
   });
 });
-['ef-mes','ef-contrato','ef-colab'].forEach(id => {
+['ef-de','ef-ate','ef-contrato','ef-colab','ef-situacao'].forEach(id => {
   $('#' + id).addEventListener('change', () => {
-    fEst.mes        = $('#ef-mes').value;
+    fEst.de         = $('#ef-de').value;
+    fEst.ate        = $('#ef-ate').value;
     fEst.contrato   = $('#ef-contrato').value;
     fEst.colaborador= $('#ef-colab').value;
+    fEst.situacao   = $('#ef-situacao').value;
+    efAtalhoAceso('');
     renderEstoque();
   });
 });
 $('#ef-epi').addEventListener('input', () => { fEst.epi = $('#ef-epi').value; renderEstoque(); });
 $('#ef-limpar').addEventListener('click', () => {
-  fEst.mes = fEst.contrato = fEst.colaborador = fEst.epi = '';
-  $('#ef-mes').value = ''; $('#ef-contrato').value = '';
-  $('#ef-colab').value = ''; $('#ef-epi').value = '';
+  fEst.de = fEst.ate = fEst.contrato = fEst.colaborador = fEst.epi = fEst.situacao = '';
+  $('#ef-de').value = ''; $('#ef-ate').value = ''; $('#ef-contrato').value = '';
+  $('#ef-colab').value = ''; $('#ef-epi').value = ''; $('#ef-situacao').value = '';
+  efAtalhoAceso('tudo');
   renderEstoque();
+});
+
+/* ---- atalhos de período ---- */
+const efISO = d => { const p = n => String(n).padStart(2,'0');
+  return d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate()); };
+function efAtalhoAceso(qual){
+  document.querySelectorAll('#ef-atalhos .ef-at').forEach(b =>
+    b.classList.toggle('ef-on', b.dataset.p === qual));
+}
+function efPeriodo(qual){
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  let de = '', ate = '';
+  if(qual === 'mes'){
+    de  = efISO(new Date(hoje.getFullYear(), hoje.getMonth(), 1));
+    ate = efISO(hoje);
+  } else if(qual === 'passado'){
+    de  = efISO(new Date(hoje.getFullYear(), hoje.getMonth()-1, 1));
+    ate = efISO(new Date(hoje.getFullYear(), hoje.getMonth(), 0));
+  } else if(qual === '30'){
+    const d = new Date(hoje); d.setDate(d.getDate() - 29);
+    de = efISO(d); ate = efISO(hoje);
+  } else if(qual === 'ano'){
+    de  = efISO(new Date(hoje.getFullYear(), 0, 1));
+    ate = efISO(hoje);
+  }
+  fEst.de = de; fEst.ate = ate;
+  $('#ef-de').value = de; $('#ef-ate').value = ate;
+  efAtalhoAceso(qual);
+  renderEstoque();
+}
+document.querySelectorAll('#ef-atalhos .ef-at').forEach(b => {
+  b.addEventListener('click', () => efPeriodo(b.dataset.p));
 });
 
 const mesDe  = m => String(m && m.data || '').slice(0,7);
@@ -5083,15 +5164,49 @@ function mesRot(ym){
   const a = ym.slice(0,4), m = parseInt(ym.slice(5,7),10);
   return (MES_PT[m-1] || '?') + '/' + a;
 }
+const diaDe = m => String(m && m.data || '').slice(0,10);
+function temPeriodo(){ return !!(fEst.de || fEst.ate); }
+function dentroDoPeriodo(m){
+  const d = diaDe(m);
+  if(!d) return !temPeriodo();          /* lançamento sem data só aparece sem filtro de período */
+  if(fEst.de  && d < fEst.de)  return false;
+  if(fEst.ate && d > fEst.ate) return false;
+  return true;
+}
 function estFiltrados(){
   const alvoEpi = botNorm(fEst.epi);
   return MOVIMENTOS.filter(m => {
-    if(fEst.mes         && mesDe(m) !== fEst.mes) return false;
+    if(!dentroDoPeriodo(m)) return false;
     if(fEst.contrato    && (m.contrato || '(sem contrato)') !== fEst.contrato) return false;
     if(fEst.colaborador && (m.colaborador || '') !== fEst.colaborador) return false;
     if(alvoEpi          && !botNorm(m.epi).includes(alvoEpi)) return false;
     return true;
   });
+}
+/* saldo real por EPI: tudo que já entrou menos tudo que já saiu, sem filtro de período */
+function saldoRealPorEpi(){
+  const m = new Map();
+  MOVIMENTOS.forEach(x => {
+    const k = x.epi || '(sem nome)';
+    if(!m.has(k)) m.set(k, {nome:k, entradas:0, saidas:0});
+    const g = m.get(k);
+    if(x.tipo === 'entrada') g.entradas += (x.quantidade || 0);
+    else g.saidas += (x.quantidade || 0);
+  });
+  m.forEach(g => { g.saldo = g.entradas - g.saidas; });
+  return m;
+}
+/* 0 em falta (zero ou negativo) · 1 acabando · 2 com saldo */
+const nivelSaldo = l => l.saldo <= 0 ? 0
+  : (l.entradas && l.saldo <= Math.max(3, l.entradas * 0.2) ? 1 : 2);
+function passaSituacao(l){
+  switch(fEst.situacao){
+    case 'neg':   return l.saldo < 0;
+    case 'falta': return l.saldo <= 0;
+    case 'baixo': return nivelSaldo(l) === 1;
+    case 'pos':   return l.saldo > 0;
+    default:      return true;
+  }
 }
 function opcoes(sel, lista, rotulo, vazio){
   const atual = sel.value;
@@ -5103,13 +5218,10 @@ function opcoes(sel, lista, rotulo, vazio){
   sel.value = lista.includes(atual) ? atual : '';
 }
 function preencherFiltrosEstoque(){
-  const meses = [...new Set(MOVIMENTOS.map(mesDe).filter(Boolean))].sort().reverse();
-  const ctrs  = [...new Set(MOVIMENTOS.map(m => m.contrato).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-  const cols  = [...new Set(MOVIMENTOS.map(m => m.colaborador).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-  opcoes($('#ef-mes'),      meses, mesRot, 'Todos os meses');
-  opcoes($('#ef-contrato'), ctrs,  null,   'Todos os contratos');
-  opcoes($('#ef-colab'),    cols,  null,   'Todos os colaboradores');
-  fEst.mes = $('#ef-mes').value;
+  const ctrs = [...new Set(MOVIMENTOS.map(m => m.contrato).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  const cols = [...new Set(MOVIMENTOS.map(m => m.colaborador).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  opcoes($('#ef-contrato'), ctrs, null, 'Todos os contratos');
+  opcoes($('#ef-colab'),    cols, null, 'Todos os colaboradores');
   fEst.contrato = $('#ef-contrato').value;
   fEst.colaborador = $('#ef-colab').value;
 }
@@ -5121,10 +5233,23 @@ function tiles(alvo, itens){
     alvo.appendChild(d);
   });
 }
+const dataBRCurta = iso => {
+  if(!iso) return '';
+  const [a,m,d] = iso.split('-');
+  return d + '/' + m + '/' + a;
+};
+function rotPeriodo(){
+  if(fEst.de && fEst.ate) return 'De ' + dataBRCurta(fEst.de) + ' a ' + dataBRCurta(fEst.ate);
+  if(fEst.de)  return 'A partir de ' + dataBRCurta(fEst.de);
+  if(fEst.ate) return 'Até ' + dataBRCurta(fEst.ate);
+  return 'Todo o período';
+}
 function resumoFiltro(n){
   const alvo = $('#ef-resumo'); alvo.textContent = '';
+  const SIT_ROT = {neg:'Só negativados', falta:'Só em falta', baixo:'Só acabando', pos:'Só com saldo'};
   const ativos = [];
-  if(fEst.mes)         ativos.push(mesRot(fEst.mes));
+  if(temPeriodo())     ativos.push(rotPeriodo());
+  if(fEst.situacao)    ativos.push(SIT_ROT[fEst.situacao]);
   if(fEst.contrato)    ativos.push(fEst.contrato);
   if(fEst.colaborador) ativos.push(fEst.colaborador);
   if(fEst.epi)         ativos.push('EPI: ' + fEst.epi);
@@ -5480,35 +5605,59 @@ function renderMovimentacao(movs){
   const sai = movs.filter(m => m.tipo !== 'entrada');
   const pEnt = ent.reduce((a,m) => a + (m.quantidade || 0), 0);
   const pSai = sai.reduce((a,m) => a + (m.quantidade || 0), 0);
+  const noPeriodo = temPeriodo();
 
-  /* saldo por EPI */
-  const porEpi = {};
+  /* ---- SALDO: o que existe em casa. Não depende do período filtrado. ---- */
+  const real = saldoRealPorEpi();
+  /* movimento do período, por EPI, para mostrar ao lado do saldo */
+  const movEpi = new Map();
   movs.forEach(m => {
     const k = m.epi || '(sem nome)';
-    if(!porEpi[k]) porEpi[k] = {entradas:0, saidas:0};
-    if(m.tipo === 'entrada') porEpi[k].entradas += (m.quantidade || 0);
-    else porEpi[k].saidas += (m.quantidade || 0);
+    if(!movEpi.has(k)) movEpi.set(k, {e:0, s:0});
+    const g = movEpi.get(k);
+    if(m.tipo === 'entrada') g.e += (m.quantidade || 0); else g.s += (m.quantidade || 0);
   });
-  const linhas = Object.entries(porEpi).map(([k,v]) => ({nome:k, ...v, saldo: v.entradas - v.saidas}));
-  /* pior primeiro: o que está em falta é o que precisa de decisão */
-  const peso = l => l.saldo <= 0 ? 0 : (l.entradas && l.saldo <= Math.max(3, l.entradas * 0.2) ? 1 : 2);
-  linhas.sort((a,b) => peso(a) - peso(b) || a.saldo - b.saldo || a.nome.localeCompare(b.nome));
 
-  const emFalta = Object.values(porEpi).filter(v => v.entradas - v.saidas <= 0).length;
+  const alvoEpi = botNorm(fEst.epi);
+  const linhas = [...real.values()]
+    .filter(l => !alvoEpi || botNorm(l.nome).includes(alvoEpi))
+    .filter(passaSituacao);
+  /* pior primeiro: o que está em falta é o que precisa de decisão */
+  linhas.sort((a,b) => nivelSaldo(a) - nivelSaldo(b) || a.saldo - b.saldo || a.nome.localeCompare(b.nome));
+
+  const todos = [...real.values()];
+  const saldoGeral = todos.reduce((a,l) => a + l.saldo, 0);
+  const emFalta = todos.filter(l => l.saldo <= 0).length;
+  const negativos = todos.filter(l => l.saldo < 0).length;
+
   tiles($('#e-tiles-mov'), [
-    ['Em estoque', String(pEnt - pSai), pEnt - pSai < 0 ? 'falta registrar compras' : 'peças disponíveis'],
-    ['EPI em falta', String(emFalta), emFalta ? 'saldo zerado ou negativo' : 'nenhum zerado'],
-    ['Entradas', String(pEnt), ent.length + ' lançamento' + (ent.length===1?'':'s')],
-    ['Saídas',   String(pSai), sai.length + ' lançamento' + (sai.length===1?'':'s')],
+    ['Em estoque hoje', String(saldoGeral),
+      saldoGeral < 0 ? 'falta registrar compras' : 'peças em casa, desde sempre'],
+    ['EPI em falta', String(emFalta),
+      negativos ? negativos + ' com saldo negativo' : (emFalta ? 'saldo zerado' : 'nenhum zerado')],
+    ['Entradas' + (noPeriodo ? ' no período' : ''), String(pEnt),
+      ent.length + ' lançamento' + (ent.length===1?'':'s')],
+    ['Saídas' + (noPeriodo ? ' no período' : ''), String(pSai),
+      sai.length + ' lançamento' + (sai.length===1?'':'s')],
   ]);
+
+  const subSaldo = $('#e-saldo-sub');
+  if(subSaldo){
+    subSaldo.textContent = 'O que existe em casa hoje: tudo que já entrou menos tudo que já saiu, desde sempre — '
+      + 'o filtro de período não muda este número.'
+      + (noPeriodo ? ' O movimento do período aparece em azul em cada cartão.' : '')
+      + (fEst.situacao ? ' Mostrando só os EPI que você pediu no filtro de situação.' : '');
+  }
 
   const wrapSaldo = $('#e-saldo'); wrapSaldo.textContent = '';
   if(!linhas.length){
-    wrapSaldo.appendChild(cria('p','nada','Nenhum lançamento no filtro atual.'));
+    wrapSaldo.appendChild(cria('p','nada', fEst.situacao || fEst.epi
+      ? 'Nenhum EPI se encaixa nesse filtro — bom sinal, se você filtrou por item em falta.'
+      : 'Nenhum lançamento de estoque ainda.'));
   } else {
     const lista = cria('div','sal-lista');
     linhas.forEach(l => {
-      const nivel = peso(l);
+      const nivel = nivelSaldo(l);
       const d = cria('div','sal-item ' + ['sal-falta','sal-baixo','sal-ok'][nivel]);
       const cab = cria('div','sal-cab');
       cab.append(cria('span','sal-nome', l.nome),
@@ -5521,12 +5670,68 @@ function renderMovimentacao(movs){
       const linha = cria('div','sal-linha');
       linha.append(trilho, cria('b','sal-saldo', String(l.saldo)));
       d.appendChild(linha);
+      if(noPeriodo){
+        const g = movEpi.get(l.nome);
+        d.appendChild(cria('div','sal-periodo', g
+          ? 'No período: saiu ' + g.s + (g.e ? ' · entrou ' + g.e : '')
+          : 'No período: não se moveu'));
+      }
       d.appendChild(cria('div','sal-meta',
-        'entrou ' + l.entradas + ' · saiu ' + l.saidas +
+        'desde sempre: entrou ' + l.entradas + ' · saiu ' + l.saidas +
         (l.saldo < 0 ? ' · saiu mais do que entrou, falta registrar a compra' : '')));
       lista.appendChild(d);
     });
     wrapSaldo.appendChild(lista);
+  }
+
+  /* ---- O QUE SAIU E PARA ONDE, no período filtrado ---- */
+  const subDst = $('#e-destino-sub');
+  if(subDst){
+    subDst.textContent = (noPeriodo ? rotPeriodo() : 'Todo o histórico')
+      + ' — o que saiu, EPI por EPI. Abra um item para ver o contrato e o colaborador que receberam.';
+  }
+  const alvoDst = $('#e-destino'); alvoDst.textContent = '';
+  const saidasReais = sai.filter(m => m.origem !== 'inventario');
+  if(!saidasReais.length){
+    alvoDst.appendChild(cria('p','nada','Nenhuma saída nesse filtro. Os acertos de inventário ficam de fora desta lista.'));
+  } else {
+    const porEpiDst = new Map();
+    saidasReais.forEach(m => {
+      const k = m.epi || '(sem nome)';
+      if(!porEpiDst.has(k)) porEpiDst.set(k, {nome:k, qtd:0, destinos:new Set(), linhas:[]});
+      const g = porEpiDst.get(k);
+      g.qtd += (m.quantidade || 0);
+      const para = (m.contrato || '(sem contrato)')
+        + (m.colaborador ? ' · ' + m.colaborador : '');
+      g.destinos.add(m.contrato || '(sem contrato)');
+      g.linhas.push({qtd:m.quantidade || 0, para, quando:dataCurta(m.data),
+                     ficha:m.solicitacaoNum ? ('Nº' + m.solicitacaoNum) : ''});
+    });
+    const ordenado = [...porEpiDst.values()].sort((a,b) => b.qtd - a.qtd);
+    const totalPecas = ordenado.reduce((a,g) => a + g.qtd, 0);
+    alvoDst.appendChild(cria('p','sub',
+      totalPecas + ' peças saíram, em ' + ordenado.length + ' EPI diferente' + (ordenado.length>1?'s':'') + '.'));
+    ordenado.forEach(g => {
+      const det = cria('details','dst-item');
+      const sum = cria('summary','dst-sum');
+      const esq = cria('div','dst-esq');
+      esq.appendChild(cria('div','dst-nome', g.nome));
+      esq.appendChild(cria('div','dst-meta',
+        g.linhas.length + ' saída' + (g.linhas.length>1?'s':'') + ' · ' +
+        g.destinos.size + ' contrato' + (g.destinos.size>1?'s':'')));
+      sum.append(esq, cria('div','dst-qtd', String(g.qtd)));
+      det.appendChild(sum);
+      const corpo = cria('div','dst-corpo');
+      g.linhas.sort((a,b) => b.qtd - a.qtd).forEach(l => {
+        const li = cria('div','dst-linha');
+        li.append(cria('b', null, l.qtd + '×'),
+                  cria('span','dst-para', l.para + (l.ficha ? ' · ' + l.ficha : '')),
+                  cria('span','dst-quando', l.quando));
+        corpo.appendChild(li);
+      });
+      det.appendChild(corpo);
+      alvoDst.appendChild(det);
+    });
   }
 
   /* movimento por mês */
@@ -5686,7 +5891,7 @@ $('#cat-semear').addEventListener('click', async () => {
   const nota = $('#cat-semear-status');
   if(!DB || !catPodeEditar()){ nota.textContent = 'Sem permissão.'; return; }
   const b = $('#cat-semear'); b.disabled = true;
-  let n = 0, erros = 0;
+  let n = 0, erros = 0, motivo = '';
   for(const e of DADOS.epis){
     try{
       await DB.doc('catalogo/' + catIdDe(e.nome)).set({
@@ -5696,9 +5901,21 @@ $('#cat-semear').addEventListener('click', async () => {
       });
       n++;
       if(n % 20 === 0) nota.textContent = n + ' de ' + DADOS.epis.length + '…';
-    }catch(x){ erros++; }
+    }catch(x){
+      erros++;
+      if(!motivo) motivo = (x && x.code) || (x && x.message) || 'erro';
+      if(motivo === 'permission-denied') break;   /* regra barrando: não insiste 130 vezes */
+    }
   }
-  nota.textContent = n + ' itens gravados' + (erros ? ' · ' + erros + ' falharam' : '') + '.';
+  nota.textContent = '';
+  nota.appendChild(cria('span', null, n + ' itens gravados' + (erros ? ' · ' + erros + ' falharam' : '') + '.'));
+  if(motivo === 'permission-denied'){
+    nota.appendChild(cria('div', null,
+      'O banco recusou a gravação: as regras do Firestore ainda não liberam a coleção "catalogo". ' +
+      'Publique as regras no console do Firebase e clique aqui de novo.'));
+  } else if(motivo){
+    nota.appendChild(cria('div', null, 'Motivo: ' + motivo));
+  }
   b.disabled = false;
 });
 
