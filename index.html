@@ -72,32 +72,35 @@ h1,h2,h3{margin:0}
 .e-filtros-cx>summary span{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:none;
   color:var(--azul-claro);font-family:inherit}
 .e-filtros-cx[open] .e-filtros{margin-top:12px}
-.e-filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
-.e-filtros .campo{margin:0;min-width:150px;flex:1 1 150px}
-.e-filtros .campo.largo{flex:2 1 220px}
+.e-filtros{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 16px;align-items:end}
+.e-filtros .campo{margin:0;min-width:0}
 .e-filtros select,.e-filtros input{width:100%;box-sizing:border-box}
-.ef-atalhos{display:flex;flex-wrap:wrap;gap:6px}
+.ef-periodo{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ef-caixa-atalhos{grid-column:span 2}
+.ef-rod{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-top:2px;padding-top:12px;border-top:1px solid var(--borda)}
+.ef-rod .sub{margin:0;flex:1;min-width:160px}
+.ef-rod .btn{flex:none;padding:7px 14px;font-size:13px}
+.ef-atalhos{display:flex;flex-wrap:wrap;gap:6px;min-height:33px;align-content:flex-end}
 .ef-at{border:1px solid var(--linha-forte);background:rgba(5,10,38,.55);border-radius:999px;
   padding:6px 12px;font-size:12.5px;font-weight:600;color:var(--suave);cursor:pointer;white-space:nowrap}
 .ef-at:hover{border-color:var(--azul);color:var(--gelo)}
 .ef-at.ef-on{border-color:var(--azul);background:rgba(46,123,255,.18);color:var(--azul-claro)}
 /* para onde foi: EPI com o destino aberto embaixo */
-.dst-item{border:1px solid var(--linha);border-radius:9px;margin-bottom:8px;background:rgba(5,10,38,.4)}
-.dst-item[open]{border-color:var(--linha-forte)}
-.dst-sum{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 13px;
-  cursor:pointer;list-style:none}
-.dst-sum::-webkit-details-marker{display:none}
-.dst-sum:hover{background:rgba(46,123,255,.07)}
-.dst-esq{min-width:0;flex:1}
-.dst-nome{font-size:13.5px;font-weight:700;line-height:1.25;overflow-wrap:anywhere}
-.dst-meta{font-size:11.5px;color:var(--suave);margin-top:2px}
-.dst-qtd{flex:none;font-family:"Barlow Condensed",Barlow,sans-serif;font-size:21px;font-weight:700;
-  font-variant-numeric:tabular-nums;color:var(--azul-claro);text-align:right}
-.dst-corpo{padding:2px 13px 12px;display:flex;flex-direction:column;gap:4px}
-.dst-linha{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:8px;font-size:12px;color:var(--suave)}
-.dst-linha b{font-variant-numeric:tabular-nums;color:var(--gelo)}
-.dst-para{overflow-wrap:anywhere}
-.dst-quando{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--tenue)}
+.dst-tab td,.dst-tab th{padding:7px 10px}
+.dst-tr{cursor:pointer}
+.dst-tr:hover{background:rgba(46,123,255,.07)}
+.dst-tr.aberto{background:rgba(46,123,255,.1)}
+.dst-tab .dst-nome{font-weight:600;overflow-wrap:anywhere}
+.dst-tab .dst-qtd{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.dst-sec{color:var(--tenue);font-variant-numeric:tabular-nums}
+.dst-seta{color:var(--tenue);width:24px;transition:transform .15s}
+.dst-tr.aberto .dst-seta{transform:rotate(180deg);display:inline-block}
+.dst-det>td{padding:0 0 8px 0;background:rgba(5,10,38,.45)}
+.dst-sub{width:100%;border-collapse:collapse;font-size:12px;color:var(--suave)}
+.dst-sub td{padding:4px 10px;border:0}
+.dst-sub tr+tr td{border-top:1px solid rgba(127,176,255,.08)}
+.dst-sub-q{font-variant-numeric:tabular-nums;color:var(--gelo);font-weight:600;width:48px}
 .sal-periodo{font-size:11.5px;color:var(--azul-claro);font-variant-numeric:tabular-nums;font-weight:600}
 .e-paginas{margin-bottom:16px}
 .e-paginas .subaba{font-size:14px;padding:9px 16px}
@@ -727,24 +730,39 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .ab-modo input{width:17px;height:17px;margin:1px 0 0;flex:none;accent-color:var(--azul)}
 .ab-modo b{color:var(--gelo)}
 /* saldo por EPI, em cartões */
-.sal-lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:10px}
-.sal-item{border:1px solid var(--linha);border-left:3px solid var(--cor-sal,var(--linha-forte));
-  border-radius:9px;padding:10px 12px;background:rgba(5,10,38,.35);display:flex;flex-direction:column;gap:6px}
-.sal-falta{--cor-sal:var(--alerta);background:rgba(232,161,92,.09)}
+.pd-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.pd-card{position:relative;border:1px solid var(--linha);border-left:3px solid var(--alerta);border-radius:10px;
+  background:rgba(5,10,38,.45);padding:12px 13px 44px;cursor:pointer;transition:background .12s,border-color .12s}
+.pd-card:hover,.pd-card:focus-visible{background:rgba(46,123,255,.09);border-color:var(--linha-forte);outline:none}
+.pd-card:focus-visible{box-shadow:0 0 0 2px var(--azul)}
+.pd-cab{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pd-num{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:19px;font-weight:700;color:var(--azul-claro)}
+.pd-falta{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;
+  padding:3px 8px;border-radius:999px;background:rgba(232,161,92,.18);color:var(--alerta)}
+.pd-nome{font-size:13.5px;font-weight:700;line-height:1.25;margin-top:4px;overflow-wrap:anywhere}
+.pd-meta{font-size:11.5px;color:var(--suave);margin-top:2px}
+.pd-itens{list-style:none;margin:9px 0 0;padding:0;display:flex;flex-direction:column;gap:3px;
+  font-size:12px;color:var(--suave)}
+.pd-itens b{font-variant-numeric:tabular-nums;color:var(--gelo)}
+.pd-parcial{color:var(--tenue)}
+.pd-mais{color:var(--tenue);font-style:italic}
+.pd-ok{position:absolute;left:13px;bottom:11px;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;
+  border:1px solid var(--linha-forte);background:transparent;color:var(--suave);cursor:pointer}
+.pd-ok:hover:not(:disabled){background:rgba(54,173,107,.16);border-color:var(--e4);color:var(--e4)}
+.pd-ok:disabled{opacity:.4;cursor:default}
+.sal-tab td,.sal-tab th{padding:7px 10px}
+.sal-tab tbody tr{border-left:3px solid var(--cor-sal,transparent)}
+.sal-falta{--cor-sal:var(--alerta)}
 .sal-baixo{--cor-sal:var(--e5)}
 .sal-ok{--cor-sal:var(--e4)}
-.sal-cab{display:flex;align-items:flex-start;gap:8px;justify-content:space-between}
-.sal-nome{font-size:13px;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
-.sal-chip{flex:none;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  border-radius:3px;padding:2px 6px;background:rgba(163,180,220,.14);color:var(--suave)}
+.sal-td-nome{font-weight:600;overflow-wrap:anywhere}
+.sal-chip{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 7px;border-radius:999px;background:rgba(127,176,255,.14);color:var(--azul-claro);white-space:nowrap}
 .sal-falta .sal-chip{background:rgba(232,161,92,.2);color:var(--alerta)}
 .sal-ok .sal-chip{background:rgba(54,173,107,.2);color:var(--e4)}
-.sal-linha{display:flex;align-items:center;gap:9px}
-.sal-trilho{flex:1;height:7px;border-radius:4px;background:rgba(127,176,255,.13);overflow:hidden}
-.sal-trilho i{display:block;height:100%;border-radius:4px;background:var(--cor-sal,var(--azul))}
-.sal-saldo{font-size:17px;font-variant-numeric:tabular-nums;flex:none;min-width:34px;text-align:right}
+.sal-saldo{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
 .sal-falta .sal-saldo{color:var(--alerta)}
-.sal-meta{font-size:11px;color:var(--tenue);font-variant-numeric:tabular-nums;line-height:1.35}
+.sal-hist{color:var(--tenue);font-variant-numeric:tabular-nums}
 .aviso-ok{background:rgba(54,173,107,.13);border:1px solid rgba(54,173,107,.45);
   border-left:4px solid var(--e4);border-radius:8px;padding:11px 13px;margin:0 0 12px;
   font-size:13.5px;line-height:1.45;color:var(--gelo);font-weight:600}
@@ -859,6 +877,9 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
 /* ================= celular ================= */
 /* nada pode empurrar a página para os lados: o que não couber rola dentro de si */
 html{overflow-x:clip}
+@media (max-width:1100px){
+  .e-filtros{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (max-width:900px){
   .topo-in{gap:8px;padding:8px 14px 0;row-gap:0;align-items:center}
   .marca{flex:0 1 auto;min-width:0}
@@ -908,9 +929,9 @@ html{overflow-x:clip}
   .marca h1{display:none}
   .tiles{grid-template-columns:repeat(auto-fit,minmax(136px,1fr));gap:9px}
   .tile dd{font-size:26px}
-  .e-filtros .campo{flex:1 1 100%;min-width:0}
-  .e-filtros .campo.largo{flex:1 1 100%}
-  .e-filtros button{width:100%}
+  .e-filtros{grid-template-columns:1fr;gap:12px}
+  .ef-periodo,.ef-caixa-atalhos{grid-column:span 1}
+  .ef-rod .btn{width:100%}
   .ficha-modal{max-width:100%}
   .gaveta{width:100%}
   .bot-painel{right:10px;left:10px;width:auto}
@@ -968,7 +989,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 31</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 36</span></p>
     </form>
   </div>
 </div>
@@ -990,7 +1011,6 @@ html{overflow-x:clip}
       <button class="aba" role="tab" aria-selected="false" data-pg="colaboradores">Colaboradores</button>
       <button class="aba" role="tab" aria-selected="false" data-pg="estoque">Estoque</button>
       <button class="aba" role="tab" aria-selected="false" data-pg="catalogo" id="aba-catalogo" hidden>Catálogo</button>
-      <button class="aba" role="tab" aria-selected="false" data-pg="importar">Importar</button>
       <button class="aba" role="tab" aria-selected="false" data-pg="usuarios" id="aba-usuarios" hidden>Usuários</button>
     </nav>
     <div class="eu">
@@ -1279,9 +1299,11 @@ html{overflow-x:clip}
       <details class="painel e-filtros-cx" id="e-filtros-cx">
         <summary>Filtrar <span id="ef-chip-resumo"></span></summary>
         <div class="e-filtros">
-          <div class="campo"><label for="ef-de">Período — de</label><input id="ef-de" type="date"></div>
-          <div class="campo"><label for="ef-ate">até</label><input id="ef-ate" type="date"></div>
-          <div class="campo largo"><label>Atalhos de período</label>
+          <div class="ef-periodo">
+            <div class="campo"><label for="ef-de">Período — de</label><input id="ef-de" type="date"></div>
+            <div class="campo"><label for="ef-ate">até</label><input id="ef-ate" type="date"></div>
+          </div>
+          <div class="campo ef-caixa-atalhos"><label>Atalhos de período</label>
             <div class="ef-atalhos" id="ef-atalhos">
               <button class="ef-at" type="button" data-p="mes">Este mês</button>
               <button class="ef-at" type="button" data-p="passado">Mês passado</button>
@@ -1290,19 +1312,21 @@ html{overflow-x:clip}
               <button class="ef-at ef-on" type="button" data-p="tudo">Tudo</button>
             </div>
           </div>
-          <div class="campo largo"><label for="ef-situacao">Situação do saldo</label><select id="ef-situacao">
+          <div class="campo"><label for="ef-situacao">Situação do saldo</label><select id="ef-situacao">
             <option value="">Todos os EPI</option>
             <option value="neg">Negativados — saldo abaixo de zero</option>
             <option value="falta">Em falta — saldo zerado ou negativo</option>
             <option value="baixo">Acabando — pouco saldo</option>
             <option value="pos">Positivos — tem saldo em casa</option>
           </select></div>
-          <div class="campo largo"><label for="ef-contrato">Contrato</label><select id="ef-contrato"></select></div>
-          <div class="campo largo"><label for="ef-colab">Colaborador</label><select id="ef-colab"></select></div>
+          <div class="campo"><label for="ef-contrato">Contrato</label><select id="ef-contrato"></select></div>
+          <div class="campo"><label for="ef-colab">Colaborador</label><select id="ef-colab"></select></div>
           <div class="campo"><label for="ef-epi">EPI</label><input id="ef-epi" autocomplete="off" placeholder="parte do nome"></div>
-          <button class="btn" id="ef-limpar" type="button">Limpar filtros</button>
+          <div class="ef-rod">
+            <p class="sub" id="ef-resumo"></p>
+            <button class="btn" id="ef-limpar" type="button">Limpar filtros</button>
+          </div>
         </div>
-        <p class="sub" id="ef-resumo" style="margin:10px 0 0"></p>
       </details>
 
       <div id="e-pg-mov">
@@ -1348,8 +1372,8 @@ html{overflow-x:clip}
           <div id="e-saldo"></div>
         </section>
         <section class="painel">
-          <h3>O que saiu — e para onde</h3>
-          <p class="sub" id="e-destino-sub">Saídas do período filtrado, EPI por EPI. Abra um item para ver o contrato e o colaborador que receberam.</p>
+          <h3>Saídas por EPI</h3>
+          <p class="sub" id="e-destino-sub">Consumo por item no período filtrado. Clique na linha para ver contrato, colaborador e data.</p>
           <div id="e-destino"></div>
         </section>
         <section class="painel">
@@ -3186,7 +3210,7 @@ $('#imp-desfazer').addEventListener('click', async () => {
 
 /* ================= sessão, login e usuários ================= */
 const PAPEL_ACESSO = {
-  admin:            ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','catalogo','importar','usuarios'],
+  admin:            ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','catalogo','usuarios'],
   seguranca:        ['solicitacao','controle','dashboard','pendencias'],
   almoxarifado:     ['controle','dashboard','estoque'],
   almoxarifado_adm: ['controle','dashboard','pendencias','colaboradores','estoque','catalogo'],
@@ -3930,7 +3954,7 @@ if(FOTO_LOGIN){
 pintarChip();
 
 /* ================= abas ================= */
-const PAGINAS = ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','catalogo','importar','usuarios'];
+const PAGINAS = ['solicitacao','controle','dashboard','pendencias','colaboradores','estoque','catalogo','usuarios'];
 document.querySelectorAll('.aba').forEach(b => {
   b.addEventListener('click', () => {
     document.querySelectorAll('.aba').forEach(o => o.setAttribute('aria-selected', String(o === b)));
@@ -5014,43 +5038,54 @@ function renderPendencias(){
     alvo.appendChild(cria('p','nada','Nenhuma ficha ficou com item pendente de separação.'));
     return;
   }
+  const grade = cria('div','pd-grade');
   comPendencia.slice().sort((a,b) => b.num - a.num).forEach(s => {
-    const sec = cria('section','painel'); sec.style.marginBottom = '14px';
-    sec.appendChild(cria('h3', null, 'Ficha nº' + s.num + ' — ' + s.colaborador));
     const pend = s.itens.filter(i => i.pendente);
     const pecasFalta = pend.reduce((a,i) => a + (i.qtd - qtdSep(i)), 0);
-    sec.appendChild(cria('p','sub', (s.contrato || '—') + ' · etapa atual: ' + etapa(s.status).rot
-      + ' · faltam ' + pecasFalta + ' peça' + (pecasFalta>1?'s':'')));
-    const ul = cria('ul','checklist');
-    s.itens.filter(i => i.pendente).forEach(it => {
-      const sep = qtdSep(it), falta = it.qtd - sep;
-      const li = cria('li','chk travado chk-parcial');
-      const q = cria('span','chk-qtd', it.qtd + '×');
-      const t = cria('span','chk-txt', it.nome);
-      if(it.ca) t.appendChild(cria('span','chk-ca','CA ' + it.ca));
-      const l = cria('div','chk-sep');
-      l.appendChild(cria('span','chk-sep-rot', sep > 0 ? 'Entregue ' + sep + ' de ' + it.qtd : 'Nada entregue de ' + it.qtd));
-      l.appendChild(cria('span','chk-falta','faltam ' + falta));
-      t.appendChild(l);
-      li.append(q, t); ul.appendChild(li);
-    });
-    sec.appendChild(ul);
-    const linhaB = cria('div','acoes'); linhaB.style.marginTop = '10px';
-    const bAbrir = cria('button','btn btn-forte','Abrir ficha para editar'); bAbrir.type = 'button';
-    bAbrir.addEventListener('click', () => abrirGaveta(s.id));
-    linhaB.appendChild(bAbrir);
-    const b = cria('button','btn','Marcar pendência como resolvida'); b.type = 'button';
-    b.disabled = !DB;
-    b.addEventListener('click', async () => {
-      const itens = s.itens.map(it => it.pendente ? {...it, pendente:false} : it);
-      try{ await DB.doc('solicitacoes/' + s.id).update({itens}); }catch(e){}
-    });
-    linhaB.appendChild(b);
-    sec.appendChild(linhaB);
-    alvo.appendChild(sec);
-  });
-}
+    const c = cria('article','pd-card');
+    c.tabIndex = 0;
+    c.setAttribute('role','button');
+    c.title = 'Abrir a ficha n\u00ba' + s.num;
 
+    const cab = cria('div','pd-cab');
+    cab.append(cria('span','pd-num','n\u00ba' + s.num),
+               cria('span','pd-falta', pecasFalta + ' pe\u00e7a' + (pecasFalta>1?'s':'')));
+    c.appendChild(cab);
+    c.appendChild(cria('div','pd-nome', s.colaborador || '(sem colaborador)'));
+    c.appendChild(cria('div','pd-meta', (s.contrato || '\u2014') + ' \u00b7 ' + etapa(s.status).rot));
+
+    const ul = cria('ul','pd-itens');
+    pend.slice(0,4).forEach(it => {
+      const sep = qtdSep(it), falta = it.qtd - sep;
+      const li = cria('li');
+      li.append(cria('b', null, falta + '\u00d7'), cria('span', null, ' ' + it.nome));
+      if(sep > 0) li.appendChild(cria('span','pd-parcial',' (j\u00e1 saiu ' + sep + ' de ' + it.qtd + ')'));
+      ul.appendChild(li);
+    });
+    if(pend.length > 4) ul.appendChild(cria('li','pd-mais','+ ' + (pend.length-4) + (pend.length-4>1?' itens':' item')));
+    c.appendChild(ul);
+
+    const abrir = () => abrirGaveta(s.id);
+    c.addEventListener('click', abrir);
+    c.addEventListener('keydown', ev => {
+      if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); abrir(); }
+    });
+
+    const b = cria('button','pd-ok','Resolvida'); b.type = 'button';
+    b.disabled = !DB;
+    b.title = 'Marcar a pend\u00eancia desta ficha como resolvida, sem abrir';
+    b.addEventListener('click', async ev => {
+      ev.stopPropagation();
+      const itens = s.itens.map(it => it.pendente ? {...it, pendente:false} : it);
+      b.disabled = true;
+      try{ await DB.doc('solicitacoes/' + s.id).update({itens}); }
+      catch(e){ b.disabled = false; }
+    });
+    c.appendChild(b);
+    grade.appendChild(c);
+  });
+  alvo.appendChild(grade);
+}
 /* ================= estoque ================= */
 $('#es-in-add').addEventListener('click', async () => {
   const nota = $('#es-in-status');
@@ -5661,40 +5696,47 @@ function renderMovimentacao(movs){
       ? 'Nenhum EPI se encaixa nesse filtro — bom sinal, se você filtrou por item em falta.'
       : 'Nenhum lançamento de estoque ainda.'));
   } else {
-    const lista = cria('div','sal-lista');
+    const tbS = cria('table','dados sal-tab');
+    const theadS = cria('thead'), trhS = cria('tr');
+    const cols = ['EPI','Situação','Saldo'];
+    if(noPeriodo) cols.push('No período');
+    cols.push('Entrou','Saiu');
+    cols.forEach((h,ix) => {
+      const th = cria('th', ix ? 'n' : null, h);
+      trhS.appendChild(th);
+    });
+    theadS.appendChild(trhS); tbS.appendChild(theadS);
+    const tbodyS = cria('tbody');
     linhas.forEach(l => {
       const nivel = nivelSaldo(l);
-      const d = cria('div','sal-item ' + ['sal-falta','sal-baixo','sal-ok'][nivel]);
-      const cab = cria('div','sal-cab');
-      cab.append(cria('span','sal-nome', l.nome),
-                 cria('span','sal-chip', ['Em falta','Acabando','Em estoque'][nivel]));
-      d.appendChild(cab);
-      const trilho = cria('div','sal-trilho'); const i = cria('i');
-      const pct = l.entradas > 0 ? Math.max(0, Math.min(100, l.saldo / l.entradas * 100)) : 0;
-      i.style.width = pct + '%';
-      trilho.appendChild(i);
-      const linha = cria('div','sal-linha');
-      linha.append(trilho, cria('b','sal-saldo', String(l.saldo)));
-      d.appendChild(linha);
+      const tr = cria('tr','sal-tr ' + ['sal-falta','sal-baixo','sal-ok'][nivel]);
+      const tdN = cria('td','sal-td-nome', l.nome);
+      if(l.saldo < 0) tdN.title = 'Saiu mais do que entrou — falta registrar a compra.';
+      tr.appendChild(tdN);
+      const tdS = cria('td','n');
+      tdS.appendChild(cria('span','sal-chip', ['Em falta','Acabando','Em estoque'][nivel]));
+      tr.appendChild(tdS);
+      tr.appendChild(cria('td','n sal-saldo', String(l.saldo)));
       if(noPeriodo){
         const g = movEpi.get(l.nome);
-        d.appendChild(cria('div','sal-periodo', g
-          ? 'No período: saiu ' + g.s + (g.e ? ' · entrou ' + g.e : '')
-          : 'No período: não se moveu'));
+        tr.appendChild(cria('td','n sal-periodo', g
+          ? (g.s ? '−' + g.s : '') + (g.e ? (g.s ? ' / ' : '') + '+' + g.e : '') || '—'
+          : '—'));
       }
-      d.appendChild(cria('div','sal-meta',
-        'desde sempre: entrou ' + l.entradas + ' · saiu ' + l.saidas +
-        (l.saldo < 0 ? ' · saiu mais do que entrou, falta registrar a compra' : '')));
-      lista.appendChild(d);
+      tr.appendChild(cria('td','n sal-hist', String(l.entradas)));
+      tr.appendChild(cria('td','n sal-hist', String(l.saidas)));
+      tbodyS.appendChild(tr);
     });
-    wrapSaldo.appendChild(lista);
+    tbS.appendChild(tbodyS);
+    const wrapT = cria('div','tabela-wrap'); wrapT.appendChild(tbS);
+    wrapSaldo.appendChild(wrapT);
   }
 
   /* ---- O QUE SAIU E PARA ONDE, no período filtrado ---- */
   const subDst = $('#e-destino-sub');
   if(subDst){
     subDst.textContent = (noPeriodo ? rotPeriodo() : 'Todo o histórico')
-      + ' — o que saiu, EPI por EPI. Abra um item para ver o contrato e o colaborador que receberam.';
+      + ' · consumo por item. Clique na linha para ver contrato, colaborador e data.';
   }
   const alvoDst = $('#e-destino'); alvoDst.textContent = '';
   const saidasReais = sai.filter(m => m.origem !== 'inventario');
@@ -5716,28 +5758,42 @@ function renderMovimentacao(movs){
     const ordenado = [...porEpiDst.values()].sort((a,b) => b.qtd - a.qtd);
     const totalPecas = ordenado.reduce((a,g) => a + g.qtd, 0);
     alvoDst.appendChild(cria('p','sub',
-      totalPecas + ' peças saíram, em ' + ordenado.length + ' EPI diferente' + (ordenado.length>1?'s':'') + '.'));
+      totalPecas + ' peças em ' + ordenado.length + (ordenado.length>1?' itens':' item') + '.'));
+    const tbD = cria('table','dados dst-tab');
+    const theadD = cria('thead'), trhD = cria('tr');
+    [['EPI',null],['Peças','n'],['Saídas','n'],['Contratos','n'],['','n']].forEach(([h,cl]) =>
+      trhD.appendChild(cria('th', cl, h)));
+    theadD.appendChild(trhD); tbD.appendChild(theadD);
+    const tbodyD = cria('tbody');
     ordenado.forEach(g => {
-      const det = cria('details','dst-item');
-      const sum = cria('summary','dst-sum');
-      const esq = cria('div','dst-esq');
-      esq.appendChild(cria('div','dst-nome', g.nome));
-      esq.appendChild(cria('div','dst-meta',
-        g.linhas.length + ' saída' + (g.linhas.length>1?'s':'') + ' · ' +
-        g.destinos.size + ' contrato' + (g.destinos.size>1?'s':'')));
-      sum.append(esq, cria('div','dst-qtd', String(g.qtd)));
-      det.appendChild(sum);
-      const corpo = cria('div','dst-corpo');
+      const tr = cria('tr','dst-tr');
+      tr.appendChild(cria('td','dst-nome', g.nome));
+      tr.appendChild(cria('td','n dst-qtd', String(g.qtd)));
+      tr.appendChild(cria('td','n dst-sec', String(g.linhas.length)));
+      tr.appendChild(cria('td','n dst-sec', String(g.destinos.size)));
+      tr.appendChild(cria('td','n dst-seta', '▾'));
+      const det = cria('tr','dst-det'); det.hidden = true;
+      const td = cria('td'); td.colSpan = 5;
+      const inner = cria('table','dst-sub');
+      const ib = cria('tbody');
       g.linhas.sort((a,b) => b.qtd - a.qtd).forEach(l => {
-        const li = cria('div','dst-linha');
-        li.append(cria('b', null, l.qtd + '×'),
-                  cria('span','dst-para', l.para + (l.ficha ? ' · ' + l.ficha : '')),
-                  cria('span','dst-quando', l.quando));
-        corpo.appendChild(li);
+        const li = cria('tr');
+        li.appendChild(cria('td','n dst-sub-q', l.qtd + '×'));
+        li.appendChild(cria('td', null, l.para));
+        li.appendChild(cria('td','n dst-sec', l.ficha || '—'));
+        li.appendChild(cria('td','n dst-sec', l.quando));
+        ib.appendChild(li);
       });
-      det.appendChild(corpo);
-      alvoDst.appendChild(det);
+      inner.appendChild(ib); td.appendChild(inner); det.appendChild(td);
+      tr.addEventListener('click', () => {
+        det.hidden = !det.hidden;
+        tr.classList.toggle('aberto', !det.hidden);
+      });
+      tbodyD.appendChild(tr); tbodyD.appendChild(det);
     });
+    tbD.appendChild(tbodyD);
+    const wrapD = cria('div','tabela-wrap'); wrapD.appendChild(tbD);
+    alvoDst.appendChild(wrapD);
   }
 
   /* movimento por mês */
