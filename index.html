@@ -185,6 +185,27 @@ h1,h2,h3{margin:0}
 .mtz-aba{font-weight:600}
 .mtz-sim{color:var(--e4);font-weight:700;font-size:15px}
 .mtz-nao{color:var(--tenue)}
+.us-ve-bt{display:flex;flex-wrap:wrap;align-items:center;gap:2px;width:100%;text-align:left;
+  background:none;border:1px dashed transparent;border-radius:8px;padding:3px 5px;cursor:pointer;color:inherit}
+.us-ve-bt:hover{border-color:var(--linha-forte);background:rgba(46,123,255,.07)}
+.us-ve-lapis{margin-left:4px;color:var(--tenue);font-size:12px}
+.us-chip-ajuste{background:rgba(232,161,92,.18);color:var(--alerta)}
+.ab-modal{max-width:520px;padding:0}
+.ab-topo{display:flex;align-items:flex-start;gap:14px;padding:16px 18px 10px;border-bottom:1px solid var(--linha)}
+.ab-topo h3{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:16px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;margin:0}
+.ab-topo .sub{margin:3px 0 0;font-size:12.5px;color:var(--suave)}
+.ab-topo .btn{flex:none;padding:5px 12px;font-size:12px}
+.ab-corpo{padding:10px 18px;display:flex;flex-direction:column;gap:2px;max-height:52vh;overflow-y:auto}
+.ab-linha{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer;
+  border-bottom:1px solid rgba(127,176,255,.08)}
+.ab-linha input{width:17px;height:17px;margin:2px 0 0;flex:none;accent-color:var(--azul)}
+.ab-linha b{font-size:13px;color:var(--gelo)}
+.ab-linha i{display:block;font-style:normal;font-size:11px;color:var(--tenue);line-height:1.35}
+.ab-linha .pd{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--azul-claro);margin-left:6px}
+.ab-rod{display:flex;gap:8px;padding:12px 18px 6px;border-top:1px solid var(--linha)}
+.ab-modal .g-nota{padding:0 18px 14px;margin:0;text-align:left}
 .us-ve{max-width:290px}
 .us-chip{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.03em;padding:2px 7px;
   border-radius:999px;background:rgba(127,176,255,.13);color:var(--azul-claro);margin:1px 3px 1px 0;
@@ -1097,7 +1118,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 43</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 44</span></p>
     </form>
   </div>
 </div>
@@ -1765,8 +1786,8 @@ html{overflow-x:clip}
     <main style="min-width:0">
       <details class="painel pn" open style="margin-bottom:14px">
         <summary><h3>Quem enxerga o quê</h3></summary>
-        <p class="sub">Cada aba do sistema e os perfis que têm acesso a ela. Ao trocar o papel de
-          um usuário, é esta linha que muda o que ele passa a ver ao entrar.</p>
+        <p class="sub">O padrão de cada papel. Para liberar ou tirar uma aba de uma pessoa
+          específica, clique nas etiquetas da coluna <b>O que ele vê</b>, na lista abaixo.</p>
         <div id="us-matriz"></div>
       </details>
       <div class="tabela-wrap">
@@ -1805,6 +1826,24 @@ html{overflow-x:clip}
 
 <div class="gaveta-fundo" id="gaveta-fundo" hidden>
   <aside class="gaveta" id="gaveta" role="dialog" aria-modal="true" aria-label="Detalhe da solicitação"></aside>
+</div>
+
+<div class="ficha-fundo" id="ab-fundo" hidden>
+  <div class="ficha-modal ab-modal">
+    <div class="ab-topo">
+      <div>
+        <h3 id="ab-titulo">Abas do usuário</h3>
+        <p class="sub" id="ab-sub"></p>
+      </div>
+      <button class="btn" id="ab-fechar" type="button">Fechar</button>
+    </div>
+    <div class="ab-corpo" id="ab-lista"></div>
+    <div class="ab-rod">
+      <button class="btn" id="ab-padrao" type="button">Voltar ao padrão do papel</button>
+      <button class="btn btn-forte" id="ab-salvar" type="button">Salvar acesso</button>
+    </div>
+    <p class="g-nota" id="ab-aviso"></p>
+  </div>
 </div>
 
 <div class="ficha-fundo rel-fundo" id="oc-fundo" hidden>
@@ -3421,6 +3460,17 @@ const PAPEL_DESC = {
 };
 const ABA_ROT = {solicitacao:'Solicitação',controle:'Controle',dashboard:'Dashboard',pendencias:'Pendências',
   colaboradores:'Colaboradores',estoque:'Estoque',catalogo:'Catálogo',importar:'Importar',usuarios:'Usuários'};
+const ABA_DESC = {
+  solicitacao:'Abrir pedidos de EPI e acompanhar as próprias fichas.',
+  controle:'Fila de trabalho: validar, separar, entregar e concluir fichas.',
+  dashboard:'Indicadores de atendimento, prazos e volume.',
+  pendencias:'Fichas que seguiram com item não separado pelo almoxarifado.',
+  colaboradores:'Cadastro de colaboradores, empresa, cargo, contrato e CPF.',
+  estoque:'Saldo, entradas, saídas, custos, relatório e ordem de compra.',
+  catalogo:'Lista de EPI, CA, preço e kits por função.',
+  usuarios:'Cadastro de acessos, papéis e senhas — acesso sensível.',
+  importar:'Carga de histórico por planilha.',
+};
 
 const gerarSenha = () => {
   const abc = 'abcdefghijkmnpqrstuvwxyz', num = '23456789';
@@ -3442,6 +3492,14 @@ function irParaAba(pg){
   const b = [...document.querySelectorAll('.aba')].find(x => x.dataset.pg === pg);
   if(b) b.click();
 }
+/* o papel define o padrão; o ajuste individual, quando existe, manda */
+function abasDe(u){
+  if(!u) return ['solicitacao'];
+  if(Array.isArray(u.abas)) return PAGINAS.filter(a => u.abas.includes(a));
+  return PAPEL_ACESSO[u.papel] || ['solicitacao'];
+}
+const temAjuste = u => Array.isArray(u && u.abas);
+
 function aplicarAcesso(){
   const bot = document.getElementById('bot-abrir');
   if(bot){
@@ -3449,7 +3507,7 @@ function aplicarAcesso(){
     bot.hidden = !botPode() || painelAberto;
     if(!botPode()) document.getElementById('bot-painel').hidden = true;
   }
-  const ok = PAPEL_ACESSO[eu.papel] || ['solicitacao'];
+  const ok = abasDe(eu);
   document.querySelectorAll('.aba').forEach(b => { b.hidden = !ok.includes(b.dataset.pg); });
   PAGINAS.forEach(pg => {
     const el = $('#pg-'+pg);
@@ -3457,7 +3515,7 @@ function aplicarAcesso(){
   });
   const visivel = [...document.querySelectorAll('.aba')]
     .find(b => !b.hidden && b.getAttribute('aria-selected') === 'true');
-  if(!visivel) irParaAba(ok[0]);
+  if(!visivel) irParaAba(ok[0] || 'solicitacao');
 }
 function atualizarAbaPendencias(){ aplicarAcesso(); }
 
@@ -3476,7 +3534,8 @@ function liberarLogin(){
 }
 function entrarComo(u){
   if(eu.id !== u.id) botLimpar();
-  eu = {id:u.id, login:(u.email || u.login || ''), nome:u.nome, papel:u.papel};
+  eu = {id:u.id, login:(u.email || u.login || ''), nome:u.nome, papel:u.papel,
+        abas: Array.isArray(u.abas) ? u.abas.slice() : null};
   $('#login-fundo').hidden = true;
   $('#lg-senha').value = '';
   pintarChip();
@@ -3811,9 +3870,16 @@ function renderUsuarios(){
     l.appendChild(cria('td','n', u.email || u.login || '—'));
     l.appendChild(cria('td', null, PAPEL_ROT[u.papel] || u.papel || '—'));
     const tdV = cria('td','us-ve');
-    const abas = PAPEL_ACESSO[u.papel] || [];
-    if(!abas.length) tdV.appendChild(cria('span','us-chip us-chip-nao','nenhuma aba'));
-    else abas.forEach(a => tdV.appendChild(cria('span','us-chip', ABA_ROT[a] || a)));
+    const abas = abasDe(u);
+    const cxV = cria('button','us-ve-bt');
+    cxV.type = 'button';
+    cxV.title = 'Clique para escolher as abas deste usuário';
+    if(!abas.length) cxV.appendChild(cria('span','us-chip us-chip-nao','nenhuma aba'));
+    else abas.forEach(a => cxV.appendChild(cria('span','us-chip', ABA_ROT[a] || a)));
+    if(temAjuste(u)) cxV.appendChild(cria('span','us-chip us-chip-ajuste','ajustado'));
+    cxV.appendChild(cria('span','us-ve-lapis','\u270e'));
+    cxV.addEventListener('click', () => abrirAbasDe(u));
+    tdV.appendChild(cxV);
     l.appendChild(tdV);
     const tdS = cria('td');
     const pill = cria('span','pill ' + (u.ativo === false ? 'pill-off' : 'pill-on'));
@@ -6127,6 +6193,88 @@ function renderEstoque(){
 }
 
 
+
+
+/* ---- abas liberadas para um usuário ---- */
+let abEditando = null, abSel = [];
+
+function abPintar(){
+  const alvo = $('#ab-lista'); alvo.textContent = '';
+  const padrao = PAPEL_ACESSO[abEditando.papel] || [];
+  PAGINAS.forEach(a => {
+    const lb = document.createElement('label');
+    lb.className = 'ab-linha';
+    const ck = document.createElement('input');
+    ck.type = 'checkbox'; ck.checked = abSel.includes(a);
+    ck.addEventListener('change', () => {
+      abSel = ck.checked ? [...abSel, a] : abSel.filter(x => x !== a);
+      $('#ab-aviso').textContent = '';
+      abResumo();
+    });
+    const txt = cria('div');
+    const b = cria('b', null, ABA_ROT[a] || a);
+    if(padrao.includes(a)) b.appendChild(cria('span','pd','padr\u00e3o do papel'));
+    txt.appendChild(b);
+    txt.appendChild(cria('i', null, ABA_DESC[a] || ''));
+    lb.append(ck, txt);
+    alvo.appendChild(lb);
+  });
+  abResumo();
+}
+function abResumo(){
+  const n = abSel.length;
+  $('#ab-sub').textContent = (abEditando.nome || '') + ' \u00b7 ' + (PAPEL_ROT[abEditando.papel] || '')
+    + ' \u00b7 ' + (n ? n + (n === 1 ? ' aba liberada' : ' abas liberadas') : 'nenhuma aba liberada');
+}
+function abrirAbasDe(u){
+  if(!ehAdmin()) return;
+  abEditando = u;
+  abSel = abasDe(u).slice();
+  $('#ab-titulo').textContent = 'O que ' + ((u.nome || 'este usu\u00e1rio').split(/\s+/)[0]) + ' v\u00ea';
+  $('#ab-aviso').textContent = '';
+  $('#ab-fundo').hidden = false;
+  document.body.style.overflow = 'hidden';
+  abPintar();
+}
+function fecharAbas(){
+  $('#ab-fundo').hidden = true;
+  document.body.style.overflow = '';
+  abEditando = null;
+}
+async function abSalvar(){
+  const av = $('#ab-aviso');
+  if(!abEditando || !DB){ av.textContent = 'Banco indispon\u00edvel.'; return; }
+  if(!abSel.length){ av.textContent = 'Deixe ao menos uma aba, sen\u00e3o a pessoa entra e n\u00e3o v\u00ea nada.'; return; }
+  /* travas: o pr\u00f3prio admin n\u00e3o pode se trancar para fora de Usu\u00e1rios */
+  if(abEditando.id === eu.id && !abSel.includes('usuarios')){
+    av.textContent = 'Voc\u00ea n\u00e3o pode tirar a aba Usu\u00e1rios de si mesmo \u2014 ficaria sem como voltar.'; return;
+  }
+  const ordenada = PAGINAS.filter(a => abSel.includes(a));
+  const padrao = PAPEL_ACESSO[abEditando.papel] || [];
+  const igualAoPadrao = ordenada.length === padrao.length && ordenada.every(a => padrao.includes(a));
+  const bt = $('#ab-salvar'); bt.disabled = true; av.textContent = 'Salvando\u2026';
+  try{
+    await DB.doc('usuarios/' + abEditando.id).update(
+      igualAoPadrao ? {abas: null} : {abas: ordenada});
+    if(abEditando.id === eu.id){
+      eu.abas = igualAoPadrao ? null : ordenada;
+      aplicarAcesso();
+    }
+    fecharAbas();
+  }catch(e){
+    av.textContent = 'N\u00e3o deu para salvar: ' + ((e && e.code) || (e && e.message) || 'erro');
+  } finally { bt.disabled = false; }
+}
+if($('#ab-fundo')){
+  $('#ab-fechar').addEventListener('click', fecharAbas);
+  $('#ab-salvar').addEventListener('click', abSalvar);
+  $('#ab-padrao').addEventListener('click', () => {
+    abSel = (PAPEL_ACESSO[abEditando.papel] || []).slice();
+    $('#ab-aviso').textContent = 'Voltou ao padr\u00e3o do papel. Clique em Salvar acesso para confirmar.';
+    abPintar();
+  });
+  $('#ab-fundo').addEventListener('click', e => { if(e.target === $('#ab-fundo')) fecharAbas(); });
+}
 
 /* ================= relatório gerencial ================= */
 const REL_SECOES = ['resumo','saldo','consumo','contrato','mensal','custo','critico'];
