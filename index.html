@@ -730,6 +730,21 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .ab-modo input{width:17px;height:17px;margin:1px 0 0;flex:none;accent-color:var(--azul)}
 .ab-modo b{color:var(--gelo)}
 /* saldo por EPI, em cartões */
+.rail .ab-passos{grid-template-columns:1fr;gap:8px;margin-bottom:10px}
+.rail .ab-passo{padding:9px 10px}
+.rail .an-solta{padding:12px 10px}
+.rail #ab-previa{font-size:12px}
+.mm-tab td,.mm-tab th{padding:7px 10px}
+.mm-tab tbody .mm-mes{font-weight:600;text-transform:capitalize}
+.mm-tab tfoot .mm-mes{font-weight:700}
+.mm-zero{color:var(--tenue)}
+.mm-tab .mm-e,.mm-tab .mm-s,.mm-tab .mm-var{font-variant-numeric:tabular-nums}
+.mm-e{color:var(--e4)}
+.mm-s{color:var(--azul-claro)}
+.mm-var{font-weight:700}
+.mm-pos{color:var(--e4)}
+.mm-neg{color:var(--alerta)}
+.mm-tab tfoot td{border-top:2px solid var(--linha-forte);font-weight:700;color:var(--gelo)}
 .pd-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
 .pd-card{position:relative;border:1px solid var(--linha);border-left:3px solid var(--alerta);border-radius:10px;
   background:rgba(5,10,38,.45);padding:12px 13px 44px;cursor:pointer;transition:background .12s,border-color .12s}
@@ -989,7 +1004,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 36</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 39</span></p>
     </form>
   </div>
 </div>
@@ -1256,6 +1271,42 @@ html{overflow-x:clip}
   </div>
   <div class="solic">
     <aside class="rail nao-imprime">
+      <section class="bloco" id="e-painel-abastecer">
+        <h2>Abastecer por planilha</h2>
+        <div class="bloco-corpo">
+          <p class="g-nota">Baixe a planilha, preencha a coluna <b>Quantidade</b> e devolva aqui. Serve para lançar uma compra ou para acertar o estoque depois de uma contagem.</p>
+          <div class="ab-passos">
+            <div class="ab-passo">
+              <b>1 · Baixar</b>
+              <span>Vem com todos os EPI do catálogo e o saldo de hoje</span>
+              <button class="btn" id="ab-modelo" type="button">Baixar planilha</button>
+            </div>
+            <div class="ab-passo">
+              <b>2 · Preencher</b>
+              <span>Só a coluna Quantidade. Linha em branco é ignorada</span>
+            </div>
+            <div class="ab-passo">
+              <b>3 · Devolver</b>
+              <span>Arraste aqui ou escolha do computador</span>
+              <input type="file" id="ab-arquivo" accept=".xlsx,.xlsm,.xls,.csv" hidden>
+              <button class="btn btn-forte" id="ab-escolher" type="button">Escolher planilha</button>
+            </div>
+          </div>
+          <div class="ab-modo">
+            <label><input type="radio" name="ab-modo" value="somar" checked>
+              <span><b>Somar ao que já tem</b> — compra nova, entrada de nota</span></label>
+            <label><input type="radio" name="ab-modo" value="ajustar">
+              <span><b>Essa é a quantidade real</b> — contagem de inventário; o sistema acerta a diferença</span></label>
+          </div>
+          <div id="ab-solta" class="an-solta" style="margin-top:10px">
+            <b>Arraste a planilha preenchida para cá</b>
+            <span>ou use o botão do passo 3</span>
+          </div>
+          <p class="g-nota" id="ab-status" style="text-align:left"></p>
+          <div id="ab-previa"></div>
+        </div>
+      </section>
+
       <section class="bloco">
         <h2>Entrada de estoque</h2>
         <div class="bloco-corpo">
@@ -1277,14 +1328,14 @@ html{overflow-x:clip}
             <input id="es-out-epi" list="l-epis-estoque" autocomplete="off" placeholder="Nome do EPI"></div>
           <div class="campo"><label for="es-out-qtd">Quantidade</label>
             <input id="es-out-qtd" type="number" min="1" step="1" value="1"></div>
-          <div class="campo"><label for="es-out-colab">Para quem foi</label>
-            <input id="es-out-colab" list="l-colabs" autocomplete="off" placeholder="Colaborador"></div>
+          <div class="campo"><label for="es-out-colab">Colaborador que recebeu</label>
+            <input id="es-out-colab" list="l-colabs" autocomplete="off" placeholder="Nome do colaborador"></div>
           <div class="campo"><label for="es-out-contrato">Contrato</label>
             <input id="es-out-contrato" list="l-contratos" autocomplete="off" placeholder="Contrato"></div>
           <div class="campo"><label for="es-out-cm">CM</label>
             <input id="es-out-cm" class="mono" autocomplete="off" placeholder="ex: CMR - 647.12.24"></div>
-          <div class="campo"><label for="es-out-por">Quem retirou/entregou</label>
-            <input id="es-out-por" autocomplete="off" placeholder="Nome de quem retirou ou entregou"></div>
+          <div class="campo"><label for="es-out-por">Responsável pela entrega</label>
+            <input id="es-out-por" autocomplete="off" placeholder="Quem do almoxarifado entregou"></div>
           <button class="btn btn-forte" id="es-out-add" type="button">Registrar saída</button>
           <p class="g-nota" id="es-out-status"></p>
         </div>
@@ -1320,7 +1371,6 @@ html{overflow-x:clip}
             <option value="pos">Positivos — tem saldo em casa</option>
           </select></div>
           <div class="campo"><label for="ef-contrato">Contrato</label><select id="ef-contrato"></select></div>
-          <div class="campo"><label for="ef-colab">Colaborador</label><select id="ef-colab"></select></div>
           <div class="campo"><label for="ef-epi">EPI</label><input id="ef-epi" autocomplete="off" placeholder="parte do nome"></div>
           <div class="ef-rod">
             <p class="sub" id="ef-resumo"></p>
@@ -1331,40 +1381,6 @@ html{overflow-x:clip}
 
       <div id="e-pg-mov">
         <dl class="tiles" id="e-tiles-mov"></dl>
-
-        <section class="painel" id="e-painel-abastecer">
-          <h3>Abastecer o estoque por planilha</h3>
-          <p class="sub">Baixe a planilha, preencha a coluna <b>Quantidade</b> e devolva aqui. Serve tanto para lançar uma compra quanto para acertar o estoque depois de uma contagem.</p>
-          <div class="ab-passos">
-            <div class="ab-passo">
-              <b>1 · Baixar</b>
-              <span>Vem com todos os EPI do catálogo e o saldo de hoje</span>
-              <button class="btn" id="ab-modelo" type="button">Baixar planilha</button>
-            </div>
-            <div class="ab-passo">
-              <b>2 · Preencher</b>
-              <span>Só a coluna Quantidade. Linha em branco é ignorada</span>
-            </div>
-            <div class="ab-passo">
-              <b>3 · Devolver</b>
-              <span>Arraste aqui ou escolha do computador</span>
-              <input type="file" id="ab-arquivo" accept=".xlsx,.xlsm,.xls,.csv" hidden>
-              <button class="btn btn-forte" id="ab-escolher" type="button">Escolher planilha</button>
-            </div>
-          </div>
-          <div class="ab-modo">
-            <label><input type="radio" name="ab-modo" value="somar" checked>
-              <span><b>Somar ao que já tem</b> — compra nova, entrada de nota</span></label>
-            <label><input type="radio" name="ab-modo" value="ajustar">
-              <span><b>Essa é a quantidade real</b> — contagem de inventário; o sistema acerta a diferença</span></label>
-          </div>
-          <div id="ab-solta" class="an-solta" style="margin-top:10px">
-            <b>Arraste a planilha preenchida para cá</b>
-            <span>ou use o botão do passo 3</span>
-          </div>
-          <p class="g-nota" id="ab-status" style="text-align:left"></p>
-          <div id="ab-previa"></div>
-        </section>
 
         <section class="painel">
           <h3>Saldo por EPI</h3>
@@ -1377,8 +1393,8 @@ html{overflow-x:clip}
           <div id="e-destino"></div>
         </section>
         <section class="painel">
-          <h3>Movimento por mês</h3>
-          <p class="sub">Peças que entraram e que saíram, mês a mês</p>
+          <h3>Movimentação mensal</h3>
+          <p class="sub">Entradas, saídas e variação do estoque mês a mês, em peças</p>
           <div id="e-mov-mes"></div>
         </section>
         <section class="painel">
@@ -5146,12 +5162,11 @@ document.querySelectorAll('#e-mov-tabs .subaba').forEach(b => {
     renderEstoque();
   });
 });
-['ef-de','ef-ate','ef-contrato','ef-colab','ef-situacao'].forEach(id => {
+['ef-de','ef-ate','ef-contrato','ef-situacao'].forEach(id => {
   $('#' + id).addEventListener('change', () => {
     fEst.de         = $('#ef-de').value;
     fEst.ate        = $('#ef-ate').value;
     fEst.contrato   = $('#ef-contrato').value;
-    fEst.colaborador= $('#ef-colab').value;
     fEst.situacao   = $('#ef-situacao').value;
     efAtalhoAceso('');
     renderEstoque();
@@ -5161,7 +5176,7 @@ $('#ef-epi').addEventListener('input', () => { fEst.epi = $('#ef-epi').value; re
 $('#ef-limpar').addEventListener('click', () => {
   fEst.de = fEst.ate = fEst.contrato = fEst.colaborador = fEst.epi = fEst.situacao = '';
   $('#ef-de').value = ''; $('#ef-ate').value = ''; $('#ef-contrato').value = '';
-  $('#ef-colab').value = ''; $('#ef-epi').value = ''; $('#ef-situacao').value = '';
+  $('#ef-epi').value = ''; $('#ef-situacao').value = '';
   efAtalhoAceso('tudo');
   renderEstoque();
 });
@@ -5260,11 +5275,8 @@ function opcoes(sel, lista, rotulo, vazio){
 }
 function preencherFiltrosEstoque(){
   const ctrs = [...new Set(MOVIMENTOS.map(m => m.contrato).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-  const cols = [...new Set(MOVIMENTOS.map(m => m.colaborador).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
   opcoes($('#ef-contrato'), ctrs, null, 'Todos os contratos');
-  opcoes($('#ef-colab'),    cols, null, 'Todos os colaboradores');
   fEst.contrato = $('#ef-contrato').value;
-  fEst.colaborador = $('#ef-colab').value;
 }
 function tiles(alvo, itens){
   alvo.textContent = '';
@@ -5807,12 +5819,37 @@ function renderMovimentacao(movs){
   });
   if(!mm.size) alvoMM.appendChild(cria('p','nada','Sem lançamentos no filtro atual.'));
   else {
-    const dados = [];
-    [...mm.entries()].sort((a,b) => a[0].localeCompare(b[0])).forEach(([k,g]) => {
-      dados.push({k:mesRot(k) + ' · entrou', v:g.e, cor:'var(--verde)'});
-      dados.push({k:mesRot(k) + ' · saiu',   v:g.s, cor:'var(--azul)'});
+    const meses = [...mm.entries()].sort((a,b) => b[0].localeCompare(a[0]));
+    const tbM = cria('table','dados mm-tab');
+    const thM = cria('thead'), trhM = cria('tr');
+    [['Mês',null],['Entradas','n'],['Saídas','n'],['Variação','n']].forEach(([h,cl]) =>
+      trhM.appendChild(cria('th', cl, h)));
+    thM.appendChild(trhM); tbM.appendChild(thM);
+    const tbdM = cria('tbody');
+    let tE = 0, tS = 0;
+    meses.forEach(([k,g]) => {
+      tE += g.e; tS += g.s;
+      const tr = cria('tr');
+      tr.appendChild(cria('td','mm-mes', mesRot(k)));
+      tr.appendChild(cria('td', g.e ? 'n mm-e' : 'n mm-zero', g.e ? '+' + g.e : '—'));
+      tr.appendChild(cria('td', g.s ? 'n mm-s' : 'n mm-zero', g.s ? '−' + g.s : '—'));
+      const dif = g.e - g.s;
+      const td = cria('td','n mm-var' + (dif < 0 ? ' mm-neg' : dif > 0 ? ' mm-pos' : ''),
+        dif === 0 ? '0' : (dif > 0 ? '+' : '−') + Math.abs(dif));
+      tr.appendChild(td);
+      tbdM.appendChild(tr);
     });
-    alvoMM.appendChild(barras(dados));
+    tbM.appendChild(tbdM);
+    const tf = cria('tfoot'), trf = cria('tr');
+    trf.appendChild(cria('td','mm-mes','Total do filtro'));
+    trf.appendChild(cria('td', tE ? 'n mm-e' : 'n mm-zero', tE ? '+' + tE : '—'));
+    trf.appendChild(cria('td', tS ? 'n mm-s' : 'n mm-zero', tS ? '−' + tS : '—'));
+    const d = tE - tS;
+    trf.appendChild(cria('td','n mm-var' + (d < 0 ? ' mm-neg' : d > 0 ? ' mm-pos' : ''),
+      d === 0 ? '0' : (d > 0 ? '+' : '−') + Math.abs(d)));
+    tf.appendChild(trf); tbM.appendChild(tf);
+    const wM = cria('div','tabela-wrap'); wM.appendChild(tbM);
+    alvoMM.appendChild(wM);
   }
 
   /* lançamentos */
