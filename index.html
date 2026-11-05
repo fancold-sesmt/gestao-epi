@@ -181,6 +181,15 @@ h1,h2,h3{margin:0}
 .us-senha{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;letter-spacing:.08em;
   background:rgba(5,10,38,.75);border:1px dashed var(--azul);border-radius:6px;padding:4px 9px;
   display:inline-block;color:var(--azul-claro);user-select:all}
+.mtz th:first-child,.mtz td:first-child{text-align:left}
+.mtz-aba{font-weight:600}
+.mtz-sim{color:var(--e4);font-weight:700;font-size:15px}
+.mtz-nao{color:var(--tenue)}
+.us-ve{max-width:290px}
+.us-chip{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.03em;padding:2px 7px;
+  border-radius:999px;background:rgba(127,176,255,.13);color:var(--azul-claro);margin:1px 3px 1px 0;
+  white-space:nowrap}
+.us-chip-nao{background:rgba(232,161,92,.16);color:var(--alerta)}
 .us-papel{padding:9px 0;border-bottom:1px solid var(--borda)}
 .us-papel:last-child{border-bottom:0}
 .us-papel b{font-size:13px;color:var(--gelo)}
@@ -734,7 +743,30 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .rail .ab-passo{padding:9px 10px}
 .rail .an-solta{padding:12px 10px}
 .rail #ab-previa{font-size:12px}
-.e-rel-btn{margin-left:auto;padding:6px 14px;font-size:13px;align-self:center}
+.rel-modal.oc-modal{grid-template-columns:280px 330px minmax(0,1fr);max-width:1400px}
+.oc-meio{display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--linha);
+  background:rgba(2,5,20,.25)}
+.oc-lista-cab{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--linha)}
+.oc-lista-cab b{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:14px;letter-spacing:.06em;
+  text-transform:uppercase}
+.oc-lista-cab span{font-size:11.5px;color:var(--tenue);margin-right:auto}
+.oc-lista-cab .btn{flex:none;padding:4px 9px;font-size:11px}
+.oc-lista{overflow-y:auto;padding:8px 10px;display:flex;flex-direction:column;gap:6px}
+.oc-item{display:grid;grid-template-columns:18px minmax(0,1fr) 62px;gap:8px;align-items:center;
+  border:1px solid var(--linha);border-radius:8px;padding:8px 10px;background:rgba(5,10,38,.45)}
+.oc-item.off{opacity:.45}
+.oc-item input[type=checkbox]{width:17px;height:17px;margin:0;accent-color:var(--azul)}
+.oc-nome{font-size:12px;font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.oc-sub{font-size:10.5px;color:var(--tenue);margin-top:1px;font-variant-numeric:tabular-nums}
+.oc-qtd{width:100%;padding:5px 6px;text-align:center;font-variant-numeric:tabular-nums;
+  background:rgba(5,10,38,.7);border:1px solid var(--linha-forte);border-radius:6px;color:var(--gelo);
+  font-weight:700;font-size:13px}
+.oc-qtd:focus{outline:none;border-color:var(--azul)}
+.oc-vazio{font-size:12px;color:var(--tenue);padding:14px;text-align:center}
+@media (max-width:1100px){.oc-modal{grid-template-columns:1fr}
+  .oc-meio{border-right:0;border-bottom:1px solid var(--linha);max-height:40vh}}
+.e-acoes{margin-left:auto;display:flex;gap:7px;align-self:center}
+.e-acoes .btn{flex:none;padding:6px 13px;font-size:12.5px}
 .rel-fundo{align-items:stretch}
 .rel-modal{display:grid;grid-template-columns:310px minmax(0,1fr);gap:0;background:#0B1440;
   border-radius:10px;width:100%;max-width:1180px;margin:auto;overflow:hidden;box-shadow:var(--sombra);
@@ -1058,7 +1090,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 40</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 41</span></p>
     </form>
   </div>
 </div>
@@ -1399,7 +1431,10 @@ html{overflow-x:clip}
       <div class="subabas e-paginas" role="tablist" id="e-paginas">
         <button class="subaba" role="tab" data-pg="mov" aria-selected="true">Entradas &times; Saídas</button>
         <button class="subaba" role="tab" data-pg="custo" aria-selected="false">Custos</button>
-        <button class="btn btn-forte e-rel-btn nao-imprime" id="e-rel-abrir" type="button">Gerar relatório</button>
+        <div class="e-acoes nao-imprime">
+          <button class="btn" id="e-oc-abrir" type="button">Ordem de compra</button>
+          <button class="btn btn-forte" id="e-rel-abrir" type="button">Gerar relatório</button>
+        </div>
       </div>
 
       <details class="painel e-filtros-cx" id="e-filtros-cx">
@@ -1715,12 +1750,18 @@ html{overflow-x:clip}
       </section>
 
       <section class="bloco">
-        <h2>O que cada papel acessa</h2>
-        <div class="bloco-corpo" id="us-matriz"></div>
+        <h2>O que cada papel faz</h2>
+        <div class="bloco-corpo" id="us-papeis-cx"></div>
       </section>
     </aside>
 
     <main style="min-width:0">
+      <details class="painel pn" open style="margin-bottom:14px">
+        <summary><h3>Quem enxerga o quê</h3></summary>
+        <p class="sub">Cada aba do sistema e os perfis que têm acesso a ela. Ao trocar o papel de
+          um usuário, é esta linha que muda o que ele passa a ver ao entrar.</p>
+        <div id="us-matriz"></div>
+      </details>
       <div class="tabela-wrap">
         <table class="dados" id="us-tabela"></table>
       </div>
@@ -1757,6 +1798,51 @@ html{overflow-x:clip}
 
 <div class="gaveta-fundo" id="gaveta-fundo" hidden>
   <aside class="gaveta" id="gaveta" role="dialog" aria-modal="true" aria-label="Detalhe da solicitação"></aside>
+</div>
+
+<div class="ficha-fundo rel-fundo" id="oc-fundo" hidden>
+  <div class="rel-modal oc-modal">
+    <aside class="rel-opcoes nao-imprime">
+      <h3>Ordem de compra</h3>
+      <div class="campo"><label for="oc-origem">Itens a incluir</label>
+        <select id="oc-origem">
+          <option value="critico">Em falta e acabando</option>
+          <option value="falta">Somente em falta</option>
+          <option value="baixo">Somente acabando</option>
+          <option value="todos">Todos os itens do estoque</option>
+        </select></div>
+      <div class="campo"><label for="oc-num">Número da ordem</label>
+        <input id="oc-num" autocomplete="off"></div>
+      <div class="campo"><label for="oc-forn">Fornecedor</label>
+        <input id="oc-forn" autocomplete="off" placeholder="Razão social do fornecedor"></div>
+      <div class="campo"><label for="oc-prazo">Prazo de entrega</label>
+        <input id="oc-prazo" type="date"></div>
+      <div class="campo"><label for="oc-entrega">Local de entrega</label>
+        <input id="oc-entrega" autocomplete="off" placeholder="Endereço do almoxarifado"></div>
+      <div class="campo"><label for="oc-comprador">Solicitante</label>
+        <input id="oc-comprador" autocomplete="off" placeholder="Quem está emitindo"></div>
+      <div class="campo"><label for="oc-obs">Observações</label>
+        <input id="oc-obs" autocomplete="off" placeholder="ex: entregar com nota e certificado"></div>
+      <p class="g-nota">A quantidade sugerida cobre dois meses de consumo, descontado o saldo atual.
+        Ajuste livremente antes de emitir.</p>
+      <div class="rel-acoes">
+        <button class="btn btn-forte" id="oc-pdf" type="button">Emitir em PDF</button>
+        <button class="btn" id="oc-xlsx" type="button">Baixar em Excel</button>
+        <button class="btn" id="oc-fechar" type="button">Fechar</button>
+      </div>
+      <p class="g-nota" id="oc-aviso"></p>
+    </aside>
+    <div class="oc-meio">
+      <div class="oc-lista-cab">
+        <b>Itens</b>
+        <span id="oc-contagem"></span>
+        <button class="btn" id="oc-todos" type="button">Marcar todos</button>
+        <button class="btn" id="oc-nenhum" type="button">Desmarcar</button>
+      </div>
+      <div class="oc-lista" id="oc-lista"></div>
+    </div>
+    <div class="rel-previa" id="oc-previa"></div>
+  </div>
 </div>
 
 <div class="ficha-fundo rel-fundo" id="rel-fundo" hidden>
@@ -3649,15 +3735,44 @@ async function excluirUsuario(u){
   }catch(e){ $('#us-form-aviso').textContent = 'Não deu para excluir.'; }
 }
 
+const PAPEIS_ORD = ['admin','seguranca','almoxarifado_adm','almoxarifado','supervisor'];
 function renderMatrizPapeis(){
   const box = $('#us-matriz'); box.textContent = '';
-  ['admin','seguranca','almoxarifado','almoxarifado_adm','supervisor'].forEach(pp => {
-    const d = cria('div','us-papel');
-    d.appendChild(cria('b', null, PAPEL_ROT[pp]));
-    d.appendChild(cria('p','g-nota', PAPEL_DESC[pp]));
-    d.appendChild(cria('p','us-abas', 'Abas: ' + PAPEL_ACESSO[pp].map(a => ABA_ROT[a]).join(' · ')));
-    box.appendChild(d);
+
+  const t = cria('table','dados mtz');
+  const th = cria('thead'), trh = cria('tr');
+  trh.appendChild(cria('th', null, 'Aba do sistema'));
+  PAPEIS_ORD.forEach(pp => trh.appendChild(cria('th','n', PAPEL_ROT[pp])));
+  th.appendChild(trh); t.appendChild(th);
+  const tb = cria('tbody');
+  PAGINAS.forEach(a => {
+    const tr = cria('tr');
+    tr.appendChild(cria('td','mtz-aba', ABA_ROT[a] || a));
+    PAPEIS_ORD.forEach(pp => {
+      const tem = PAPEL_ACESSO[pp].includes(a);
+      const td = cria('td','n mtz-' + (tem ? 'sim' : 'nao'), tem ? '\u2713' : '\u2014');
+      td.title = PAPEL_ROT[pp] + (tem ? ' v\u00ea ' : ' n\u00e3o v\u00ea ') + (ABA_ROT[a] || a);
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
   });
+  t.appendChild(tb);
+  const wrap = cria('div','tabela-wrap'); wrap.appendChild(t);
+  box.appendChild(wrap);
+
+  const cx = $('#us-papeis-cx');
+  if(cx){
+    cx.textContent = '';
+    PAPEIS_ORD.forEach(pp => {
+      const d = cria('div','us-papel');
+      d.appendChild(cria('b', null, PAPEL_ROT[pp]));
+      d.appendChild(cria('p','g-nota', PAPEL_DESC[pp]));
+      d.appendChild(cria('p','us-abas', PAPEL_ACESSO[pp].length
+        ? PAPEL_ACESSO[pp].map(a => ABA_ROT[a] || a).join(' · ')
+        : 'nenhuma aba'));
+      cx.appendChild(d);
+    });
+  }
 }
 function renderUsuarios(){
   renderMatrizPapeis();
@@ -3667,14 +3782,14 @@ function renderUsuarios(){
     return;
   }
   const thead = cria('thead'), tr = cria('tr');
-  ['Nome','E-mail','Papel','Status','Último acesso','Ações'].forEach(t => tr.appendChild(cria('th', null, t)));
+  ['Nome','E-mail','Papel','O que ele vê','Status','Último acesso','Ações'].forEach(t => tr.appendChild(cria('th', null, t)));
   thead.appendChild(tr); tb.appendChild(thead);
   const tbody = cria('tbody');
   const lista = [...USUARIOS].sort((a,b) =>
     (a.ativo === false) - (b.ativo === false) || (a.nome||'').localeCompare(b.nome||'','pt-BR'));
   if(!lista.length){
     const l = cria('tr'), td = cria('td', null, 'Nenhum usuário cadastrado ainda.');
-    td.colSpan = 6; l.appendChild(td); tbody.appendChild(l);
+    td.colSpan = 7; l.appendChild(td); tbody.appendChild(l);
   }
   lista.forEach(u => {
     const l = cria('tr');
@@ -3684,6 +3799,11 @@ function renderUsuarios(){
     l.appendChild(tdN);
     l.appendChild(cria('td','n', u.email || u.login || '—'));
     l.appendChild(cria('td', null, PAPEL_ROT[u.papel] || u.papel || '—'));
+    const tdV = cria('td','us-ve');
+    const abas = PAPEL_ACESSO[u.papel] || [];
+    if(!abas.length) tdV.appendChild(cria('span','us-chip us-chip-nao','nenhuma aba'));
+    else abas.forEach(a => tdV.appendChild(cria('span','us-chip', ABA_ROT[a] || a)));
+    l.appendChild(tdV);
     const tdS = cria('td');
     const pill = cria('span','pill ' + (u.ativo === false ? 'pill-off' : 'pill-on'));
     pill.appendChild(cria('b'));
@@ -6429,6 +6549,263 @@ if($('#e-rel-abrir')){
   });
   ['rel-titulo','rel-ref'].forEach(id => $('#' + id).addEventListener('input', relMontar));
   $('#rel-fundo').addEventListener('click', e => { if(e.target === $('#rel-fundo')) fecharRelatorio(); });
+}
+
+
+/* ================= ordem de compra ================= */
+let ocLinhas = [];   /* {nome, ca, saldo, nivel, media, sugerido, qtd, incluir} */
+
+function ocCaDe(nome){
+  const acha = alvo => {
+    const k = normEpi(alvo);
+    const c = CATALOGO.find(x => normEpi(x.nome) === k);
+    if(c && c.ca) return c.ca;
+    const e = DADOS.epis.find(x => normEpi(x.nome) === k);
+    return (e && e.ca) || '';
+  };
+  const direto = acha(nome);
+  if(direto) return direto;
+  /* nome antigo do histórico: usa o item do catálogo a que ele corresponde */
+  const c = casarEpi(nome);
+  return (c && c.alvo && c.alvo !== nome) ? acha(c.alvo) : '';
+}
+function ocCustoDe(nome){
+  const c = custoDe(nome);
+  return c == null ? null : c;
+}
+/* consumo médio por mês, olhando só os meses em que o item se mexeu */
+function ocMediaMensal(nome){
+  const meses = new Set();
+  let total = 0;
+  MOVIMENTOS.forEach(m => {
+    if(m.tipo === 'entrada' || m.origem === 'inventario') return;
+    if((m.epi || '') !== nome) return;
+    total += (m.quantidade || 0);
+    const k = mesDe(m); if(k) meses.add(k);
+  });
+  const n = Math.max(1, meses.size);
+  return total / n;
+}
+function ocMontarLista(){
+  const origem = $('#oc-origem').value;
+  const real = [...saldoRealPorEpi().values()];
+  const filtrada = real.filter(l => {
+    const nv = nivelSaldo(l);
+    if(origem === 'falta')   return nv === 0;
+    if(origem === 'baixo')   return nv === 1;
+    if(origem === 'critico') return nv <= 1;
+    return true;
+  }).sort((a,b) => nivelSaldo(a) - nivelSaldo(b) || a.saldo - b.saldo || a.nome.localeCompare(b.nome));
+
+  ocLinhas = filtrada.map(l => {
+    const media = ocMediaMensal(l.nome);
+    /* cobre dois meses de consumo e repõe o que falta para zerar o saldo negativo */
+    const bruto = Math.ceil(media * 2) - l.saldo;
+    const sugerido = Math.max(1, bruto);
+    return {nome:l.nome, ca:ocCaDe(l.nome), saldo:l.saldo, nivel:nivelSaldo(l),
+            media:Math.round(media * 10) / 10, qtd:sugerido, custo:ocCustoDe(l.nome), incluir:true};
+  });
+  ocPintarLista();
+}
+function ocPintarLista(){
+  const alvo = $('#oc-lista'); alvo.textContent = '';
+  if(!ocLinhas.length){
+    alvo.appendChild(cria('p','oc-vazio','Nenhum item nessa condição. Troque o filtro ao lado.'));
+    ocContar(); ocMontarPrevia(); return;
+  }
+  ocLinhas.forEach((l, i) => {
+    const d = cria('div','oc-item' + (l.incluir ? '' : ' off'));
+    const ck = document.createElement('input');
+    ck.type = 'checkbox'; ck.checked = l.incluir;
+    ck.addEventListener('change', () => {
+      l.incluir = ck.checked;
+      d.classList.toggle('off', !l.incluir);
+      ocContar(); ocMontarPrevia();
+    });
+    const meio = cria('div');
+    meio.appendChild(cria('div','oc-nome', l.nome));
+    meio.appendChild(cria('div','oc-sub',
+      (l.ca ? 'CA ' + l.ca + ' · ' : '') + 'saldo ' + l.saldo
+      + ' · consumo ' + l.media.toLocaleString('pt-BR') + '/mês'
+      + ' · ' + ['em falta','acabando','regular'][l.nivel]));
+    const q = document.createElement('input');
+    q.type = 'number'; q.min = '0'; q.step = '1'; q.className = 'oc-qtd'; q.value = l.qtd;
+    q.addEventListener('input', () => {
+      l.qtd = Math.max(0, parseInt(q.value, 10) || 0);
+      ocContar(); ocMontarPrevia();
+    });
+    d.append(ck, meio, q);
+    alvo.appendChild(d);
+  });
+  ocContar(); ocMontarPrevia();
+}
+function ocSelecionados(){ return ocLinhas.filter(l => l.incluir && l.qtd > 0); }
+function ocContar(){
+  const sel = ocSelecionados();
+  const pecas = sel.reduce((a,l) => a + l.qtd, 0);
+  $('#oc-contagem').textContent = sel.length + (sel.length === 1 ? ' item · ' : ' itens · ') + pecas + ' peças';
+}
+
+function ocMontarPrevia(){
+  const alvo = $('#oc-previa'); alvo.textContent = '';
+  const sel = ocSelecionados();
+  const folha = cria('article','folha');
+  relCabecalho(folha, 'Ordem de Compra de Equipamentos de Proteção Individual', null);
+
+  const dados = cria('div','f-dados');
+  const linha = (rot, val) => {
+    const l = cria('div','f-linha');
+    l.append(cria('div','f-rot', rot), cria('div','f-val', val || '—'));
+    dados.appendChild(l);
+  };
+  linha('Ordem nº', $('#oc-num').value);
+  linha('Emissão', new Date().toLocaleDateString('pt-BR'));
+  linha('Fornecedor', $('#oc-forn').value);
+  linha('Prazo de entrega', $('#oc-prazo').value ? dataBRCurta($('#oc-prazo').value) : '');
+  linha('Local de entrega', $('#oc-entrega').value);
+  linha('Solicitante', $('#oc-comprador').value || eu.nome || '');
+  folha.appendChild(dados);
+
+  if(!sel.length){
+    folha.appendChild(cria('p','r-texto','Marque ao menos um item, com quantidade maior que zero.'));
+    alvo.appendChild(folha);
+    return;
+  }
+
+  const sec = cria('section','r-sec');
+  sec.appendChild(cria('h3','r-h2','Itens solicitados'));
+  const temCusto = sel.some(l => l.custo != null);
+  const cols = [{t:'Item'},{t:'CA'},{t:'Qtde',n:1}];
+  if(temCusto) cols.push({t:'Valor unit. ref.',n:1},{t:'Valor total ref.',n:1});
+  const linhas = sel.map(l => {
+    const base = [l.nome, l.ca || '—', l.qtd];
+    if(temCusto) base.push(l.custo == null ? '—' : fmtMoeda(l.custo),
+                           l.custo == null ? '—' : fmtMoeda(l.custo * l.qtd));
+    return base;
+  });
+  const totalPecas = sel.reduce((a,l) => a + l.qtd, 0);
+  const totalVal = sel.reduce((a,l) => a + (l.custo == null ? 0 : l.custo * l.qtd), 0);
+  const rod = temCusto ? ['Total', '', totalPecas, '', fmtMoeda(totalVal)] : ['Total', '', totalPecas];
+  sec.appendChild(relTab(cols, linhas, rod));
+  if(temCusto){
+    sec.appendChild(cria('p','r-nota',
+      'Os valores acima são referenciais, extraídos do último preço registrado no catálogo interno, '
+      + 'e não substituem a proposta comercial do fornecedor.'));
+  }
+  folha.appendChild(sec);
+
+  const cond = cria('section','r-sec');
+  cond.appendChild(cria('h3','r-h2','Condições de fornecimento'));
+  const itens = [
+    'Todos os equipamentos devem possuir Certificado de Aprovação (CA) válido na data da entrega, '
+      + 'conforme exigência da NR-06, item 6.2.',
+    'A nota fiscal deve discriminar o número do CA de cada item fornecido.',
+    'Equipamentos entregues com CA vencido, divergente do solicitado ou com embalagem violada '
+      + 'serão devolvidos ao fornecedor, sem ônus para a contratante.',
+    'A entrega deve ocorrer no local e no prazo indicados acima, em horário comercial, '
+      + 'mediante conferência do almoxarifado.',
+  ];
+  const obs = ($('#oc-obs').value || '').trim();
+  if(obs) itens.push(obs);
+  const ul = document.createElement('ol');
+  ul.style.cssText = 'margin:0 0 6px;padding-left:18px;font-size:11.5px;line-height:1.6;color:#1a1a1a';
+  itens.forEach(t => { const li = document.createElement('li'); li.textContent = t;
+                       li.style.marginBottom = '4px'; ul.appendChild(li); });
+  cond.appendChild(ul);
+  folha.appendChild(cond);
+
+  const rodape = cria('div','r-rod');
+  rodape.append(cria('span', null, 'SESMT — Fancold Service Ltda'),
+                cria('span', null, 'Emitida em ' + new Date().toLocaleString('pt-BR',
+                  {day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})));
+  folha.appendChild(rodape);
+  const as = cria('div','r-assinaturas');
+  ['Solicitante — Segurança do Trabalho','Autorização — Suprimentos'].forEach(r => {
+    const b = cria('div','f-assina');
+    b.append(cria('div','f-risco'), cria('span', null, r));
+    as.appendChild(b);
+  });
+  folha.appendChild(as);
+  alvo.appendChild(folha);
+}
+
+async function ocPdf(){
+  const av = $('#oc-aviso'); av.textContent = '';
+  if(!ocSelecionados().length){ av.textContent = 'Marque ao menos um item antes de emitir.'; return; }
+  const html = '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Ordem de compra '
+    + ($('#oc-num').value || '') + '</title><style>' + CSS_IMPRESSAO + CSS_RELATORIO
+    + '</style></head><body>' + $('#oc-previa').innerHTML
+    + '<script>window.onload=function(){setTimeout(function(){window.print();},400);};<\/script></body></html>';
+  const w = window.open('', '_blank');
+  if(w){ w.document.write(html); w.document.close(); return; }
+  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'ordem-de-compra.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  av.textContent = 'Arquivo baixado. Abra e use Ctrl+P para salvar em PDF.';
+}
+function ocXlsx(){
+  const av = $('#oc-aviso');
+  if(typeof XLSX === 'undefined'){ av.textContent = 'A biblioteca de planilha não carregou. Recarregue a página.'; return; }
+  const sel = ocSelecionados();
+  if(!sel.length){ av.textContent = 'Marque ao menos um item antes de baixar.'; return; }
+  const aoa = [
+    ['Ordem de compra de EPI'],
+    ['Ordem nº', $('#oc-num').value],
+    ['Fornecedor', $('#oc-forn').value],
+    ['Prazo de entrega', $('#oc-prazo').value ? dataBRCurta($('#oc-prazo').value) : ''],
+    ['Local de entrega', $('#oc-entrega').value],
+    ['Solicitante', $('#oc-comprador').value || eu.nome || ''],
+    ['Emitida em', new Date().toLocaleString('pt-BR')],
+    [],
+    ['Item','CA','Quantidade','Saldo atual','Consumo mensal','Valor unit. ref.','Valor total ref.'],
+    ...sel.map(l => [l.nome, l.ca || '', l.qtd, l.saldo, l.media,
+                     l.custo == null ? '' : l.custo,
+                     l.custo == null ? '' : l.custo * l.qtd]),
+    [],
+    ['Total', '', sel.reduce((a,l) => a + l.qtd, 0), '', '', '',
+     sel.reduce((a,l) => a + (l.custo == null ? 0 : l.custo * l.qtd), 0)],
+  ];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(aoa), 'Ordem de compra');
+  XLSX.writeFile(wb, 'ordem-compra-epi-' + new Date().toISOString().slice(0,10) + '.xlsx');
+  av.textContent = 'Planilha baixada.';
+}
+
+function ocNumPadrao(){
+  const d = new Date();
+  const p = n => String(n).padStart(2,'0');
+  return 'OC-' + d.getFullYear() + p(d.getMonth()+1) + p(d.getDate()) + '-' + p(d.getHours()) + p(d.getMinutes());
+}
+function abrirOC(){
+  if(!$('#oc-num').value) $('#oc-num').value = ocNumPadrao();
+  if(!$('#oc-comprador').value) $('#oc-comprador').value = eu.nome || '';
+  if(!$('#oc-prazo').value){
+    const d = new Date(); d.setDate(d.getDate() + 15);
+    $('#oc-prazo').value = d.toISOString().slice(0,10);
+  }
+  if(!$('#oc-entrega').value){
+    const e = (DADOS.empresas || []).find(x => x.cod === LOGO_PADRAO) || (DADOS.empresas || [])[0];
+    if(e) $('#oc-entrega').value = e.endereco || '';
+  }
+  $('#oc-aviso').textContent = '';
+  $('#oc-fundo').hidden = false;
+  document.body.style.overflow = 'hidden';
+  ocMontarLista();
+}
+function fecharOC(){ $('#oc-fundo').hidden = true; document.body.style.overflow = ''; }
+
+if($('#e-oc-abrir')){
+  $('#e-oc-abrir').addEventListener('click', abrirOC);
+  $('#oc-fechar').addEventListener('click', fecharOC);
+  $('#oc-origem').addEventListener('change', ocMontarLista);
+  $('#oc-pdf').addEventListener('click', ocPdf);
+  $('#oc-xlsx').addEventListener('click', ocXlsx);
+  $('#oc-todos').addEventListener('click', () => { ocLinhas.forEach(l => l.incluir = true); ocPintarLista(); });
+  $('#oc-nenhum').addEventListener('click', () => { ocLinhas.forEach(l => l.incluir = false); ocPintarLista(); });
+  ['oc-num','oc-forn','oc-prazo','oc-entrega','oc-comprador','oc-obs'].forEach(id =>
+    $('#' + id).addEventListener('input', ocMontarPrevia));
+  $('#oc-fundo').addEventListener('click', e => { if(e.target === $('#oc-fundo')) fecharOC(); });
 }
 
 /* ================= catálogo de EPI (aba própria) ================= */
