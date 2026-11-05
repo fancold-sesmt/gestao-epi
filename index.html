@@ -1146,7 +1146,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 50</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 52</span></p>
     </form>
   </div>
 </div>
@@ -1336,7 +1336,7 @@ html{overflow-x:clip}
         <div class="ctl-campos">
           <div class="campo"><label for="cf-busca">Buscar</label>
             <input id="cf-busca" type="search" autocomplete="off"
-                   placeholder="nº ou nome"></div>
+                   placeholder="nº, nome, EPI ou CA"></div>
           <div class="campo"><label for="cf-contrato">Contrato</label><select id="cf-contrato"></select></div>
           <div class="campo"><label for="cf-dia">Dia</label><input id="cf-dia" type="date"></div>
           <div class="ctl-duo">
@@ -1668,7 +1668,7 @@ html{overflow-x:clip}
         <h3>Carga da contagem de 29/10</h3>
         <p class="sub" id="cg-sub">Prepara o catálogo para receber a contagem: cria os 19 itens que faltavam (tamanhos de colete, luva e macacão, calça e camisa NR10 nos tamanhos EG e G4, blusa de moletom EG e protetor solar FPS 60), põe o CA 38503 na BOTINA MICROFIBRA e desativa a BOTA DE SEGURANÇA C/ COMPOSITE, que era o mesmo calçado com o CA digitado trocado. Pode clicar mais de uma vez: regrava por cima, não duplica.</p>
         <div id="cg-uso" class="cg-uso"></div>
-        <button class="btn btn-forte" id="cg-rodar" type="button">Aplicar a carga (42 itens)</button>
+        <button class="btn btn-forte" id="cg-rodar" type="button">Aplicar a carga (49 itens)</button>
         <div id="cg-log" class="imp-erros" style="margin-top:10px"></div>
       </section>
       <section class="painel" id="cat-painel-kit">
@@ -4359,8 +4359,10 @@ function passaCtl(s){
   if(fCtl.contrato && (s.contrato || '(sem contrato)') !== fCtl.contrato) return false;
   const b = botNorm(fCtl.busca);
   if(b){
+    /* procura tamb\u00e9m no nome e no CA dos EPI da ficha */
+    const itens = (s.itens || []).map(i => (i.nome || '') + ' ' + (i.ca || '')).join(' ');
     const alvo = botNorm((s.colaborador || '') + ' ' + (s.num || '') + ' '
-      + (s.solicitante || '') + ' ' + (s.cm || ''));
+      + (s.solicitante || '') + ' ' + (s.cm || '') + ' ' + (s.contrato || '') + ' ' + itens);
     if(!alvo.includes(b)) return false;
   }
   return true;
@@ -7325,6 +7327,7 @@ async function catLigar(nomeAntigo, idAlvo){
 
 const CARGA_NOVOS = [{"nome": "COLETE REFLETIVO TIPO BLUSÃO LARANJA M", "ca": "", "grupo": "EPI", "custo": 19.0, "apelidos": [], "ativo": true}, {"nome": "COLETE REFLETIVO TIPO BLUSÃO LARANJA G", "ca": "", "grupo": "EPI", "custo": 19.0, "apelidos": [], "ativo": true}, {"nome": "COLETE REFLETIVO TIPO BLUSÃO LARANJA XG", "ca": "", "grupo": "EPI", "custo": 19.0, "apelidos": [], "ativo": true}, {"nome": "COLETE REFLETIVO TIPO BLUSÃO LARANJA XXG", "ca": "", "grupo": "EPI", "custo": 19.0, "apelidos": [], "ativo": true}, {"nome": "LUVA ANTI CORTE DANNY G", "ca": "32036", "grupo": "EPI", "custo": 17.0, "apelidos": [], "ativo": true}, {"nome": "LUVA ANTI CORTE DANNY GG", "ca": "32036", "grupo": "EPI", "custo": 17.0, "apelidos": [], "ativo": true}, {"nome": "LUVA LATEX LONGATEX DANNY AMARELA P", "ca": "9567", "grupo": "EPI", "custo": 10.0, "apelidos": [], "ativo": true}, {"nome": "LUVA LATEX LONGATEX DANNY AMARELA M", "ca": "9567", "grupo": "EPI", "custo": 10.0, "apelidos": [], "ativo": true}, {"nome": "LUVA LATEX LONGATEX DANNY AMARELA G", "ca": "9567", "grupo": "EPI", "custo": 10.0, "apelidos": [], "ativo": true}, {"nome": "LUVA LATEX LONGATEX DANNY AMARELA GG", "ca": "9567", "grupo": "EPI", "custo": 10.0, "apelidos": [], "ativo": true}, {"nome": "MACACÃO SEGURANÇA BRANCO (CONVERTEH/STEELGEN) M", "ca": "39183/20662", "grupo": "EPI", "custo": 14.0, "apelidos": [], "ativo": true}, {"nome": "MACACÃO SEGURANÇA BRANCO (CONVERTEH/STEELGEN) G", "ca": "39183/20662", "grupo": "EPI", "custo": 14.0, "apelidos": [], "ativo": true}, {"nome": "MACACÃO SEGURANÇA BRANCO (CONVERTEH/STEELGEN) XXG", "ca": "39183/20662", "grupo": "EPI", "custo": 14.0, "apelidos": [], "ativo": true}, {"nome": "PROTETOR SOLAR FPS 60", "ca": "", "grupo": "EPI", "custo": null, "apelidos": [], "ativo": true}, {"nome": "CALÇA UNIFORME NR10 AZUL C/REFLETIVO LARANJA EG", "ca": "", "grupo": "Uniforme NR10", "custo": 162.5, "apelidos": [], "ativo": true}, {"nome": "CALÇA UNIFORME NR10 AZUL C/REFLETIVO LARANJA G4", "ca": "", "grupo": "Uniforme NR10", "custo": 177.5, "apelidos": [], "ativo": true}, {"nome": "CAMISA UNIFORME NR10 AZUL C/REFLETIVO LARANJA EG", "ca": "", "grupo": "Uniforme NR10", "custo": 162.5, "apelidos": [], "ativo": true}, {"nome": "CAMISA UNIFORME NR10 AZUL C/REFLETIVO LARANJA G4", "ca": "", "grupo": "Uniforme NR10", "custo": 177.5, "apelidos": [], "ativo": true}, {"nome": "BLUSA DE MOLETOM AZUL EG", "ca": "", "grupo": "Uniforme", "custo": 55.0, "apelidos": [], "ativo": true}];
 const CARGA_ALTERA = [{"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 35", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": [], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 36", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 36"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 37", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 37"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 38", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 38"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 39", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 39"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 40", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 40"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 41", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 41"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 42", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 42"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 43", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 43"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 44", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 44"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 45", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 45"], "ativo": true}, {"nome": "BOTINA MICROFIBRA PRETA C/BICO COMPOSITE 46", "ca": "38503", "grupo": "Calçado", "custo": 120.0, "apelidos": ["BOTA DE SEGURANÇA C/ COMPOSITE 46"], "ativo": true}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 36", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 37", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 38", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 39", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 40", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 41", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 42", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 43", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 44", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 45", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}, {"nome": "BOTA DE SEGURANÇA C/ COMPOSITE 46", "ca": "38530", "grupo": "Calçado", "custo": 118.0, "apelidos": [], "ativo": false}];
+const CARGA_LIMPEZA = [{"nome": "CAMISA UNIFORME BRIM AZUL C/REFLETIVO LARANJA G", "ca": "", "grupo": "Uniforme brim", "custo": 75.0, "apelidos": ["CAMISA BRIM AZUL COM REFLETIVO LARANJA 44"], "ativo": true}, {"nome": "RESPIRADOR SEMI FACIAL 3M MOD.7502", "ca": "12011", "grupo": "EPI", "custo": 299.0, "apelidos": ["RESPIRADOR SEMI FACIAL 7502 3M"], "ativo": true}, {"nome": "RESPIRADOR SEMI FACIAL 7502 3M", "ca": "12011", "grupo": "EPI", "custo": 290.0, "apelidos": [], "ativo": false}, {"nome": "COLETE REFLETIVO TIPO BLUSÃO LARANJA", "ca": "", "grupo": "EPI", "custo": 19.0, "apelidos": [], "ativo": false}, {"nome": "LUVA ANTI CORTE DANNY", "ca": "32036", "grupo": "EPI", "custo": 17.0, "apelidos": [], "ativo": false}, {"nome": "LUVA LATEX LONGATEX DANNY AMARELA", "ca": "9567", "grupo": "EPI", "custo": 10.0, "apelidos": [], "ativo": false}, {"nome": "MACACÃO SEGURANÇA BRANCO (CONVERTEH/STEELGEN)", "ca": "39183/20662", "grupo": "EPI", "custo": 14.0, "apelidos": [], "ativo": false}];
 let cgPronta = false;
 
 function cgLog(txt, cls){
@@ -7344,7 +7347,7 @@ async function cgRodar(){
     lista = DADOS.epis.map(e => ({nome:e.nome, ca:e.ca || '', grupo:e.grupo || 'EPI',
                                   custo: e.custo == null ? null : e.custo, apelidos:[], ativo:true}));
   }
-  lista = lista.concat(CARGA_NOVOS, CARGA_ALTERA);
+  lista = lista.concat(CARGA_NOVOS, CARGA_ALTERA, CARGA_LIMPEZA);
   let n = 0, erros = 0, motivo = '';
   for(const e of lista){
     try{
@@ -7392,7 +7395,7 @@ function cgRelatorioUso(){
   const cx = $('#cg-uso');
   if(!cx) return;
   cx.textContent = '';
-  const aDesativar = CARGA_ALTERA.filter(e => e.ativo === false);
+  const aDesativar = CARGA_ALTERA.concat(CARGA_LIMPEZA).filter(e => e.ativo === false);
   let fichas = 0, lanc = 0, usados = [];
   aDesativar.forEach(e => {
     const u = cgUsoDe(e.nome);
@@ -7403,8 +7406,10 @@ function cgRelatorioUso(){
   cab.appendChild(cria('b','', 'Confer\u00eancia antes de desativar'));
   cx.appendChild(cab);
   const p1 = cria('div', null, 'A carga desativa ' + aDesativar.length
-    + ' linhas de BOTA DE SEGURAN\u00c7A C/ COMPOSITE (36 a 46) e mant\u00e9m a BOTINA MICROFIBRA PRETA '
-    + 'C/BICO COMPOSITE com o CA 38503.');
+    + ' linhas: as 11 de BOTA DE SEGURAN\u00c7A C/ COMPOSITE (fica a BOTINA MICROFIBRA, CA 38503), '
+    + 'a c\u00f3pia do RESPIRADOR SEMI FACIAL 7502 (fica o MOD.7502, mesmo CA 12011) e os 4 itens que '
+    + 'estavam cadastrados ao mesmo tempo com e sem tamanho \u2014 colete refletivo, luva anti corte, '
+    + 'luva latex e macac\u00e3o.');
   cx.appendChild(p1);
   if(!fichas && !lanc){
     cx.appendChild(cria('div','ok',
@@ -7418,9 +7423,29 @@ function cgRelatorioUso(){
       + ', ' + u.lanc + ' lan\u00e7amento' + (u.lanc === 1 ? '' : 's'))));
     cx.appendChild(cria('div', null,
       'Nada disso se perde: os itens ficam desativados, n\u00e3o apagados \u2014 somem da lista de '
-      + 'escolha, mas continuam no hist\u00f3rico. E cada nome antigo entra como apelido da BOTINA, '
-      + 'ent\u00e3o pre\u00e7o e saldo passam a ser contados no item certo.'));
+      + 'escolha, mas continuam no hist\u00f3rico, e o nome antigo vira apelido do item que fica, '
+      + 'de modo que pre\u00e7o e saldo passam a ser contados no lugar certo.'));
   }
+
+  /* nomes antigos que passam a ser lidos como um item do cat\u00e1logo */
+  const liga = [];
+  CARGA_ALTERA.concat(CARGA_LIMPEZA).forEach(e => {
+    (e.apelidos || []).forEach(a => {
+      const u = cgUsoDe(a);
+      liga.push({de:a, para:e.nome, ...u});
+    });
+  });
+  const usadas = liga.filter(l => l.fichas || l.lanc);
+  cx.appendChild(cria('div','', '\u00a0'));
+  cx.appendChild(cria('b','', 'Nomes antigos que ser\u00e3o reconhecidos'));
+  cx.appendChild(cria('div', null, liga.length + ' nome' + (liga.length === 1 ? '' : 's')
+    + ' entram como apelido. ' + (usadas.length
+      ? usadas.length + (usadas.length === 1 ? ' deles aparece' : ' deles aparecem') + ' no hist\u00f3rico:'
+      : 'Nenhum deles aparece em ficha ou lan\u00e7amento at\u00e9 agora.')));
+  usadas.slice(0,12).forEach(l => cx.appendChild(cria('div','at',
+    '\u00b7 ' + l.de + ' \u2192 ' + l.para + ': ' + l.fichas + ' ficha'
+    + (l.fichas === 1 ? '' : 's') + ', ' + l.lanc + ' lan\u00e7amento'
+    + (l.lanc === 1 ? '' : 's'))));
 }
 
 function renderCarga(){
