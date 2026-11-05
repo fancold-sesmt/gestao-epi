@@ -1127,7 +1127,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 46</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 47</span></p>
     </form>
   </div>
 </div>
@@ -1309,11 +1309,12 @@ html{overflow-x:clip}
   </div>
   <div id="c-aviso"></div>
 
-  <details class="painel e-filtros-cx" id="c-filtros-cx" style="margin-bottom:12px">
-    <summary>Filtrar <span id="cf-chip-resumo"></span></summary>
+  <details class="painel e-filtros-cx" id="c-filtros-cx" style="margin-bottom:12px" open>
+    <summary>Consultar solicitação <span id="cf-chip-resumo"></span></summary>
     <div class="e-filtros c-filtros">
       <div class="campo cf-busca"><label for="cf-busca">Buscar</label>
-        <input id="cf-busca" autocomplete="off" placeholder="número da ficha ou nome do colaborador"></div>
+        <input id="cf-busca" type="search" autocomplete="off"
+               placeholder="nº da solicitação ou nome do colaborador"></div>
       <div class="campo"><label for="cf-contrato">Contrato</label><select id="cf-contrato"></select></div>
       <div class="campo"><label for="cf-dia">Dia</label><input id="cf-dia" type="date"></div>
       <div class="campo"><label for="cf-mes">Mês</label><select id="cf-mes"></select></div>
@@ -4401,7 +4402,10 @@ if($('#cf-busca')){
   });
 }
 
+let cfAjustado = false;
 function renderKanban(){
+  const cxf = $('#c-filtros-cx');
+  if(cxf && !cfAjustado){ cxf.open = window.innerWidth > 900; cfAjustado = true; }
   const alvo = $('#kanban'); alvo.textContent = '';
   const temEx = SOLICITACOES.some(s => s.exemplo);
   $('#b-limpar-ex').hidden = !temEx || !DB;
