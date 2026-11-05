@@ -185,6 +185,11 @@ h1,h2,h3{margin:0}
 .mtz-aba{font-weight:600}
 .mtz-sim{color:var(--e4);font-weight:700;font-size:15px}
 .mtz-nao{color:var(--tenue)}
+.cg-uso{margin:0 0 11px;font-size:12px;line-height:1.5;color:var(--suave);
+  border-left:3px solid var(--e5);padding:9px 12px;background:rgba(5,10,38,.45);border-radius:0 8px 8px 0}
+.cg-uso b{color:var(--gelo)}
+.cg-uso .ok{color:var(--e4)}
+.cg-uso .at{color:var(--alerta)}
 .us-ve-bt{display:flex;flex-wrap:wrap;align-items:center;gap:2px;width:100%;text-align:left;
   background:none;border:1px dashed transparent;border-radius:8px;padding:3px 5px;cursor:pointer;color:inherit}
 .us-ve-bt:hover{border-color:var(--linha-forte);background:rgba(46,123,255,.07)}
@@ -1118,7 +1123,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 44</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 45</span></p>
     </form>
   </div>
 </div>
@@ -1608,6 +1613,7 @@ html{overflow-x:clip}
       <section class="painel" id="cat-painel-carga" hidden>
         <h3>Carga da contagem de 29/10</h3>
         <p class="sub" id="cg-sub">Prepara o catálogo para receber a contagem: cria os 19 itens que faltavam (tamanhos de colete, luva e macacão, calça e camisa NR10 nos tamanhos EG e G4, blusa de moletom EG e protetor solar FPS 60), põe o CA 38503 na BOTINA MICROFIBRA e desativa a BOTA DE SEGURANÇA C/ COMPOSITE, que era o mesmo calçado com o CA digitado trocado. Pode clicar mais de uma vez: regrava por cima, não duplica.</p>
+        <div id="cg-uso" class="cg-uso"></div>
         <button class="btn btn-forte" id="cg-rodar" type="button">Aplicar a carga (42 itens)</button>
         <div id="cg-log" class="imp-erros" style="margin-top:10px"></div>
       </section>
@@ -7163,6 +7169,57 @@ async function cgRodar(){
   b.disabled = false;
 }
 
+/* quantas fichas e quantos lançamentos usam um nome de EPI */
+function cgUsoDe(nome){
+  const alvo = normEpi(nome);
+  let fichas = 0, pecasFicha = 0;
+  SOLICITACOES.forEach(s => {
+    if((s.itens || []).some(i => normEpi(i.nome) === alvo)){
+      fichas++;
+      (s.itens || []).forEach(i => { if(normEpi(i.nome) === alvo) pecasFicha += (i.qtd || 0); });
+    }
+  });
+  let lanc = 0, pecasMov = 0;
+  MOVIMENTOS.forEach(m => {
+    if(normEpi(m.epi || '') === alvo){ lanc++; pecasMov += (m.quantidade || 0); }
+  });
+  return {fichas, pecasFicha, lanc, pecasMov};
+}
+function cgRelatorioUso(){
+  const cx = $('#cg-uso');
+  if(!cx) return;
+  cx.textContent = '';
+  const aDesativar = CARGA_ALTERA.filter(e => e.ativo === false);
+  let fichas = 0, lanc = 0, usados = [];
+  aDesativar.forEach(e => {
+    const u = cgUsoDe(e.nome);
+    fichas += u.fichas; lanc += u.lanc;
+    if(u.fichas || u.lanc) usados.push({nome:e.nome, ...u});
+  });
+  const cab = cria('div');
+  cab.appendChild(cria('b','', 'Confer\u00eancia antes de desativar'));
+  cx.appendChild(cab);
+  const p1 = cria('div', null, 'A carga desativa ' + aDesativar.length
+    + ' linhas de BOTA DE SEGURAN\u00c7A C/ COMPOSITE (36 a 46) e mant\u00e9m a BOTINA MICROFIBRA PRETA '
+    + 'C/BICO COMPOSITE com o CA 38503.');
+  cx.appendChild(p1);
+  if(!fichas && !lanc){
+    cx.appendChild(cria('div','ok',
+      '\u2713 Nenhuma ficha e nenhum lan\u00e7amento usam esses nomes. A remo\u00e7\u00e3o n\u00e3o afeta nada.'));
+  } else {
+    cx.appendChild(cria('div','at',
+      '\u26a0 ' + fichas + (fichas === 1 ? ' ficha' : ' fichas') + ' e ' + lanc
+      + (lanc === 1 ? ' lan\u00e7amento' : ' lan\u00e7amentos') + ' usam esses nomes.'));
+    usados.slice(0,12).forEach(u => cx.appendChild(cria('div', null,
+      '\u00b7 ' + u.nome + ': ' + u.fichas + ' ficha' + (u.fichas === 1 ? '' : 's')
+      + ', ' + u.lanc + ' lan\u00e7amento' + (u.lanc === 1 ? '' : 's'))));
+    cx.appendChild(cria('div', null,
+      'Nada disso se perde: os itens ficam desativados, n\u00e3o apagados \u2014 somem da lista de '
+      + 'escolha, mas continuam no hist\u00f3rico. E cada nome antigo entra como apelido da BOTINA, '
+      + 'ent\u00e3o pre\u00e7o e saldo passam a ser contados no item certo.'));
+  }
+}
+
 function renderCarga(){
   const pn = $('#cat-painel-carga');
   if(!pn) return;
@@ -7170,6 +7227,7 @@ function renderCarga(){
   const falta = CARGA_NOVOS.filter(e => !CATALOGO.some(c => normEpi(c.nome) === normEpi(e.nome))).length;
   const botaViva = CATALOGO.some(c => c.ativo !== false && normEpi(c.nome).startsWith('BOTA DE SEGURANCA C COMPOSITE'));
   pn.hidden = !catPodeEditar() || (CATALOGO.length > 0 && falta === 0 && !botaViva);
+  if(!pn.hidden) cgRelatorioUso();
   if(!cgPronta){ cgPronta = true; $('#cg-rodar').addEventListener('click', cgRodar); }
 }
 
