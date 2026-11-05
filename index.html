@@ -1090,7 +1090,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 41</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 42</span></p>
     </form>
   </div>
 </div>
@@ -6674,24 +6674,14 @@ function ocMontarPrevia(){
 
   const sec = cria('section','r-sec');
   sec.appendChild(cria('h3','r-h2','Itens solicitados'));
-  const temCusto = sel.some(l => l.custo != null);
-  const cols = [{t:'Item'},{t:'CA'},{t:'Qtde',n:1}];
-  if(temCusto) cols.push({t:'Valor unit. ref.',n:1},{t:'Valor total ref.',n:1});
-  const linhas = sel.map(l => {
-    const base = [l.nome, l.ca || '—', l.qtd];
-    if(temCusto) base.push(l.custo == null ? '—' : fmtMoeda(l.custo),
-                           l.custo == null ? '—' : fmtMoeda(l.custo * l.qtd));
-    return base;
-  });
+  /* o documento vai para o fornecedor: nenhum valor interno aparece nele */
+  const cols = [{t:'Item'},{t:'CA'},{t:'Qtde',n:1},{t:'Unid.',n:1}];
+  const linhas = sel.map(l => [l.nome, l.ca || '—', l.qtd, 'peça']);
   const totalPecas = sel.reduce((a,l) => a + l.qtd, 0);
-  const totalVal = sel.reduce((a,l) => a + (l.custo == null ? 0 : l.custo * l.qtd), 0);
-  const rod = temCusto ? ['Total', '', totalPecas, '', fmtMoeda(totalVal)] : ['Total', '', totalPecas];
-  sec.appendChild(relTab(cols, linhas, rod));
-  if(temCusto){
-    sec.appendChild(cria('p','r-nota',
-      'Os valores acima são referenciais, extraídos do último preço registrado no catálogo interno, '
-      + 'e não substituem a proposta comercial do fornecedor.'));
-  }
+  sec.appendChild(relTab(cols, linhas, ['Total', '', totalPecas, '']));
+  sec.appendChild(cria('p','r-nota',
+    'Solicitamos proposta comercial com preço unitário, prazo de entrega e condições de pagamento '
+    + 'para os itens acima.'));
   folha.appendChild(sec);
 
   const cond = cria('section','r-sec');
@@ -6758,13 +6748,10 @@ function ocXlsx(){
     ['Solicitante', $('#oc-comprador').value || eu.nome || ''],
     ['Emitida em', new Date().toLocaleString('pt-BR')],
     [],
-    ['Item','CA','Quantidade','Saldo atual','Consumo mensal','Valor unit. ref.','Valor total ref.'],
-    ...sel.map(l => [l.nome, l.ca || '', l.qtd, l.saldo, l.media,
-                     l.custo == null ? '' : l.custo,
-                     l.custo == null ? '' : l.custo * l.qtd]),
+    ['Item','CA','Quantidade','Unidade','Preço unitário','Preço total','Prazo'],
+    ...sel.map(l => [l.nome, l.ca || '', l.qtd, 'peça', '', '', '']),
     [],
-    ['Total', '', sel.reduce((a,l) => a + l.qtd, 0), '', '', '',
-     sel.reduce((a,l) => a + (l.custo == null ? 0 : l.custo * l.qtd), 0)],
+    ['Total', '', sel.reduce((a,l) => a + l.qtd, 0), '', '', '', ''],
   ];
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(aoa), 'Ordem de compra');
