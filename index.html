@@ -734,6 +734,55 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .rail .ab-passo{padding:9px 10px}
 .rail .an-solta{padding:12px 10px}
 .rail #ab-previa{font-size:12px}
+.e-rel-btn{margin-left:auto;padding:6px 14px;font-size:13px;align-self:center}
+.rel-fundo{align-items:stretch}
+.rel-modal{display:grid;grid-template-columns:310px minmax(0,1fr);gap:0;background:#0B1440;
+  border-radius:10px;width:100%;max-width:1180px;margin:auto;overflow:hidden;box-shadow:var(--sombra);
+  max-height:94vh}
+.rel-opcoes{padding:16px 16px 18px;border-right:1px solid var(--linha);overflow-y:auto}
+.rel-opcoes h3{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:15px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;margin:0 0 4px}
+.rel-chk{display:flex;gap:9px;align-items:flex-start;padding:7px 0;cursor:pointer;
+  border-top:1px solid rgba(127,176,255,.1)}
+.rel-chk input{width:17px;height:17px;margin:2px 0 0;flex:none;accent-color:var(--azul)}
+.rel-chk span{display:flex;flex-direction:column;gap:1px;min-width:0}
+.rel-chk b{font-size:12.5px;color:var(--gelo)}
+.rel-chk i{font-style:normal;font-size:11px;color:var(--tenue);line-height:1.3}
+.rel-acoes{display:flex;flex-direction:column;gap:7px;margin-top:14px}
+.rel-previa{overflow-y:auto;padding:20px;background:rgba(2,5,20,.4);display:flex;
+  flex-direction:column;align-items:center;gap:16px}
+.rel-previa .folha{min-height:0;padding:30px 34px}
+.r-sec{margin:0 0 18px}
+.r-h2{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:13.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.09em;color:#000;margin:0 0 8px;padding-bottom:4px;
+  border-bottom:1.5px solid #000}
+.r-texto{font-size:12px;line-height:1.6;text-align:justify;margin:0 0 10px;color:#1a1a1a}
+.r-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.r-kpi{border:1px solid #6B6B6B;padding:8px 9px}
+.r-kpi b{display:block;font-size:19px;font-weight:700;line-height:1.1;color:#000;font-variant-numeric:tabular-nums}
+.r-kpi span{display:block;font-size:9.5px;text-transform:uppercase;letter-spacing:.07em;color:#444;margin-top:2px}
+.r-tab{width:100%;border-collapse:collapse;margin-bottom:6px;font-size:11.5px}
+.r-tab th{background:#E9EEEB;color:#000;border:1px solid #000;padding:4px 7px;font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;text-align:left}
+.r-tab td{border:1px solid #9a9a9a;color:#000;background:#fff;padding:4px 7px;vertical-align:top}
+.r-tab .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.r-tab tfoot td{font-weight:700;background:#F2F4F3;color:#000;border-top:1.5px solid #000}
+.r-nota{font-size:10px;color:#555;margin:0 0 14px}
+.r-rod{margin-top:26px;padding-top:10px;border-top:1px solid #000;display:flex;
+  justify-content:space-between;gap:20px;font-size:10px;color:#333}
+.r-assinaturas{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+@media (max-width:900px){.rel-modal{grid-template-columns:1fr}.rel-opcoes{border-right:0;border-bottom:1px solid var(--linha)}}
+.pn{padding:0}
+.pn>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:14px 17px}
+.pn>summary::-webkit-details-marker{display:none}
+.pn>summary h3{margin:0}
+.pn>summary::after{content:'\25be';margin-left:auto;color:var(--suave);font-size:13px;flex:none}
+.pn[open]>summary::after{content:'\25b4'}
+.pn>summary:hover{background:rgba(46,123,255,.07)}
+.pn[open]>summary{padding-bottom:2px}
+.pn>*:not(summary){padding-left:17px;padding-right:17px}
+.pn>*:last-child{padding-bottom:17px}
+.pn>.tabela-wrap,.pn>div{min-width:0}
 .mm-tab td,.mm-tab th{padding:7px 10px}
 .mm-tab tbody .mm-mes{font-weight:600;text-transform:capitalize}
 .mm-tab tfoot .mm-mes{font-weight:700}
@@ -884,7 +933,12 @@ table.dados{width:100%;border-collapse:collapse;font-size:13px}
     break-after:page;page-break-after:always}
   .folha:last-child{break-after:auto;page-break-after:auto}
   .ficha-lote{display:block !important;gap:0 !important}
-  .sel-fundo{display:none !important}
+  .sel-fundo,.rel-opcoes{display:none !important}
+  .rel-fundo{position:static !important;background:none !important;backdrop-filter:none !important;
+    padding:0 !important;display:block !important;inset:auto;overflow:visible}
+  .rel-modal{display:block !important;max-width:none;max-height:none;background:none !important;box-shadow:none;border-radius:0}
+  .rel-previa{display:block !important;padding:0 !important;background:none !important;overflow:visible}
+  .rel-previa .folha{padding:0}
   .f-tabela td,.f-tabela th,.f-topo,.f-risco,.f-termo h3{border-color:#000}
   .f-topo{padding-right:2px}
 }
@@ -1004,7 +1058,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 39</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 40</span></p>
     </form>
   </div>
 </div>
@@ -1345,6 +1399,7 @@ html{overflow-x:clip}
       <div class="subabas e-paginas" role="tablist" id="e-paginas">
         <button class="subaba" role="tab" data-pg="mov" aria-selected="true">Entradas &times; Saídas</button>
         <button class="subaba" role="tab" data-pg="custo" aria-selected="false">Custos</button>
+        <button class="btn btn-forte e-rel-btn nao-imprime" id="e-rel-abrir" type="button">Gerar relatório</button>
       </div>
 
       <details class="painel e-filtros-cx" id="e-filtros-cx">
@@ -1382,58 +1437,59 @@ html{overflow-x:clip}
       <div id="e-pg-mov">
         <dl class="tiles" id="e-tiles-mov"></dl>
 
-        <section class="painel">
-          <h3>Saldo por EPI</h3>
+        <details class="painel pn" open>
+          <summary><h3>Saldo por EPI</h3></summary>
           <p class="sub" id="e-saldo-sub">O que existe em casa hoje: tudo que já entrou menos tudo que já saiu, desde sempre. Não muda quando você filtra período — o período aparece ao lado, como movimento.</p>
           <div id="e-saldo"></div>
-        </section>
-        <section class="painel">
-          <h3>Saídas por EPI</h3>
+        </details>
+        <details class="painel pn" open>
+          <summary><h3>Saídas por EPI</h3></summary>
           <p class="sub" id="e-destino-sub">Consumo por item no período filtrado. Clique na linha para ver contrato, colaborador e data.</p>
           <div id="e-destino"></div>
-        </section>
-        <section class="painel">
-          <h3>Movimentação mensal</h3>
+        </details>
+        <details class="painel pn" open>
+          <summary><h3>Movimentação mensal</h3></summary>
           <p class="sub">Entradas, saídas e variação do estoque mês a mês, em peças</p>
           <div id="e-mov-mes"></div>
-        </section>
-        <section class="painel">
+        </details>
+        <details class="painel pn" open>
+          <summary><h3>Lançamentos</h3></summary>
           <div class="subabas" role="tablist" id="e-mov-tabs">
             <button class="subaba" role="tab" data-sub="saida" aria-selected="true">Saídas</button>
             <button class="subaba" role="tab" data-sub="entrada" aria-selected="false">Entradas</button>
           </div>
           <p class="sub" id="e-mov-sub">Todas as saídas registradas, da mais recente à mais antiga</p>
           <div id="e-mov"></div>
-        </section>
+        </details>
       </div>
 
       <div id="e-pg-custo" hidden>
         <dl class="tiles" id="e-tiles"></dl>
-        <section class="painel" id="e-painel-sem" hidden>
-          <h3>EPI sem preço cadastrado</h3>
+        <details class="painel pn" open id="e-painel-sem" hidden>
+          <summary><h3>EPI sem preço cadastrado</h3></summary>
           <p class="sub">Estes saíram do estoque mas não têm preço na tabela — por isso ficam fora do custo total. Me diga o preço de cada um e eles entram na conta.</p>
           <div id="e-sem-preco"></div>
-        </section>
-        <section class="painel">
-          <h3>Custo por mês</h3>
+        </details>
+        <details class="painel pn" open>
+          <summary><h3>Custo por mês</h3></summary>
           <p class="sub">Quanto saiu de EPI em cada mês</p>
           <div id="e-custo-mes"></div>
-        </section>
-        <section class="painel">
-          <h3>Custo por contrato</h3>
+        </details>
+        <details class="painel pn" open>
+          <summary><h3>Custo por contrato</h3></summary>
           <p class="sub">Soma de tudo que saiu, por contrato. Clique para ver de quais fichas veio o valor.</p>
           <div id="e-contratos"></div>
-        </section>
-        <section class="painel">
-          <h3>Maiores custos por colaborador</h3>
+        </details>
+        <details class="painel pn" open>
+          <summary><h3>Maiores custos por colaborador</h3></summary>
           <p class="sub">Os 15 colaboradores que mais consumiram no período filtrado</p>
           <div id="e-custo-colab"></div>
-        </section>
-        <section class="painel">
-          <h3>Custo por EPI</h3>
+        </details>
+        <details class="painel pn" open>
+          <summary><h3>Custo por EPI</h3></summary>
           <p class="sub">Quanto cada equipamento consumiu no total</p>
           <div id="e-custo-epi"></div>
-        </section>
+        </details>
       </div>
     </main>
   </div>
@@ -1701,6 +1757,33 @@ html{overflow-x:clip}
 
 <div class="gaveta-fundo" id="gaveta-fundo" hidden>
   <aside class="gaveta" id="gaveta" role="dialog" aria-modal="true" aria-label="Detalhe da solicitação"></aside>
+</div>
+
+<div class="ficha-fundo rel-fundo" id="rel-fundo" hidden>
+  <div class="rel-modal">
+    <aside class="rel-opcoes nao-imprime">
+      <h3>Montar relatório</h3>
+      <p class="g-nota" id="rel-periodo-nota"></p>
+      <div class="campo"><label for="rel-titulo">Título</label>
+        <input id="rel-titulo" autocomplete="off" value="Relatório Gerencial de Equipamentos de Proteção Individual"></div>
+      <div class="campo"><label for="rel-ref">Referência / setor</label>
+        <input id="rel-ref" autocomplete="off" placeholder="ex: SESMT — Fancold Service"></div>
+      <label class="rel-chk"><input type="checkbox" id="rc-resumo" checked><span><b>Síntese executiva</b><i>Indicadores do período e leitura dos números</i></span></label>
+      <label class="rel-chk"><input type="checkbox" id="rc-saldo" checked><span><b>Posição de estoque</b><i>Saldo por item, com situação de cada EPI</i></span></label>
+      <label class="rel-chk"><input type="checkbox" id="rc-consumo" checked><span><b>Consumo por EPI</b><i>O que saiu no período, item a item</i></span></label>
+      <label class="rel-chk"><input type="checkbox" id="rc-contrato"><span><b>Consumo por contrato</b><i>Peças e custo distribuídos por contrato</i></span></label>
+      <label class="rel-chk"><input type="checkbox" id="rc-mensal"><span><b>Movimentação mensal</b><i>Entradas, saídas e variação mês a mês</i></span></label>
+      <label class="rel-chk"><input type="checkbox" id="rc-custo"><span><b>Análise de custos</b><i>Valor consumido por item e total do período</i></span></label>
+      <label class="rel-chk"><input type="checkbox" id="rc-critico"><span><b>Itens críticos</b><i>Somente o que está em falta ou acabando</i></span></label>
+      <div class="rel-acoes">
+        <button class="btn btn-forte" id="rel-pdf" type="button">Salvar em PDF</button>
+        <button class="btn" id="rel-xlsx" type="button">Baixar em Excel</button>
+        <button class="btn" id="rel-fechar" type="button">Fechar</button>
+      </div>
+      <p class="g-nota" id="rel-aviso"></p>
+    </aside>
+    <div class="rel-previa" id="rel-previa"></div>
+  </div>
 </div>
 
 <div class="ficha-fundo" id="ficha-fundo" hidden>
@@ -2928,7 +3011,7 @@ function renderSeletor(){
     info.appendChild(l1);
     const emp = empresaDaFicha(s);
     info.appendChild(cria('div','sel-meta',
-      (s.contrato || 'sem contrato') + ' · ' + emp.razao.trim() + ' · ' + s.itens.length + ' item' + (s.itens.length>1?'ns':'')));
+      (s.contrato || 'sem contrato') + ' · ' + emp.razao.trim() + ' · ' + s.itens.length + (s.itens.length>1?' itens':' item')));
     lab.append(cb, info);
     lista.appendChild(lab);
   });
@@ -5912,6 +5995,441 @@ function renderEstoque(){
   else renderCustos(movs);
 }
 
+
+
+/* ================= relatório gerencial ================= */
+const REL_SECOES = ['resumo','saldo','consumo','contrato','mensal','custo','critico'];
+let relPronto = false;
+
+function relMarcadas(){
+  return REL_SECOES.filter(k => { const c = $('#rc-' + k); return c && c.checked; });
+}
+function relEl(tag, cls, txt){ return cria(tag, cls, txt); }
+function relTab(cols, linhas, rodape){
+  const t = cria('table','r-tab');
+  const th = cria('thead'), tr = cria('tr');
+  cols.forEach(c => tr.appendChild(cria('th', c.n ? 'n' : null, c.t)));
+  th.appendChild(tr); t.appendChild(th);
+  const tb = cria('tbody');
+  linhas.forEach(l => {
+    const r = cria('tr');
+    l.forEach((v,i) => r.appendChild(cria('td', cols[i] && cols[i].n ? 'n' : null, String(v))));
+    tb.appendChild(r);
+  });
+  t.appendChild(tb);
+  if(rodape){
+    const tf = cria('tfoot'), r = cria('tr');
+    rodape.forEach((v,i) => r.appendChild(cria('td', cols[i] && cols[i].n ? 'n' : null, String(v))));
+    tf.appendChild(r); t.appendChild(tf);
+  }
+  return t;
+}
+
+/* junta tudo que o relatório precisa, respeitando o filtro ativo da aba Estoque */
+function relDados(){
+  const movs = estFiltrados();
+  const saidas = movs.filter(m => m.tipo === 'saida' && m.origem !== 'inventario');
+  const entradas = movs.filter(m => m.tipo === 'entrada');
+  const real = [...saldoRealPorEpi().values()].sort((a,b) => a.nome.localeCompare(b.nome));
+
+  const porEpi = new Map();
+  saidas.forEach(m => {
+    const k = m.epi || '(sem nome)';
+    if(!porEpi.has(k)) porEpi.set(k, {nome:k, qtd:0, custo:0, temPreco:false, contratos:new Set()});
+    const g = porEpi.get(k);
+    g.qtd += (m.quantidade || 0);
+    const c = custoDaSaida(m);
+    if(c != null){ g.custo += c; g.temPreco = true; }
+    g.contratos.add(m.contrato || '(sem contrato)');
+  });
+  const porContrato = new Map();
+  saidas.forEach(m => {
+    const k = m.contrato || '(sem contrato)';
+    if(!porContrato.has(k)) porContrato.set(k, {nome:k, qtd:0, custo:0, colabs:new Set(), itens:new Set()});
+    const g = porContrato.get(k);
+    g.qtd += (m.quantidade || 0);
+    g.custo += (custoDaSaida(m) || 0);
+    if(m.colaborador) g.colabs.add(m.colaborador);
+    g.itens.add(m.epi || '(sem nome)');
+  });
+  const mm = new Map();
+  movs.forEach(m => {
+    const k = mesDe(m) || '';
+    if(!mm.has(k)) mm.set(k, {e:0, s:0});
+    if(m.tipo === 'entrada') mm.get(k).e += (m.quantidade || 0); else mm.get(k).s += (m.quantidade || 0);
+  });
+
+  return {
+    movs, saidas, entradas, real,
+    epis:[...porEpi.values()].sort((a,b) => b.qtd - a.qtd),
+    contratos:[...porContrato.values()].sort((a,b) => b.qtd - a.qtd),
+    meses:[...mm.entries()].sort((a,b) => a[0].localeCompare(b[0])),
+    pecasEnt: entradas.reduce((a,m) => a + (m.quantidade || 0), 0),
+    pecasSai: saidas.reduce((a,m) => a + (m.quantidade || 0), 0),
+    custoTotal: saidas.reduce((a,m) => a + (custoDaSaida(m) || 0), 0),
+    semPreco: saidas.filter(m => custoDaSaida(m) == null).length,
+  };
+}
+
+function relCabecalho(folha, titulo, subtitulo){
+  const tpl = $('#tpl-ficha').content.querySelector('.f-selo');
+  const topo = cria('header','f-topo');
+  const selo = document.createElement('img');
+  selo.className = 'f-selo'; selo.alt = ''; selo.src = tpl ? tpl.src : '';
+  const h = cria('h2','f-titulo', titulo);
+  const logo = document.createElement('img');
+  logo.className = 'f-fancold'; logo.alt = '';
+  logo.src = LOGOS_EMPRESA[LOGO_PADRAO] || '';
+  topo.append(selo, h, logo);
+  folha.appendChild(topo);
+  if(subtitulo){
+    const p = cria('p','r-nota', subtitulo);
+    p.style.textAlign = 'center'; p.style.margin = '7px 0 16px';
+    folha.appendChild(p);
+  }
+}
+
+function relRodape(folha, ref){
+  const rod = cria('div','r-rod');
+  rod.append(cria('span', null, (ref || 'SESMT — Fancold Service Ltda')),
+             cria('span', null, 'Emitido em ' + new Date().toLocaleString('pt-BR',
+               {day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
+               + ' por ' + (eu.nome || '—')));
+  folha.appendChild(rod);
+  const as = cria('div','r-assinaturas');
+  ['Responsável técnico — Segurança do Trabalho','Ciência da gestão'].forEach(r => {
+    const b = cria('div','f-assina');
+    b.append(cria('div','f-risco'), cria('span', null, r));
+    as.appendChild(b);
+  });
+  folha.appendChild(as);
+}
+
+function relTextoResumo(d){
+  const periodo = temPeriodo() ? rotPeriodo().toLowerCase() : 'todo o histórico registrado';
+  const saldoGeral = d.real.reduce((a,l) => a + l.saldo, 0);
+  const emFalta = d.real.filter(l => l.saldo <= 0).length;
+  const negativos = d.real.filter(l => l.saldo < 0).length;
+  const acabando = d.real.filter(l => nivelSaldo(l) === 1).length;
+  const liq = d.pecasEnt - d.pecasSai;
+
+  const partes = [];
+  partes.push('O presente relatório consolida a movimentação de equipamentos de proteção individual '
+    + 'referente a ' + periodo + ', abrangendo ' + d.movs.length + ' lançamento'
+    + (d.movs.length === 1 ? '' : 's') + ' de entrada e saída registrados no sistema de gestão de EPI.');
+
+  partes.push('No período analisado foram incorporadas ' + d.pecasEnt + ' peças ao estoque e consumidas '
+    + d.pecasSai + ' peças, resultando em uma variação líquida de '
+    + (liq >= 0 ? 'mais ' : 'menos ') + Math.abs(liq) + ' peças. '
+    + 'O consumo concentrou-se em ' + d.epis.length + (d.epis.length === 1 ? ' item distinto' : ' itens distintos') + ', distribuídos entre '
+    + d.contratos.length + ' contrato' + (d.contratos.length === 1 ? '' : 's') + '.');
+
+  if(d.custoTotal > 0){
+    partes.push('O custo apurado das saídas no período totaliza ' + fmtMoeda(d.custoTotal) + '.'
+      + (d.semPreco ? ' Ressalva-se que ' + d.semPreco + ' lançamento'
+        + (d.semPreco === 1 ? '' : 's') + ' não possu' + (d.semPreco === 1 ? 'i' : 'em')
+        + ' preço cadastrado no catálogo e, portanto, não integra' + (d.semPreco === 1 ? '' : 'm')
+        + ' o valor acima.' : ''));
+  }
+
+  if(emFalta || acabando){
+    const rotFalta = emFalta === 1 ? '1 item encontra-se' : emFalta + ' itens encontram-se';
+    let t = 'Quanto à disponibilidade, ' + rotFalta + ' com saldo esgotado'
+      + (acabando ? ' e ' + acabando + (acabando === 1 ? ' item' : ' itens')
+         + ' em nível de atenção, com quantidade reduzida frente ao histórico de consumo.' : '.');
+    if(negativos){
+      t += ' Observa-se ainda ' + negativos + (negativos === 1 ? ' item' : ' itens')
+        + ' com saldo negativo, condição que decorre do registro de saídas sem a correspondente '
+        + 'entrada de nota fiscal ou de contagem física, recomendando-se a regularização do '
+        + 'lançamento de compras para fidelizar o saldo apresentado.';
+    }
+    partes.push(t);
+  } else {
+    partes.push('Não há, na data de emissão, itens com saldo esgotado, indicando cobertura adequada '
+      + 'do estoque frente à demanda registrada.');
+  }
+
+  partes.push('Recomenda-se o acompanhamento mensal dos indicadores aqui apresentados, com '
+    + 'reposição programada dos itens sinalizados e conferência física periódica do estoque, '
+    + 'em conformidade com as atribuições do SESMT previstas na NR-01 e na NR-06.');
+  return partes;
+}
+
+function relMontar(){
+  const alvo = $('#rel-previa'); alvo.textContent = '';
+  const sel = relMarcadas();
+  const d = relDados();
+  const titulo = ($('#rel-titulo').value || 'Relatório Gerencial de EPI').trim();
+  const ref = ($('#rel-ref').value || '').trim();
+  const folha = cria('article','folha');
+
+  relCabecalho(folha, titulo,
+    (temPeriodo() ? rotPeriodo() : 'Período: todo o histórico registrado')
+    + (fEst.contrato ? ' · Contrato: ' + fEst.contrato : '')
+    + (fEst.epi ? ' · Filtro de item: ' + fEst.epi : ''));
+
+  if(!sel.length){
+    folha.appendChild(cria('p','r-texto','Selecione ao menos uma seção ao lado para montar o relatório.'));
+    alvo.appendChild(folha);
+    return;
+  }
+
+  if(sel.includes('resumo')){
+    const sec = cria('section','r-sec');
+    sec.appendChild(cria('h3','r-h2','1. Síntese executiva'));
+    const kp = cria('div','r-kpis');
+    const saldoGeral = d.real.reduce((a,l) => a + l.saldo, 0);
+    [[String(saldoGeral),'Peças em estoque'],
+     [String(d.real.filter(l => l.saldo <= 0).length),'Itens em falta'],
+     [String(d.pecasEnt),'Peças recebidas'],
+     [String(d.pecasSai),'Peças consumidas']].forEach(([v,r]) => {
+      const c = cria('div','r-kpi'); c.append(cria('b', null, v), cria('span', null, r)); kp.appendChild(c);
+    });
+    sec.appendChild(kp);
+    relTextoResumo(d).forEach(t => sec.appendChild(cria('p','r-texto', t)));
+    folha.appendChild(sec);
+  }
+
+  let n = sel.includes('resumo') ? 2 : 1;
+
+  if(sel.includes('saldo')){
+    const sec = cria('section','r-sec');
+    sec.appendChild(cria('h3','r-h2', n++ + '. Posição de estoque por item'));
+    sec.appendChild(cria('p','r-texto',
+      'Saldo apurado pela diferença entre o total recebido e o total consumido desde o início dos '
+      + 'registros. A coluna Situação classifica o item conforme o nível de cobertura.'));
+    const linhas = d.real.map(l => [l.nome, ['Em falta','Atenção','Regular'][nivelSaldo(l)],
+                                    l.entradas, l.saidas, l.saldo]);
+    sec.appendChild(relTab(
+      [{t:'Equipamento'},{t:'Situação'},{t:'Recebido',n:1},{t:'Consumido',n:1},{t:'Saldo',n:1}],
+      linhas,
+      ['Total', '', d.real.reduce((a,l)=>a+l.entradas,0), d.real.reduce((a,l)=>a+l.saidas,0),
+       d.real.reduce((a,l)=>a+l.saldo,0)]));
+    folha.appendChild(sec);
+  }
+
+  if(sel.includes('critico')){
+    const crit = d.real.filter(l => nivelSaldo(l) <= 1)
+      .sort((a,b) => nivelSaldo(a) - nivelSaldo(b) || a.saldo - b.saldo);
+    const sec = cria('section','r-sec');
+    sec.appendChild(cria('h3','r-h2', n++ + '. Itens críticos — reposição recomendada'));
+    if(!crit.length){
+      sec.appendChild(cria('p','r-texto','Nenhum item em situação crítica na data de emissão.'));
+    } else {
+      sec.appendChild(cria('p','r-texto',
+        'Relação dos equipamentos com saldo esgotado ou em nível de atenção, ordenados por '
+        + 'criticidade. Sugere-se avaliação de compra ou remanejamento.'));
+      sec.appendChild(relTab(
+        [{t:'Equipamento'},{t:'Situação'},{t:'Saldo',n:1},{t:'Consumo histórico',n:1}],
+        crit.map(l => [l.nome, ['Em falta','Atenção'][nivelSaldo(l)], l.saldo, l.saidas])));
+    }
+    folha.appendChild(sec);
+  }
+
+  if(sel.includes('consumo')){
+    const sec = cria('section','r-sec');
+    sec.appendChild(cria('h3','r-h2', n++ + '. Consumo por equipamento'));
+    if(!d.epis.length){
+      sec.appendChild(cria('p','r-texto','Não houve saídas no período filtrado.'));
+    } else {
+      sec.appendChild(cria('p','r-texto',
+        'Equipamentos entregues no período, ordenados por volume. Acertos de inventário não '
+        + 'integram esta relação, por não configurarem entrega a colaborador.'));
+      sec.appendChild(relTab(
+        [{t:'Equipamento'},{t:'Peças',n:1},{t:'Contratos atendidos',n:1},{t:'Participação',n:1}],
+        d.epis.map(g => [g.nome, g.qtd, g.contratos.size,
+          (d.pecasSai ? (g.qtd / d.pecasSai * 100).toFixed(1) : '0,0') + '%']),
+        ['Total', d.pecasSai, '', '100,0%']));
+    }
+    folha.appendChild(sec);
+  }
+
+  if(sel.includes('contrato')){
+    const sec = cria('section','r-sec');
+    sec.appendChild(cria('h3','r-h2', n++ + '. Consumo por contrato'));
+    if(!d.contratos.length){
+      sec.appendChild(cria('p','r-texto','Não houve saídas no período filtrado.'));
+    } else {
+      sec.appendChild(cria('p','r-texto',
+        'Distribuição do consumo entre os contratos atendidos, com o respectivo custo apurado.'));
+      sec.appendChild(relTab(
+        [{t:'Contrato'},{t:'Itens',n:1},{t:'Peças',n:1},{t:'Colaboradores',n:1},{t:'Custo',n:1}],
+        d.contratos.map(g => [g.nome, g.itens.size, g.qtd, g.colabs.size, fmtMoeda(g.custo)]),
+        ['Total', '', d.pecasSai, '', fmtMoeda(d.custoTotal)]));
+    }
+    folha.appendChild(sec);
+  }
+
+  if(sel.includes('mensal')){
+    const sec = cria('section','r-sec');
+    sec.appendChild(cria('h3','r-h2', n++ + '. Movimentação mensal'));
+    if(!d.meses.length){
+      sec.appendChild(cria('p','r-texto','Sem lançamentos no período filtrado.'));
+    } else {
+      sec.appendChild(cria('p','r-texto',
+        'Evolução mensal das entradas e saídas, em peças, com a variação líquida de cada mês.'));
+      sec.appendChild(relTab(
+        [{t:'Mês'},{t:'Entradas',n:1},{t:'Saídas',n:1},{t:'Variação',n:1}],
+        d.meses.map(([k,g]) => [mesRot(k), g.e, g.s, (g.e - g.s > 0 ? '+' : '') + (g.e - g.s)]),
+        ['Total', d.pecasEnt, d.pecasSai,
+         (d.pecasEnt - d.pecasSai > 0 ? '+' : '') + (d.pecasEnt - d.pecasSai)]));
+    }
+    folha.appendChild(sec);
+  }
+
+  if(sel.includes('custo')){
+    const sec = cria('section','r-sec');
+    sec.appendChild(cria('h3','r-h2', n++ + '. Análise de custos'));
+    const comPreco = d.epis.filter(g => g.temPreco);
+    if(!comPreco.length){
+      sec.appendChild(cria('p','r-texto',
+        'Não há custo apurado no período: os itens consumidos não possuem preço cadastrado no catálogo.'));
+    } else {
+      sec.appendChild(cria('p','r-texto',
+        'Valor consumido por equipamento, calculado pelo preço unitário registrado no catálogo na '
+        + 'data da saída. Itens sem preço cadastrado são identificados ao final.'));
+      sec.appendChild(relTab(
+        [{t:'Equipamento'},{t:'Peças',n:1},{t:'Custo unitário médio',n:1},{t:'Custo total',n:1}],
+        comPreco.map(g => [g.nome, g.qtd, fmtMoeda(g.qtd ? g.custo / g.qtd : 0), fmtMoeda(g.custo)]),
+        ['Total apurado', '', '', fmtMoeda(d.custoTotal)]));
+      const sem = d.epis.filter(g => !g.temPreco);
+      if(sem.length){
+        sec.appendChild(cria('p','r-nota',
+          'Sem preço cadastrado: ' + sem.map(g => g.nome).join('; ') + '.'));
+      }
+    }
+    folha.appendChild(sec);
+  }
+
+  relRodape(folha, ref);
+  alvo.appendChild(folha);
+}
+
+function relHtmlCompleto(){
+  const titulo = ($('#rel-titulo').value || 'Relatório de EPI').trim();
+  return '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>' + titulo
+    + '</title><style>' + CSS_IMPRESSAO + CSS_RELATORIO + '</style></head><body>'
+    + $('#rel-previa').innerHTML
+    + '<script>window.onload=function(){setTimeout(function(){window.print();},400);};<\/script>'
+    + '</body></html>';
+}
+
+const CSS_RELATORIO = `
+.r-sec{margin:0 0 18px}
+.r-h2{font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.09em;color:#000;
+  margin:0 0 8px;padding-bottom:4px;border-bottom:1.5px solid #000}
+.r-texto{font-size:11.5px;line-height:1.6;text-align:justify;margin:0 0 10px;color:#1a1a1a}
+.r-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.r-kpi{border:1px solid #6B6B6B;padding:8px 9px}
+.r-kpi b{display:block;font-size:18px;font-weight:700;line-height:1.1}
+.r-kpi span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#444;margin-top:2px}
+.r-tab{width:100%;border-collapse:collapse;margin-bottom:6px;font-size:10.5px}
+.r-tab th{background:#E9EEEB;border:1px solid #000;padding:4px 6px;font-size:9.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;text-align:left}
+.r-tab td{border:1px solid #9a9a9a;padding:3px 6px;vertical-align:top}
+.r-tab .n{text-align:right;white-space:nowrap}
+.r-tab tfoot td{font-weight:700;background:#F2F4F3;border-top:1.5px solid #000}
+.r-tab tr{break-inside:avoid;page-break-inside:avoid}
+.r-nota{font-size:9.5px;color:#555;margin:0 0 14px}
+.r-rod{margin-top:22px;padding-top:9px;border-top:1px solid #000;display:flex;
+  justify-content:space-between;gap:20px;font-size:9.5px;color:#333}
+.r-assinaturas{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:38px}
+.folha{min-height:0}
+`;
+
+async function relBaixarPdf(){
+  const av = $('#rel-aviso'); av.textContent = '';
+  const html = relHtmlCompleto();
+  const w = window.open('', '_blank');
+  if(w){ w.document.write(html); w.document.close(); return; }
+  try{
+    const dl = await claude.use('downloads');
+    if(dl){ await dl.save({filename:'relatorio-epi.html', data:html});
+      av.textContent = 'Arquivo baixado. Abra e use Ctrl+P para salvar em PDF.'; return; }
+  }catch(e){}
+  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'relatorio-epi.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  av.textContent = 'Arquivo baixado. Abra e use Ctrl+P para salvar em PDF.';
+}
+
+function relBaixarXlsx(){
+  const av = $('#rel-aviso');
+  if(typeof XLSX === 'undefined'){ av.textContent = 'A biblioteca de planilha não carregou. Recarregue a página.'; return; }
+  const sel = relMarcadas();
+  const d = relDados();
+  const wb = XLSX.utils.book_new();
+  const add = (nome, aoa) => XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(aoa), nome);
+
+  add('Resumo', [
+    ['Relatório gerencial de EPI'],
+    ['Período', temPeriodo() ? rotPeriodo() : 'Todo o histórico'],
+    ['Contrato', fEst.contrato || 'Todos'],
+    ['Emitido em', new Date().toLocaleString('pt-BR')],
+    ['Emitido por', eu.nome || ''],
+    [],
+    ['Peças em estoque', d.real.reduce((a,l) => a + l.saldo, 0)],
+    ['Itens em falta', d.real.filter(l => l.saldo <= 0).length],
+    ['Peças recebidas no período', d.pecasEnt],
+    ['Peças consumidas no período', d.pecasSai],
+    ['Custo apurado', d.custoTotal],
+  ]);
+  if(sel.includes('saldo') || sel.includes('critico')){
+    add('Posição de estoque', [['Equipamento','Situação','Recebido','Consumido','Saldo'],
+      ...d.real.map(l => [l.nome, ['Em falta','Atenção','Regular'][nivelSaldo(l)],
+                          l.entradas, l.saidas, l.saldo])]);
+  }
+  if(sel.includes('consumo') || sel.includes('custo')){
+    add('Consumo por EPI', [['Equipamento','Peças','Contratos','Custo total'],
+      ...d.epis.map(g => [g.nome, g.qtd, g.contratos.size, g.temPreco ? g.custo : ''])]);
+  }
+  if(sel.includes('contrato')){
+    add('Por contrato', [['Contrato','Itens','Peças','Colaboradores','Custo'],
+      ...d.contratos.map(g => [g.nome, g.itens.size, g.qtd, g.colabs.size, g.custo])]);
+  }
+  if(sel.includes('mensal')){
+    add('Mensal', [['Mês','Entradas','Saídas','Variação'],
+      ...d.meses.map(([k,g]) => [mesRot(k), g.e, g.s, g.e - g.s])]);
+  }
+  add('Lançamentos', [['Data','Tipo','EPI','Quantidade','Contrato','Colaborador','Nº ficha','Origem'],
+    ...d.movs.slice().sort((a,b) => String(b.data).localeCompare(String(a.data)))
+      .map(m => [dataCurta(m.data), m.tipo === 'entrada' ? 'Entrada' : 'Saída', m.epi || '',
+                 m.quantidade || 0, m.contrato || '', m.colaborador || '',
+                 m.solicitacaoNum ? 'Nº' + m.solicitacaoNum : '', m.origem || ''])]);
+
+  XLSX.writeFile(wb, 'relatorio-epi-' + new Date().toISOString().slice(0,10) + '.xlsx');
+  av.textContent = 'Planilha baixada.';
+}
+
+function abrirRelatorio(){
+  $('#rel-periodo-nota').textContent = 'Usa o filtro ativo da aba Estoque: '
+    + (temPeriodo() ? rotPeriodo() : 'todo o histórico')
+    + (fEst.contrato ? ' · ' + fEst.contrato : '') + '.';
+  if(!$('#rel-ref').value) $('#rel-ref').value = 'SESMT — Fancold Service Ltda';
+  $('#rel-aviso').textContent = '';
+  $('#rel-fundo').hidden = false;
+  document.body.style.overflow = 'hidden';
+  relMontar();
+}
+function fecharRelatorio(){
+  $('#rel-fundo').hidden = true;
+  document.body.style.overflow = '';
+}
+
+if($('#e-rel-abrir')){
+  $('#e-rel-abrir').addEventListener('click', abrirRelatorio);
+  $('#rel-fechar').addEventListener('click', fecharRelatorio);
+  $('#rel-pdf').addEventListener('click', relBaixarPdf);
+  $('#rel-xlsx').addEventListener('click', relBaixarXlsx);
+  REL_SECOES.forEach(k => {
+    const c = $('#rc-' + k);
+    if(c) c.addEventListener('change', relMontar);
+  });
+  ['rel-titulo','rel-ref'].forEach(id => $('#' + id).addEventListener('input', relMontar));
+  $('#rel-fundo').addEventListener('click', e => { if(e.target === $('#rel-fundo')) fecharRelatorio(); });
+}
 
 /* ================= catálogo de EPI (aba própria) ================= */
 let catEditando = null;
