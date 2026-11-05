@@ -751,7 +751,11 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
   text-transform:uppercase}
 .oc-lista-cab span{font-size:11.5px;color:var(--tenue);margin-right:auto}
 .oc-lista-cab .btn{flex:none;padding:4px 9px;font-size:11px}
-.oc-lista{overflow-y:auto;padding:8px 10px;display:flex;flex-direction:column;gap:6px}
+.oc-busca-cx{padding:9px 12px;border-bottom:1px solid var(--linha)}
+.oc-busca-cx input{width:100%;box-sizing:border-box;padding:7px 10px;font-size:12.5px;
+  background:rgba(5,10,38,.7);border:1px solid var(--linha-forte);border-radius:7px;color:var(--gelo)}
+.oc-busca-cx input:focus{outline:none;border-color:var(--azul)}
+.oc-lista{overflow-y:auto;padding:8px 10px;display:flex;flex-direction:column;gap:6px;min-height:0}
 .oc-item{display:grid;grid-template-columns:18px minmax(0,1fr) 62px;gap:8px;align-items:center;
   border:1px solid var(--linha);border-radius:8px;padding:8px 10px;background:rgba(5,10,38,.45)}
 .oc-item.off{opacity:.45}
@@ -781,8 +785,11 @@ table.f-tabela{width:100%;border-collapse:collapse;margin-bottom:16px}
 .rel-chk b{font-size:12.5px;color:var(--gelo)}
 .rel-chk i{font-style:normal;font-size:11px;color:var(--tenue);line-height:1.3}
 .rel-acoes{display:flex;flex-direction:column;gap:7px;margin-top:14px}
+.rel-modal{grid-template-rows:minmax(0,1fr)}
+.rel-modal>*{min-height:0;max-height:100%}
 .rel-previa{overflow-y:auto;padding:20px;background:rgba(2,5,20,.4);display:flex;
   flex-direction:column;align-items:center;gap:16px}
+.rel-previa>*{flex:none}
 .rel-previa .folha{min-height:0;padding:30px 34px}
 .r-sec{margin:0 0 18px}
 .r-h2{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:13.5px;font-weight:700;
@@ -1090,7 +1097,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 42</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 43</span></p>
     </form>
   </div>
 </div>
@@ -1806,10 +1813,11 @@ html{overflow-x:clip}
       <h3>Ordem de compra</h3>
       <div class="campo"><label for="oc-origem">Itens a incluir</label>
         <select id="oc-origem">
-          <option value="critico">Em falta e acabando</option>
-          <option value="falta">Somente em falta</option>
-          <option value="baixo">Somente acabando</option>
-          <option value="todos">Todos os itens do estoque</option>
+          <option value="critico">Reposição prioritária — ruptura e nível de atenção</option>
+          <option value="falta">Somente itens em ruptura de estoque</option>
+          <option value="baixo">Somente itens em nível de atenção</option>
+          <option value="todos">Catálogo completo — todos os itens</option>
+          <option value="manual">Seleção manual — escolher item a item</option>
         </select></div>
       <div class="campo"><label for="oc-num">Número da ordem</label>
         <input id="oc-num" autocomplete="off"></div>
@@ -1838,6 +1846,9 @@ html{overflow-x:clip}
         <span id="oc-contagem"></span>
         <button class="btn" id="oc-todos" type="button">Marcar todos</button>
         <button class="btn" id="oc-nenhum" type="button">Desmarcar</button>
+      </div>
+      <div class="oc-busca-cx">
+        <input id="oc-busca" autocomplete="off" placeholder="Buscar item pelo nome ou CA">
       </div>
       <div class="oc-lista" id="oc-lista"></div>
     </div>
@@ -6589,31 +6600,56 @@ function ocMediaMensal(nome){
 function ocMontarLista(){
   const origem = $('#oc-origem').value;
   const real = [...saldoRealPorEpi().values()];
+
+  /* na seleção manual entram também os itens do catálogo que nunca se mexeram */
+  if(origem === 'manual' || origem === 'todos'){
+    const vistos = new Set(real.map(l => normEpi(l.nome)));
+    const base = CATALOGO.length
+      ? CATALOGO.filter(c => c.ativo !== false)
+      : DADOS.epis;
+    base.forEach(c => {
+      if(vistos.has(normEpi(c.nome))) return;
+      vistos.add(normEpi(c.nome));
+      real.push({nome:c.nome, entradas:0, saidas:0, saldo:0});
+    });
+  }
+
   const filtrada = real.filter(l => {
     const nv = nivelSaldo(l);
     if(origem === 'falta')   return nv === 0;
     if(origem === 'baixo')   return nv === 1;
     if(origem === 'critico') return nv <= 1;
     return true;
-  }).sort((a,b) => nivelSaldo(a) - nivelSaldo(b) || a.saldo - b.saldo || a.nome.localeCompare(b.nome));
+  }).sort((a,b) => origem === 'manual' || origem === 'todos'
+      ? a.nome.localeCompare(b.nome)
+      : nivelSaldo(a) - nivelSaldo(b) || a.saldo - b.saldo || a.nome.localeCompare(b.nome));
 
+  const manual = origem === 'manual';
   ocLinhas = filtrada.map(l => {
     const media = ocMediaMensal(l.nome);
     /* cobre dois meses de consumo e repõe o que falta para zerar o saldo negativo */
     const bruto = Math.ceil(media * 2) - l.saldo;
     const sugerido = Math.max(1, bruto);
     return {nome:l.nome, ca:ocCaDe(l.nome), saldo:l.saldo, nivel:nivelSaldo(l),
-            media:Math.round(media * 10) / 10, qtd:sugerido, custo:ocCustoDe(l.nome), incluir:true};
+            media:Math.round(media * 10) / 10, qtd:sugerido, custo:ocCustoDe(l.nome),
+            incluir: !manual};
   });
   ocPintarLista();
 }
 function ocPintarLista(){
   const alvo = $('#oc-lista'); alvo.textContent = '';
+  const busca = botNorm(($('#oc-busca') && $('#oc-busca').value) || '');
   if(!ocLinhas.length){
     alvo.appendChild(cria('p','oc-vazio','Nenhum item nessa condição. Troque o filtro ao lado.'));
     ocContar(); ocMontarPrevia(); return;
   }
-  ocLinhas.forEach((l, i) => {
+  const visiveis = ocLinhas.filter(l => !busca
+    || botNorm(l.nome).includes(busca) || String(l.ca || '').includes(busca));
+  if(!visiveis.length){
+    alvo.appendChild(cria('p','oc-vazio','Nenhum item com esse nome ou CA.'));
+    ocContar(); ocMontarPrevia(); return;
+  }
+  visiveis.forEach(l => {
     const d = cria('div','oc-item' + (l.incluir ? '' : ' off'));
     const ck = document.createElement('input');
     ck.type = 'checkbox'; ck.checked = l.incluir;
@@ -6643,7 +6679,9 @@ function ocSelecionados(){ return ocLinhas.filter(l => l.incluir && l.qtd > 0); 
 function ocContar(){
   const sel = ocSelecionados();
   const pecas = sel.reduce((a,l) => a + l.qtd, 0);
-  $('#oc-contagem').textContent = sel.length + (sel.length === 1 ? ' item · ' : ' itens · ') + pecas + ' peças';
+  $('#oc-contagem').textContent = sel.length
+    ? sel.length + (sel.length === 1 ? ' item selecionado · ' : ' itens selecionados · ') + pecas + ' peças'
+    : 'nenhum item selecionado';
 }
 
 function ocMontarPrevia(){
@@ -6776,6 +6814,7 @@ function abrirOC(){
     if(e) $('#oc-entrega').value = e.endereco || '';
   }
   $('#oc-aviso').textContent = '';
+  $('#oc-busca').value = '';
   $('#oc-fundo').hidden = false;
   document.body.style.overflow = 'hidden';
   ocMontarLista();
@@ -6788,8 +6827,16 @@ if($('#e-oc-abrir')){
   $('#oc-origem').addEventListener('change', ocMontarLista);
   $('#oc-pdf').addEventListener('click', ocPdf);
   $('#oc-xlsx').addEventListener('click', ocXlsx);
-  $('#oc-todos').addEventListener('click', () => { ocLinhas.forEach(l => l.incluir = true); ocPintarLista(); });
-  $('#oc-nenhum').addEventListener('click', () => { ocLinhas.forEach(l => l.incluir = false); ocPintarLista(); });
+  const marcarVisiveis = v => {
+    const busca = botNorm($('#oc-busca').value || '');
+    ocLinhas.forEach(l => {
+      if(!busca || botNorm(l.nome).includes(busca) || String(l.ca || '').includes(busca)) l.incluir = v;
+    });
+    ocPintarLista();
+  };
+  $('#oc-todos').addEventListener('click', () => marcarVisiveis(true));
+  $('#oc-nenhum').addEventListener('click', () => marcarVisiveis(false));
+  $('#oc-busca').addEventListener('input', ocPintarLista);
   ['oc-num','oc-forn','oc-prazo','oc-entrega','oc-comprador','oc-obs'].forEach(id =>
     $('#' + id).addEventListener('input', ocMontarPrevia));
   $('#oc-fundo').addEventListener('click', e => { if(e.target === $('#oc-fundo')) fecharOC(); });
