@@ -185,6 +185,10 @@ h1,h2,h3{margin:0}
 .mtz-aba{font-weight:600}
 .mtz-sim{color:var(--e4);font-weight:700;font-size:15px}
 .mtz-nao{color:var(--tenue)}
+.c-filtros{grid-template-columns:repeat(5,minmax(0,1fr))}
+.c-filtros .cf-busca{grid-column:span 2}
+@media (max-width:1100px){.c-filtros{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.c-filtros{grid-template-columns:1fr}.c-filtros .cf-busca{grid-column:span 1}}
 .cg-uso{margin:0 0 11px;font-size:12px;line-height:1.5;color:var(--suave);
   border-left:3px solid var(--e5);padding:9px 12px;background:rgba(5,10,38,.45);border-radius:0 8px 8px 0}
 .cg-uso b{color:var(--gelo)}
@@ -1123,7 +1127,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 45</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 46</span></p>
     </form>
   </div>
 </div>
@@ -1304,6 +1308,23 @@ html{overflow-x:clip}
     </div>
   </div>
   <div id="c-aviso"></div>
+
+  <details class="painel e-filtros-cx" id="c-filtros-cx" style="margin-bottom:12px">
+    <summary>Filtrar <span id="cf-chip-resumo"></span></summary>
+    <div class="e-filtros c-filtros">
+      <div class="campo cf-busca"><label for="cf-busca">Buscar</label>
+        <input id="cf-busca" autocomplete="off" placeholder="número da ficha ou nome do colaborador"></div>
+      <div class="campo"><label for="cf-contrato">Contrato</label><select id="cf-contrato"></select></div>
+      <div class="campo"><label for="cf-dia">Dia</label><input id="cf-dia" type="date"></div>
+      <div class="campo"><label for="cf-mes">Mês</label><select id="cf-mes"></select></div>
+      <div class="campo"><label for="cf-ano">Ano</label><select id="cf-ano"></select></div>
+      <div class="ef-rod">
+        <p class="sub" id="cf-resumo"></p>
+        <button class="btn" id="cf-limpar" type="button">Limpar filtros</button>
+      </div>
+    </div>
+  </details>
+
   <p class="dica" id="c-dica" style="margin-top:-4px;margin-bottom:12px">Clique num cartão para ver os equipamentos, ou arraste entre as colunas para mudar a etapa.</p>
   <div class="kanban" id="kanban"></div>
 </section>
@@ -1494,6 +1515,13 @@ html{overflow-x:clip}
             <option value="pos">Positivos — tem saldo em casa</option>
           </select></div>
           <div class="campo"><label for="ef-contrato">Contrato</label><select id="ef-contrato"></select></div>
+          <div class="campo"><label for="ef-origem">Status do lançamento</label><select id="ef-origem">
+            <option value="">Todos os lançamentos</option>
+            <option value="fluxo">Entrega por ficha de EPI</option>
+            <option value="manual">Lançamento manual</option>
+            <option value="planilha">Entrada por planilha</option>
+            <option value="inventario">Acerto de inventário</option>
+          </select></div>
           <div class="campo"><label for="ef-epi">EPI</label><input id="ef-epi" autocomplete="off" placeholder="parte do nome"></div>
           <div class="ef-rod">
             <p class="sub" id="ef-resumo"></p>
@@ -4290,10 +4318,95 @@ function progresso(s){
   return {tot, fez, parciais, pecasTot, pecasSep,
           pct: pecasTot ? Math.round(pecasSep/pecasTot*100) : 0};
 }
+
+/* ---- filtros do Controle ---- */
+const fCtl = {busca:'', contrato:'', dia:'', mes:'', ano:''};
+let cfMontado = false;
+
+const diaDeSol = s => String(s && (s.dataRetirada || s.criadoEm) || '').slice(0,10);
+
+function passaCtl(s){
+  const d = diaDeSol(s);
+  if(fCtl.dia && d !== fCtl.dia) return false;
+  if(fCtl.ano && d.slice(0,4) !== fCtl.ano) return false;
+  if(fCtl.mes && d.slice(5,7) !== fCtl.mes) return false;
+  if(fCtl.contrato && (s.contrato || '(sem contrato)') !== fCtl.contrato) return false;
+  const b = botNorm(fCtl.busca);
+  if(b){
+    const alvo = botNorm((s.colaborador || '') + ' ' + (s.num || '') + ' '
+      + (s.solicitante || '') + ' ' + (s.cm || ''));
+    if(!alvo.includes(b)) return false;
+  }
+  return true;
+}
+function ctlTemFiltro(){
+  return !!(fCtl.busca || fCtl.contrato || fCtl.dia || fCtl.mes || fCtl.ano);
+}
+function preencherFiltrosCtl(){
+  const ctrs = [...new Set(SOLICITACOES.map(s => s.contrato).filter(Boolean))]
+    .sort((a,b) => a.localeCompare(b,'pt-BR'));
+  opcoes($('#cf-contrato'), ctrs, null, 'Todos os contratos');
+  fCtl.contrato = $('#cf-contrato').value;
+
+  const anos = [...new Set(SOLICITACOES.map(s => diaDeSol(s).slice(0,4)).filter(Boolean))]
+    .sort((a,b) => b.localeCompare(a));
+  opcoes($('#cf-ano'), anos, null, 'Todos os anos');
+  fCtl.ano = $('#cf-ano').value;
+
+  if(!cfMontado){
+    const sel = $('#cf-mes');
+    sel.textContent = '';
+    const o0 = cria('option', null, 'Todos os meses'); o0.value = ''; sel.appendChild(o0);
+    MES_PT.forEach((m, i) => {
+      const o = cria('option', null, m.charAt(0).toUpperCase() + m.slice(1));
+      o.value = String(i + 1).padStart(2,'0');
+      sel.appendChild(o);
+    });
+    cfMontado = true;
+  }
+}
+function resumoCtl(n){
+  const chip = $('#cf-chip-resumo');
+  const partes = [];
+  if(fCtl.busca)    partes.push('"' + fCtl.busca + '"');
+  if(fCtl.contrato) partes.push(fCtl.contrato);
+  if(fCtl.dia)      partes.push(dataBRCurta(fCtl.dia));
+  else {
+    if(fCtl.mes) partes.push(MES_PT[parseInt(fCtl.mes,10) - 1]);
+    if(fCtl.ano) partes.push(fCtl.ano);
+  }
+  if(chip) chip.textContent = partes.length ? partes.join(' \u00b7 ') : '';
+  const r = $('#cf-resumo');
+  if(r) r.textContent = ctlTemFiltro()
+    ? n + (n === 1 ? ' ficha encontrada' : ' fichas encontradas') + ' no filtro.'
+    : SOLICITACOES.filter(s => !s.cancelada).length + ' fichas no total \u2014 sem filtro.';
+}
+if($('#cf-busca')){
+  const aplica = () => {
+    fCtl.busca    = $('#cf-busca').value;
+    fCtl.contrato = $('#cf-contrato').value;
+    fCtl.dia      = $('#cf-dia').value;
+    fCtl.mes      = $('#cf-mes').value;
+    fCtl.ano      = $('#cf-ano').value;
+    renderKanban();
+  };
+  $('#cf-busca').addEventListener('input', aplica);
+  ['cf-contrato','cf-dia','cf-mes','cf-ano'].forEach(id =>
+    $('#' + id).addEventListener('change', aplica));
+  $('#cf-limpar').addEventListener('click', () => {
+    fCtl.busca = fCtl.contrato = fCtl.dia = fCtl.mes = fCtl.ano = '';
+    $('#cf-busca').value = ''; $('#cf-contrato').value = '';
+    $('#cf-dia').value = ''; $('#cf-mes').value = ''; $('#cf-ano').value = '';
+    renderKanban();
+  });
+}
+
 function renderKanban(){
   const alvo = $('#kanban'); alvo.textContent = '';
   const temEx = SOLICITACOES.some(s => s.exemplo);
   $('#b-limpar-ex').hidden = !temEx || !DB;
+  preencherFiltrosCtl();
+  let achadas = 0;
 
   /* o Almoxarifado Operacional só enxerga a coluna dele: menos ruído, menos engano */
   const colunas = eu.papel === 'almoxarifado'
@@ -4306,8 +4419,9 @@ function renderKanban(){
     : 'Clique num cartão para ver os equipamentos, ou arraste entre as colunas para mudar a etapa.';
 
   colunas.forEach(et => {
-    const doStatus = SOLICITACOES.filter(s => s.status === et.id && !s.cancelada)
+    const doStatus = SOLICITACOES.filter(s => s.status === et.id && !s.cancelada && passaCtl(s))
       .sort((a,b) => new Date(b.criadoEm) - new Date(a.criadoEm));
+    achadas += doStatus.length;
     const col = cria('section','coluna');
     col.style.setProperty('--cor', et.cor);
     col.style.setProperty('--cor-f', et.f);
@@ -4372,8 +4486,10 @@ function renderKanban(){
     alvo.appendChild(col);
   });
 
+  resumoCtl(achadas);
+
   /* canceladas saem das colunas e ficam numa lista à parte, sem sumir do histórico */
-  const canceladas = SOLICITACOES.filter(s => s.cancelada);
+  const canceladas = SOLICITACOES.filter(s => s.cancelada && passaCtl(s));
   const antigo = document.getElementById('bloco-canceladas');
   if(antigo) antigo.remove();
   if(canceladas.length){
@@ -5430,7 +5546,7 @@ $('#es-out-add').addEventListener('click', async () => {
 });
 /* ======== aba Estoque: duas páginas (movimentação e custos) + filtros ======== */
 let subPgEstoque = 'mov';
-const fEst = {de:'', ate:'', contrato:'', colaborador:'', epi:'', situacao:''};
+const fEst = {de:'', ate:'', contrato:'', colaborador:'', epi:'', situacao:'', origem:''};
 
 document.querySelectorAll('#e-paginas .subaba').forEach(b => {
   b.addEventListener('click', () => {
@@ -5448,21 +5564,22 @@ document.querySelectorAll('#e-mov-tabs .subaba').forEach(b => {
     renderEstoque();
   });
 });
-['ef-de','ef-ate','ef-contrato','ef-situacao'].forEach(id => {
+['ef-de','ef-ate','ef-contrato','ef-situacao','ef-origem'].forEach(id => {
   $('#' + id).addEventListener('change', () => {
     fEst.de         = $('#ef-de').value;
     fEst.ate        = $('#ef-ate').value;
     fEst.contrato   = $('#ef-contrato').value;
     fEst.situacao   = $('#ef-situacao').value;
+    fEst.origem     = $('#ef-origem').value;
     efAtalhoAceso('');
     renderEstoque();
   });
 });
 $('#ef-epi').addEventListener('input', () => { fEst.epi = $('#ef-epi').value; renderEstoque(); });
 $('#ef-limpar').addEventListener('click', () => {
-  fEst.de = fEst.ate = fEst.contrato = fEst.colaborador = fEst.epi = fEst.situacao = '';
+  fEst.de = fEst.ate = fEst.contrato = fEst.colaborador = fEst.epi = fEst.situacao = fEst.origem = '';
   $('#ef-de').value = ''; $('#ef-ate').value = ''; $('#ef-contrato').value = '';
-  $('#ef-epi').value = ''; $('#ef-situacao').value = '';
+  $('#ef-epi').value = ''; $('#ef-situacao').value = ''; $('#ef-origem').value = '';
   efAtalhoAceso('tudo');
   renderEstoque();
 });
@@ -5520,6 +5637,7 @@ function estFiltrados(){
   return MOVIMENTOS.filter(m => {
     if(!dentroDoPeriodo(m)) return false;
     if(fEst.contrato    && (m.contrato || '(sem contrato)') !== fEst.contrato) return false;
+    if(fEst.origem      && (m.origem || 'manual') !== fEst.origem) return false;
     if(fEst.colaborador && (m.colaborador || '') !== fEst.colaborador) return false;
     if(alvoEpi          && !botNorm(m.epi).includes(alvoEpi)) return false;
     return true;
@@ -5583,6 +5701,8 @@ function rotPeriodo(){
   if(fEst.ate) return 'Até ' + dataBRCurta(fEst.ate);
   return 'Todo o período';
 }
+const ORIGEM_ROT = {fluxo:'Entrega por ficha', manual:'Lançamento manual',
+                    planilha:'Entrada por planilha', inventario:'Acerto de inventário'};
 function resumoFiltro(n){
   const alvo = $('#ef-resumo'); alvo.textContent = '';
   const SIT_ROT = {neg:'Só negativados', falta:'Só em falta', baixo:'Só acabando', pos:'Só com saldo'};
@@ -5590,6 +5710,7 @@ function resumoFiltro(n){
   if(temPeriodo())     ativos.push(rotPeriodo());
   if(fEst.situacao)    ativos.push(SIT_ROT[fEst.situacao]);
   if(fEst.contrato)    ativos.push(fEst.contrato);
+  if(fEst.origem)      ativos.push(ORIGEM_ROT[fEst.origem] || fEst.origem);
   if(fEst.colaborador) ativos.push(fEst.colaborador);
   if(fEst.epi)         ativos.push('EPI: ' + fEst.epi);
   const chip = $('#ef-chip-resumo');
