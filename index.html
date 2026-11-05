@@ -1146,7 +1146,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 49</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 50</span></p>
     </form>
   </div>
 </div>
@@ -1327,6 +1327,7 @@ html{overflow-x:clip}
     </div>
   </div>
   <div id="c-aviso"></div>
+  <div id="c-regular" class="cg-uso" hidden style="margin-bottom:12px"></div>
 
   <div class="ctl-grade">
     <aside class="ctl-rail nao-imprime">
@@ -4426,6 +4427,47 @@ if($('#cf-busca')){
   });
 }
 
+
+/* fichas que já passaram de Separação antes da regra nova e nunca baixaram do estoque */
+let regPronto = false;
+function renderRegularizar(){
+  const cx = $('#c-regular');
+  if(!cx) return;
+  const pecasDe = s => (s.itens || []).reduce((a,i) => a + (qtdSep(i) || 0), 0);
+  const pend = SOLICITACOES.filter(s => !s.cancelada && !s.estoqueBaixado
+                                        && BAIXA_EM.includes(s.status) && pecasDe(s) > 0);
+  const podeMexer = eu.papel === 'admin' || eu.papel === 'almoxarifado_adm'
+                 || eu.papel === 'almoxarifado';
+  cx.hidden = !pend.length || !podeMexer || !DB;
+  if(cx.hidden) return;
+  const pecas = pend.reduce((a,s) => a + pecasDe(s), 0);
+  cx.textContent = '';
+  cx.appendChild(cria('b', null, 'Baixa de estoque pendente'));
+  cx.appendChild(cria('div', null,
+    pend.length + (pend.length === 1 ? ' ficha j\u00e1 est\u00e1' : ' fichas j\u00e1 est\u00e3o')
+    + ' em Envio, Entrega ou Conclu\u00eddo, mas entrou' + (pend.length === 1 ? '' : 'ram')
+    + ' no fluxo antes da regra atual e nunca deu' + (pend.length === 1 ? '' : 'ram')
+    + ' baixa no estoque \u2014 somando ' + pecas + (pecas === 1 ? ' pe\u00e7a.' : ' pe\u00e7as.')));
+  const bt = cria('button','btn btn-forte','Dar baixa agora \u2014 ' + pecas
+    + (pecas === 1 ? ' pe\u00e7a' : ' pe\u00e7as'));
+  bt.type = 'button';
+  bt.style.marginTop = '9px';
+  bt.addEventListener('click', async () => {
+    bt.disabled = true; bt.textContent = 'Baixando\u2026';
+    let n = 0;
+    for(const s of pend){
+      try{
+        await DB.doc('solicitacoes/' + s.id).update({estoqueBaixado:true});
+        await registrarSaidaAutomatica(s);
+        n++;
+      }catch(e){}
+    }
+    avisoFeito(n + (n === 1 ? ' ficha baixada' : ' fichas baixadas') + ' do estoque.');
+    cx.hidden = true;
+  });
+  cx.appendChild(bt);
+}
+
 let cfAjustado = false;
 function renderKanban(){
   const cxf = $('#c-filtros-cx');
@@ -4515,6 +4557,7 @@ function renderKanban(){
   });
 
   resumoCtl(achadas);
+  renderRegularizar();
 
   /* canceladas saem das colunas e ficam numa lista à parte, sem sumir do histórico */
   const canceladas = SOLICITACOES.filter(s => s.cancelada && passaCtl(s));
@@ -5291,6 +5334,10 @@ async function marcarItem(s, idx, qtd){
 }
 /* devolvem null quando deu certo, ou o motivo da falha — antes o erro era engolido
    e o botão parecia não fazer nada */
+/* a partir de Envio o material já deixou o almoxarifado: o saldo baixa aqui,
+   e a marca estoqueBaixado garante que não baixe de novo nas etapas seguintes */
+const BAIXA_EM = ['envio','entrega','concluido'];
+
 async function concluirSeparacao(s, destino){
   if(!DB) return 'sem conexão com o banco';
   /* item que vai incompleto (nada ou quantidade menor) entra como pendência */
@@ -5301,8 +5348,12 @@ async function concluirSeparacao(s, destino){
   });
   const agora = new Date().toISOString();
   const h = (s.historico || []).concat([{status:destino, em:agora, por: eu.nome || PAPEL_ROT[eu.papel]}]);
+  const patch = {itens, status:destino, historico:h};
+  const baixa = BAIXA_EM.includes(destino) && !s.estoqueBaixado;
+  if(baixa) patch.estoqueBaixado = true;
   try{
-    await DB.doc('solicitacoes/' + s.id).update({itens, status:destino, historico:h});
+    await DB.doc('solicitacoes/' + s.id).update(patch);
+    if(baixa) registrarSaidaAutomatica({...s, itens, status:destino});
     return null;
   }catch(e){ return (e && e.code) || (e && e.message) || 'erro'; }
 }
@@ -5311,9 +5362,9 @@ async function avancar(s, novo){
   const agora = new Date().toISOString();
   const h = (s.historico || []).concat([{status:novo, em:agora, por: eu.nome || PAPEL_ROT[eu.papel]}]);
   const patch = {status:novo, historico:h};
-  if(novo === 'concluido' && !s.estoqueBaixado){
+  if(BAIXA_EM.includes(novo) && !s.estoqueBaixado){
     patch.estoqueBaixado = true;
-    registrarSaidaAutomatica(s);
+    registrarSaidaAutomatica({...s, status:novo});
   }
   try{
     await DB.doc('solicitacoes/' + s.id).update(patch);
@@ -5324,7 +5375,9 @@ async function registrarSaidaAutomatica(s){
   if(!DB) return;
   const agora = new Date().toISOString();
   const retiradoPor = s.status === 'envio'
-    ? 'Correios (Segurança do Trabalho)' : 'Almoxarifado (entrega pessoal)';
+    ? 'Correios (Segurança do Trabalho)'
+    : s.status === 'entrega' ? 'Almoxarifado (entrega pessoal)'
+    : 'Entregue ao colaborador';
   for(const it of s.itens){
     if(qtdSep(it) <= 0) continue;
     try{
