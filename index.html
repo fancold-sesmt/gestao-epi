@@ -185,10 +185,29 @@ h1,h2,h3{margin:0}
 .mtz-aba{font-weight:600}
 .mtz-sim{color:var(--e4);font-weight:700;font-size:15px}
 .mtz-nao{color:var(--tenue)}
-.c-filtros{grid-template-columns:repeat(5,minmax(0,1fr))}
-.c-filtros .cf-busca{grid-column:span 2}
-@media (max-width:1100px){.c-filtros{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:900px){.c-filtros{grid-template-columns:1fr}.c-filtros .cf-busca{grid-column:span 1}}
+.ctl-grade{display:grid;grid-template-columns:232px minmax(0,1fr);gap:16px;align-items:start}
+.ctl-rail{align-self:start;position:sticky;top:74px}
+.ctl-main{min-width:0}
+.ctl-consulta{padding:12px 13px 13px}
+.ctl-consulta>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:7px;
+  font-family:"Barlow Condensed",Barlow,sans-serif;font-size:14px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--gelo)}
+.ctl-consulta>summary::-webkit-details-marker{display:none}
+.ctl-consulta>summary::after{content:'\25be';margin-left:auto;color:var(--suave);font-size:12px}
+.ctl-consulta[open]>summary::after{content:'\25b4'}
+.ctl-consulta>summary span{font-size:10.5px;font-weight:600;letter-spacing:.02em;text-transform:none;
+  color:var(--azul-claro);font-family:inherit;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ctl-campos{display:flex;flex-direction:column;gap:9px;margin-top:11px}
+.ctl-campos .campo{margin:0;min-width:0}
+.ctl-campos select,.ctl-campos input{width:100%;box-sizing:border-box;font-size:12.5px;padding:7px 9px}
+.ctl-duo{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ctl-campos .sub{margin:2px 0 0;font-size:11.5px;line-height:1.4}
+.ctl-campos .btn{flex:none;padding:7px 10px;font-size:12.5px}
+@media (max-width:1000px){
+  .ctl-grade{grid-template-columns:1fr}
+  .ctl-rail{position:static}
+  .ctl-duo{grid-template-columns:1fr 1fr}
+}
 .cg-uso{margin:0 0 11px;font-size:12px;line-height:1.5;color:var(--suave);
   border-left:3px solid var(--e5);padding:9px 12px;background:rgba(5,10,38,.45);border-radius:0 8px 8px 0}
 .cg-uso b{color:var(--gelo)}
@@ -1127,7 +1146,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 47</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 49</span></p>
     </form>
   </div>
 </div>
@@ -1309,25 +1328,30 @@ html{overflow-x:clip}
   </div>
   <div id="c-aviso"></div>
 
-  <details class="painel e-filtros-cx" id="c-filtros-cx" style="margin-bottom:12px" open>
-    <summary>Consultar solicitação <span id="cf-chip-resumo"></span></summary>
-    <div class="e-filtros c-filtros">
-      <div class="campo cf-busca"><label for="cf-busca">Buscar</label>
-        <input id="cf-busca" type="search" autocomplete="off"
-               placeholder="nº da solicitação ou nome do colaborador"></div>
-      <div class="campo"><label for="cf-contrato">Contrato</label><select id="cf-contrato"></select></div>
-      <div class="campo"><label for="cf-dia">Dia</label><input id="cf-dia" type="date"></div>
-      <div class="campo"><label for="cf-mes">Mês</label><select id="cf-mes"></select></div>
-      <div class="campo"><label for="cf-ano">Ano</label><select id="cf-ano"></select></div>
-      <div class="ef-rod">
-        <p class="sub" id="cf-resumo"></p>
-        <button class="btn" id="cf-limpar" type="button">Limpar filtros</button>
-      </div>
+  <div class="ctl-grade">
+    <aside class="ctl-rail nao-imprime">
+      <details class="painel ctl-consulta" id="c-filtros-cx" open>
+        <summary>Consultar <span id="cf-chip-resumo"></span></summary>
+        <div class="ctl-campos">
+          <div class="campo"><label for="cf-busca">Buscar</label>
+            <input id="cf-busca" type="search" autocomplete="off"
+                   placeholder="nº ou nome"></div>
+          <div class="campo"><label for="cf-contrato">Contrato</label><select id="cf-contrato"></select></div>
+          <div class="campo"><label for="cf-dia">Dia</label><input id="cf-dia" type="date"></div>
+          <div class="ctl-duo">
+            <div class="campo"><label for="cf-mes">Mês</label><select id="cf-mes"></select></div>
+            <div class="campo"><label for="cf-ano">Ano</label><select id="cf-ano"></select></div>
+          </div>
+          <p class="sub" id="cf-resumo"></p>
+          <button class="btn" id="cf-limpar" type="button">Limpar filtros</button>
+        </div>
+      </details>
+    </aside>
+    <div class="ctl-main">
+      <p class="dica" id="c-dica" style="margin-top:0;margin-bottom:12px">Clique num cartão para ver os equipamentos, ou arraste entre as colunas para mudar a etapa.</p>
+      <div class="kanban" id="kanban"></div>
     </div>
-  </details>
-
-  <p class="dica" id="c-dica" style="margin-top:-4px;margin-bottom:12px">Clique num cartão para ver os equipamentos, ou arraste entre as colunas para mudar a etapa.</p>
-  <div class="kanban" id="kanban"></div>
+  </div>
 </section>
 
 <!-- ========== PÁGINA 3 ========== -->
@@ -6528,7 +6552,8 @@ function relTextoResumo(d){
     + 'referente a ' + periodo + ', abrangendo ' + d.movs.length + ' lançamento'
     + (d.movs.length === 1 ? '' : 's') + ' de entrada e saída registrados no sistema de gestão de EPI.');
 
-  partes.push('No período analisado foram incorporadas ' + d.pecasEnt + ' peças ao estoque e consumidas '
+  partes.push('No período analisado foram registradas entradas de ' + d.pecasEnt
+    + ' peças e saídas de '
     + d.pecasSai + ' peças, resultando em uma variação líquida de '
     + (liq >= 0 ? 'mais ' : 'menos ') + Math.abs(liq) + ' peças. '
     + 'O consumo concentrou-se em ' + d.epis.length + (d.epis.length === 1 ? ' item distinto' : ' itens distintos') + ', distribuídos entre '
@@ -6591,8 +6616,8 @@ function relMontar(){
     const saldoGeral = d.real.reduce((a,l) => a + l.saldo, 0);
     [[String(saldoGeral),'Peças em estoque'],
      [String(d.real.filter(l => l.saldo <= 0).length),'Itens em falta'],
-     [String(d.pecasEnt),'Peças recebidas'],
-     [String(d.pecasSai),'Peças consumidas']].forEach(([v,r]) => {
+     [String(d.pecasEnt),'Entradas no período'],
+     [String(d.pecasSai),'Saídas no período']].forEach(([v,r]) => {
       const c = cria('div','r-kpi'); c.append(cria('b', null, v), cria('span', null, r)); kp.appendChild(c);
     });
     sec.appendChild(kp);
@@ -6606,12 +6631,12 @@ function relMontar(){
     const sec = cria('section','r-sec');
     sec.appendChild(cria('h3','r-h2', n++ + '. Posição de estoque por item'));
     sec.appendChild(cria('p','r-texto',
-      'Saldo apurado pela diferença entre o total recebido e o total consumido desde o início dos '
+      'Saldo apurado pela diferença entre o total de entradas e o total de saídas desde o início dos '
       + 'registros. A coluna Situação classifica o item conforme o nível de cobertura.'));
     const linhas = d.real.map(l => [l.nome, ['Em falta','Atenção','Regular'][nivelSaldo(l)],
                                     l.entradas, l.saidas, l.saldo]);
     sec.appendChild(relTab(
-      [{t:'Equipamento'},{t:'Situação'},{t:'Recebido',n:1},{t:'Consumido',n:1},{t:'Saldo',n:1}],
+      [{t:'Equipamento'},{t:'Situação'},{t:'Entradas',n:1},{t:'Saídas',n:1},{t:'Saldo',n:1}],
       linhas,
       ['Total', '', d.real.reduce((a,l)=>a+l.entradas,0), d.real.reduce((a,l)=>a+l.saidas,0),
        d.real.reduce((a,l)=>a+l.saldo,0)]));
@@ -6630,7 +6655,7 @@ function relMontar(){
         'Relação dos equipamentos com saldo esgotado ou em nível de atenção, ordenados por '
         + 'criticidade. Sugere-se avaliação de compra ou remanejamento.'));
       sec.appendChild(relTab(
-        [{t:'Equipamento'},{t:'Situação'},{t:'Saldo',n:1},{t:'Consumo histórico',n:1}],
+        [{t:'Equipamento'},{t:'Situação'},{t:'Saldo',n:1},{t:'Saídas acumuladas',n:1}],
         crit.map(l => [l.nome, ['Em falta','Atenção'][nivelSaldo(l)], l.saldo, l.saidas])));
     }
     folha.appendChild(sec);
@@ -6782,12 +6807,12 @@ function relBaixarXlsx(){
     [],
     ['Peças em estoque', d.real.reduce((a,l) => a + l.saldo, 0)],
     ['Itens em falta', d.real.filter(l => l.saldo <= 0).length],
-    ['Peças recebidas no período', d.pecasEnt],
-    ['Peças consumidas no período', d.pecasSai],
+    ['Entradas no período', d.pecasEnt],
+    ['Saídas no período', d.pecasSai],
     ['Custo apurado', d.custoTotal],
   ]);
   if(sel.includes('saldo') || sel.includes('critico')){
-    add('Posição de estoque', [['Equipamento','Situação','Recebido','Consumido','Saldo'],
+    add('Posição de estoque', [['Equipamento','Situação','Entradas','Saídas','Saldo'],
       ...d.real.map(l => [l.nome, ['Em falta','Atenção','Regular'][nivelSaldo(l)],
                           l.entradas, l.saidas, l.saldo])]);
   }
