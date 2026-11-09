@@ -1146,7 +1146,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 52</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 53</span></p>
     </form>
   </div>
 </div>
@@ -2077,11 +2077,13 @@ const AVANCO = {
 };
 /* Quem pode ABRIR e mexer na ficha em cada etapa. Os demais veem o cartão no
    kanban, mas não entram nele. */
+/* a Segurança do Trabalho responde pelo processo inteiro: abre e corrige
+   a ficha em qualquer etapa, como o Administrador */
 const DONOS_ETAPA = {
   validacao: ['admin','seguranca'],
-  separacao: ['admin','almoxarifado','almoxarifado_adm'],
+  separacao: ['admin','seguranca','almoxarifado','almoxarifado_adm'],
   envio:     ['admin','seguranca'],
-  entrega:   ['admin','almoxarifado','almoxarifado_adm'],
+  entrega:   ['admin','seguranca','almoxarifado','almoxarifado_adm'],
   concluido: ['admin','seguranca','almoxarifado','almoxarifado_adm'],
 };
 const QUEM_ETAPA = {
