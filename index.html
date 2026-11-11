@@ -208,6 +208,10 @@ h1,h2,h3{margin:0}
   .ctl-rail{position:static}
   .ctl-duo{grid-template-columns:1fr 1fr}
 }
+.cat-ver-inat{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--suave);margin:0 0 12px;cursor:pointer}
+.cat-ver-inat input{width:16px;height:16px;accent-color:var(--azul)}
+tr.cat-inat td{opacity:.5}
+.cat-tag-inat{display:inline-block;margin-left:8px;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:rgba(232,161,92,.18);color:var(--alerta)}
 .cg-uso{margin:0 0 11px;font-size:12px;line-height:1.5;color:var(--suave);
   border-left:3px solid var(--e5);padding:9px 12px;background:rgba(5,10,38,.45);border-radius:0 8px 8px 0}
 .cg-uso b{color:var(--gelo)}
@@ -1146,7 +1150,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 56</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 58</span></p>
     </form>
   </div>
 </div>
@@ -1687,6 +1691,8 @@ html{overflow-x:clip}
         <h3>Itens do catálogo</h3>
         <div class="campo" style="max-width:340px;margin-bottom:12px"><label for="cat-busca">Buscar</label>
           <input id="cat-busca" autocomplete="off" placeholder="Nome, CA ou grupo"></div>
+        <label class="cat-ver-inat" id="cat-ver-inat-cx" hidden>
+          <input type="checkbox" id="cat-ver-inat"> <span id="cat-ver-inat-rot">Mostrar desativados</span></label>
         <div id="cat-lista"></div>
       </section>
     </main>
@@ -2178,9 +2184,12 @@ DADOS.colaboradores.forEach(c => {
   const o = cria('option'); o.value = c.nome; o.label = c.cargo; dlCol.appendChild(o);
 });
 const dlEstoque = $('#l-epis-estoque');
-[...new Set(DADOS.epis.map(e => e.nome))].forEach(n => {
-  const o = cria('option'); o.value = n; dlEstoque.appendChild(o);
-});
+function preencherListaEpi(){
+  dlEstoque.textContent = '';
+  [...new Set(epiAtivos().map(e => e.nome))].sort((a,b) => a.localeCompare(b)).forEach(n => {
+    const o = cria('option'); o.value = n; dlEstoque.appendChild(o);
+  });
+}
 
 /* As solicitações do usuário logado aparecem sozinhas — o nº é só um filtro opcional. */
 function minhasSolicitacoes(){
@@ -2356,7 +2365,8 @@ busca.addEventListener('input', () => {
   const t = busca.value.trim().toUpperCase(); caixa.textContent='';
   if(!t){ busca.setAttribute('aria-expanded','false'); return; }
   const ps = t.split(/\s+/);
-  const achados = DADOS.epis.filter(e => ps.every(p => e.nome.toUpperCase().includes(p))).slice(0,60);
+  const achados = epiAtivos().filter(e => ps.every(p => String(e.nome || '').toUpperCase().includes(p)))
+    .sort((a,b) => (a.nome || '').localeCompare(b.nome || '')).slice(0,60);
   achados.forEach(e => {
     const b = cria('button','res-item'); b.type='button'; b.setAttribute('role','option');
     b.append(cria('span','res-nome', e.nome), cria('span','res-ca', e.ca ? 'CA '+e.ca : 'sem CA'));
@@ -3045,6 +3055,8 @@ const tipoRot = t => TIPO_ROT[t] || 'Reposição';
 let CATALOGO = [];            /* vem do Firestore; vazio = usa o catálogo embutido */
 let CUSTO_EPI = {};
 const epiBase = () => CATALOGO.length ? CATALOGO : DADOS.epis;
+/* o que pode ser escolhido em tela: só item ativo */
+const epiAtivos = () => epiBase().filter(e => e.ativo !== false);
 
 /* fichas antigas usam a nomenclatura anterior ("CAPACETE DE SEGURANÇA AZUL" em vez de
    "CAPACETE CLASSE A AZUL"). O casamento abaixo é proposital conservador: exige o mesmo
@@ -3121,6 +3133,7 @@ function reconstruirCatalogo(){
   NOME_OFICIAL = {};
   epiBase().forEach(e => { const k = normEpi(e.nome); if(k && !NOME_OFICIAL[k]) NOME_OFICIAL[k] = e.nome; });
   _cacheCusto.clear();
+  if(typeof preencherListaEpi === 'function') preencherListaEpi();
 }
 let NOME_OFICIAL = {};
 /* agrupa pelo item de verdade: ignora acento, espa\u00e7o e pontua\u00e7\u00e3o, e segue o apelido */
@@ -4021,7 +4034,7 @@ function botPendentes(){
 function botAchaEpi(q){
   const alvo = ' ' + q + ' ';
   let melhor = null, melhorN = 0;
-  (DADOS.epis || []).forEach(e => {
+  epiAtivos().forEach(e => {
     const toks = botNorm(e.nome).split(' ').filter(x => x.length > 2);
     if(!toks.length) return;
     const achou = toks.filter(tk => alvo.includes(' ' + tk)).length;
@@ -5858,12 +5871,14 @@ $('#ab-modelo').addEventListener('click', () => {
     .sort((a,b) => (a.nome||'').localeCompare(b.nome||''))
     .map(e => [e.nome, e.ca || '', saldos.get(chaveEpi(e.nome)) || 0, '', '']);
   /* EPI que já se moveu mas não está no catálogo também entra, para não ficar de fora */
-  const vistos = new Set(epiBase().map(e => chaveEpi(e.nome)));
+  const inativos = new Set(epiBase().filter(e => e.ativo === false).map(e => chaveEpi(e.nome)));
+  const vistos = new Set(epiBase().filter(e => e.ativo !== false).map(e => chaveEpi(e.nome)));
   [...new Set(MOVIMENTOS.map(m => m.epi).filter(Boolean))].forEach(nome => {
     const k = chaveEpi(nome);
     if(!k || vistos.has(k)) return;
     vistos.add(k);
-    linhas.push([nomeEpiOficial(nome), '', saldos.get(k) || 0, '', 'fora do catálogo']);
+    linhas.push([nomeEpiOficial(nome), '', saldos.get(k) || 0, '',
+      inativos.has(k) ? 'item desativado, ainda com saldo' : 'fora do catálogo']);
   });
   const ws = XLSX.utils.aoa_to_sheet([cab, ...linhas]);
   ws['!cols'] = [{wch:52},{wch:12},{wch:12},{wch:13},{wch:30}];
@@ -5914,7 +5929,9 @@ async function abLer(arq){
     const saldos = abSaldoAtual();
     const modo = (document.querySelector('input[name="ab-modo"]:checked') || {}).value || 'somar';
 
-    const linhas = [];
+    /* duas linhas da planilha podem ser o mesmo item (nome antigo e nome atual):
+       somam-se antes, senao o segundo ajuste desfaz o primeiro */
+    const juntas = new Map();
     for(let i = iCab + 1; i < aoa.length; i++){
       const l = aoa[i]; if(!l) continue;
       const nome = anTxt(l[cEpi]);
@@ -5922,11 +5939,20 @@ async function abLer(arq){
       if(!nome || bruto === '') continue;
       const qtd = anNum(bruto);
       if(!isFinite(qtd)) continue;
-      const atual = saldos.get(chaveEpi(nome)) || 0;
-      const delta = modo === 'somar' ? qtd : (qtd - atual);
-      if(!delta) continue;
-      linhas.push({nome: nomeEpiOficial(nome), qtd, atual, delta, obs: cObs >= 0 ? anTxt(l[cObs]) : ''});
+      const k = chaveEpi(nome);
+      if(!k) continue;
+      if(!juntas.has(k)) juntas.set(k, {nome: nomeEpiOficial(nome), qtd: 0, obs: ''});
+      const g = juntas.get(k);
+      g.qtd += qtd;
+      if(!g.obs && cObs >= 0) g.obs = anTxt(l[cObs]);
     }
+    const linhas = [];
+    juntas.forEach((g, k) => {
+      const atual = saldos.get(k) || 0;
+      const delta = modo === 'somar' ? g.qtd : (g.qtd - atual);
+      if(!delta) return;
+      linhas.push({nome: g.nome, qtd: g.qtd, atual, delta, obs: g.obs});
+    });
     if(!linhas.length){
       nota.textContent = modo === 'somar'
         ? 'Nenhuma linha com quantidade preenchida.'
@@ -7336,6 +7362,7 @@ $('#cat-semear').addEventListener('click', async () => {
 });
 
 $('#cat-busca').addEventListener('input', renderCatalogo);
+$('#cat-ver-inat').addEventListener('change', renderCatalogo);
 
 /* liga um nome órfão a um item do catálogo, gravando como apelido */
 async function catLigar(nomeAntigo, idAlvo){
@@ -7580,7 +7607,9 @@ function renderKitAdm(){
 }
 
 function renderCatalogo(){
-  const base = epiBase();
+  const todos = epiBase();
+  const base = todos.filter(e => e.ativo !== false);
+  const inat = todos.length - base.length;
   const noBanco = CATALOGO.length > 0;
   const comPreco = base.filter(e => e.custo != null).length;
 
@@ -7666,7 +7695,11 @@ function renderCatalogo(){
 
   /* ---- lista ---- */
   const termo = normEpi($('#cat-busca').value || '');
-  const lista = base.filter(e => !termo
+  const cxI = $('#cat-ver-inat-cx');
+  cxI.hidden = !inat;
+  $('#cat-ver-inat-rot').textContent = 'Mostrar também os ' + inat + ' desativados';
+  const fonte = (inat && $('#cat-ver-inat').checked) ? todos : base;
+  const lista = fonte.filter(e => !termo
       || normEpi(e.nome).includes(termo)
       || String(e.ca || '').includes(termo)
       || normEpi(e.grupo || '').includes(termo)
@@ -7685,8 +7718,10 @@ function renderCatalogo(){
   th.appendChild(trh); tb.appendChild(th);
   const tbody = cria('tbody');
   lista.forEach(e => {
-    const tr = cria('tr');
-    tr.appendChild(cria('td', null, e.nome));
+    const tr = cria('tr', e.ativo === false ? 'cat-inat' : null);
+    const tdN = cria('td', null, e.nome);
+    if(e.ativo === false) tdN.appendChild(cria('span','cat-tag-inat','desativado'));
+    tr.appendChild(tdN);
     tr.appendChild(cria('td','mono', e.ca || '—'));
     tr.appendChild(cria('td', null, e.grupo || 'EPI'));
     const tdC = cria('td','n', e.custo != null ? fmtMoeda(e.custo) : 'sem preço');
