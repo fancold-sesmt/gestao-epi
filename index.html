@@ -1150,7 +1150,7 @@ html{overflow-x:clip}
       </div>
       <p class="login-erro" id="lg-erro"></p>
       <button class="btn btn-forte" id="lg-entrar" type="submit" disabled>Carregando…</button>
-      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 58</span></p>
+      <p class="login-rod" id="lg-rod"><button type="button" id="lg-esqueci" class="lg-link">Esqueci minha senha</button> — enviamos um link de redefinição para o seu e-mail.<br><span style="opacity:.6">versão 60</span></p>
     </form>
   </div>
 </div>
@@ -1341,6 +1341,12 @@ html{overflow-x:clip}
           <div class="campo"><label for="cf-busca">Buscar</label>
             <input id="cf-busca" type="search" autocomplete="off"
                    placeholder="nº, nome, EPI ou CA"></div>
+          <div class="campo"><label for="cf-tipo">Tipo</label><select id="cf-tipo">
+            <option value="">Todos os tipos</option>
+            <option value="admissional">Admissão</option>
+            <option value="reposicao">Reposição</option>
+            <option value="troca">Troca</option>
+          </select></div>
           <div class="campo"><label for="cf-contrato">Contrato</label><select id="cf-contrato"></select></div>
           <div class="campo"><label for="cf-dia">Dia</label><input id="cf-dia" type="date"></div>
           <div class="ctl-duo">
@@ -4386,7 +4392,7 @@ function progresso(s){
 }
 
 /* ---- filtros do Controle ---- */
-const fCtl = {busca:'', contrato:'', dia:'', mes:'', ano:''};
+const fCtl = {busca:'', contrato:'', dia:'', mes:'', ano:'', tipo:''};
 let cfMontado = false;
 
 const diaDeSol = s => String(s && (s.dataRetirada || s.criadoEm) || '').slice(0,10);
@@ -4397,6 +4403,8 @@ function passaCtl(s){
   if(fCtl.ano && d.slice(0,4) !== fCtl.ano) return false;
   if(fCtl.mes && d.slice(5,7) !== fCtl.mes) return false;
   if(fCtl.contrato && (s.contrato || '(sem contrato)') !== fCtl.contrato) return false;
+  /* ficha antiga sem tipo gravado conta como reposição, igual ao resto do sistema */
+  if(fCtl.tipo && (s.tipo || 'reposicao') !== fCtl.tipo) return false;
   const b = botNorm(fCtl.busca);
   if(b){
     /* procura tamb\u00e9m no nome e no CA dos EPI da ficha */
@@ -4408,7 +4416,7 @@ function passaCtl(s){
   return true;
 }
 function ctlTemFiltro(){
-  return !!(fCtl.busca || fCtl.contrato || fCtl.dia || fCtl.mes || fCtl.ano);
+  return !!(fCtl.busca || fCtl.contrato || fCtl.dia || fCtl.mes || fCtl.ano || fCtl.tipo);
 }
 function preencherFiltrosCtl(){
   const ctrs = [...new Set(SOLICITACOES.map(s => s.contrato).filter(Boolean))]
@@ -4437,6 +4445,7 @@ function resumoCtl(n){
   const chip = $('#cf-chip-resumo');
   const partes = [];
   if(fCtl.busca)    partes.push('"' + fCtl.busca + '"');
+  if(fCtl.tipo)     partes.push({admissional:'Admissão', reposicao:'Reposição', troca:'Troca'}[fCtl.tipo]);
   if(fCtl.contrato) partes.push(fCtl.contrato);
   if(fCtl.dia)      partes.push(dataBRCurta(fCtl.dia));
   else {
@@ -4453,17 +4462,18 @@ if($('#cf-busca')){
   const aplica = () => {
     fCtl.busca    = $('#cf-busca').value;
     fCtl.contrato = $('#cf-contrato').value;
+    fCtl.tipo     = $('#cf-tipo').value;
     fCtl.dia      = $('#cf-dia').value;
     fCtl.mes      = $('#cf-mes').value;
     fCtl.ano      = $('#cf-ano').value;
     renderKanban();
   };
   $('#cf-busca').addEventListener('input', aplica);
-  ['cf-contrato','cf-dia','cf-mes','cf-ano'].forEach(id =>
+  ['cf-contrato','cf-tipo','cf-dia','cf-mes','cf-ano'].forEach(id =>
     $('#' + id).addEventListener('change', aplica));
   $('#cf-limpar').addEventListener('click', () => {
-    fCtl.busca = fCtl.contrato = fCtl.dia = fCtl.mes = fCtl.ano = '';
-    $('#cf-busca').value = ''; $('#cf-contrato').value = '';
+    fCtl.busca = fCtl.contrato = fCtl.dia = fCtl.mes = fCtl.ano = fCtl.tipo = '';
+    $('#cf-busca').value = ''; $('#cf-contrato').value = ''; $('#cf-tipo').value = '';
     $('#cf-dia').value = ''; $('#cf-mes').value = ''; $('#cf-ano').value = '';
     renderKanban();
   });
@@ -7650,7 +7660,7 @@ function renderCatalogo(){
     ['Nome que apareceu na ficha','Peças','Corresponde a qual item do catálogo'].forEach(h => trh.appendChild(cria('th', null, h)));
     th.appendChild(trh); tb.appendChild(th);
     const tbody = cria('tbody');
-    const ordenado = CATALOGO.slice().sort((a,b) => (a.nome||'').localeCompare(b.nome||''));
+    const ordenado = CATALOGO.filter(c => c.ativo !== false).sort((a,b) => (a.nome||'').localeCompare(b.nome||''));
     orf.forEach(o => {
       const tr = cria('tr');
       tr.appendChild(cria('td', null, o.nome));
